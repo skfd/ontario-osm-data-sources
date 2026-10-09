@@ -1,0 +1,41 @@
+{{Languages|Canada/Open data}}
+Open data that can be used for OpenStreetMap in Canada, as a tree: national sources here,
+then one page per province, then one page per municipality where there is layer-by-layer detail.
+
+This page is generated from [https://github.com/skfd/ontario-osm-data-sources ontario-osm-data-sources]. Fix a row there, or edit here and say so on the talk page.
+
+'''A row here is not permission to import.''' The licence verdict for every portal lives in [[Canada#Open Data]] and on the OSMF [https://osmfoundation.org/wiki/OGL_Canada_and_local_variants OGL Canada and local variants] page; the LWG column only cites it. Every import still needs a proposal, a community discussion and an [[Import/Catalogue]] entry.
+
+== Licences ==
+Which municipal and provincial licences are compatible is tracked in [[Canada#Open Data]],
+backed by the OSMF [https://osmfoundation.org/wiki/OGL_Canada_and_local_variants OGL Canada and local variants] page and
+[[Contributors#Canada]] for attribution.
+
+== National sources ==
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Municipality !! Licence !! Use !! Status !! Tools !! Verified !! Notes
+|}
+
+== By province ==
+* '''Ontario''' — [[Ontario/Data sources]]
+* Alberta, British Columbia, Manitoba, New Brunswick, Nova Scotia, Québec, Saskatchewan, Yukon —
+  no data-source page yet; see the per-province licence tables in [[Canada#Open Data]].
+
+== Use ==
+{| class="wikitable" style="font-size:90%"
+! Use !! means
+|-
+| Import || bulk upload after an import proposal ([[Import/Guidelines]])
+|-
+| Conflate || merge names, attributes or missing features into what OSM already has
+|-
+| Validate || a gap list or task queue (gaps page, MapRoulette, Osmose) worked by hand
+|-
+| Reference || a tile layer to trace or check against; nothing is uploaded
+|-
+| No || not useful for OSM, or not licensed
+|}
+
+[[Category:Canada]]
+[[Category:Data sources from Canada]]
