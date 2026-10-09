@@ -23,6 +23,16 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Municipality !! Licence !! Use !! Status !! Tools !! Verified !! Notes
+|-
+| [https://data.ontario.ca/ Ontario Data Catalogue] || Government of Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://wiki.openstreetmap.org/wiki/Canada#Open_Data Canada open data table] || 2026-10-09 || About 2,964 provincial datasets under a licence the LWG found compatible on 2024-03-04.
+|-
+| [https://geohub.lio.gov.on.ca/ Ontario GeoHub] || Land Information Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://wiki.openstreetmap.org/wiki/Land_Information_Ontario Land Information Ontario wiki] || 2026-10-09 || GeoHub items carry OGL Ontario while the 2011 wiki page still describes the older Unrestricted Use License.
+|-
+| [https://data.ontario.ca/en/dataset/open-ontario-imagery Geospatial Ontario imagery] || Ontario Ministry of Natural Resources || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://wiki.openstreetmap.org/wiki/Ontario Ontario wiki] || 2026-10-09 || Imagery Ontario owns is released openly from 2024 while partner-funded 2013 to 2023 blocks open on a schedule, with SWOOP 2025 due in 2026.
+|-
+| [https://github.com/skfd/ontario-address-changes/tree/main/datasets Municipal civic address datasets] || Ontario municipalities || Per municipality || Validate || style="background:#e6f6d0" | Ongoing || [https://skfd.github.io/ontario-address-changes/ Address change tracker] || 2026-10-09 || Daily snapshots of 53 municipal address datasets report added, removed and changed addresses, with four held back for incompatible licences.
+|-
+| [https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E Census of Population land area] || Statistics Canada || Statistics Canada Open Licence || Validate || style="background:#e8eef8" | Available || [https://skfd.github.io/ontario-farmland/ Farmland comparison] || 2026-10-09 || 2021 census land areas serve as the denominator that ranks 48 municipalities by how much farmland OSM has drawn.
 |}
 
 == Address points ==
@@ -142,7 +152,36 @@ Geofabrik extract on 2026-08-12.
 |}
 
 == Other layers, by municipality ==
+=== Guelph ===
+75 layers (34 not usable, 29 available, 9 ongoing, 3 completed) — see '''[[Guelph/Data sources]]'''.
 
+=== Oakville ===
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://portal-exploreoakville.opendata.arcgis.com/datasets/address-points Address Points] || OGL 2.0 Custom (Town of Oakville) ||  || Import || style="background:#fdf6c8" | Onboarding || [https://skfd.github.io/oakville-address-layer/ Address layer]<br>[https://maproulette.org/browse/challenges/55881 MapRoulette] || {{User|TronnaLegacy}} || 2026-10-09 || TronnaLegacy adds addresses by hand through MapRoulette while the import tooling waits on a pending LWG review of the Town licence.
+|}
+
+=== Toronto ===
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/ Address Points (Municipal) - Toronto One Address Repository] || OGL-CA v1.0 - Toronto || 452 of 523,835 missing (2026-08-28) || Import || style="background:#e6f6d0" | Ongoing || [https://skfd.github.io/toronto-addresses-layer/ Address layer]<br>[https://skfd.github.io/toronto-addresses-import/ Change tracker]<br>[https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints Import page]<br>[https://skfd.github.io/toronto-2-address-import/ Import evidence]<br>[https://community.openstreetmap.org/t/address-import-for-toronto/119368 Forum thread] || {{User|skfd}} || 2026-10-09 || The bulk import of 449,052 addresses finished 2026-05-28 and continuous maintenance has run from the skfd imports account since 2026-06-05.
+|-
+| [https://open.toronto.ca/dataset/green-spaces/ Green Spaces] || OGL-CA v1.0 - Toronto || 170 of 1,756 missing (2026-10-05) || Validate || style="background:#e6f6d0" | Ongoing || [https://skfd.github.io/toronto-parks-layer/ Parks layer]<br>[https://skfd.github.io/toronto-parks-layer/gaps/ Gaps page]<br>[https://skfd.github.io/toronto-parks-layer/gaps/history.html Gap history] || {{User|skfd}} || 2026-10-09 || Green Spaces replaces the deprecated Parks dataset, and the weekly gaps page also lists 175 parks whose OSM name differs.
+|-
+| [https://open.toronto.ca/dataset/toronto-centreline-tcl/ Toronto Centreline (TCL)] || OGL-CA v1.0 - Toronto || 37 of 13,327 local streets missing (2026-07-16) || Validate || style="background:#e6f6d0" | Ongoing || [https://skfd.github.io/toronto-streets-layer/ Streets layer]<br>[https://skfd.github.io/toronto-streets-osm/ Gaps page]<br>[https://skfd.github.io/toronto-streets-osm/history.html Gap history] || {{User|skfd}} || 2026-10-09 || The street-name gap list has not refreshed since the 2026-07-16 OSM extract although the reference layer still rebuilds.
+|-
+| [https://open.toronto.ca/dataset/3d-massing/ 3D Massing] || OGL-CA v1.0 - Toronto || 273 of 425,711 buildings have height (2026-10-03) || Conflate || style="background:#fdf6c8" | Planned || [https://wiki.openstreetmap.org/wiki/Toronto_building_import Prior building import] || {{User|skfd}} || 2026-10-09 || A local pilot derives heights and roof shapes from NRCan lidar and checks them against 3D Massing, with nothing published yet.
+|-
+| [https://open.toronto.ca/dataset/dinesafe/ DineSafe] || OGL-CA v1.0 - Toronto || 34.3% of 10,420 premises have no OSM match (2026-09-16) || Validate || style="background:#e8eef8" | Available || [https://skfd.github.io/toronto-open-poi/ POI explorer] || {{User|skfd}} || 2026-10-09 || A one-off survey queue of unmatched food premises, explicitly not an import.
+|-
+| [https://open.toronto.ca/dataset/bodysafe/ BodySafe] || OGL-CA v1.0 - Toronto || 2,496 premises have no OSM match, 33.6% matched (2026-09-16) || Validate || style="background:#e8eef8" | Available || [https://skfd.github.io/toronto-open-poi/ POI explorer] || {{User|skfd}} || 2026-10-09 || Personal-service premises shown in the same survey explorer as DineSafe, explicitly not an import.
+|-
+| [https://open.toronto.ca/dataset/bike-share-toronto/ Bike Share Toronto] || OGL-CA v1.0 - Toronto || 42 of 1,072 stations missing (2026-08-31) || Validate || style="background:#e6f6d0" | Ongoing || [https://maproulette.org/browse/challenges/56663 MapRoulette missing stations]<br>[https://maproulette.org/browse/challenges/56664 MapRoulette removed stations]<br>[https://maproulette.org/browse/challenges/56665 MapRoulette duplicate refs] || {{User|skfd}} || 2026-10-09 || The GBFS station feed refreshes three MapRoulette challenges weekly, and CKAN lists its licence as not specified while the dataset page says OGL Toronto.
+|}
 
 [[Category:Ontario]]
 [[Category:Data sources from Canada]]

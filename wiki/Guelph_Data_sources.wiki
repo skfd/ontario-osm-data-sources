@@ -1,0 +1,182 @@
+Open data from Guelph and what it is worth to OpenStreetMap, layer by layer.
+Part of [[Ontario/Data sources]].
+
+This page is generated from [https://github.com/skfd/ontario-osm-data-sources ontario-osm-data-sources]. Fix a row there, or edit here and say so on the talk page.
+
+'''A row here is not permission to import.''' The licence verdict for every portal lives in [[Canada#Open Data]] and on the OSMF [https://osmfoundation.org/wiki/OGL_Canada_and_local_variants OGL Canada and local variants] page; the LWG column only cites it. Every import still needs a proposal, a community discussion and an [[Import/Catalogue]] entry.
+
+''Value'' is a 1–5 score of what OSM would gain.
+
+== Use ==
+{| class="wikitable" style="font-size:90%"
+! Use !! means
+|-
+| Import || bulk upload after an import proposal ([[Import/Guidelines]])
+|-
+| Conflate || merge names, attributes or missing features into what OSM already has
+|-
+| Validate || a gap list or task queue (gaps page, MapRoulette, Osmose) worked by hand
+|-
+| Reference || a tile layer to trace or check against; nothing is uploaded
+|-
+| No || not useful for OSM, or not licensed
+|}
+
+== Layers ==
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/1 Bike Facilities] || Open Government Licence – City of Guelph || 4/5 || Lane on the correct side for 118.5 of 124 km (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The fastest-moving layer in the catalogue, so a new-install watcher would earn its keep more than a backlog list.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/5 Park Boundary] || Open Government Licence – City of Guelph || 4/5 || 13 of 126 parks missing, 7 named differently, 2 unnamed (2026-10-06) || Conflate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-parks-layer/ Parks layer]<br>[https://guelph-maps.github.io/guelph-parks-layer/gaps/ Parks gaps page]<br>[https://github.com/guelph-maps/guelph-parks-layer guelph-parks-layer repo] || {{User|skfd}} || 2026-10-09 || Official park names, including Anishinaabemowin renamings, are the gain; the geometry is not.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/22 Park Courts] || Open Government Licence – City of Guelph || 4/5 || 6 of 68 missing; 162 of 191 pitches lack the official name (2026-09-12) || Conflate || style="background:#e6f6d0" | Ongoing || [https://github.com/guelph-maps/guelph-pitches-beholder guelph-pitches-beholder repo] || {{User|skfd}} || 2026-09-12 || OSM has the courts but almost none carry the City's official name or surface.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/23 Sports Fields] || Open Government Licence – City of Guelph || 4/5 || 8 of 123 missing; 162 of 191 pitches lack the official name (2026-09-12) || Conflate || style="background:#e6f6d0" | Ongoing || [https://github.com/guelph-maps/guelph-pitches-beholder guelph-pitches-beholder repo] || {{User|skfd}} || 2026-09-12 || OSM has the fields but trails badly on official names, surface and lighting.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/28 Community Gardens Polygons] || Open Government Licence – City of Guelph || 4/5 || 22 of 40 in-use gardens have no OSM garden within 25 m (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Frozen since 2025-06 and missing the newest gardens, so treat the outlines as hints beside the points roster.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/18 Community Gardens] || Open Government Licence – City of Guelph || 4/5 || 25 of 43 in-use food gardens have nothing within 50 m (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The live garden roster and the right source for a gardens gaps page; the 27 pollinator rows have no settled tag.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/10 Stormwater Management Pond] || Open Government Licence – City of Guelph || 4/5 || 33 of 93 basins absent; about 50 more tagged as bare water (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Draw the missing basins and classify the bare ponds once dry-basin tagging is settled; the Greenway swales are not basins.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/7 AED Locations] || Open Government Licence – City of Guelph || 4/5 || 1 AED in OSM; all 91 City sites unmapped (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The largest relative gap, but rows are address geocodes and only an indoor survey can place a device.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/0 Addresses (2025 import)] || Open Government Licence – City of Guelph || 3/5 || Imported 2025-10-23; 42,718 tagged addresses in OSM (2026-09-12) || Import || style="background:#d4f4d4" | Completed || [https://wiki.openstreetmap.org/wiki/Guelph/Address_Import Import wiki page] || {{User|ARandomThumbtack}} || 2026-09-12 || Bulk-imported in 2025 by the ARandomThumbtack_Import account; its source:license tags still name the federal licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/0 Addresses (continuous gap-fill)] || Open Government Licence – City of Guelph || 3/5 || 927 of 40,684 civic addresses missing (2026-08-28); 4,367 added by 2026-10-07 || Conflate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-address-layer/ Address layer]<br>[https://github.com/guelph-maps/guelph-address-layer guelph-address-layer repo]<br>[https://github.com/guelph-maps/guelph-address-import guelph-address-import repo]<br>[https://github.com/guelph-maps/guelph-beholder guelph-beholder repo]<br>[https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous Continuous import wiki page] || {{User|skfd}} || 2026-10-07 || Create-only, human-reviewed gap-fill and QA over the finished 2025 import, re-run when the City publishes.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/10 Buildings] || Open Government Licence – City of Guelph || 3/5 || 1,354 City buildings with no OSM building on them, 511 more under 30 m² (2026-10-09) || Validate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-buildings-layer/ Buildings layer]<br>[https://guelph-maps.github.io/guelph-buildings-layer/gaps/ Buildings gaps page]<br>[https://github.com/guelph-maps/guelph-buildings-layer guelph-buildings-layer repo] || {{User|skfd}} || 2026-10-09 || OSM already has more buildings than the City, so the work is the ones it lacks entirely.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/1 StreetCentrelines] || Open Government Licence – City of Guelph || 3/5 || Every active segment has an OSM road; about 16 City names absent (2026-10-09) || Reference || style="background:#e8eef8" | Available || [https://maproulette.org/api/v2/project/57179/challenges MapRoulette project 57179 incl. challenge 49101 speed limits (API listing)] ||  || 2026-10-09 || Engineering geometry is no better than OSM's; use it to check street names, as speed limits are already saturated.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/1 Truck Routes (field on StreetCentrelines)] || Open Government Licence – City of Guelph || 4/5 || 0 hgv=designated; 81.1 of 91.6 km carry no hgv tag (2026-10-09) || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The signed truck network is absent from OSM but never moves, so it is a one-off conflation rather than a watcher.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/21 Trails] || Open Government Licence – City of Guelph || 3/5 || 6.2 km unmatched; 28.4 km of matched path lacks surface (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The value is surface and winter service, which fits one MapRoulette challenge better than a weekly page.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/7 Trees] || Open Government Licence – City of Guelph || 4/5 || 34,291 of 42,467 City trees have no OSM tree within 5 m; 8,164 mapped trees lack species (2026-10-09) || Validate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-trees-layer/ Trees layer]<br>[https://guelph-maps.github.io/guelph-trees-layer/gaps/ Trees gaps page]<br>[https://github.com/guelph-maps/guelph-trees-layer guelph-trees-layer repo] || {{User|skfd}} || 2026-10-09 || OSM's trees are one mapper's bare tracing, so both placement and species are missing; individual-tree imports are contested.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/20 Restrooms] || Open Government Licence – City of Guelph || 3/5 || 3 of 16 permanent restrooms missing (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Most rows are seasonal portables; the three permanent gaps belong on the parks gaps page.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/36 Schools] || Open Government Licence – City of Guelph || 3/5 || 56 of 60 in OSM; 4 to check (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || OSM already has them as polygons with operator and ISCED level; the City ships centroids.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/14 Child Care] || Open Government Licence – City of Guelph || 3/5 || About 20 of 27 standalone centres unmatched (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || A real gap from directory data that goes stale, worth one MapRoulette challenge rather than a weekly page.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/4 Fire Stations] || Open Government Licence – City of Guelph || 3/5 || All 6 Guelph stations mapped (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Only 6 of the 19 rows are in Guelph; the layer spans 8 municipalities.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/8 EMS Locations] || Open Government Licence – City of Guelph || 3/5 || 1 of 4 Guelph EMS stations unmatched (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Most rows republish the fire station layer; only 4 are Guelph ambulance stations.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/3 Hydrants] || Open Government Licence – City of Guelph || 3/5 || 3,384 of 3,524 City hydrants have no OSM hydrant within 10 m (2026-10-09) || Validate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-hydrants-layer/ Hydrants layer]<br>[https://guelph-maps.github.io/guelph-hydrants-layer/gaps/ Hydrants gaps page]<br>[https://github.com/guelph-maps/guelph-hydrants-layer guelph-hydrants-layer repo] || {{User|skfd}} || 2026-10-09 || OSM's hydrants sit a median 1.4 m from the City's, so position alone is worth a gaps page.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/18 Donation Bins] || Open Government Licence – City of Guelph || 3/5 || 0 recycling:clothes; all 8 actual bins missing (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Only 8 rows are bins and they move; the rest are thrift counters and consignment shops.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/33 Bus Stops] || Open Government Licence – City of Guelph || 3/5 || 111 missing, 68 unnamed, 9 lacking ref (2026-10-09) || Validate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-bus-stops-layer/ Bus stops layer]<br>[https://guelph-maps.github.io/guelph-bus-stops-layer/gaps/ Bus stops gaps page]<br>[https://github.com/guelph-maps/guelph-bus-stops-layer guelph-bus-stops-layer repo] || {{User|skfd}} || 2026-10-09 || A stale export of the GTFS stops table, matched to OSM by stop number.
+|-
+| [https://explore.guelph.ca/pages/transit-gtfs-data GTFS feed] || Open Government Licence – City of Guelph || 3/5 || 682 platform objects in OSM (2026-09-12) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-09-12 || The validation gold standard for stops and routes, never imported; aggregators point at expired copies.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/8 Wards] || Open Government Licence – City of Guelph || 3/5 || 6 of 6 as political ward relations, IoU 1.000 (2026-10-09) || Import || style="background:#d4f4d4" | Completed || [https://github.com/guelph-maps/guelph-boundaries guelph-boundaries repo] ||  || 2026-10-09 || Uploaded 2026-08-22 as boundary=political relations prepared by guelph-boundaries.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/15 Watercourse Polygons] || Open Government Licence – City of Guelph || 3/5 || 3 creeks wholly unnamed in OSM (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The geometry is redundant; the missing creek names fold into a water gaps page with the stormwater basins.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/17 Guelph Areas] || Open Government Licence – City of Guelph || 4/5 || 20 of 20 residential areas as boundary=place relations (2026-10-09) || Import || style="background:#d4f4d4" | Completed || [https://github.com/guelph-maps/guelph-boundaries guelph-boundaries repo]<br>[https://www.openstreetmap.org/changeset/187822521 Upload changeset 187822521] ||  || 2026-10-09 || The neighbourhoods went up 2026-08-22; the three Non-Residential filler polygons stay out of OSM.
+|-
+| [https://gismaps.guelph.ca/Images/OrthoImages/ Aerial imagery 2000–2023] || Open Government Licence – City of Guelph || 3/5 || Editors already show Ontario Mosaic 2023-2027 at 16 cm (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Comparable to imagery the editors already have; the unique value is the time series.
+|-
+| [https://gismaps.guelph.ca/image/rest/services/Imagery Aerial imagery 2025–2026 (ImageServer)] || none published || 3/5 || 2026 flight is newer than anything in the editor imagery index (2026-10-09) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-09 || The 2025 and 2026 items carry no licence; a licence email to the City is pending, then an editor-layer-index PR.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/0 Sidewalks] || Open Government Licence – City of Guelph || 2/5 || About 60–75 km of City sidewalk has no OSM line within 15 m (2026-10-09) || Validate || style="background:#e6f6d0" | Ongoing || [https://guelph-maps.github.io/guelph-sidewalks-layer/ Sidewalks layer]<br>[https://guelph-maps.github.io/guelph-sidewalks-layer/gaps/ Sidewalks gaps page] || {{User|skfd}} || 2026-10-09 || The audit's 92% was a length ratio; matched by location, whole streets of sidewalk were never traced.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/2 Laneways] || Open Government Licence – City of Guelph || 2/5 || 60 OSM alleys; 0.1 km of City laneway unmatched (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || OSM already has more laneways than the City publishes.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/11 Street Intersections] || Open Government Licence – City of Guelph || 2/5 || Not compared (2026-09-12) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-09-12 || A point per junction is not uploadable, and the bike-box field is set on one row.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/37 Parking Lot Points] || Open Government Licence – City of Guelph || 2/5 || 17 of 17 matched; capacity absent on 8 (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Already hand-conflated, with the capacities matching the City's exactly.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/40 Bus Routes] || Open Government Licence – City of Guelph || 2/5 || 5 of 26 routes have no OSM relation (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || OSM's route relations are decaying, but the GTFS feed rather than this layer is the authority.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/13 Golf Courses] || Open Government Licence – City of Guelph || 2/5 || 1 of 4 in-city courses unmatched (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Six points can never supply the polygons a course needs; two hand edits remain.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/13 Health Services] || Open Government Licence – City of Guelph || 2/5 || 25 of 40 Guelph rows unmatched by name (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || A programme directory reaching other cities that churns faster than OSM can verify.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/12 Organizations Serving Immigrants] || Open Government Licence – City of Guelph || 2/5 || 19 in OSM (2026-09-12) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-09-12 || Directory data reaching beyond Guelph that churns faster than OSM can verify.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/32 City Facilities] || Open Government Licence – City of Guelph || 2/5 || 17 of 24 matched by name (2026-10-09) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || Small, and OSM already has the notable facilities.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/9 Police Station] || Open Government Licence – City of Guelph || 2/5 || 3 in OSM (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || One row, and OSM already has more.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/35 Neighbourhood Groups] || Open Government Licence – City of Guelph || 2/5 || 13 of 13 as admin_level=10 relations (2026-09-12) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-09-12 || Already fully in OSM.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/3 CityBoundary] || Open Government Licence – City of Guelph || 2/5 || 1 OSM relation, agreeing to 0.7% (2026-09-12) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-09-12 || Nothing to improve.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/27 ActiveDevelopmentPlanning] || Open Government Licence – City of Guelph || 2/5 || Not compared (2026-09-12) || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-09-12 || Mostly scanned 1990s records, with 47 live rows.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/16 Property] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Cadastral parcels; OSM does not map legal land ownership.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/5 Registered Plans (61M)] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Subdivision plan boundaries are legal, not physical.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/39 Residential Building Permits] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || A table of administrative records with no geometry.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/9 Zoning (1995)] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Superseded, and zoning is a legal designation rather than ground truth.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/16 Zoning 2023] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || The current by-law, but zoning is a legal designation rather than ground truth.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/29 Polling Stations] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Election-cycle data, and the buildings are already mapped.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/30 Polling Subdivisions] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Election-cycle administrative areas.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/12 Termite Data] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Termite management areas are a regulatory overlay, not a visible feature.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/4 Solid Waste Collection Days] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Collection-day zones are scheduling, not geography.
+|-
+| [https://services5.arcgis.com/k3dd78JyG9GFoZHG/arcgis/rest/services/Contours_(2012)/FeatureServer/0 Contours (2012)] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || OSM renders contours from a DEM and does not store them.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/ParksMowing/FeatureServer/0 Grass Maintenance] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Mowing routes are operational records.
+|-
+| [https://gismaps.guelph.ca/OpenData/EmmaParkGroundwaterLevels_2010_2026.zip Emma Park Groundwater Levels] || Open Government Licence – City of Guelph || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Spreadsheets of well readings with no coordinates anywhere.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/19 Park Location] || Open Government Licence – City of Guelph ||  || 1 of 94 park playgrounds missing; capacity on 0 of 25 park lots (2026-10-09) || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-09 || The same parks as Park Boundary, whose amenity flags belong as extra statuses on the parks gaps page.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/HeritageRegistry/FeatureServer/129 Heritage Register] || none published || 4/5 || 0 heritage tags in Guelph (2026-09-12) || Conflate || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || 573 legally designated properties with no OSM heritage tags, but no licence; email to the City pending and Ontario tagging unsettled.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/RoutesToSchool_External/FeatureServer/1 Stop Signs] || none published || 4/5 || 1,086 of 2,108 in OSM (2026-09-12) || Conflate || style="background:#eeeeee" | Not usable || [https://osmose.openstreetmap.fr/api/0.3/issues?bbox=-80.33,43.48,-80.14,43.60&item=8300 Osmose unmapped stops from Mapillary not City data] ||  || 2026-09-12 || Facing direction and sign codes on every sign, but no licence; email to the City pending.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/VeteranStreetNames/MapServer/9 Veteran Street Names] || none published || 4/5 || 0 name:etymology in Guelph (2026-09-12) || Conflate || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Who 156 streets are named for, with war-memorial citations, but no licence; email pending.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/ParkingForPublic_Temp/FeatureServer/2 Park Parking Lots] || none published || 4/5 || 1,800 OSM parking objects, mostly bare (2026-09-12) || Conflate || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Audited space counts including accessible spaces, but no licence; email pending.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/RoutesToSchool_External/FeatureServer/4 Trails (master)] || none published || 3/5 || lit on 1,514 OSM path ways (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || The catalogued Trails layer is a filtered subset of this; the master adds informal paths and lighting, but has no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/TrafficCountermeasures/FeatureServer/0 Traffic Countermeasures] || none published || 3/5 || 58 bump and 0 cushion in OSM (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || 38 speed cushions appear mis-tagged as bumps in OSM, a correction list blocked by the missing licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/TrafficCountermeasures/FeatureServer/3 Pedestrian Crossovers] || none published || 3/5 || 0 crossings with flashing_lights (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Ontario crossover types have no settled OSM tag, and the layer has no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/TrafficCountermeasures/FeatureServer/2 Radar Speed Boards] || none published || 3/5 || 0 highway=speed_display (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || A settled tag and a real gap, but no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/ParkingForPublic_Temp/FeatureServer/1 On-Street Parking] || none published || 3/5 || 7 objects with parking:right (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Street-side parking rules OSM rarely carries, in free text with no side of street, and no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/RoutesToSchool_External/FeatureServer/0 School Crossings] || none published || 3/5 || 0 supervised=yes crossings (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || The cleanest validation list in the survey, but no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/Internal/CityMap_Community/MapServer/119 Places of Worship] || none published || 3/5 || 46 of 56 in OSM (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Ten missing from an undated list with no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/BlueW_WaterRefillLocations/FeatureServer/0 BlueW Water Refills] || none published || 3/5 || 0 drinking_water:refill (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Most in-service rows are shops offering refills, not fountains, and the layer has no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/RedLightCameras/FeatureServer/0 Red Light Cameras] || none published || 3/5 || 2 of 6 in OSM (2026-09-12) || Reference || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Small, enforcement mapping is contested in OSM, and there is no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/HeritageRegistry/FeatureServer/131 Cultural Heritage Landscapes / HCDs] || none published || 3/5 || 0 in OSM (2026-09-12) || Conflate || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || The right home for the per-lot heritage district rows, pending a licence and a tagging decision.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/HeritageRegistry/FeatureServer/130 Heritage Bridges] || none published || 3/5 || 0 of 5 tagged (2026-09-12) || Conflate || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Five names to put on existing bridge ways once licensed.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/AutomatedSpeedEnforcement/FeatureServer/0 Automated Speed Enforcement] || none published || 1/5 || 2 speed cameras in OSM (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Rotating temporary deployments, and no licence.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/TrafficCalmingSegments/FeatureServer/0 TrafficCalmingSegments] || none published || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || A plan of eligible streets, not installed devices.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/RoadClosures/FeatureServer RoadClosures] || none published || 1/5 || Not examined (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Returns HTTP 500 at source, and closures are transient anyway.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/LeafCollection/FeatureServer/0 Leaf Collection Streets] || none published || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Seasonal operational status per street segment.
+|-
+| [https://gismaps.guelph.ca/hosting/rest/services/External/CommitteeOfAdjustment/FeatureServer/0 Committee of Adjustment] || none published || 1/5 || Out of scope (2026-09-12) || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-09-12 || Minor-variance applications are transient legal records.
+|}
+
+[[Category:Guelph]]
+[[Category:Data sources from Canada]]
