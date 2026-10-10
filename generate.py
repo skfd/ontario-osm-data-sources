@@ -277,8 +277,6 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
         url = checkout_url(slug)
         if url:
             tools.append(("import checkout", url))
-        if slug == "toronto":
-            tools.append(("import page", "https://wiki.openstreetmap.org/wiki/Toronto/Address_Import"))
         if slug == "guelph":
             tools.append(("import page", "https://wiki.openstreetmap.org/wiki/Guelph/Address_Import"))
 
