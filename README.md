@@ -2,16 +2,11 @@
 
 One tree of every open data source usable for OpenStreetMap in Ontario, with what each is
 good for (import / conflate / validate / reference / no) and how far work on it has got.
-It is generated here and pasted into the OSM wiki:
-
-| file | wiki page |
-|---|---|
-| `wiki/Canada_Open_data.wiki` | [Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data) — the root; today a 555-byte stub the Canada page already calls "a list of them" |
-| `wiki/Ontario_Data_sources.wiki` | `Ontario/Data sources` — provincial sources, all 53 tracked address-point datasets, other layers per municipality |
-| `wiki/Guelph_Data_sources.wiki` | `Guelph/Data sources` — every Guelph layer, from the [audit](../guelph-osm-import-audit) |
-
-A municipality gets its own page once it has more than 12 rows; until then its rows sit on
-the Ontario page.
+It is generated here as one wiki page, `wiki/Canada_Open_data.wiki`, for
+[Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). Today that page is a
+555-byte stub, but the Canada page already links to it as the list of municipal datasets.
+Sections: national sources; then for Ontario, provincial sources, all tracked address-point
+datasets, and every Guelph and Toronto layer.
 
 **Licence verdicts are not made here.** The wiki's `Canada#Open_Data` table and the OSMF
 [OGL Canada and local variants](https://osmfoundation.org/wiki/OGL_Canada_and_local_variants)

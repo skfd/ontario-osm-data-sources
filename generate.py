@@ -7,7 +7,7 @@ Reads
   - the OSMF "OGL Canada and local variants" page      licence evidence (cached)
   - data/*.csv                                         curated rows (see data/SCHEMA.md)
 Writes
-  - wiki/*.wiki                                        one file per wiki page
+  - wiki/Canada_Open_data.wiki                         the whole tree, one wiki page
   - wiki/CHECKS.md                                     disagreements to resolve before publishing
 
     python generate.py [--refresh]
@@ -377,89 +377,52 @@ def summarize(rows) -> str:
     return ", ".join(f"{n} {s.lower()}" for s, n in c.most_common())
 
 
-def page_canada(curated) -> str:
+def page(curated, addresses) -> str:
     national = [r for r in curated if r["area"] == "Canada"]
+    prov = [r for r in curated if r["area"] == "Ontario"]
+    munis = sorted({r["area"] for r in curated} - {"Canada", "Ontario"},
+                   key=lambda m: -sum(r["area"] == m for r in curated))
+    cols = ["licence", "coverage", "feasibility", "status", "tools", "lead", "last_verified",
+            "notes"]
+    sections = []
+    for m in munis:
+        rs = [r for r in curated if r["area"] == m]
+        scored = any(r["tier"] for r in rs)
+        intro = (f"{len(rs)} layers ({summarize(rs)}). ''Value'' is a 1–5 score of what OSM "
+                 "would gain.\n\n" if scored else "")
+        sections.append(f"=== {m} ===\n{intro}"
+                        + table(rs, "dataset", cols[:1] + (["tier"] if scored else []) + cols[1:]))
+    munis_text = "\n\n".join(sections)
     return f"""{{{{Languages|Canada/Open data}}}}
-Open data that can be used for OpenStreetMap in Canada, as a tree: national sources here,
-then one page per province, then one page per municipality where there is layer-by-layer detail.
+Open data that can be used for OpenStreetMap in Canada: what each source is good for, and how
+far work on it has got. Only Ontario is filled in so far; other provinces are welcome.
 
 {PREAMBLE}
 
-== Licences ==
-Which municipal and provincial licences are compatible is tracked in [[Canada#Open Data]],
-backed by the OSMF [{OSMF_PAGE} OGL Canada and local variants] page and
-[[Contributors#Canada]] for attribution.
+== Use ==
+{LEGEND}
 
 == National sources ==
 {table(national, "dataset", ["provider", "licence", "feasibility", "status", "tools", "last_verified", "notes"])}
 
-== By province ==
-* '''Ontario''' — [[Ontario/Data sources]]
-* Alberta, British Columbia, Manitoba, New Brunswick, Nova Scotia, Québec, Saskatchewan, Yukon —
-  no data-source page yet; see the per-province licence tables in [[Canada#Open Data]].
-
-== Use ==
-{LEGEND}
-
-[[Category:Canada]]
-[[Category:Data sources from Canada]]
-"""
-
-
-def page_ontario(curated, addresses) -> str:
-    prov = [r for r in curated if r["area"] == "Ontario"]
-    munis = sorted({r["area"] for r in curated} - {"Canada", "Ontario"})
-    sections = []
-    for m in munis:
-        rs = [r for r in curated if r["area"] == m]
-        if len(rs) > 12:
-            sections.append(f"=== {m} ===\n{len(rs)} layers ({summarize(rs)}) — see "
-                            f"'''[[{m}/Data sources]]'''.")
-        else:
-            sections.append(f"=== {m} ===\n" + table(
-                rs, "dataset", ["licence", "coverage", "feasibility", "status", "tools", "lead",
-                                "last_verified", "notes"]))
-    munis_text = "\n\n".join(sections)
-    return f"""Open data that can be used for OpenStreetMap in Ontario. Part of [[Canada/Open data]].
-
-{PREAMBLE}
-
-== Use ==
-{LEGEND}
-
-== Provincial sources ==
+== Ontario ==
+=== Provincial sources ===
 {table(prov, "dataset", ["provider", "licence", "feasibility", "status", "tools", "last_verified", "notes"])}
 
-== Address points ==
+=== Address points ===
 {len(addresses)} municipal and county address-point datasets ({summarize(addresses)}).
 ''In OSM'' is the share of source addresses with no matching OSM address, measured from a
-Geofabrik extract on {SURVEY_DATE}.
+Geofabrik extract on {SURVEY_DATE} unless the row says otherwise.
 
 {table(addresses, "provider", ["licence", "lwg", "coverage", "feasibility", "status", "tools", "lead", "notes"])}
 
-== Other layers, by municipality ==
 {munis_text}
 
-[[Category:Ontario]]
-[[Category:Data sources from Canada]]
-"""
+== Other provinces ==
+Licence status per portal: [[Canada#Open Data]]. Add a section here when you have
+dataset-level detail.
 
-
-def page_city(area, rows) -> str:
-    return f"""Open data from {area} and what it is worth to OpenStreetMap, layer by layer.
-Part of [[Ontario/Data sources]].
-
-{PREAMBLE}
-
-''Value'' is a 1–5 score of what OSM would gain.
-
-== Use ==
-{LEGEND}
-
-== Layers ==
-{table(rows, "dataset", ["licence", "tier", "coverage", "feasibility", "status", "tools", "lead", "last_verified", "notes"])}
-
-[[Category:{area}]]
+[[Category:Canada]]
 [[Category:Data sources from Canada]]
 """
 
@@ -472,12 +435,9 @@ def main():
     curated = merge_address_rows(read_curated(), addresses)
 
     OUT.mkdir(exist_ok=True)
-    (OUT / "Canada_Open_data.wiki").write_text(page_canada(curated), encoding="utf-8")
-    (OUT / "Ontario_Data_sources.wiki").write_text(page_ontario(curated, addresses), encoding="utf-8")
-    for area in sorted({r["area"] for r in curated} - {"Canada", "Ontario"}):
-        rows = [r for r in curated if r["area"] == area]
-        if len(rows) > 12:
-            (OUT / f"{area}_Data_sources.wiki").write_text(page_city(area, rows), encoding="utf-8")
+    for stale in OUT.glob("*.wiki"):
+        stale.unlink()
+    (OUT / "Canada_Open_data.wiki").write_text(page(curated, addresses), encoding="utf-8")
 
     (OUT / "CHECKS.md").write_text(
         f"# Resolve before publishing ({date.today()})\n\n"
