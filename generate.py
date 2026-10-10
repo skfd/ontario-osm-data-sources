@@ -37,7 +37,7 @@ OSMF_API = ("https://osmfoundation.org/w/api.php?action=parse&prop=wikitext&form
 OSMF_PAGE = "https://osmfoundation.org/wiki/OGL_Canada_and_local_variants"
 OUT = HERE / "wiki"
 # Set once the repository is published; until then the pages say it is unpublished.
-REPO_URL = ""
+REPO_URL = "https://github.com/skfd/ontario-osm-data-sources"
 
 FEASIBILITY = {
     "import": "Import",
