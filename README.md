@@ -1,6 +1,6 @@
 # ontario-osm-data-sources
 
-One tree of every open data source usable for OpenStreetMap in Ontario, with what each is
+One list of every open data source usable for OpenStreetMap in Ontario, with what each is
 good for (import / conflate / validate / reference / no) and how far work on it has got.
 It is generated here as one wiki page, `wiki/Canada_Open_data.wiki`, for
 [Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). Today that page is a
