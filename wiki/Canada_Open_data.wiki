@@ -2,7 +2,7 @@
 Open data that can be used for OpenStreetMap in Canada: what each source is good for, and how
 far work on it has got. Only Ontario is filled in so far; other provinces are welcome.
 
-This page is generated from [https://github.com/skfd/ontario-osm-data-sources ontario-osm-data-sources]. Fix a row there, Edit here if you like, and say so on the talk page.
+This page is generated from [https://github.com/skfd/ontario-osm-data-sources ontario-osm-data-sources]. Fix a row there. Edit here if you like, and say so on the talk page.
 
 '''A row here is not permission to import.''' The licence verdict for every portal lives in [[Canada#Open Data]] and on the OSMF [https://osmfoundation.org/wiki/OGL_Canada_and_local_variants OGL Canada and local variants] page; the LWG column only cites it. Every import still needs a proposal, a community discussion and an [[Import/Catalogue]] entry.
 
