@@ -213,9 +213,9 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
         provider = t.get("provider", slug)
         lwg = lwg_date(slug, provider, approvals)
         indirect = bool(lwg) and slug in OSMF_NAME and slug not in ("toronto", "york")
-        cleared = (bool(lwg) and not indirect) or tier == "green-cc0" or slug in AUTHORIZED
+        cleared = (bool(lwg) and not indirect) or tier in ("green-cc0", "green-self") or slug in AUTHORIZED
 
-        if tier.startswith("green") and not cleared and not indirect:
+        if tier.startswith("green") and not cleared and not indirect:  # green-self is cleared
             checks.append(f"- **{slug}**: tracker says `{tier}`, but `{provider}` is not on the "
                           f"OSMF variants page. Listed as *licence unverified*.")
         if slug in OSMF_NAME and lwg and slug not in ("toronto", "york"):
@@ -295,6 +295,7 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
             "source_url": t.get("data_url", ""),
             "licence": t.get("license_name", ""),
             "lwg": lwg or ("CC0" if tier == "green-cc0" else "")
+                   or ("[[Contributors#Ontario|self-listed]]" if tier == "green-self" else "")
                    or (f"[{AUTHORIZED[slug]} permission]" if slug in AUTHORIZED else ""),
             "tier": "",
             "coverage": coverage,

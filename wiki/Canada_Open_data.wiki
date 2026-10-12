@@ -73,7 +73,7 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 |}
 
 === Address points ===
-53 municipal and county address-point datasets (27 parked, 15 onboarding, 7 not usable, 2 available, 1 ongoing, 1 completed).
+53 municipal and county address-point datasets (25 parked, 15 onboarding, 7 not usable, 4 available, 1 ongoing, 1 completed).
 ''In OSM'' is the share of source addresses with no matching OSM address, measured from a
 Geofabrik extract on 2026-08-12 unless the row says otherwise.
 
@@ -83,7 +83,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://mapamherstburg.ca/arcgis/rest/services/Address_Points/FeatureServer/0 Town of Amherstburg] || None published (confirmed 2026-08-20) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
-| [https://services3.arcgis.com/C964zBpHgJUpj4d0/arcgis/rest/services/COB_ADDRESS_POINT/FeatureServer/0 City of Barrie] || Open Government Licence - Barrie ||  || 80% of 63,341 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/barrie-address-import import checkout] ||  || licence unverified (not on OSMF list); few addresses in OSM yet
+| [https://services3.arcgis.com/C964zBpHgJUpj4d0/arcgis/rest/services/COB_ADDRESS_POINT/FeatureServer/0 City of Barrie] || Open Government Licence - Barrie || [[Contributors#Ontario|self-listed]] || 80% of 63,341 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/barrie-address-import import checkout] ||  || few addresses in OSM yet
 |-
 | [https://maps1.brampton.ca/arcgis/rest/services/COB/OpenData_Address_Points/MapServer/14 City of Brampton] || Creative Commons Attribution 4.0 (CC BY 4.0) ||  || 82% of 249,143 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || CC BY: needs an OSMF waiver
 |-
@@ -103,7 +103,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services2.arcgis.com/tPtW2sjE3XOR63A7/arcgis/rest/services/AddressPoints/FeatureServer/34 City of Cornwall] || Open Government Licence - City of Cornwall || 2025-10-08 || 81% of 20,640 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked || [https://github.com/skfd/cornwall-address-import import checkout] ||  || a local mapper adds addresses by hand; coordinate first
 |-
-| [https://services5.arcgis.com/C0BEdgagVaXzcw0W/arcgis/rest/services/Dufferin_County_Entrances/FeatureServer/0 County of Dufferin] || Open Government Licence - County of Dufferin ||  || 86% of 27,075 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending; a better address layer exists on the same portal
+| [https://services5.arcgis.com/C0BEdgagVaXzcw0W/arcgis/rest/services/Dufferin_County_Entrances/FeatureServer/0 County of Dufferin] || Open Government Licence - County of Dufferin || [[Contributors#Ontario|self-listed]] || 86% of 27,075 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || a better address layer exists on the same portal
 |-
 | [https://maps.durham.ca/arcgis/rest/services/Open_Data/Durham_OpenData/MapServer/0 Regional Municipality of Durham] || Region of Durham Open Data Licence v1.0 ||  || 78% of 253,559 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
@@ -111,11 +111,11 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services2.arcgis.com/vJlmDE1PmdTcJF0N/arcgis/rest/services/Civic_Address_Points_View_2/FeatureServer/0 County of Frontenac] || Open Government Licence - County of Frontenac v1.0 ||  || 90% of 22,365 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
-| [https://services.arcgis.com/q3mIlR87lZlZsds3/arcgis/rest/services/Address_and_Building_Roofline/FeatureServer/2 City of Greater Sudbury] || Open Data Licence - City of Greater Sudbury ||  || 54% of 70,061 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/greater-sudbury-address-import import checkout] ||  || licence unverified (not on OSMF list); few addresses in OSM yet
+| [https://services.arcgis.com/q3mIlR87lZlZsds3/arcgis/rest/services/Address_and_Building_Roofline/FeatureServer/2 City of Greater Sudbury] || Open Data Licence - City of Greater Sudbury || [[Contributors#Ontario|self-listed]] || 54% of 70,061 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/greater-sudbury-address-import import checkout] ||  || few addresses in OSM yet
 |-
 | [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/0 City of Guelph] || Open Government Licence - City of Guelph || 2024-09-09 || 6% of 53,844 missing (2026-08-12) || Validate || style="background:#e6f6d0" | Ongoing || [https://github.com/guelph-maps/guelph-address-import import checkout]<br>[https://wiki.openstreetmap.org/wiki/Guelph/Address_Import import page] ||  || already imported; gap-fill only
 |-
-| [https://gis.haldimandcounty.ca/server/rest/services/Topo/AddressPoints/FeatureServer/0 Haldimand County] || Open Government Licence - Haldimand County v1.0 ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
+| [https://gis.haldimandcounty.ca/server/rest/services/Topo/AddressPoints/FeatureServer/0 Haldimand County] || Open Government Licence - Haldimand County v1.0 || [[Contributors#Ontario|self-listed]] ||  || Import || style="background:#e8eef8" | Available ||  ||  || 
 |-
 | [https://services3.arcgis.com/Nn3SWZrtm4WZaUtd/arcgis/rest/services/Civic_Address_(od)/FeatureServer/152 Town of Halton Hills] || Open Data License - Town of Halton Hills ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
@@ -123,7 +123,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services1.arcgis.com/1xcPmb5WGexkkJ9w/arcgis/rest/services/CivicAddresses/FeatureServer/0 County of Hastings] || Open Government Licence - The Corporation of the County of Hastings (not found published) ||  || 93% of 30,864 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
-| [https://services1.arcgis.com/Nl1VlZHemqspPW1n/arcgis/rest/services/Municipal_911_Address/FeatureServer/0 County of Huron] || Open Government Licence - The County of Huron ||  || 81% of 38,312 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/huron-address-import import checkout] ||  || OGL variant: LWG review pending; few addresses in OSM yet
+| [https://services1.arcgis.com/Nl1VlZHemqspPW1n/arcgis/rest/services/Municipal_911_Address/FeatureServer/0 County of Huron] || Open Government Licence - The County of Huron || [[Contributors#Ontario|self-listed]] || 81% of 38,312 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/huron-address-import import checkout] ||  || few addresses in OSM yet
 |-
 | [https://services3.arcgis.com/RQBDTPtsbT0jebs7/arcgis/rest/services/CKL_Address_Point_View/FeatureServer/0 City of Kawartha Lakes] || None published (disclaimer only, confirmed 2026-08-20) ||  || 85% of 44,205 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
@@ -131,7 +131,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services1.arcgis.com/qAo1OsXi67t7XgmS/arcgis/rest/services/Addresses/FeatureServer/0 City of Kitchener] || Open Government Licence - The Corporation of the City of Kitchener || [https://wiki.openstreetmap.org/wiki/Waterloo_region/Kitchener_authorization permission] || 69% of 132,060 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/kitchener-address-import import checkout] ||  || explicit OSM permission from the municipality; local mappers active; coordinate first
 |-
-| [https://www.lambtongis.ca/arcgis_adaptor/rest/services/OpenData/AddressPoints/MapServer/0 County of Lambton] || Open Government Licence - County of Lambton ||  || 86% of 56,897 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/lambton-address-import import checkout] ||  || licence unverified (not on OSMF list); few addresses in OSM yet
+| [https://www.lambtongis.ca/arcgis_adaptor/rest/services/OpenData/AddressPoints/MapServer/0 County of Lambton] || Open Government Licence - County of Lambton ||  || 86% of 56,897 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/lambton-address-import import checkout] ||  || OGL variant: LWG review pending; few addresses in OSM yet
 |-
 | [https://services3.arcgis.com/KQcdsE7S72bcD7R8/ArcGIS/rest/services/CivicAddress/FeatureServer/0 United Counties of Leeds and Grenville] || Open Government Licence - United Counties of Leeds and Grenville v1.0 ||  || 60% of 54,142 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
@@ -183,7 +183,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://www.wpsgn.ca/s22/rest/services/wpsgnPublic/wpsgn_opendata/FeatureServer/0 West Parry Sound Geography Network] || Open Government License - Township of The Archipelago (v2, based on OGL-Canada 2.0) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
-| [https://mappmycity.ca/arcgis/rest/services/MappMyCity/AllUniqueAddresses_Parcels/MapServer/0 City of Windsor] || Open Government Licence - City of Windsor v1.0 ||  || 91% of 118,841 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
+| [https://mappmycity.ca/arcgis/rest/services/MappMyCity/AllUniqueAddresses_Parcels/MapServer/0 City of Windsor] || Open Government Licence - City of Windsor v1.0 || [[Contributors#Ontario|self-listed]] || 91% of 118,841 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |-
 | [https://ww3.yorkmaps.ca/arcgis/rest/services/Geocortex/OpenData/MapServer/6 Regional Municipality of York] || York Region Open Data Licence || 2024-04-08 || 76% of 431,809 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |}
