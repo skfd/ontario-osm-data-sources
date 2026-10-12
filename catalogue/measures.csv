@@ -8,18 +8,18 @@ ca/on/guelph/community-gardens,2026-10-09,missing,25,43,,audit,25 of 43 in-use f
 ca/on/guelph/stormwater-management-pond,2026-10-09,missing,33,93,,audit,33 of 93 basins absent; about 50 more tagged as bare water
 ca/on/guelph/aed-locations,2026-10-09,observation,,,,audit,1 AED in OSM; all 91 City sites unmapped
 ca/on/guelph/addresses-2025-import,2026-09-12,observation,,,,audit,"Imported 2025-10-23; 42,718 tagged addresses in OSM"
-ca/on/guelph/addresses-continuous-gap-fill,2026-08-28,matched,927,40684,,audit,"927 of 40,684 civic addresses missing (2026-08-28); 4,367 added by 2026-10-07"
+ca/on/guelph/addresses-continuous-gap-fill,2026-08-28,missing,927,40684,,audit,"927 of 40,684 civic addresses missing (2026-08-28); 4,367 added by 2026-10-07"
 ca/on/guelph/buildings,2026-10-09,observation,,,,audit,"1,354 City buildings with no OSM building on them, 511 more under 30 m²"
 ca/on/guelph/streetcentrelines,2026-10-09,observation,,,,audit,Every active segment has an OSM road; about 16 City names absent
 ca/on/guelph/truck-routes-field-on-streetcentrelines,2026-10-09,missing,81.1,91.6,,audit,0 hgv=designated; 81.1 of 91.6 km carry no hgv tag
 ca/on/guelph/trails,2026-10-09,observation,,,,audit,6.2 km unmatched; 28.4 km of matched path lacks surface
-ca/on/guelph/trees,2026-10-09,matched,34291,42467,,audit,"34,291 of 42,467 City trees have no OSM tree within 5 m; 8,164 mapped trees lack species"
+ca/on/guelph/trees,2026-10-09,missing,34291,42467,,audit,"34,291 of 42,467 City trees have no OSM tree within 5 m; 8,164 mapped trees lack species"
 ca/on/guelph/restrooms,2026-10-09,missing,3,16,,audit,3 of 16 permanent restrooms missing
 ca/on/guelph/schools,2026-10-09,matched,56,60,,audit,56 of 60 in OSM; 4 to check
 ca/on/guelph/child-care,2026-10-09,missing,20,27,,audit,About 20 of 27 standalone centres unmatched
 ca/on/guelph/fire-stations,2026-10-09,observation,,,,audit,All 6 Guelph stations mapped
 ca/on/guelph/ems-locations,2026-10-09,missing,1,4,,audit,1 of 4 Guelph EMS stations unmatched
-ca/on/guelph/hydrants,2026-10-09,matched,3384,3524,,audit,"3,384 of 3,524 City hydrants have no OSM hydrant within 10 m"
+ca/on/guelph/hydrants,2026-10-09,missing,3384,3524,,audit,"3,384 of 3,524 City hydrants have no OSM hydrant within 10 m"
 ca/on/guelph/donation-bins,2026-10-09,observation,,,,audit,0 recycling:clothes; all 8 actual bins missing
 ca/on/guelph/bus-stops,2026-10-09,observation,,,,audit,"111 missing, 68 unnamed, 9 lacking ref"
 ca/on/guelph/gtfs-feed,2026-09-12,observation,,,,audit,682 platform objects in OSM
@@ -74,13 +74,13 @@ ca/on/guelph/trafficcalmingsegments,2026-09-12,note,,,,audit,Out of scope
 ca/on/guelph/roadclosures,2026-09-12,note,,,,audit,Not examined
 ca/on/guelph/leaf-collection-streets,2026-09-12,note,,,,audit,Out of scope
 ca/on/guelph/committee-of-adjustment,2026-09-12,note,,,,audit,Out of scope
-ca/on/toronto/addresses,2026-08-28,matched,452,523835,,audit,"452 of 523,835 missing"
-ca/on/toronto/green-spaces,2026-10-05,matched,170,1756,,audit,"170 of 1,756 missing"
-ca/on/toronto/tcl,2026-07-16,matched,37,13327,,audit,"37 of 13,327 local streets missing"
+ca/on/toronto/addresses,2026-08-28,missing,452,523835,,audit,"452 of 523,835 missing"
+ca/on/toronto/green-spaces,2026-10-05,missing,170,1756,,audit,"170 of 1,756 missing"
+ca/on/toronto/tcl,2026-07-16,missing,37,13327,,audit,"37 of 13,327 local streets missing"
 ca/on/toronto/3d-massing,2026-10-03,matched,273,425711,,audit,"273 of 425,711 buildings have height"
 ca/on/toronto/dinesafe,2026-09-16,observation,,,,audit,"34.3% of 10,420 premises have no OSM match"
 ca/on/toronto/bodysafe,2026-09-16,observation,,,,audit,"2,496 premises have no OSM match, 33.6% matched"
-ca/on/toronto/bike-share-toronto,2026-08-31,matched,42,1072,,audit,"42 of 1,072 stations missing"
+ca/on/toronto/bike-share-toronto,2026-08-31,missing,42,1072,,audit,"42 of 1,072 stations missing"
 ca/on/barrie/addresses,2026-08-12,missing,50863,63341,addresses,portfolio-survey,"80% of 63,341 missing"
 ca/on/brampton/addresses,2026-08-12,missing,204546,249143,addresses,portfolio-survey,"82% of 249,143 missing"
 ca/on/brant/addresses,2026-08-12,missing,16220,19333,addresses,portfolio-survey,"84% of 19,333 missing"
