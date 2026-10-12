@@ -1,0 +1,56 @@
+code,name,level
+ca,Canada,country
+ca/on,Ontario,province
+ca/on/amherstburg,Amherstburg,municipal
+ca/on/barrie,Barrie,municipal
+ca/on/brampton,Brampton,municipal
+ca/on/brant,Brant,municipal
+ca/on/brantford,Brantford,municipal
+ca/on/bruce,Bruce,municipal
+ca/on/burlington,Burlington,municipal
+ca/on/cambridge,Cambridge,municipal
+ca/on/chatham-kent,Chatham-Kent,municipal
+ca/on/cobourg,Cobourg,municipal
+ca/on/cornwall,Cornwall,municipal
+ca/on/dufferin,Dufferin,municipal
+ca/on/durham,Durham,municipal
+ca/on/elgin,Elgin,municipal
+ca/on/frontenac,Frontenac,municipal
+ca/on/greater-sudbury,Greater Sudbury,municipal
+ca/on/guelph,Guelph,municipal
+ca/on/haldimand,Haldimand,municipal
+ca/on/halton-hills,Halton Hills,municipal
+ca/on/hamilton,Hamilton,municipal
+ca/on/hastings,Hastings,municipal
+ca/on/huron,Huron,municipal
+ca/on/kawartha-lakes,Kawartha Lakes,municipal
+ca/on/kingston,Kingston,municipal
+ca/on/kitchener,Kitchener,municipal
+ca/on/lambton,Lambton,municipal
+ca/on/leeds-grenville,Leeds and Grenville,municipal
+ca/on/lennox-addington,Lennox and Addington,municipal
+ca/on/london,London,municipal
+ca/on/middlesex,Middlesex,municipal
+ca/on/milton,Milton,municipal
+ca/on/muskoka,Muskoka,municipal
+ca/on/niagara-falls,Niagara,municipal
+ca/on/norfolk,Norfolk,municipal
+ca/on/oakville,Oakville,municipal
+ca/on/ottawa,Ottawa,municipal
+ca/on/peel-region,Peel,municipal
+ca/on/perth-county,Perth,municipal
+ca/on/peterborough-county,Peterborough,municipal
+ca/on/prince-edward-county,County of Prince Edward,municipal
+ca/on/quinte-west,Quinte West,municipal
+ca/on/renfrew,Renfrew,municipal
+ca/on/sarnia,Sarnia,municipal
+ca/on/sdg,"Stormont, Dundas and Glengarry",municipal
+ca/on/simcoe,Simcoe,municipal
+ca/on/stratford,Stratford,municipal
+ca/on/thunder-bay,Thunder Bay,municipal
+ca/on/toronto,Toronto,municipal
+ca/on/waterloo,Waterloo,municipal
+ca/on/wellington,Wellington,municipal
+ca/on/west-parry-sound,West Parry Sound Geography Network,municipal
+ca/on/windsor,Windsor,municipal
+ca/on/york,York,municipal

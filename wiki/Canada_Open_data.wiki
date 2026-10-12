@@ -48,10 +48,6 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 |-
 | [https://open.canada.ca/data/en/dataset/8ba2aa2a-7bb9-4448-b4d7-f164409fe056 Topographic Data of Canada - CanVec Series] || Natural Resources Canada || OGL-Canada 2.0 || Import || style="background:#e8eef8" | Available || [https://wiki.openstreetmap.org/wiki/CanVec CanVec wiki] || 2026-10-09 || Only water, wetland, place and a few other classes may still be imported from the frozen 2012 OSM extract, and current releases lack community approval.
 |-
-| [https://ws.geoservices.lrc.gov.on.ca/arcgis5/services/AerialImagery/GEO_Imagery_Data_Service_2018to2022/ImageServer/WMSServer?SERVICE=WMS&REQUEST=GetCapabilities Ontario Orthophotography Mosaic 2018-2022] || Government of Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://github.com/osmlab/editor-layer-index/blob/gh-pages/sources/north-america/ca/on/Ontario_Mosaic_2018-2022_RGB.geojson ELI entry] || 2026-10-09 || Province-wide WMS imagery listed in the editor layer index as Ontario_Mosaic_2018-2022_RGB and Ontario_Mosaic_2018-2022_CIR.
-|-
-| [https://ws.geoservices.lrc.gov.on.ca/arcgis5/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/WMSServer?SERVICE=WMS&REQUEST=GetCapabilities Ontario Orthophotography Mosaic 2023-2027] || Government of Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://github.com/osmlab/editor-layer-index/blob/gh-pages/sources/north-america/ca/on/Ontario_Mosaic_2023-2027_RGB.geojson ELI entry] || 2026-10-09 || Province-wide WMS imagery listed in the editor layer index as Ontario_Mosaic_2023-2027_RGB, filling in as acquisition blocks are flown.
-|-
 | [https://github.com/openaddresses/openaddresses/tree/master/sources/ca OpenAddresses Canada] || OpenAddresses || Per source (definitions BSD-3-Clause) || Reference || style="background:#e8eef8" | Available ||  || 2026-10-09 || An index of address sources, 85 of them in Ontario, whose licences must be checked one by one at the municipal source.
 |-
 | [https://mobilitydatabase.org/ Mobility Database] || MobilityData || Per feed (catalogue Apache-2.0) || Validate || style="background:#e8eef8" | Available || [https://wiki.openstreetmap.org/wiki/List_of_GTFS_feeds List of GTFS feeds] || 2026-10-09 || A catalogue of GTFS and GBFS feeds whose licences are set by each agency, useful for checking stops and routes.
@@ -62,6 +58,10 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Municipality !! Licence !! Use !! Status !! Tools !! Verified !! Notes
+|-
+| [https://ws.geoservices.lrc.gov.on.ca/arcgis5/services/AerialImagery/GEO_Imagery_Data_Service_2018to2022/ImageServer/WMSServer?SERVICE=WMS&REQUEST=GetCapabilities Ontario Orthophotography Mosaic 2018-2022] || Government of Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://github.com/osmlab/editor-layer-index/blob/gh-pages/sources/north-america/ca/on/Ontario_Mosaic_2018-2022_RGB.geojson ELI entry] || 2026-10-09 || Province-wide WMS imagery listed in the editor layer index as Ontario_Mosaic_2018-2022_RGB and Ontario_Mosaic_2018-2022_CIR.
+|-
+| [https://ws.geoservices.lrc.gov.on.ca/arcgis5/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/WMSServer?SERVICE=WMS&REQUEST=GetCapabilities Ontario Orthophotography Mosaic 2023-2027] || Government of Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://github.com/osmlab/editor-layer-index/blob/gh-pages/sources/north-america/ca/on/Ontario_Mosaic_2023-2027_RGB.geojson ELI entry] || 2026-10-09 || Province-wide WMS imagery listed in the editor layer index as Ontario_Mosaic_2023-2027_RGB, filling in as acquisition blocks are flown.
 |-
 | [https://data.ontario.ca/ Ontario Data Catalogue] || Government of Ontario || OGL 1.0 Ontario || Reference || style="background:#e8eef8" | Available || [https://wiki.openstreetmap.org/wiki/Canada#Open_Data Canada open data table] || 2026-10-09 || About 2,964 provincial datasets under a licence the LWG found compatible on 2024-03-04.
 |-
@@ -83,7 +83,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://mapamherstburg.ca/arcgis/rest/services/Address_Points/FeatureServer/0 Town of Amherstburg] || None published (confirmed 2026-08-20) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
-| [https://services3.arcgis.com/C964zBpHgJUpj4d0/arcgis/rest/services/COB_ADDRESS_POINT/FeatureServer/0 City of Barrie] || Open Government Licence - Barrie || [[Contributors#Ontario|self-listed]] || 80% of 63,341 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/barrie-address-import import checkout] ||  || few addresses in OSM yet
+| [https://gispublic.barrie.ca/arcgis/rest/services/Open_Data/AddressVW/MapServer/0 City of Barrie] || Open Government Licence - Barrie || [[Contributors#Ontario|self-listed]] || 80% of 63,341 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/barrie-address-import import checkout] ||  || few addresses in OSM yet
 |-
 | [https://maps1.brampton.ca/arcgis/rest/services/COB/OpenData_Address_Points/MapServer/14 City of Brampton] || Creative Commons Attribution 4.0 (CC BY 4.0) ||  || 82% of 249,143 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || CC BY: needs an OSMF waiver
 |-
@@ -133,7 +133,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://www.lambtongis.ca/arcgis_adaptor/rest/services/OpenData/AddressPoints/MapServer/0 County of Lambton] || Open Government Licence - County of Lambton ||  || 86% of 56,897 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/lambton-address-import import checkout] ||  || OGL variant: LWG review pending; few addresses in OSM yet
 |-
-| [https://services3.arcgis.com/KQcdsE7S72bcD7R8/ArcGIS/rest/services/CivicAddress/FeatureServer/0 United Counties of Leeds and Grenville] || Open Government Licence - United Counties of Leeds and Grenville v1.0 ||  || 60% of 54,142 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
+| [https://services3.arcgis.com/KQcdsE7S72bcD7R8/arcgis/rest/services/LG_CivicAddress_OpenData/FeatureServer/0 United Counties of Leeds and Grenville] || Open Government Licence - United Counties of Leeds and Grenville v1.0 ||  || 60% of 54,142 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://services.arcgis.com/YmmKxwNVvLQW5zcm/arcgis/rest/services/L_and_A_County_Civic_Address_Point_%28Public%29/FeatureServer/0 County of Lennox and Addington] || Open Government Licence - County of Lennox and Addington v2.0 ||  || 88% of 26,102 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
@@ -149,7 +149,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services1.arcgis.com/mSGV2hCLXHNsfQqK/arcgis/rest/services/Civic_Addresses/FeatureServer/0 Norfolk County] || Norfolk County Open Data Licence Agreement ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
-| [https://maps.oakville.ca/oakgis/rest/services/ArcGISOnline/AGO_Oakville_Misc_Layers/MapServer/15 Town of Oakville] || Open Government Licence — Town of Oakville || 2026-09-14 || 76% of 71,049 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/oakville-address-import import checkout]<br>[https://skfd.github.io/oakville-address-layer/ Address layer]<br>[https://maproulette.org/browse/challenges/55881 MapRoulette] || {{User|TronnaLegacy}} || local mappers active; coordinate first
+| [https://maps.oakville.ca/oakgis/rest/services/ArcGISOnline/AGO_Oakville_Misc_Layers/MapServer/15 Town of Oakville] || Open Government Licence — Town of Oakville || 2026-09-14 || 76% of 71,049 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/oakville-address-import import checkout]<br>[https://skfd.github.io/oakville-address-layer/ Address layer]<br>[https://maproulette.org/browse/challenges/55881 MapRoulette] || {{User|TronnaLegacy}} || TronnaLegacy adds addresses by hand through MapRoulette while the import tooling waits on a pending LWG review of the Town licence.
 |-
 | [https://maps.ottawa.ca/arcgis/rest/services/Municipal_Address/MapServer/0 City of Ottawa] || Open Government Licence – City of Ottawa 2.0 || 2017-03-02 || 15% of 402,984 missing (2026-08-12) || Conflate || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/ottawa-address-import import checkout] ||  || local community maps from City data; coordinate first
 |-
@@ -175,7 +175,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services5.arcgis.com/h9xShea49ZANgOtx/arcgis/rest/services/Municipal_Address_Feature_Layer/FeatureServer/0 City of Thunder Bay] || City of Thunder Bay Open Data Licence || 2025-09-08 || 79% of 45,098 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/thunder-bay-address-import import checkout] ||  || few addresses in OSM yet
 |-
-| [https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/abedd8bc-e3dd-4d45-8e69-79165a76e4fa/resource/b1c2ab72-dfe7-4b29-8550-6d1cfaa61733/download/address-points-4326.geojson City of Toronto] || Open Government Licence – Toronto || 2024-04-08 || 452 of 523,835 missing (2026-08-28) || Validate || style="background:#d4f4d4" | Completed || [https://github.com/skfd/toronto-2-address-import import checkout]<br>[https://skfd.github.io/toronto-addresses-layer/ Address layer]<br>[https://skfd.github.io/toronto-addresses-import/ Change tracker]<br>[https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints Import page]<br>[https://skfd.github.io/toronto-2-address-import/ Import evidence]<br>[https://community.openstreetmap.org/t/address-import-for-toronto/119368 Forum thread] || {{User|skfd}} || 
+| [https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/abedd8bc-e3dd-4d45-8e69-79165a76e4fa/resource/b1c2ab72-dfe7-4b29-8550-6d1cfaa61733/download/address-points-4326.geojson City of Toronto] || Open Government Licence – Toronto || 2024-04-08 || 452 of 523,835 missing (2026-08-28) || Validate || style="background:#d4f4d4" | Completed || [https://github.com/skfd/toronto-2-address-import import checkout]<br>[https://skfd.github.io/toronto-addresses-layer/ Address layer]<br>[https://skfd.github.io/toronto-addresses-import/ Change tracker]<br>[https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints Import page]<br>[https://skfd.github.io/toronto-2-address-import/ Import evidence]<br>[https://community.openstreetmap.org/t/address-import-for-toronto/119368 Forum thread] || {{User|skfd}} || The bulk import of 449,052 addresses finished 2026-05-28 and continuous maintenance has run from the skfd imports account since 2026-06-05.
 |-
 | [https://opendata.arcgis.com/api/v3/datasets/fb1ce9625c634b2dbe1d2be36d419711_0/downloads/data?format=shp&spatialRefId=4326&where=1%3D1 City of Waterloo] || Open Government Licence – City of Waterloo || 2025-2-10 || 65% of 55,541 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/waterloo-address-import import checkout] ||  || few addresses in OSM yet
 |-
@@ -183,7 +183,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://www.wpsgn.ca/s22/rest/services/wpsgnPublic/wpsgn_opendata/FeatureServer/0 West Parry Sound Geography Network] || Open Government License - Township of The Archipelago (v2, based on OGL-Canada 2.0) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
-| [https://mappmycity.ca/arcgis/rest/services/MappMyCity/AllUniqueAddresses_Parcels/MapServer/0 City of Windsor] || Open Government Licence - City of Windsor v1.0 || [[Contributors#Ontario|self-listed]] || 91% of 118,841 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
+| [https://mappmycity.ca/arcgis/rest/services/OpenDataServices/PropertyParcels/MapServer/1 City of Windsor] || Open Government Licence - City of Windsor v1.0 || [[Contributors#Ontario|self-listed]] || 91% of 118,841 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |-
 | [https://ww3.yorkmaps.ca/arcgis/rest/services/Geocortex/OpenData/MapServer/6 Regional Municipality of York] || York Region Open Data Licence || 2024-04-08 || 76% of 431,809 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |}

@@ -1,0 +1,156 @@
+"""The catalogue's files, vocabularies and loaders, shared by sync.py and build.py."""
+
+import csv
+import re
+import sys
+from datetime import date
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+CODE_DIR = HERE.parent
+CATALOGUE = HERE / "catalogue"
+SOURCES = CATALOGUE / "sources.csv"
+SYNCED = CATALOGUE / "synced" / "addresses.csv"
+MEASURES = CATALOGUE / "measures.csv"
+JURISDICTIONS = CATALOGUE / "jurisdictions.csv"
+
+SOURCE_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tier",
+               "feasibility", "status", "tools", "lead", "last_verified", "notes"]
+SYNCED_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tracker_tier",
+               "lwg", "lwg_url", "feasibility", "status", "tools", "last_verified", "notes"]
+MEASURE_COLS = ["source_id", "measured_on", "measure", "value", "of", "unit", "method", "text"]
+
+FEASIBILITY = {
+    "import": "Import",
+    "conflate": "Conflate",
+    "validate": "Validate",
+    "reference": "Reference",
+    "no": "No",
+}
+STATUSES = ["Completed", "Ongoing", "Planned", "Onboarding", "Available", "Parked", "Not usable"]
+THEMES = [
+    "addresses", "buildings", "roads", "traffic", "parking", "cycling", "pedestrian", "trails",
+    "transit", "parks", "recreation", "trees", "water", "amenities", "emergency", "health",
+    "education", "community", "poi", "heritage", "boundaries", "planning", "elections",
+    "waste", "environment", "topography", "imagery", "catalogue",
+]
+MEASURES_VOCAB = ["missing", "matched", "observation", "note"]
+
+
+def read_csv(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def write_csv(path: Path, cols: list[str], rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, cols, lineterminator="\n")
+        w.writeheader()
+        w.writerows({c: r.get(c, "") for c in cols} for r in rows)
+
+
+def jurisdiction(source_id: str) -> str:
+    return source_id.rsplit("/", 1)[0]
+
+
+def is_date(s: str) -> bool:
+    try:
+        date.fromisoformat(s)
+        return True
+    except ValueError:
+        return False
+
+
+def tool_pairs(tools: str) -> list[tuple[str, str]]:
+    out = []
+    for pair in filter(None, (p.strip() for p in tools.split(";"))):
+        label, _, url = pair.partition("|")
+        out.append((label.strip(), url.strip()))
+    return out
+
+
+def load() -> tuple[list[dict], list[dict], dict[str, dict]]:
+    """(sources, measures, jurisdictions), validated. A hand row whose id is a synced row adds
+    to it: its non-empty cells win, and its tools follow the synced ones."""
+    synced = read_csv(SYNCED)
+    hand = read_csv(SOURCES)
+    measures = read_csv(MEASURES)
+    juris = {j["code"]: j for j in read_csv(JURISDICTIONS)}
+    errors = []
+
+    blank = dict.fromkeys(SOURCE_COLS + SYNCED_COLS, "")
+    by_id = {r["id"]: blank | r for r in synced}
+    sources = list(by_id.values())
+    seen = set()
+    for n, r in enumerate(hand, start=2):
+        where = f"sources.csv:{n} {r['id']}"
+        if r["id"] in seen:
+            errors.append(f"{where}: duplicate id")
+        seen.add(r["id"])
+        base = by_id.get(r["id"])
+        if base:
+            tools = "; ".join(x for x in (base["tools"], r["tools"]) if x)
+            base.update({k: v for k, v in r.items() if v})
+            base["tools"] = tools
+            continue
+        for k in ("dataset", "feasibility", "status"):
+            if not r[k]:
+                errors.append(f"{where}: no {k} (and no synced row to add to)")
+        sources.append(blank | r)
+
+    for r in sources:
+        where = r["id"]
+        if not re.fullmatch(r"[a-z]+(/[a-z0-9-]+)+", r["id"]):
+            errors.append(f"{where}: id is not a lowercase path")
+        if jurisdiction(r["id"]) not in juris:
+            errors.append(f"{where}: jurisdiction {jurisdiction(r['id'])!r} not in jurisdictions.csv")
+        if r["theme"] not in THEMES:
+            errors.append(f"{where}: theme {r['theme']!r}")
+        if r["feasibility"] not in FEASIBILITY:
+            errors.append(f"{where}: feasibility {r['feasibility']!r}")
+        if r["status"] not in STATUSES:
+            errors.append(f"{where}: status {r['status']!r}")
+        if r.get("last_verified") and not is_date(r["last_verified"]):
+            errors.append(f"{where}: last_verified {r['last_verified']!r}")
+        for label, url in tool_pairs(r["tools"]):
+            if not url.startswith("http"):
+                errors.append(f"{where}: tool {label!r} has no URL")
+        for k, v in r.items():
+            if k != "tools" and "|" in (v or ""):
+                errors.append(f"{where}: pipe in {k}")
+
+    ids = {r["id"] for r in sources}
+    for n, m in enumerate(measures, start=2):
+        where = f"measures.csv:{n} {m['source_id']}"
+        if m["source_id"] not in ids:
+            errors.append(f"{where}: no such source")
+        if not is_date(m["measured_on"]):
+            errors.append(f"{where}: measured_on {m['measured_on']!r}")
+        if m["measure"] not in MEASURES_VOCAB:
+            errors.append(f"{where}: measure {m['measure']!r}")
+        for k in ("value", "of"):
+            if m[k] and not re.fullmatch(r"\d+(\.\d+)?", m[k]):
+                errors.append(f"{where}: {k} {m[k]!r} is not a number")
+
+    if errors:
+        sys.exit("catalogue failed validation:\n  " + "\n  ".join(errors))
+    return sources, measures, juris
+
+
+def latest(measures: list[dict]) -> dict[str, dict]:
+    """source id -> its most recent measure; on a tie the later line wins."""
+    out = {}
+    for m in measures:
+        cur = out.get(m["source_id"])
+        if not cur or m["measured_on"] >= cur["measured_on"]:
+            out[m["source_id"]] = m
+    return out
+
+
+def measure_text(m: dict | None) -> str:
+    if not m:
+        return ""
+    return m["text"] if m["measured_on"] in m["text"] else f"{m['text']} ({m['measured_on']})"

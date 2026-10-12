@@ -1,32 +1,44 @@
 # ontario-osm-data-sources
 
-One list of every open data source usable for OpenStreetMap in Ontario, with what each is
-good for (import / conflate / validate / reference / no) and how far work on it has got.
-It is generated here as one wiki page, `wiki/Canada_Open_data.wiki`, for
-[Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). Today that page is a
-555-byte stub, but the Canada page already links to it as the list of municipal datasets.
-Sections: national sources; then for Ontario, provincial sources, all tracked address-point
-datasets, and every Guelph and Toronto layer.
+A catalogue of every open data source usable for OpenStreetMap in Ontario. It records what
+each source is, what it is good for (import / conflate / validate / reference / no), and how
+far it has been brought into OSM, as dated measurements that build up a history. It grows
+until it covers every source and every measure we track.
+
+Views are generated from it. Today there are two:
+
+- [`wiki/Canada_Open_data.wiki`](wiki/Canada_Open_data.wiki), for
+  [Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). The live page is
+  still a stub; nothing is pasted until the catalogue has been reviewed.
+- [`report/SUMMARY.md`](report/SUMMARY.md): counts by jurisdiction and theme, how fresh the
+  measures are, what is being worked on, and which measures are still free text.
 
 **Licence verdicts are not made here.** The wiki's `Canada#Open_Data` table and the OSMF
 [OGL Canada and local variants](https://osmfoundation.org/wiki/OGL_Canada_and_local_variants)
 page own them; the LWG column cites the OSMF page. `wiki/CHECKS.md` lists every dataset where
-our address tracker disagrees with that page. Resolve it before pasting.
+our address tracker disagrees with that page.
 
-## Inputs
+## The catalogue
 
-- `../ontario-address-changes/datasets/*.toml` — address datasets, licence name, tracker tier
-- `../address-importer-friend/future-work/multi-city/` — coverage survey (2026-08-12) and
-  onboarding queue (entry state per city)
-- `../<slug>-address-import` — checkout remotes, for tool links
-- `data/*.csv` — curated rows for everything else; format in `data/SCHEMA.md`
-- the OSMF variants page, cached in `cache/` (`--refresh` refetches it)
+All of it is in [`catalogue/`](catalogue/); the format is in
+[`catalogue/SCHEMA.md`](catalogue/SCHEMA.md).
+
+- `sources.csv`: hand-curated sources, one row each, with a stable id like
+  `ca/on/guelph/hydrants`
+- `synced/addresses.csv`: the address datasets the tracker follows, written by `sync.py`
+- `measures.csv`: dated measurements, append only
+- `jurisdictions.csv`: the places an id can sit under
 
 ## Run
 
 ```bash
-python generate.py --refresh
+python sync.py --refresh
 ```
 
-Needs Python 3.11+ and nothing else. The sibling repos above must be checked out next to
-this one.
+```bash
+python build.py
+```
+
+`sync.py` brings in what the sibling repos know (`../ontario-address-changes`,
+`../address-importer-friend`, `../<slug>-address-import`) and the OSMF page. `build.py`
+reads only this repo. Both need Python 3.11+ and nothing else.

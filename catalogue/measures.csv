@@ -1,0 +1,125 @@
+source_id,measured_on,measure,value,of,unit,method,text
+ca/on/guelph/bike-facilities,2026-10-09,matched,118.5,124,,audit,Lane on the correct side for 118.5 of 124 km
+ca/on/guelph/park-boundary,2026-10-06,missing,13,126,,audit,"13 of 126 parks missing, 7 named differently, 2 unnamed"
+ca/on/guelph/park-courts,2026-09-12,missing,6,68,,audit,6 of 68 missing; 162 of 191 pitches lack the official name
+ca/on/guelph/sports-fields,2026-09-12,missing,8,123,,audit,8 of 123 missing; 162 of 191 pitches lack the official name
+ca/on/guelph/community-gardens-polygons,2026-10-09,missing,22,40,,audit,22 of 40 in-use gardens have no OSM garden within 25 m
+ca/on/guelph/community-gardens,2026-10-09,missing,25,43,,audit,25 of 43 in-use food gardens have nothing within 50 m
+ca/on/guelph/stormwater-management-pond,2026-10-09,missing,33,93,,audit,33 of 93 basins absent; about 50 more tagged as bare water
+ca/on/guelph/aed-locations,2026-10-09,observation,,,,audit,1 AED in OSM; all 91 City sites unmapped
+ca/on/guelph/addresses-2025-import,2026-09-12,observation,,,,audit,"Imported 2025-10-23; 42,718 tagged addresses in OSM"
+ca/on/guelph/addresses-continuous-gap-fill,2026-08-28,matched,927,40684,,audit,"927 of 40,684 civic addresses missing (2026-08-28); 4,367 added by 2026-10-07"
+ca/on/guelph/buildings,2026-10-09,observation,,,,audit,"1,354 City buildings with no OSM building on them, 511 more under 30 m²"
+ca/on/guelph/streetcentrelines,2026-10-09,observation,,,,audit,Every active segment has an OSM road; about 16 City names absent
+ca/on/guelph/truck-routes-field-on-streetcentrelines,2026-10-09,missing,81.1,91.6,,audit,0 hgv=designated; 81.1 of 91.6 km carry no hgv tag
+ca/on/guelph/trails,2026-10-09,observation,,,,audit,6.2 km unmatched; 28.4 km of matched path lacks surface
+ca/on/guelph/trees,2026-10-09,matched,34291,42467,,audit,"34,291 of 42,467 City trees have no OSM tree within 5 m; 8,164 mapped trees lack species"
+ca/on/guelph/restrooms,2026-10-09,missing,3,16,,audit,3 of 16 permanent restrooms missing
+ca/on/guelph/schools,2026-10-09,matched,56,60,,audit,56 of 60 in OSM; 4 to check
+ca/on/guelph/child-care,2026-10-09,missing,20,27,,audit,About 20 of 27 standalone centres unmatched
+ca/on/guelph/fire-stations,2026-10-09,observation,,,,audit,All 6 Guelph stations mapped
+ca/on/guelph/ems-locations,2026-10-09,missing,1,4,,audit,1 of 4 Guelph EMS stations unmatched
+ca/on/guelph/hydrants,2026-10-09,matched,3384,3524,,audit,"3,384 of 3,524 City hydrants have no OSM hydrant within 10 m"
+ca/on/guelph/donation-bins,2026-10-09,observation,,,,audit,0 recycling:clothes; all 8 actual bins missing
+ca/on/guelph/bus-stops,2026-10-09,observation,,,,audit,"111 missing, 68 unnamed, 9 lacking ref"
+ca/on/guelph/gtfs-feed,2026-09-12,observation,,,,audit,682 platform objects in OSM
+ca/on/guelph/wards,2026-10-09,matched,6,6,,audit,"6 of 6 as political ward relations, IoU 1.000"
+ca/on/guelph/watercourse-polygons,2026-10-09,observation,,,,audit,3 creeks wholly unnamed in OSM
+ca/on/guelph/guelph-areas,2026-10-09,matched,20,20,,audit,20 of 20 residential areas as boundary=place relations
+ca/on/guelph/aerial-imagery-2000-2023,2026-10-09,observation,,,,audit,Editors already show Ontario Mosaic 2023-2027 at 16 cm
+ca/on/guelph/aerial-imagery-2025-2026-imageserver,2026-10-09,observation,,,,audit,2026 flight is newer than anything in the editor imagery index
+ca/on/guelph/sidewalks,2026-10-09,observation,,,,audit,About 60–75 km of City sidewalk has no OSM line within 15 m
+ca/on/guelph/laneways,2026-10-09,observation,,,,audit,60 OSM alleys; 0.1 km of City laneway unmatched
+ca/on/guelph/street-intersections,2026-09-12,note,,,,audit,Not compared
+ca/on/guelph/parking-lot-points,2026-10-09,matched,17,17,,audit,17 of 17 matched; capacity absent on 8
+ca/on/guelph/bus-routes,2026-10-09,missing,5,26,,audit,5 of 26 routes have no OSM relation
+ca/on/guelph/golf-courses,2026-10-09,missing,1,4,,audit,1 of 4 in-city courses unmatched
+ca/on/guelph/health-services,2026-10-09,missing,25,40,,audit,25 of 40 Guelph rows unmatched by name
+ca/on/guelph/organizations-serving-immigrants,2026-09-12,observation,,,,audit,19 in OSM
+ca/on/guelph/city-facilities,2026-10-09,matched,17,24,,audit,17 of 24 matched by name
+ca/on/guelph/police-station,2026-09-12,observation,,,,audit,3 in OSM
+ca/on/guelph/neighbourhood-groups,2026-09-12,matched,13,13,,audit,13 of 13 as admin_level=10 relations
+ca/on/guelph/cityboundary,2026-09-12,observation,,,,audit,"1 OSM relation, agreeing to 0.7%"
+ca/on/guelph/activedevelopmentplanning,2026-09-12,note,,,,audit,Not compared
+ca/on/guelph/property,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/registered-plans-61m,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/residential-building-permits,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/zoning-1995,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/zoning-2023,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/polling-stations,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/polling-subdivisions,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/termite-data,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/solid-waste-collection-days,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/contours-2012,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/grass-maintenance,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/emma-park-groundwater-levels,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/park-location,2026-10-09,missing,1,94,,audit,1 of 94 park playgrounds missing; capacity on 0 of 25 park lots
+ca/on/guelph/heritage-register,2026-09-12,observation,,,,audit,0 heritage tags in Guelph
+ca/on/guelph/stop-signs,2026-09-12,matched,1086,2108,,audit,"1,086 of 2,108 in OSM"
+ca/on/guelph/veteran-street-names,2026-09-12,observation,,,,audit,0 name:etymology in Guelph
+ca/on/guelph/park-parking-lots,2026-09-12,observation,,,,audit,"1,800 OSM parking objects, mostly bare"
+ca/on/guelph/trails-master,2026-09-12,observation,,,,audit,"lit on 1,514 OSM path ways"
+ca/on/guelph/traffic-countermeasures,2026-09-12,observation,,,,audit,58 bump and 0 cushion in OSM
+ca/on/guelph/pedestrian-crossovers,2026-09-12,observation,,,,audit,0 crossings with flashing_lights
+ca/on/guelph/radar-speed-boards,2026-09-12,observation,,,,audit,0 highway=speed_display
+ca/on/guelph/on-street-parking,2026-09-12,observation,,,,audit,7 objects with parking:right
+ca/on/guelph/school-crossings,2026-09-12,observation,,,,audit,0 supervised=yes crossings
+ca/on/guelph/places-of-worship,2026-09-12,matched,46,56,,audit,46 of 56 in OSM
+ca/on/guelph/bluew-water-refills,2026-09-12,observation,,,,audit,0 drinking_water:refill
+ca/on/guelph/red-light-cameras,2026-09-12,matched,2,6,,audit,2 of 6 in OSM
+ca/on/guelph/cultural-heritage-landscapes-hcds,2026-09-12,observation,,,,audit,0 in OSM
+ca/on/guelph/heritage-bridges,2026-09-12,matched,0,5,,audit,0 of 5 tagged
+ca/on/guelph/automated-speed-enforcement,2026-09-12,observation,,,,audit,2 speed cameras in OSM
+ca/on/guelph/trafficcalmingsegments,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/roadclosures,2026-09-12,note,,,,audit,Not examined
+ca/on/guelph/leaf-collection-streets,2026-09-12,note,,,,audit,Out of scope
+ca/on/guelph/committee-of-adjustment,2026-09-12,note,,,,audit,Out of scope
+ca/on/toronto/addresses,2026-08-28,matched,452,523835,,audit,"452 of 523,835 missing"
+ca/on/toronto/green-spaces,2026-10-05,matched,170,1756,,audit,"170 of 1,756 missing"
+ca/on/toronto/tcl,2026-07-16,matched,37,13327,,audit,"37 of 13,327 local streets missing"
+ca/on/toronto/3d-massing,2026-10-03,matched,273,425711,,audit,"273 of 425,711 buildings have height"
+ca/on/toronto/dinesafe,2026-09-16,observation,,,,audit,"34.3% of 10,420 premises have no OSM match"
+ca/on/toronto/bodysafe,2026-09-16,observation,,,,audit,"2,496 premises have no OSM match, 33.6% matched"
+ca/on/toronto/bike-share-toronto,2026-08-31,matched,42,1072,,audit,"42 of 1,072 stations missing"
+ca/on/barrie/addresses,2026-08-12,missing,50863,63341,addresses,portfolio-survey,"80% of 63,341 missing"
+ca/on/brampton/addresses,2026-08-12,missing,204546,249143,addresses,portfolio-survey,"82% of 249,143 missing"
+ca/on/brant/addresses,2026-08-12,missing,16220,19333,addresses,portfolio-survey,"84% of 19,333 missing"
+ca/on/brantford/addresses,2026-08-12,missing,30367,38982,addresses,portfolio-survey,"78% of 38,982 missing"
+ca/on/bruce/addresses,2026-08-12,missing,46399,51727,addresses,portfolio-survey,"90% of 51,727 missing"
+ca/on/burlington/addresses,2026-08-12,missing,47658,60326,addresses,portfolio-survey,"79% of 60,326 missing"
+ca/on/cambridge/addresses,2026-08-12,missing,40141,54025,addresses,portfolio-survey,"74% of 54,025 missing"
+ca/on/chatham-kent/addresses,2026-08-12,missing,52575,58809,addresses,portfolio-survey,"89% of 58,809 missing"
+ca/on/cornwall/addresses,2026-08-12,missing,16739,20640,addresses,portfolio-survey,"81% of 20,640 missing"
+ca/on/dufferin/addresses,2026-08-12,missing,23176,27075,addresses,portfolio-survey,"86% of 27,075 missing"
+ca/on/durham/addresses,2026-08-12,missing,198790,253559,addresses,portfolio-survey,"78% of 253,559 missing"
+ca/on/elgin/addresses,2026-08-12,missing,18517,21785,addresses,portfolio-survey,"85% of 21,785 missing"
+ca/on/frontenac/addresses,2026-08-12,missing,20017,22365,addresses,portfolio-survey,"90% of 22,365 missing"
+ca/on/greater-sudbury/addresses,2026-08-12,missing,37693,70061,addresses,portfolio-survey,"54% of 70,061 missing"
+ca/on/guelph/addresses,2026-08-12,missing,3392,53844,addresses,portfolio-survey,"6% of 53,844 missing"
+ca/on/hamilton/addresses,2026-08-12,missing,203117,273374,addresses,portfolio-survey,"74% of 273,374 missing"
+ca/on/hastings/addresses,2026-08-12,missing,28827,30864,addresses,portfolio-survey,"93% of 30,864 missing"
+ca/on/huron/addresses,2026-08-12,missing,31186,38312,addresses,portfolio-survey,"81% of 38,312 missing"
+ca/on/kawartha-lakes/addresses,2026-08-12,missing,37707,44205,addresses,portfolio-survey,"85% of 44,205 missing"
+ca/on/kingston/addresses,2026-08-12,missing,59044,77384,addresses,portfolio-survey,"76% of 77,384 missing"
+ca/on/kitchener/addresses,2026-08-12,missing,91386,132060,addresses,portfolio-survey,"69% of 132,060 missing"
+ca/on/lambton/addresses,2026-08-12,missing,48818,56897,addresses,portfolio-survey,"86% of 56,897 missing"
+ca/on/leeds-grenville/addresses,2026-08-12,missing,32485,54142,addresses,portfolio-survey,"60% of 54,142 missing"
+ca/on/lennox-addington/addresses,2026-08-12,missing,23100,26102,addresses,portfolio-survey,"88% of 26,102 missing"
+ca/on/london/addresses,2026-08-12,missing,121121,143000,addresses,portfolio-survey,"85% of 143,000 missing"
+ca/on/milton/addresses,2026-08-12,missing,39932,46379,addresses,portfolio-survey,"86% of 46,379 missing"
+ca/on/muskoka/addresses,2026-08-12,missing,63184,66440,addresses,portfolio-survey,"95% of 66,440 missing"
+ca/on/niagara-falls/addresses,2026-08-12,missing,164531,208004,addresses,portfolio-survey,"79% of 208,004 missing"
+ca/on/oakville/addresses,2026-08-12,missing,53784,71049,addresses,portfolio-survey,"76% of 71,049 missing"
+ca/on/ottawa/addresses,2026-08-12,missing,61657,402984,addresses,portfolio-survey,"15% of 402,984 missing"
+ca/on/peel-region/addresses,2026-08-12,missing,502915,503923,addresses,portfolio-survey,"100% of 503,923 missing"
+ca/on/peterborough-county/addresses,2026-08-12,missing,37046,40532,addresses,portfolio-survey,"91% of 40,532 missing"
+ca/on/quinte-west/addresses,2026-08-12,missing,17510,20290,addresses,portfolio-survey,"86% of 20,290 missing"
+ca/on/renfrew/addresses,2026-08-12,missing,35575,39050,addresses,portfolio-survey,"91% of 39,050 missing"
+ca/on/sarnia/addresses,2026-08-12,missing,22082,26896,addresses,portfolio-survey,"82% of 26,896 missing"
+ca/on/sdg/addresses,2026-08-12,missing,28652,31660,addresses,portfolio-survey,"90% of 31,660 missing"
+ca/on/thunder-bay/addresses,2026-08-12,missing,35808,45098,addresses,portfolio-survey,"79% of 45,098 missing"
+ca/on/toronto/addresses,2026-08-12,missing,2627,525473,addresses,portfolio-survey,"0% of 525,473 missing"
+ca/on/waterloo/addresses,2026-08-12,missing,35935,55541,addresses,portfolio-survey,"65% of 55,541 missing"
+ca/on/wellington/addresses,2026-08-12,missing,34426,42925,addresses,portfolio-survey,"80% of 42,925 missing"
+ca/on/windsor/addresses,2026-08-12,missing,108621,118841,addresses,portfolio-survey,"91% of 118,841 missing"
+ca/on/york/addresses,2026-08-12,missing,329470,431809,addresses,portfolio-survey,"76% of 431,809 missing"
