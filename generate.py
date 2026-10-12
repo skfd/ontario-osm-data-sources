@@ -66,6 +66,12 @@ OSMF_NAME = {
 }
 
 
+# Municipalities that granted OSM explicit permission, recorded on the wiki Contributors page.
+AUTHORIZED = {
+    "kitchener": "https://wiki.openstreetmap.org/wiki/Waterloo_region/Kitchener_authorization",
+}
+
+
 # ---------------------------------------------------------------- sources
 
 def osmf_wikitext(refresh: bool) -> str:
@@ -209,7 +215,7 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
         provider = t.get("provider", slug)
         lwg = lwg_date(slug, provider, approvals)
         indirect = bool(lwg) and slug in OSMF_NAME and slug not in ("toronto", "york")
-        cleared = (bool(lwg) and not indirect) or tier == "green-cc0"
+        cleared = (bool(lwg) and not indirect) or tier == "green-cc0" or slug in AUTHORIZED
 
         if tier.startswith("green") and not cleared and not indirect:
             checks.append(f"- **{slug}**: tracker says `{tier}`, but `{provider}` is not on the "
@@ -255,6 +261,8 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
 
         if tier.startswith("red"):
             licence_note = "licence incompatible"
+        elif slug in AUTHORIZED and not lwg:
+            licence_note = "explicit OSM permission from the municipality"
         elif cleared:
             licence_note = ""
         elif tier == "orange-ccby-waiver":
@@ -286,7 +294,8 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
             "provider": provider,
             "source_url": t.get("data_url", ""),
             "licence": t.get("license_name", ""),
-            "lwg": lwg or ("CC0" if tier == "green-cc0" else ""),
+            "lwg": lwg or ("CC0" if tier == "green-cc0" else "")
+                   or (f"[{AUTHORIZED[slug]} permission]" if slug in AUTHORIZED else ""),
             "tier": "",
             "coverage": coverage,
             "feasibility": feas,
