@@ -46,7 +46,7 @@
 |So far incompatible (liability issues, may pass costs on to you if they get sued: Same issue with Ottawa's old license)
 |-
 |City of Niagara Falls
-|[https://open.niagarafalls.ca/pages/terms-of-use Open Government Licence â€“ Niagara Falls]
+|[https://open.niagarafalls.ca/pages/terms-of-use Open Government Licence – Niagara Falls]
 |[https://open.niagarafalls.ca/]
 |Not accepted for import into OSM due to name and licence text being different
 |2025-11-28
@@ -75,7 +75,7 @@ Currently under review/importing: https://wiki.openstreetmap.org/wiki/Canada:Ont
 |2025-09-14
 |-
 |City of Sarnia
-|[https://city-of-sarnia.hub.arcgis.com/pages/terms-of-use Open Government Licence â€“ City of Sarnia]
+|[https://city-of-sarnia.hub.arcgis.com/pages/terms-of-use Open Government Licence – City of Sarnia]
 |[https://www.sarnia.ca/city-of-sarnia-open-data-portal/] [https://city-of-sarnia.hub.arcgis.com/]
 |Not accepted for import into OSM due to name and licence text being different
 |2026-02-24
