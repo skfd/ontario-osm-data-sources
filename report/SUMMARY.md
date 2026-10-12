@@ -132,7 +132,7 @@ tracked over time:
 
 `catalogue/portals.csv` lists every open-data portal found in Ontario and a `none-found` row
 for each municipality that has none. 90 portals are known,
-85 of them counted through their API: **14889 layers seen, against 138
+85 of them counted through their API: **14890 layers seen, against 138
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
@@ -149,7 +149,7 @@ higher than a Hub's count of curated datasets.
 | platform | portals | layers seen |
 |---|---|---|
 | arcgis-hub | 69 | 5783 |
-| arcgis-rest | 17 | 5053 |
+| arcgis-rest | 17 | 5054 |
 | ckan | 3 | 4053 |
 | custom | 1 | — |
 
@@ -198,7 +198,7 @@ consortium portal are in `portals.csv`.
 | Perth | arcgis-rest | 81 | 1 | 1.2% |
 | Sault Ste. Marie | arcgis-rest | 74 |  |  |
 | Wellington | arcgis-rest | 74 | 1 | 1.4% |
-| Brockville | arcgis-rest | 67 |  |  |
+| Brockville | arcgis-rest | 68 |  |  |
 | Grey | arcgis-hub | 62 |  |  |
 | Dufferin | arcgis-hub | 51 | 1 | 2.0% |
 | Greater Sudbury | arcgis-hub | 50 | 1 | 2.0% |

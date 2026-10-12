@@ -139,6 +139,13 @@ Enterprise Sites page has no Hub API; its `api_url` is the portal's `sharing/res
 the site's group, and the count is `total`. An `arcgis-rest` count includes the layers behind
 map viewers, so it runs higher than a Hub's count of curated datasets: compare within a platform.
 
+`python survey.py --count` takes these counts again and rewrites `layers_seen` only, never
+`surveyed_on`. It skips rows with no `api_url`, `shared portal of` rows, and rows whose notes
+say `not counted`. An `arcgis-rest` service is counted once by name: its FeatureServer if it
+has one, else its MapServer, counting layers without `subLayerIds`; an ImageServer alone counts
+1, other service types and secured folders or services count 0. A row whose request fails
+keeps its old count.
+
 ## `jurisdictions.csv`
 
     code,name,level,tier

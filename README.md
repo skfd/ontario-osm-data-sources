@@ -40,9 +40,15 @@ python sync.py --refresh
 ```
 
 ```bash
+python survey.py --count
+```
+
+```bash
 python build.py
 ```
 
 `sync.py` brings in what the sibling repos know (`../ontario-address-changes`,
-`../address-importer-friend`, `../<slug>-address-import`) and the OSMF page. `build.py`
-reads only this repo. Both need Python 3.11+ and nothing else.
+`../address-importer-friend`, `../<slug>-address-import`) and the OSMF page. `survey.py
+--count` asks every portal in `catalogue/portals.csv` how many datasets it lists and rewrites
+`layers_seen` (name jurisdiction codes after it to recount only those). `build.py` reads only
+this repo. All need Python 3.11+ and nothing else.
