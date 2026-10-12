@@ -1,0 +1,183 @@
+===Ontario===
+{| class="wikitable"
+!Entity
+!Licence
+!Link to portal
+!Notes
+!Date Checked
+|-
+|Government of Ontario
+|[https://www.ontario.ca/page/open-government-licence-ontario Custom]
+|[https://data.ontario.ca/]
+|compatible (LWG minutes 2024-03-04)
+|2024-03-04
+|-
+|Metrolinx
+|[https://assets.metrolinx.com/image/upload/v1663237565/Documents/Metrolinx/Open-Government-Licence-Ontario-Metrolinx.pdf Ontario OGL]
+|[https://www.metrolinx.com/en/about-us/open-data]
+|Identical license as Ontario's, but with "Metrolinx" appended to everywhere "Ontario" is used.
+|2024-03-20
+|-
+|City of Brampton
+|CC-BY 4.0
+|[http://geohub.brampton.ca/pages/data/]
+|Switched to CC-BY-4.0 from their custom license. Requires a waiver from the city in order to use the data
+|-
+|City of Burlington
+|[https://opendata.burlington.ca/opendata-terms-of-use/City%20of%20Burlington%20-%20Open%20Data%20Terms%20of%20Use.pdf Custom]
+|[http://www.burlington.ca/en/services-for-you/open-data.asp]
+|So far incompatible (liability issues, may pass costs on to you if they get sued: Same issue with Ottawa's old license)
+|2022-02-03
+|-
+|City of Hamilton
+|[https://www.hamilton.ca/city-council/data-maps/open-data/open-data-licence-terms-and-conditions Custom]
+|[https://www.hamilton.ca/city-initiatives/strategies-actions/open-accessible-data]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2024-11-18). Previously under incompatible licence.
+|2025-10-22
+|-
+|City of London
+|[https://london.maps.arcgis.com/sharing/rest/content/items/e31458fd0c7e41dd9f93144a9550781d/data Custom]
+|[https://opendata.london.ca/]
+|So far incompatible (liability issues, may pass costs on to you if they get sued: Same issue with Ottawa's old license)
+|-
+|City of Mississauga
+|[http://www5.mississauga.ca/research_catalogue/CityofMississauga_TermsofUse.pdf Custom]
+|[https://data.mississauga.ca/]
+|So far incompatible (liability issues, may pass costs on to you if they get sued: Same issue with Ottawa's old license)
+|-
+|City of Niagara Falls
+|[https://open.niagarafalls.ca/pages/terms-of-use Open Government Licence â€“ Niagara Falls]
+|[https://open.niagarafalls.ca/]
+|Not accepted for import into OSM due to name and licence text being different
+|2025-11-28
+|-
+|Town of Oakville
+|[https://www.oakville.ca/getmedia/3cb7902a-2220-433e-8aed-24f326b745b9/town-hall-oakville-open-data-licence.pdf Open Government Licence – Town of Oakville]
+|[https://portal-exploreoakville.opendata.arcgis.com/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2026-09-14)
+|2026-10-11
+|-
+|City of Ottawa
+|[https://ottawa.ca/en/city-hall/open-transparent-and-accountable-government/open-data/open-data-licence-version-20 Open Data License - Ottawa]
+|[http://data.ottawa.ca/]
+|compatible (see [https://docs.google.com/document/d/1KyTLbQWSmo1rdoppqlFGTB3by-qVAzjLo_LPml3Ri9Y/edit?usp=sharing LWG minutes 2017-03-02])
+Currently under review/importing: https://wiki.openstreetmap.org/wiki/Canada:Ontario:Ottawa/Import/Plan
+|-
+|Region of Peel
+|[https://data.peelregion.ca/pages/license Open Data Licence for The Regional Municipality of Peel]
+|[http://data.peelregion.ca/]
+|Current status is on hold due to license(need to make sure they own all the rights): https://github.com/osmottawa/data-research/tree/master/Peel-Region
+|-
+|City of Quinte West
+|[https://ago-item-storage.s3.amazonaws.com/2d74bbcab91441209f5669908ec31ad6/City_of_Quinte_West_Open_Data_Licence_1.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIDp0QTx%2Fz2bMQOwY1Z5FctTPlLXcvmSArn3FyfNdmD2lAiEAhqhaUGu%2BtBt5avbgHNBrCJDZb3MaWDADIrt2%2F2BNatMqtAUIYRAAGgw2MDQ3NTgxMDI2NjUiDNM34Mh9P6oWmrZKGiqRBezMVUF7Bq0g%2BUeEkgxhAiP%2FlyvSKCQvamFReJQgFCjq8FFH2bcGXzk%2B5o90Jeh%2BtvxAc%2Fi%2Bz7Eq9xQni8rtUYSEbxO2wViJ7qPYw9JMi62Ji0%2BMUNBdXZbR8%2BJEQo%2Bcw4i%2FuOmrC%2B1JuVbK2zL%2FYH5TUwnZMix7sR63pkHbzv%2B5%2ByYNbBH%2B2Oua3exGj8iCN1%2BOewz3wz2pjP3xlrGy1FhgGnZ16FxYtT5rr2uKSbFT8zaOAUU1RKpLJiSoH9SCci%2F7C60Ibh4vpvdA2FbayI0aAEtNO6mwSD7ebfJ3vd%2Fk84fy%2F7jrdS%2BixE7aHnUOTBpKbN2n%2F0l1klACvvtOaAi3AhbZCv0hPXDWTIrA%2FW1NvA2%2FWF3lYzT%2Fq6qaPV9fR3ig3EjwsDkqlKQ5TUyjwTUt3GpJMp9PZwoZN9f%2FfnBVdwN4uRlryupx0In%2FmwaW1WqXEqRZy6xPipStPLqxBxVgqXLciXIzMRLa1E4r6Yp3Mm1R2NgKDj6BrN8cP4AK3w%2BpAAtb0Zft1ifvxnqbtg%2BpMuf0anB%2FRWI5q3D47Ug0%2FWGac%2ByEvYLV5l8R4qZyM1ZSeflhbzQh9uf9A4CP79epKyr63ud32jqK%2Fo%2Bn3h1pIDed7Qsc%2B3UNw0Bboq6fAhltOxJnCESg20CO93%2Bgfp25coSjuUW3IMpXe1sIPRklx2VR57j77%2BqOKXvRzFp6kBLQomQibSNDtVgZOQgFhEfxZu5YJMjZavNZKVKX0aZgeUlGIPXYTdOveQHNsIUgjHDFoLvQkLnN3HR5AGZtpgMpS6b9HQdyHQI14Iz8EZMoyAoB6x2RuSV50lSuDSx8ZMlgcVUyZWphYh1EVfcbf5nuEQ4ux0djX%2F6lxN1o7SptCjCTvJvGBjqxAZ9cK27U82UqZXDI77xxi%2FUZxuWiIJ0th8DbKktEUd94UHUglEgXl12KDyPHTGgn8I5hfS99%2FUhgezrvkabmJ7TNpIHxw9hoy9xXcJIJ%2BviVZ6rU6xr5SRHe9pNKehOB%2BS%2Bm4A73RNsv2K49ET1cuXseItggBY0ID9iF04ZROP1Gudk9tDoqmhqfyq2wHre%2BVyDtTU1VmF1UTHESqU%2BzoYG%2B1%2BkZXnxRKFFfy4a52K0FgQ%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250914T160152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAYZTTEKKEVNIST7JF%2F20250914%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=14b33024bc399219d927ade74cb45eeaf91bf77212a9965d5ea92589877d7c39 City of Quinte West Open Data Licence 1.0]
+|[https://geodata-quintewest.opendata.arcgis.com/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-09-08)
+|2025-09-14
+|-
+|City of Sarnia
+|[https://city-of-sarnia.hub.arcgis.com/pages/terms-of-use Open Government Licence â€“ City of Sarnia]
+|[https://www.sarnia.ca/city-of-sarnia-open-data-portal/] [https://city-of-sarnia.hub.arcgis.com/]
+|Not accepted for import into OSM due to name and licence text being different
+|2026-02-24
+|-
+|City of Greater Sudbury
+|[http://www.greatersudbury.ca/inside-city-hall/open-government/open-data/licence/ OGL-CA v1.0 City of Greater Sudbury]
+|[http://opendata.greatersudbury.ca/]
+|Not accepted for import into OSM due to name and licence text being different
+|2025-11-28
+|-
+|City of Toronto
+|[https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-licence/ OGL-CA v1.0 - Toronto]
+|[https://open.toronto.ca/]
+|compatible (LWG minutes 2024-04-08)
+|-
+|City of Thunder Bay
+|[https://www.thunderbay.ca/en/city-hall/open-data-licence.aspx The Corporation of the City of Thunder Bay Open Data Licence 1.0]
+|[https://opendata.thunderbay.ca/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-09-08)
+|2025-09-14
+|-
+|City of Welland
+|[http://www.welland.ca/open/OpendataTermUse.asp OGL-CA City of Welland]
+|[http://www.welland.ca/open/]
+|Not accepted for import into OSM due to name and licence text being different
+|-
+|City of Windsor
+|[http://www.citywindsor.ca/opendata/Documents/OpenDataTermsofUse.pdf OGL-CA v1.0 - The Corporation of the City of Windsor]
+|[https://opendata.citywindsor.ca/]
+|Not accepted for import into OSM due to name and licence text being different
+|-
+|City of Guelph
+|[https://explore.guelph.ca/pages/open-data-license Open Government Licence – City of Guelph]
+|[https://explore.guelph.ca/]
+|compatible (LWG minutes 2024-09-09)
+|2024-10-28
+|-
+|Niagara Region
+|Mixed based upon dataset, 99% OGL-CA v2.0 based with city names attached
+|[http://www.niagararegion.ca/government/opendata/default.aspx]
+|Most datasets not accepted for import into OSM due to including city/town name in licence text
+|-
+|Region of Waterloo
+|[https://www.regionofwaterloo.ca/en/regional-government/open-data.aspx#Open-Data-Licence Region of Waterloo Open Data Licence v.2.0]
+|[https://rowopendata-rmw.opendata.arcgis.com/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-02-10); see also [[Waterloo region#Open Data]]
+|2026-10-11
+|-
+|City of Waterloo
+|[http://data.waterloo.ca/pages/open-data-licence Waterloo Open Data User Licence]
+|[http://data.waterloo.ca/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-02-10)
+|2026-10-11
+|-
+|City of Kitchener
+|[https://www.kitchener.ca/en/council-and-city-administration/open-data-licence.aspx Open Government License - The Corporation of the City of Kitchener]
+|[http://open-kitchenergis.opendata.arcgis.com/]
+|[[Waterloo region/Kitchener authorization|Explicit authorization]] to use the data in OSM; licence itself not on the OSMF list
+|2026-10-11
+|-
+|City of Cambridge
+|[https://www.cambridge.ca/en/your-city/resources/Open-Data-Licence-Version-2.pdf Open Data Licence Version 2.0 - City of Cambridge]
+|[https://geohub.cambridge.ca/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-02-10)
+|2026-10-11
+|-
+|Township of North Frontenac
+|used to be [http://www.northfrontenac.com/opendata-licence.html OGL-CA v1.0]
+|[http://data.nftwp.opendata.arcgis.com/]
+|2019-01-22 link to licence on open data page (which works) doesn't work
+|-
+|Haldimand County
+|[http://opendata.haldimandcounty.on.ca/ Custom (on landing page)]
+|[http://opendata.haldimandcounty.on.ca/]
+|Must assign attribution. Would have to ask if attribution on the https://wiki.openstreetmap.org/wiki/Contributors page would fulfil the attribution requirement
+|-
+|Grey County
+|[https://geo.grey.ca/launchpage/opendatalicence Custom]
+|[http://opendata.grey.ca/]
+|Must assign attribution. Would have to ask if attribution on the https://wiki.openstreetmap.org/wiki/Contributors page would fulfil the attribution requirement
+|-
+|York Region
+|[https://insights-york.opendata.arcgis.com/documents/york-region-open-data-licence/explore York Region Open Data Licence]
+|[https://insights-york.opendata.arcgis.com/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2024-04-08). Very open license, no attribution, no legal carry over, etc
+|2025-10-23
+|-
+|Lambton County
+|[https://county-lambton.opendata.arcgis.com/pages/open-data-license Open Government License 2.0 - County of Lambton]
+|[https://county-lambton.opendata.arcgis.com/]
+|
+|2026-02-14
+|-
+|City of Cornwall
+|[https://www.cornwall.ca/en/play-here/resources/Maps/City-of-Cornwall-Open-Government-Licence.pdf Open Government Licence – City of Cornwall]
+|[https://www.cornwall.ca/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-10-08)
+|2026-10-11
+|-
+|City of Kingston
+|[https://www.cityofkingston.ca/media/wtpgpkb0/gis_license_opendata.pdf Open Data Licence – City of Kingston]
+|[https://opendatakingston.cityofkingston.ca/]
+|[https://osmfoundation.org/wiki/OGL_Canada_and_local_variants compatible] (LWG minutes 2025-08-11)
+|2026-10-11
+|}
