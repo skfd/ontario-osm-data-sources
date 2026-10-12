@@ -12,6 +12,7 @@ its old count.
 import json
 import sys
 import threading
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
@@ -24,7 +25,11 @@ PARALLEL = 8
 SLOTS = threading.Semaphore(PARALLEL)  # requests in flight, across rows and the services in them
 
 
-class Secured(OSError):
+class ServiceError(Exception):
+    """The server answered with an error of its own, not a network failure."""
+
+
+class Secured(ServiceError):
     """The server wants a token: not public, so nothing to count."""
 
 
@@ -35,14 +40,19 @@ def get_json(url: str) -> dict:
             with SLOTS, urllib.request.urlopen(req, timeout=60) as r:
                 data = json.load(r)
             break
-        except OSError:  # URLError, HTTPError and timeouts
+        except urllib.error.HTTPError as e:
+            if 400 <= e.code < 500:  # an answer, not a failure: retrying will not change it
+                raise ServiceError(f"{url}: HTTP {e.code}") from None
+            if attempt == 2:
+                raise
+        except OSError:  # URLError, 5xx and timeouts
             if attempt == 2:
                 raise
     if isinstance(data, dict) and "error" in data and len(data) == 1:
         error = data["error"]
         if isinstance(error, dict) and error.get("code") in (403, 498, 499):
             raise Secured(url)
-        raise OSError(f"{url}: {error}")
+        raise ServiceError(f"{url}: {error}")
     return data
 
 
@@ -51,8 +61,9 @@ def with_param(url: str, param: str) -> str:
 
 
 def rest_layers(root: str, warnings: list[str]) -> int:
-    """Layers in every service of an ArcGIS REST root, folders walked one level. Secured
-    folders and services count 0."""
+    """Layers in every service of an ArcGIS REST root, folders walked one level. A folder or
+    service that is secured or answers with an error counts 0; a network failure fails the
+    whole count, so a timeout cannot pass for a smaller number."""
     top = get_json(with_param(root, "f=json"))
     services = list(top.get("services", []))
     secured = []
@@ -61,7 +72,7 @@ def rest_layers(root: str, warnings: list[str]) -> int:
             services += get_json(f"{root}/{urllib.parse.quote(folder)}?f=json").get("services", [])
         except Secured:
             secured.append(folder)
-        except (OSError, ValueError) as e:
+        except (ServiceError, ValueError) as e:
             warnings.append(f"folder {folder}: {e}")
     types = defaultdict(set)
     for s in services:
@@ -77,7 +88,7 @@ def rest_layers(root: str, warnings: list[str]) -> int:
         except Secured:
             secured.append(f"{name}/{kind}")
             return 0
-        except (OSError, ValueError) as e:
+        except (ServiceError, ValueError) as e:
             warnings.append(f"{name}/{kind}: {e}")
             return 0
         return sum(1 for layer in layers if not layer.get("subLayerIds"))
@@ -123,10 +134,11 @@ def main():
         warnings = []
         try:
             return p, count(p, warnings), None, warnings
-        except (OSError, ValueError, KeyError, TypeError) as e:
+        except (OSError, ServiceError, ValueError, KeyError, TypeError) as e:
             return p, None, e, warnings
 
-    changed = failed = 0
+    counts = {}
+    failed = 0
     with ThreadPoolExecutor(PARALLEL) as pool:
         for p, n, err, warnings in pool.map(run, todo):
             where = f"{p['jurisdiction']} {p['portal_url']}"
@@ -135,15 +147,26 @@ def main():
             if err is not None:
                 failed += 1
                 print(f"  FAIL  {where}: {err} (kept {p['layers_seen'] or 'blank'})")
-                continue
-            if str(n) != p["layers_seen"]:
-                changed += 1
-                print(f"  {p['layers_seen'] or 'blank':>5} -> {n:<5} {where}")
-                p["layers_seen"] = str(n)
+            else:
+                counts[p["jurisdiction"], p["portal_url"]] = str(n)
+
+    # The run takes a minute or more and others edit the file meanwhile: read it again, write
+    # back only the counts, and never drop a column this checkout's PORTAL_COLS does not know.
+    portals = read_csv(PORTALS)
+    unknown = [c for c in (portals[0] if portals else {}) if c not in PORTAL_COLS]
+    if unknown:
+        sys.exit(f"portals.csv has columns {unknown} that common.PORTAL_COLS lacks; "
+                 "nothing written, run again")
+    changed = 0
+    for p in portals:
+        n = counts.get((p["jurisdiction"], p["portal_url"]))
+        if n is not None and counted(p) and n != p["layers_seen"]:
+            changed += 1
+            print(f"  {p['layers_seen'] or 'blank':>5} -> {n:<5} {p['jurisdiction']} {p['portal_url']}")
+            p["layers_seen"] = n
 
     write_csv(PORTALS, PORTAL_COLS, portals)
     print(f"{len(todo)} portals counted; {changed} changed, {failed} failed")
-
 
 if __name__ == "__main__":
     main()
