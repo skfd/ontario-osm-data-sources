@@ -1,0 +1,3 @@
+jurisdiction,portal_url,platform,api_url,licence,layers_seen,surveyed_on,notes
+ca/on,https://data.ontario.ca,ckan,https://data.ontario.ca/api/3/action/package_search,Open Government Licence – Ontario,2964,2026-10-12,"The province's whole data catalogue, mostly tables; the spatial layers live on GeoHub."
+ca/on,https://geohub.lio.gov.on.ca,arcgis-hub,https://geohub.lio.gov.on.ca/api/search/v1/collections/dataset/items,Open Government Licence – Ontario,244,2026-10-12,Land Information Ontario's spatial catalogue (roads/ORN; water/OHN; boundaries; imagery); layers are served from ws.lioservices.lrc.gov.on.ca and ws.geoservices.lrc.gov.on.ca.

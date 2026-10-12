@@ -93,8 +93,57 @@ the point. The wiki shows each source's latest line.
 | `method` | How it was measured. Next month's number is only comparable to this one if this matches. `audit` = a hand audit; `portfolio-survey` = the 2026-08-12 address survey |
 | `text` | The measurement as a sentence, shown on the wiki |
 
+## `portals.csv`
+
+    jurisdiction,portal_url,platform,api_url,licence,layers_seen,surveyed_on,notes
+
+The denominator: every place Ontario publishes open data, so the catalogue can say how much of
+it has been looked at. Every municipality in `jurisdictions.csv` gets at least one row, a
+`none-found` row when the survey found nothing. A portal's datasets are candidates for new
+sources. One row per `(jurisdiction, portal_url)`.
+
+| column | meaning |
+|---|---|
+| `jurisdiction` | Code from `jurisdictions.csv` |
+| `portal_url` | The portal's home page. Blank for `none-found` |
+| `platform` | `arcgis-hub`, `arcgis-rest`, `ckan`, `socrata`, `opendatasoft`, `custom` or `none-found` |
+| `api_url` | The catalogue API (below). Blank for `custom` without one, and for `none-found` |
+| `licence` | Licence name as the portal publishes it, `None published`, or blank for `none-found`. Never a verdict |
+| `layers_seen` | Datasets the API listed on `surveyed_on`, by the method below. Blank if not counted |
+| `surveyed_on` | `YYYY-MM-DD` the row was last checked by hand |
+| `notes` | One short sentence. For `none-found`, what was checked |
+
+**What is a portal.** A site whose purpose is publishing datasets anyone can download or query.
+A map viewer alone, a PDF map library or a request form is not one; neither is a dashboard or
+story-map hub. A Hub and the ArcGIS server behind it are one portal (the Hub); a CKAN site and
+a Hub run side by side are two. A county or consortium portal that publishes a member's own
+data gives the member a row too, with the same URL, blank `layers_seen` and `shared portal of
+<code>` in notes, so its layers are counted once.
+
+**`api_url` and `layers_seen` by platform.** Next survey's count is comparable only if it is
+taken the same way.
+
+| platform | `api_url` | `layers_seen` |
+|---|---|---|
+| `arcgis-hub` | `<site>/api/search/v1/collections/dataset/items` | `numberMatched` of `?limit=1` |
+| `ckan` | `<base>/api/3/action/package_search` | `result.count` of `?rows=0` (all datasets, not only spatial) |
+| `opendatasoft` | `<base>/api/explore/v2.1/catalog/datasets` | `total_count` of `?limit=0` |
+| `socrata` | `https://api.us.socrata.com/api/catalog/v1?domains=<domain>` | `resultSetSize` of `&limit=0` |
+| `arcgis-rest` | the services root, ending `/rest/services` | layers in every service, folders walked one level |
+| `custom` | blank, or its JSON API | blank unless an API gives a count |
+
 ## `jurisdictions.csv`
 
-    code,name,level
+    code,name,level,tier
 
-`level` is `country`, `province` or `municipal`. The name is used as a wiki section heading.
+`level` is `country`, `province` or `municipal`. `tier` is `upper`, `single` or `lower` for the
+444 municipalities of the Ontario list, blank otherwise (`west-parry-sound` is a GIS
+consortium, not a municipality). The name is used as a wiki section heading, so no two rows
+share one.
+
+A new code is the slug of the name: lowercase, accents and punctuation dropped, spaces and
+slashes as hyphens (`St. Catharines` → `st-catharines`, `Admaston/Bromley` →
+`admaston-bromley`). Codes that came from the address tracker keep its slug even where it
+reads oddly: `niagara-falls` is Niagara Region, `waterloo` the City of Waterloo. When a slug is
+taken, the newcomer gets a qualifier: `niagara-falls-city`, `waterloo-region`, `renfrew-town`,
+`hamilton-township`, `essex-county`.

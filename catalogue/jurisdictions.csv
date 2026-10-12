@@ -1,56 +1,448 @@
-code,name,level
-ca,Canada,country
-ca/on,Ontario,province
-ca/on/amherstburg,Amherstburg,municipal
-ca/on/barrie,Barrie,municipal
-ca/on/brampton,Brampton,municipal
-ca/on/brant,Brant,municipal
-ca/on/brantford,Brantford,municipal
-ca/on/bruce,Bruce,municipal
-ca/on/burlington,Burlington,municipal
-ca/on/cambridge,Cambridge,municipal
-ca/on/chatham-kent,Chatham-Kent,municipal
-ca/on/cobourg,Cobourg,municipal
-ca/on/cornwall,Cornwall,municipal
-ca/on/dufferin,Dufferin,municipal
-ca/on/durham,Durham,municipal
-ca/on/elgin,Elgin,municipal
-ca/on/frontenac,Frontenac,municipal
-ca/on/greater-sudbury,Greater Sudbury,municipal
-ca/on/guelph,Guelph,municipal
-ca/on/haldimand,Haldimand,municipal
-ca/on/halton-hills,Halton Hills,municipal
-ca/on/hamilton,Hamilton,municipal
-ca/on/hastings,Hastings,municipal
-ca/on/huron,Huron,municipal
-ca/on/kawartha-lakes,Kawartha Lakes,municipal
-ca/on/kingston,Kingston,municipal
-ca/on/kitchener,Kitchener,municipal
-ca/on/lambton,Lambton,municipal
-ca/on/leeds-grenville,Leeds and Grenville,municipal
-ca/on/lennox-addington,Lennox and Addington,municipal
-ca/on/london,London,municipal
-ca/on/middlesex,Middlesex,municipal
-ca/on/milton,Milton,municipal
-ca/on/muskoka,Muskoka,municipal
-ca/on/niagara-falls,Niagara,municipal
-ca/on/norfolk,Norfolk,municipal
-ca/on/oakville,Oakville,municipal
-ca/on/ottawa,Ottawa,municipal
-ca/on/peel-region,Peel,municipal
-ca/on/perth-county,Perth,municipal
-ca/on/peterborough-county,Peterborough,municipal
-ca/on/prince-edward-county,Prince Edward County,municipal
-ca/on/quinte-west,Quinte West,municipal
-ca/on/renfrew,Renfrew,municipal
-ca/on/sarnia,Sarnia,municipal
-ca/on/sdg,"Stormont, Dundas and Glengarry",municipal
-ca/on/simcoe,Simcoe,municipal
-ca/on/stratford,Stratford,municipal
-ca/on/thunder-bay,Thunder Bay,municipal
-ca/on/toronto,Toronto,municipal
-ca/on/waterloo,Waterloo,municipal
-ca/on/wellington,Wellington,municipal
-ca/on/west-parry-sound,West Parry Sound,municipal
-ca/on/windsor,Windsor,municipal
-ca/on/york,York,municipal
+code,name,level,tier
+ca,Canada,country,
+ca/on,Ontario,province,
+ca/on/addington-highlands,Addington Highlands,municipal,lower
+ca/on/adelaide-metcalfe,Adelaide Metcalfe,municipal,lower
+ca/on/adjala-tosorontio,Adjala-Tosorontio,municipal,lower
+ca/on/admaston-bromley,Admaston/Bromley,municipal,lower
+ca/on/ajax,Ajax,municipal,lower
+ca/on/alberton,Alberton,municipal,single
+ca/on/alfred-and-plantagenet,Alfred and Plantagenet,municipal,lower
+ca/on/algonquin-highlands,Algonquin Highlands,municipal,lower
+ca/on/alnwick-haldimand,Alnwick/Haldimand,municipal,lower
+ca/on/amaranth,Amaranth,municipal,lower
+ca/on/amherstburg,Amherstburg,municipal,lower
+ca/on/armour,Armour,municipal,single
+ca/on/armstrong,Armstrong,municipal,single
+ca/on/arnprior,Arnprior,municipal,lower
+ca/on/arranelderslie,Arran–Elderslie,municipal,lower
+ca/on/ashfieldcolbornewawanosh,Ashfield–Colborne–Wawanosh,municipal,lower
+ca/on/asphodelnorwood,Asphodel–Norwood,municipal,lower
+ca/on/assiginack,Assiginack,municipal,single
+ca/on/athens,Athens,municipal,lower
+ca/on/atikokan,Atikokan,municipal,single
+ca/on/augusta,Augusta,municipal,lower
+ca/on/aurora,Aurora,municipal,lower
+ca/on/aylmer,Aylmer,municipal,lower
+ca/on/baldwin,Baldwin,municipal,single
+ca/on/bancroft,Bancroft,municipal,lower
+ca/on/barrie,Barrie,municipal,single
+ca/on/bayham,Bayham,municipal,lower
+ca/on/beckwith,Beckwith,municipal,lower
+ca/on/belleville,Belleville,municipal,single
+ca/on/billings,Billings,municipal,single
+ca/on/black-river-matheson,Black River-Matheson,municipal,single
+ca/on/blandford-blenheim,Blandford-Blenheim,municipal,lower
+ca/on/blind-river,Blind River,municipal,single
+ca/on/bluewater,Bluewater,municipal,lower
+ca/on/bonfield,Bonfield,municipal,single
+ca/on/bonnechere-valley,Bonnechere Valley,municipal,lower
+ca/on/bracebridge,Bracebridge,municipal,lower
+ca/on/bradford-west-gwillimbury,Bradford West Gwillimbury,municipal,lower
+ca/on/brampton,Brampton,municipal,lower
+ca/on/brant,Brant,municipal,single
+ca/on/brantford,Brantford,municipal,single
+ca/on/brethour,Brethour,municipal,single
+ca/on/brighton,Brighton,municipal,lower
+ca/on/brock,Brock,municipal,lower
+ca/on/brockton,Brockton,municipal,lower
+ca/on/brockville,Brockville,municipal,single
+ca/on/brooke-alvinston,Brooke-Alvinston,municipal,lower
+ca/on/bruce,Bruce,municipal,upper
+ca/on/bruce-mines,Bruce Mines,municipal,single
+ca/on/brudenell-lyndoch-and-raglan,"Brudenell, Lyndoch and Raglan",municipal,lower
+ca/on/burks-falls,Burk's Falls,municipal,single
+ca/on/burlington,Burlington,municipal,lower
+ca/on/burpee-and-mills,Burpee and Mills,municipal,single
+ca/on/caledon,Caledon,municipal,lower
+ca/on/callander,Callander,municipal,single
+ca/on/calvin,Calvin,municipal,single
+ca/on/cambridge,Cambridge,municipal,lower
+ca/on/carleton-place,Carleton Place,municipal,lower
+ca/on/carling,Carling,municipal,single
+ca/on/carlow-mayo,Carlow/Mayo,municipal,lower
+ca/on/casey,Casey,municipal,single
+ca/on/casselman,Casselman,municipal,lower
+ca/on/cavan-monaghan,Cavan Monaghan,municipal,lower
+ca/on/central-elgin,Central Elgin,municipal,lower
+ca/on/central-frontenac,Central Frontenac,municipal,lower
+ca/on/central-huron,Central Huron,municipal,lower
+ca/on/central-manitoulin,Central Manitoulin,municipal,single
+ca/on/centre-hastings,Centre Hastings,municipal,lower
+ca/on/centre-wellington,Centre Wellington,municipal,lower
+ca/on/chamberlain,Chamberlain,municipal,single
+ca/on/champlain,Champlain,municipal,lower
+ca/on/chapleau,Chapleau,municipal,single
+ca/on/chapple,Chapple,municipal,single
+ca/on/charlton-and-dack,Charlton and Dack,municipal,single
+ca/on/chatham-kent,Chatham-Kent,municipal,single
+ca/on/chatsworth,Chatsworth,municipal,lower
+ca/on/chisholm,Chisholm,municipal,single
+ca/on/clarence-rockland,Clarence-Rockland,municipal,lower
+ca/on/clarington,Clarington,municipal,lower
+ca/on/clearview,Clearview,municipal,lower
+ca/on/cobalt,Cobalt,municipal,single
+ca/on/cobourg,Cobourg,municipal,lower
+ca/on/cochrane,Cochrane,municipal,single
+ca/on/cockburn-island,Cockburn Island,municipal,single
+ca/on/coleman,Coleman,municipal,single
+ca/on/collingwood,Collingwood,municipal,lower
+ca/on/conmee,Conmee,municipal,single
+ca/on/cornwall,Cornwall,municipal,single
+ca/on/cramahe,Cramahe,municipal,lower
+ca/on/dawn-euphemia,Dawn-Euphemia,municipal,lower
+ca/on/dawson,Dawson,municipal,single
+ca/on/deep-river,Deep River,municipal,lower
+ca/on/deseronto,Deseronto,municipal,lower
+ca/on/dorion,Dorion,municipal,single
+ca/on/douro-dummer,Douro-Dummer,municipal,lower
+ca/on/drummond-north-elmsley,Drummond/North Elmsley,municipal,lower
+ca/on/dryden,Dryden,municipal,single
+ca/on/dubreuilville,Dubreuilville,municipal,single
+ca/on/dufferin,Dufferin,municipal,upper
+ca/on/durham,Durham,municipal,upper
+ca/on/dutton-dunwich,Dutton/Dunwich,municipal,lower
+ca/on/dysart-et-al,Dysart et al,municipal,lower
+ca/on/ear-falls,Ear Falls,municipal,single
+ca/on/east-ferris,East Ferris,municipal,single
+ca/on/east-garafraxa,East Garafraxa,municipal,lower
+ca/on/east-gwillimbury,East Gwillimbury,municipal,lower
+ca/on/east-hawkesbury,East Hawkesbury,municipal,lower
+ca/on/east-zorra-tavistock,East Zorra-Tavistock,municipal,lower
+ca/on/edwardsburgh-cardinal,Edwardsburgh/Cardinal,municipal,lower
+ca/on/elgin,Elgin,municipal,upper
+ca/on/elizabethtown-kitley,Elizabethtown-Kitley,municipal,lower
+ca/on/elliot-lake,Elliot Lake,municipal,single
+ca/on/emo,Emo,municipal,single
+ca/on/englehart,Englehart,municipal,single
+ca/on/enniskillen,Enniskillen,municipal,lower
+ca/on/erin,Erin,municipal,lower
+ca/on/espanola,Espanola,municipal,single
+ca/on/essa,Essa,municipal,lower
+ca/on/essex,Town of Essex,municipal,lower
+ca/on/essex-county,Essex,municipal,upper
+ca/on/evanturel,Evanturel,municipal,single
+ca/on/faraday,Faraday,municipal,lower
+ca/on/fauquier-strickland,Fauquier-Strickland,municipal,single
+ca/on/fort-erie,Fort Erie,municipal,lower
+ca/on/fort-frances,Fort Frances,municipal,single
+ca/on/french-river,French River,municipal,single
+ca/on/front-of-yonge,Front of Yonge,municipal,lower
+ca/on/frontenac,Frontenac,municipal,upper
+ca/on/frontenac-islands,Frontenac Islands,municipal,lower
+ca/on/gananoque,Gananoque,municipal,single
+ca/on/gauthier,Gauthier,municipal,single
+ca/on/georgian-bay,Georgian Bay,municipal,lower
+ca/on/georgian-bluffs,Georgian Bluffs,municipal,lower
+ca/on/georgina,Georgina,municipal,lower
+ca/on/gillies,Gillies,municipal,single
+ca/on/goderich,Goderich,municipal,lower
+ca/on/gordon-barrie-island,Gordon/Barrie Island,municipal,single
+ca/on/gore-bay,Gore Bay,municipal,single
+ca/on/grand-valley,Grand Valley,municipal,lower
+ca/on/gravenhurst,Gravenhurst,municipal,lower
+ca/on/greater-madawaska,Greater Madawaska,municipal,lower
+ca/on/greater-napanee,Greater Napanee,municipal,lower
+ca/on/greater-sudbury,Greater Sudbury,municipal,single
+ca/on/greenstone,Greenstone,municipal,single
+ca/on/grey,Grey,municipal,upper
+ca/on/grey-highlands,Grey Highlands,municipal,lower
+ca/on/grimsby,Grimsby,municipal,lower
+ca/on/guelph,Guelph,municipal,single
+ca/on/guelph-eramosa,Guelph/Eramosa,municipal,lower
+ca/on/haldimand,Haldimand,municipal,single
+ca/on/haliburton,Haliburton,municipal,upper
+ca/on/halton,Halton,municipal,upper
+ca/on/halton-hills,Halton Hills,municipal,lower
+ca/on/hamilton,Hamilton,municipal,single
+ca/on/hamilton-township,Township of Hamilton,municipal,lower
+ca/on/hanover,Hanover,municipal,lower
+ca/on/harley,Harley,municipal,single
+ca/on/harris,Harris,municipal,single
+ca/on/hastings,Hastings,municipal,upper
+ca/on/hastings-highlands,Hastings Highlands,municipal,lower
+ca/on/havelock-belmont-methuen,Havelock-Belmont-Methuen,municipal,lower
+ca/on/hawkesbury,Hawkesbury,municipal,lower
+ca/on/head-clara-and-maria,"Head, Clara and Maria",municipal,lower
+ca/on/hearst,Hearst,municipal,single
+ca/on/highlands-east,Highlands East,municipal,lower
+ca/on/hilliard,Hilliard,municipal,single
+ca/on/hilton,Hilton,municipal,single
+ca/on/hilton-beach,Hilton Beach,municipal,single
+ca/on/hornepayne,Hornepayne,municipal,single
+ca/on/horton,Horton,municipal,lower
+ca/on/howick,Howick,municipal,lower
+ca/on/hudson,Hudson,municipal,single
+ca/on/huntsville,Huntsville,municipal,lower
+ca/on/huron,Huron,municipal,upper
+ca/on/huron-east,Huron East,municipal,lower
+ca/on/huron-kinloss,Huron-Kinloss,municipal,lower
+ca/on/huron-shores,Huron Shores,municipal,single
+ca/on/ignace,Ignace,municipal,single
+ca/on/ingersoll,Ingersoll,municipal,lower
+ca/on/innisfil,Innisfil,municipal,lower
+ca/on/iroquois-falls,Iroquois Falls,municipal,single
+ca/on/james,James,municipal,single
+ca/on/jocelyn,Jocelyn,municipal,single
+ca/on/johnson,Johnson,municipal,single
+ca/on/joly,Joly,municipal,single
+ca/on/kapuskasing,Kapuskasing,municipal,single
+ca/on/kawartha-lakes,Kawartha Lakes,municipal,single
+ca/on/kearney,Kearney,municipal,single
+ca/on/kenora,Kenora,municipal,single
+ca/on/kerns,Kerns,municipal,single
+ca/on/killaloe-hagarty-and-richards,"Killaloe, Hagarty and Richards",municipal,lower
+ca/on/killarney,Killarney,municipal,single
+ca/on/kincardine,Kincardine,municipal,lower
+ca/on/king,King,municipal,lower
+ca/on/kingston,Kingston,municipal,single
+ca/on/kingsville,Kingsville,municipal,lower
+ca/on/kirkland-lake,Kirkland Lake,municipal,single
+ca/on/kitchener,Kitchener,municipal,lower
+ca/on/la-vallee,La Vallee,municipal,single
+ca/on/laird,Laird,municipal,single
+ca/on/lake-of-bays,Lake of Bays,municipal,lower
+ca/on/lake-of-the-woods,Lake of the Woods,municipal,single
+ca/on/lakeshore,Lakeshore,municipal,lower
+ca/on/lambton,Lambton,municipal,upper
+ca/on/lambton-shores,Lambton Shores,municipal,lower
+ca/on/lanark,Lanark,municipal,upper
+ca/on/lanark-highlands,Lanark Highlands,municipal,lower
+ca/on/larder-lake,Larder Lake,municipal,single
+ca/on/lasalle,LaSalle,municipal,lower
+ca/on/latchford,Latchford,municipal,single
+ca/on/laurentian-hills,Laurentian Hills,municipal,lower
+ca/on/laurentian-valley,Laurentian Valley,municipal,lower
+ca/on/leamington,Leamington,municipal,lower
+ca/on/leeds-and-the-thousand-islands,Leeds and the Thousand Islands,municipal,lower
+ca/on/leeds-grenville,Leeds and Grenville,municipal,upper
+ca/on/lennox-addington,Lennox and Addington,municipal,upper
+ca/on/limerick,Limerick,municipal,lower
+ca/on/lincoln,Lincoln,municipal,lower
+ca/on/london,London,municipal,single
+ca/on/loyalist,Loyalist,municipal,lower
+ca/on/lucan-biddulph,Lucan Biddulph,municipal,lower
+ca/on/macdonald-meredith-and-aberdeen-additional,"Macdonald, Meredith and Aberdeen Additional",municipal,single
+ca/on/machar,Machar,municipal,single
+ca/on/machin,Machin,municipal,single
+ca/on/madawaska-valley,Madawaska Valley,municipal,lower
+ca/on/madoc,Madoc,municipal,lower
+ca/on/magnetawan,Magnetawan,municipal,single
+ca/on/malahide,Malahide,municipal,lower
+ca/on/manitouwadge,Manitouwadge,municipal,single
+ca/on/mapleton,Mapleton,municipal,lower
+ca/on/marathon,Marathon,municipal,single
+ca/on/markham,Markham,municipal,lower
+ca/on/markstay-warren,Markstay-Warren,municipal,single
+ca/on/marmora-and-lake,Marmora and Lake,municipal,lower
+ca/on/matachewan,Matachewan,municipal,single
+ca/on/mattawa,Mattawa,municipal,single
+ca/on/mattawan,Mattawan,municipal,single
+ca/on/mattice-val-cote,Mattice-Val Côté,municipal,single
+ca/on/mcdougall,McDougall,municipal,single
+ca/on/mcgarry,McGarry,municipal,single
+ca/on/mckellar,McKellar,municipal,single
+ca/on/mcmurrich-monteith,McMurrich/Monteith,municipal,single
+ca/on/mcnab-braeside,McNab/Braeside,municipal,lower
+ca/on/meaford,Meaford,municipal,lower
+ca/on/melancthon,Melancthon,municipal,lower
+ca/on/merrickvillewolford,Merrickville–Wolford,municipal,lower
+ca/on/middlesex,Middlesex,municipal,upper
+ca/on/middlesex-centre,Middlesex Centre,municipal,lower
+ca/on/midland,Midland,municipal,lower
+ca/on/milton,Milton,municipal,lower
+ca/on/minden-hills,Minden Hills,municipal,lower
+ca/on/minto,Minto,municipal,lower
+ca/on/mississauga,Mississauga,municipal,lower
+ca/on/mississippi-mills,Mississippi Mills,municipal,lower
+ca/on/mono,Mono,municipal,lower
+ca/on/montague,Montague,municipal,lower
+ca/on/moonbeam,Moonbeam,municipal,single
+ca/on/moosonee,Moosonee,municipal,single
+ca/on/morley,Morley,municipal,single
+ca/on/morris-turnberry,Morris-Turnberry,municipal,lower
+ca/on/mulmur,Mulmur,municipal,lower
+ca/on/muskoka,Muskoka,municipal,upper
+ca/on/muskoka-lakes,Muskoka Lakes,municipal,lower
+ca/on/nairn-and-hyman,Nairn and Hyman,municipal,single
+ca/on/neebing,Neebing,municipal,single
+ca/on/new-tecumseth,New Tecumseth,municipal,lower
+ca/on/newbury,Newbury,municipal,lower
+ca/on/newmarket,Newmarket,municipal,lower
+ca/on/niagara-falls,Niagara,municipal,upper
+ca/on/niagara-falls-city,Niagara Falls,municipal,lower
+ca/on/niagara-on-the-lake,Niagara-on-the-Lake,municipal,lower
+ca/on/nipigon,Nipigon,municipal,single
+ca/on/nipissing,Nipissing,municipal,single
+ca/on/norfolk,Norfolk,municipal,single
+ca/on/north-algona-wilberforce,North Algona Wilberforce,municipal,lower
+ca/on/north-bay,North Bay,municipal,single
+ca/on/north-dumfries,North Dumfries,municipal,lower
+ca/on/north-dundas,North Dundas,municipal,lower
+ca/on/north-frontenac,North Frontenac,municipal,lower
+ca/on/north-glengarry,North Glengarry,municipal,lower
+ca/on/north-grenville,North Grenville,municipal,lower
+ca/on/north-huron,North Huron,municipal,lower
+ca/on/north-kawartha,North Kawartha,municipal,lower
+ca/on/north-middlesex,North Middlesex,municipal,lower
+ca/on/north-perth,North Perth,municipal,lower
+ca/on/north-stormont,North Stormont,municipal,lower
+ca/on/northeastern-manitoulin-and-the-islands,Northeastern Manitoulin and the Islands,municipal,single
+ca/on/northern-bruce-peninsula,Northern Bruce Peninsula,municipal,lower
+ca/on/northumberland,Northumberland,municipal,upper
+ca/on/norwich,Norwich,municipal,lower
+ca/on/oakville,Oakville,municipal,lower
+ca/on/oconnor,O'Connor,municipal,single
+ca/on/oil-springs,Oil Springs,municipal,lower
+ca/on/oliver-paipoonge,Oliver Paipoonge,municipal,single
+ca/on/opasatika,Opasatika,municipal,single
+ca/on/orangeville,Orangeville,municipal,lower
+ca/on/orillia,Orillia,municipal,single
+ca/on/oro-medonte,Oro-Medonte,municipal,lower
+ca/on/oshawa,Oshawa,municipal,lower
+ca/on/otonabeesouth-monaghan,Otonabee–South Monaghan,municipal,lower
+ca/on/ottawa,Ottawa,municipal,single
+ca/on/owen-sound,Owen Sound,municipal,lower
+ca/on/oxford,Oxford,municipal,upper
+ca/on/papineau-cameron,Papineau-Cameron,municipal,single
+ca/on/parry-sound,Parry Sound,municipal,single
+ca/on/peel-region,Peel,municipal,upper
+ca/on/pelee,Pelee,municipal,single
+ca/on/pelham,Pelham,municipal,lower
+ca/on/pembroke,Pembroke,municipal,single
+ca/on/penetanguishene,Penetanguishene,municipal,lower
+ca/on/perry,Perry,municipal,single
+ca/on/perth,Town of Perth,municipal,lower
+ca/on/perth-county,Perth,municipal,upper
+ca/on/perth-east,Perth East,municipal,lower
+ca/on/perth-south,Perth South,municipal,lower
+ca/on/petawawa,Petawawa,municipal,lower
+ca/on/peterborough,City of Peterborough,municipal,single
+ca/on/peterborough-county,Peterborough,municipal,upper
+ca/on/petrolia,Petrolia,municipal,lower
+ca/on/pickering,Pickering,municipal,lower
+ca/on/pickle-lake,Pickle Lake,municipal,single
+ca/on/plummer-additional,Plummer Additional,municipal,single
+ca/on/plymptonwyoming,Plympton–Wyoming,municipal,lower
+ca/on/point-edward,Point Edward,municipal,lower
+ca/on/port-colborne,Port Colborne,municipal,lower
+ca/on/port-hope,Port Hope,municipal,lower
+ca/on/powassan,Powassan,municipal,single
+ca/on/prescott,Prescott,municipal,single
+ca/on/prescott-russell,Prescott and Russell,municipal,upper
+ca/on/prince,Prince,municipal,single
+ca/on/prince-edward-county,Prince Edward County,municipal,single
+ca/on/puslinch,Puslinch,municipal,lower
+ca/on/quinte-west,Quinte West,municipal,single
+ca/on/rainy-river,Rainy River,municipal,single
+ca/on/ramara,Ramara,municipal,lower
+ca/on/red-lake,Red Lake,municipal,single
+ca/on/red-rock,Red Rock,municipal,single
+ca/on/renfrew,Renfrew,municipal,upper
+ca/on/renfrew-town,Town of Renfrew,municipal,lower
+ca/on/richmond-hill,Richmond Hill,municipal,lower
+ca/on/rideau-lakes,Rideau Lakes,municipal,lower
+ca/on/russell,Russell,municipal,lower
+ca/on/ryerson,Ryerson,municipal,single
+ca/on/sables-spanish-rivers,Sables-Spanish Rivers,municipal,single
+ca/on/sarnia,Sarnia,municipal,lower
+ca/on/saugeen-shores,Saugeen Shores,municipal,lower
+ca/on/sault-ste-marie,Sault Ste. Marie,municipal,single
+ca/on/schreiber,Schreiber,municipal,single
+ca/on/scugog,Scugog,municipal,lower
+ca/on/sdg,"Stormont, Dundas and Glengarry",municipal,upper
+ca/on/seguin,Seguin,municipal,single
+ca/on/selwyn,Selwyn,municipal,lower
+ca/on/severn,Severn,municipal,lower
+ca/on/shelburne,Shelburne,municipal,lower
+ca/on/shuniah,Shuniah,municipal,single
+ca/on/simcoe,Simcoe,municipal,upper
+ca/on/sioux-lookout,Sioux Lookout,municipal,single
+ca/on/sioux-narrows-nestor-falls,Sioux Narrows-Nestor Falls,municipal,single
+ca/on/smiths-falls,Smiths Falls,municipal,single
+ca/on/smooth-rock-falls,Smooth Rock Falls,municipal,single
+ca/on/south-algonquin,South Algonquin,municipal,single
+ca/on/south-bruce,South Bruce,municipal,lower
+ca/on/south-bruce-peninsula,South Bruce Peninsula,municipal,lower
+ca/on/south-dundas,South Dundas,municipal,lower
+ca/on/south-frontenac,South Frontenac,municipal,lower
+ca/on/south-glengarry,South Glengarry,municipal,lower
+ca/on/south-huron,South Huron,municipal,lower
+ca/on/south-river,South River,municipal,single
+ca/on/south-stormont,South Stormont,municipal,lower
+ca/on/south-west-oxford,South-West Oxford,municipal,lower
+ca/on/southgate,Southgate,municipal,lower
+ca/on/southwest-middlesex,Southwest Middlesex,municipal,lower
+ca/on/southwold,Southwold,municipal,lower
+ca/on/spanish,Spanish,municipal,single
+ca/on/springwater,Springwater,municipal,lower
+ca/on/st-catharines,St. Catharines,municipal,lower
+ca/on/st-charles,St.-Charles,municipal,single
+ca/on/st-clair,St. Clair,municipal,lower
+ca/on/st-joseph,St. Joseph,municipal,single
+ca/on/st-marys,St. Marys,municipal,single
+ca/on/st-thomas,St. Thomas,municipal,single
+ca/on/stirling-rawdon,Stirling-Rawdon,municipal,lower
+ca/on/stone-mills,Stone Mills,municipal,lower
+ca/on/stratford,Stratford,municipal,single
+ca/on/strathroy-caradoc,Strathroy-Caradoc,municipal,lower
+ca/on/strong,Strong,municipal,single
+ca/on/sundridge,Sundridge,municipal,single
+ca/on/tarbutt,Tarbutt,municipal,single
+ca/on/tay,Tay,municipal,lower
+ca/on/tay-valley,Tay Valley,municipal,lower
+ca/on/tecumseh,Tecumseh,municipal,lower
+ca/on/tehkummah,Tehkummah,municipal,single
+ca/on/temagami,Temagami,municipal,single
+ca/on/temiskaming-shores,Temiskaming Shores,municipal,single
+ca/on/terrace-bay,Terrace Bay,municipal,single
+ca/on/thames-centre,Thames Centre,municipal,lower
+ca/on/the-archipelago,The Archipelago,municipal,single
+ca/on/the-blue-mountains,The Blue Mountains,municipal,lower
+ca/on/the-nation,The Nation,municipal,lower
+ca/on/the-north-shore,The North Shore,municipal,single
+ca/on/thessalon,Thessalon,municipal,single
+ca/on/thornloe,Thornloe,municipal,single
+ca/on/thorold,Thorold,municipal,lower
+ca/on/thunder-bay,Thunder Bay,municipal,single
+ca/on/tillsonburg,Tillsonburg,municipal,lower
+ca/on/timmins,Timmins,municipal,single
+ca/on/tiny,Tiny,municipal,lower
+ca/on/toronto,Toronto,municipal,single
+ca/on/trent-hills,Trent Hills,municipal,lower
+ca/on/trent-lakes,Trent Lakes,municipal,lower
+ca/on/tudor-and-cashel,Tudor and Cashel,municipal,lower
+ca/on/tweed,Tweed,municipal,lower
+ca/on/tyendinaga,Tyendinaga,municipal,lower
+ca/on/uxbridge,Uxbridge,municipal,lower
+ca/on/val-rita-harty,Val Rita-Harty,municipal,single
+ca/on/vaughan,Vaughan,municipal,lower
+ca/on/wainfleet,Wainfleet,municipal,lower
+ca/on/warwick,Warwick,municipal,lower
+ca/on/wasaga-beach,Wasaga Beach,municipal,lower
+ca/on/waterloo,Waterloo,municipal,lower
+ca/on/waterloo-region,Region of Waterloo,municipal,upper
+ca/on/wawa,Wawa,municipal,single
+ca/on/welland,Welland,municipal,lower
+ca/on/wellesley,Wellesley,municipal,lower
+ca/on/wellington,Wellington,municipal,upper
+ca/on/wellington-north,Wellington North,municipal,lower
+ca/on/west-elgin,West Elgin,municipal,lower
+ca/on/west-grey,West Grey,municipal,lower
+ca/on/west-lincoln,West Lincoln,municipal,lower
+ca/on/west-nipissing,West Nipissing,municipal,single
+ca/on/west-parry-sound,West Parry Sound,municipal,
+ca/on/west-perth,West Perth,municipal,lower
+ca/on/westport,Westport,municipal,lower
+ca/on/whitby,Whitby,municipal,lower
+ca/on/whitchurch-stouffville,Whitchurch-Stouffville,municipal,lower
+ca/on/white-river,White River,municipal,single
+ca/on/whitestone,Whitestone,municipal,single
+ca/on/whitewater,Whitewater,municipal,lower
+ca/on/wilmot,Wilmot,municipal,lower
+ca/on/windsor,Windsor,municipal,single
+ca/on/wollaston,Wollaston,municipal,lower
+ca/on/woodstock,Woodstock,municipal,lower
+ca/on/woolwich,Woolwich,municipal,lower
+ca/on/york,York,municipal,upper
+ca/on/zorra,Zorra,municipal,lower

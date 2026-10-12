@@ -2,7 +2,7 @@
 
 Reads   catalogue/*.csv, catalogue/synced/*.csv  (see catalogue/SCHEMA.md)
 Writes  wiki/Canada_Open_data.wiki               the OSM wiki page
-        report/SUMMARY.md                        counts, freshness and gaps, for review
+        report/SUMMARY.md                        counts, freshness, gaps and coverage, for review
 
     python build.py
 """
@@ -10,8 +10,8 @@ Writes  wiki/Canada_Open_data.wiki               the OSM wiki page
 from collections import Counter, defaultdict
 from datetime import date
 
-from common import (FEASIBILITY, HERE, STATUSES, THEMES, jurisdiction, latest, load,
-                    measure_text, tool_pairs)
+from common import (FEASIBILITY, HERE, PLATFORMS, STATUSES, THEMES, jurisdiction, latest,
+                    load, measure_text, tool_pairs)
 
 WIKI = HERE / "wiki"
 REPORT = HERE / "report"
@@ -273,8 +273,61 @@ tracked over time:
 """ + "\n".join(f"- `{m['source_id']}` — {m['text']}" for m in unparsed) + "\n"
 
 
+def coverage(sources, juris, portals) -> str:
+    """How much of what Ontario publishes the catalogue has looked at: the portal inventory is
+    the denominator, catalogued sources the numerator."""
+    catalogued = Counter(jurisdiction(r["id"]) for r in sources)
+    by_j = defaultdict(list)
+    for p in portals:
+        by_j[p["jurisdiction"]].append(p)
+    live = [p for p in portals if p["platform"] != "none-found"]
+    counted = {p["portal_url"]: int(p["layers_seen"]) for p in live if p["layers_seen"]}
+    seen = sum(counted.values())
+    in_counted = sum(catalogued[j] for j in {p["jurisdiction"] for p in live if p["layers_seen"]})
+
+    tiers = [("upper", "upper-tier"), ("single", "single-tier"), ("lower", "lower-tier")]
+    t_rows = []
+    for tier, label in tiers:
+        codes = [c for c, j in juris.items() if j["tier"] == tier]
+        has = [c for c in codes if any(p["platform"] != "none-found" for p in by_j[c])]
+        none = [c for c in codes if by_j[c] and c not in has]
+        t_rows.append([label, len(codes), len(has), len(none), len(codes) - len(has) - len(none)])
+    t_rows.append(["**all**"] + [sum(r[i] for r in t_rows) for i in range(1, 5)])
+
+    p_rows = []
+    for plat in PLATFORMS[:-1]:
+        urls = {p["portal_url"] for p in live if p["platform"] == plat}
+        if urls:
+            p_rows.append([plat, len(urls), sum(counted.get(u, 0) for u in urls)])
+
+    j_rows = []
+    for code in sorted({p["jurisdiction"] for p in live}, key=lambda c: juris[c]["name"]):
+        ps = [p for p in by_j[code] if p["platform"] != "none-found"]
+        n = sum(int(p["layers_seen"]) for p in ps if p["layers_seen"])
+        shared = all(not p["layers_seen"] for p in ps)
+        j_rows.append([juris[code]["name"], ", ".join(sorted({p["platform"] for p in ps})),
+                       "—" if shared else n, catalogued[code] or "",
+                       f"{catalogued[code] / n:.1%}" if n and catalogued[code] else ""])
+    j_rows.sort(key=lambda r: (-(r[2] if r[2] != "—" else -1), r[0]))
+
+    return f"""## Coverage of the catalogue
+
+`catalogue/portals.csv` lists every open-data portal found in Ontario and a `none-found` row
+for each municipality that has none. {len(set(p["portal_url"] for p in live))} portals are known,
+{len(counted)} of them counted through their API: **{seen} layers seen, against {in_counted}
+sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
+county or consortium portal is counted once, under its owner.
+
+{md_table(["municipalities", "total", "with a portal", "none found", "not surveyed"], t_rows)}
+
+{md_table(["platform", "portals", "layers seen"], p_rows)}
+
+{md_table(["jurisdiction", "platform", "layers seen", "sources catalogued", "share"], j_rows)}
+"""
+
+
 def main():
-    sources, measures, juris = load()
+    sources, measures, juris, portals = load()
     last = latest(measures)
     for r in sources:
         r["coverage"] = measure_text(last.get(r["id"]))
@@ -283,7 +336,8 @@ def main():
     (WIKI / "Canada_Open_data.wiki").write_text(wiki_page([with_work(r) for r in sources], juris),
                                                 encoding="utf-8")
     REPORT.mkdir(exist_ok=True)
-    (REPORT / "SUMMARY.md").write_text(summary(sources, measures, juris, last), encoding="utf-8")
+    (REPORT / "SUMMARY.md").write_text(summary(sources, measures, juris, last) + "\n"
+                                       + coverage(sources, juris, portals), encoding="utf-8")
     print(f"{len(sources)} sources ({summarize(sources)}); {len(measures)} measures")
 
 

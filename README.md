@@ -11,7 +11,8 @@ Views are generated from it. Today there are two:
   [Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). The live page is
   still a stub; nothing is pasted until the catalogue has been reviewed.
 - [`report/SUMMARY.md`](report/SUMMARY.md): counts by jurisdiction and theme, how fresh the
-  measures are, what is being worked on, and which measures are still free text.
+  measures are, what is being worked on, which measures are still free text, and how much of
+  what the portals publish the catalogue has covered.
 
 **Licence verdicts are not made here.** The wiki's `Canada#Open_Data` table and the OSMF
 [OGL Canada and local variants](https://osmfoundation.org/wiki/OGL_Canada_and_local_variants)
@@ -28,7 +29,9 @@ All of it is in [`catalogue/`](catalogue/); the format is in
 - `work.csv`: streams of work on a source (an import, a gap-fill, a MapRoulette queue)
 - `synced/addresses.csv`: the address datasets the tracker follows, written by `sync.py`
 - `measures.csv`: dated measurements, append only
-- `jurisdictions.csv`: the places an id can sit under
+- `portals.csv`: every open-data portal in Ontario, and a `none-found` row for each
+  municipality without one: the denominator the catalogue grows towards
+- `jurisdictions.csv`: the places an id can sit under, including all 444 municipalities
 
 ## Run
 

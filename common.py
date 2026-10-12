@@ -3,6 +3,7 @@
 import csv
 import re
 import sys
+from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
@@ -14,6 +15,7 @@ SYNCED = CATALOGUE / "synced" / "addresses.csv"
 MEASURES = CATALOGUE / "measures.csv"
 JURISDICTIONS = CATALOGUE / "jurisdictions.csv"
 WORK = CATALOGUE / "work.csv"
+PORTALS = CATALOGUE / "portals.csv"
 
 SOURCE_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tier",
                "feasibility", "status", "tools", "lead", "last_verified", "notes"]
@@ -21,6 +23,8 @@ SYNCED_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "t
                "lwg", "lwg_url", "feasibility", "status", "tools", "last_verified", "notes"]
 WORK_COLS = ["id", "source_id", "kind", "status", "lead", "started", "ended", "tools", "notes"]
 MEASURE_COLS = ["source_id", "measured_on", "measure", "value", "of", "unit", "method", "text"]
+PORTAL_COLS = ["jurisdiction", "portal_url", "platform", "api_url", "licence", "layers_seen",
+               "surveyed_on", "notes"]
 
 FEASIBILITY = {
     "import": "Import",
@@ -39,6 +43,9 @@ THEMES = [
 MEASURES_VOCAB = ["missing", "matched", "added", "observation", "note"]
 WORK_KINDS = ["import", "gap-fill", "maintenance", "conflation", "task-queue", "survey"]
 WORK_STATUSES = ["Completed", "Ongoing", "Planned", "Parked"]
+PLATFORMS = ["arcgis-hub", "arcgis-rest", "ckan", "socrata", "opendatasoft", "custom",
+             "none-found"]
+TIERS = ["upper", "single", "lower"]
 
 
 def read_csv(path: Path) -> list[dict]:
@@ -76,15 +83,23 @@ def tool_pairs(tools: str) -> list[tuple[str, str]]:
     return out
 
 
-def load() -> tuple[list[dict], list[dict], dict[str, dict]]:
-    """(sources, measures, jurisdictions), validated. A hand row whose id is a synced row adds
-    to it: its non-empty cells win, and its tools follow the synced ones. Each source carries
-    its streams of work as r["work"]."""
+def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
+    """(sources, measures, jurisdictions, portals), validated. A hand row whose id is a synced
+    row adds to it: its non-empty cells win, and its tools follow the synced ones. Each source
+    carries its streams of work as r["work"]."""
     synced = read_csv(SYNCED)
     hand = read_csv(SOURCES)
     measures = read_csv(MEASURES)
     juris = {j["code"]: j for j in read_csv(JURISDICTIONS)}
+    portals = read_csv(PORTALS)
     errors = []
+
+    names = Counter(j["name"] for j in juris.values())
+    for j in juris.values():
+        if names[j["name"]] > 1:
+            errors.append(f"jurisdictions.csv {j['code']}: name {j['name']!r} used twice")
+        if j["tier"] not in TIERS + [""]:
+            errors.append(f"jurisdictions.csv {j['code']}: tier {j['tier']!r}")
 
     blank = dict.fromkeys(SOURCE_COLS + SYNCED_COLS, "")
     by_id = {r["id"]: blank | r for r in synced}
@@ -166,9 +181,41 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict]]:
             if m[k] and not re.fullmatch(r"\d+(\.\d+)?", m[k]):
                 errors.append(f"{where}: {k} {m[k]!r} is not a number")
 
+    seen, found = set(), defaultdict(set)
+    for n, p in enumerate(portals, start=2):
+        where = f"portals.csv:{n} {p['jurisdiction']}"
+        if (p["jurisdiction"], p["portal_url"]) in seen:
+            errors.append(f"{where}: duplicate portal {p['portal_url']!r}")
+        seen.add((p["jurisdiction"], p["portal_url"]))
+        found[p["jurisdiction"]].add(p["platform"] != "none-found")
+        if p["jurisdiction"] not in juris:
+            errors.append(f"{where}: jurisdiction not in jurisdictions.csv")
+        if p["platform"] not in PLATFORMS:
+            errors.append(f"{where}: platform {p['platform']!r}")
+        if not is_date(p["surveyed_on"]):
+            errors.append(f"{where}: surveyed_on {p['surveyed_on']!r}")
+        if p["layers_seen"] and not p["layers_seen"].isdigit():
+            errors.append(f"{where}: layers_seen {p['layers_seen']!r} is not a count")
+        for k in ("portal_url", "api_url"):
+            if p[k] and not p[k].startswith("http"):
+                errors.append(f"{where}: {k} is not a URL")
+        if p["platform"] == "none-found":
+            if any(p[k] for k in ("portal_url", "api_url", "licence", "layers_seen")):
+                errors.append(f"{where}: none-found with a portal, API, licence or count")
+            if not p["notes"]:
+                errors.append(f"{where}: none-found without a note of what was checked")
+        elif not p["portal_url"]:
+            errors.append(f"{where}: no portal_url")
+        for k, v in p.items():
+            if "|" in (v or ""):
+                errors.append(f"{where}: pipe in {k}")
+    for code, kinds in found.items():
+        if len(kinds) == 2:
+            errors.append(f"portals.csv {code}: both a portal and a none-found row")
+
     if errors:
         sys.exit("catalogue failed validation:\n  " + "\n  ".join(errors))
-    return sources, measures, juris
+    return sources, measures, juris, portals
 
 
 def latest(measures: list[dict]) -> dict[str, dict]:

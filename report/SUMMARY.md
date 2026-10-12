@@ -127,3 +127,27 @@ tracked over time:
 - `ca/on/guelph/automated-speed-enforcement` — 2 speed cameras in OSM
 - `ca/on/toronto/dinesafe` — 34.3% of 10,420 premises have no OSM match
 - `ca/on/toronto/bodysafe` — 2,496 premises have no OSM match, 33.6% matched
+
+## Coverage of the catalogue
+
+`catalogue/portals.csv` lists every open-data portal found in Ontario and a `none-found` row
+for each municipality that has none. 2 portals are known,
+2 of them counted through their API: **3208 layers seen, against 6
+sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
+county or consortium portal is counted once, under its owner.
+
+| municipalities | total | with a portal | none found | not surveyed |
+|---|---|---|---|---|
+| upper-tier | 30 | 0 | 0 | 30 |
+| single-tier | 173 | 0 | 0 | 173 |
+| lower-tier | 241 | 0 | 0 | 241 |
+| **all** | 444 | 0 | 0 | 444 |
+
+| platform | portals | layers seen |
+|---|---|---|
+| arcgis-hub | 1 | 244 |
+| ckan | 1 | 2964 |
+
+| jurisdiction | platform | layers seen | sources catalogued | share |
+|---|---|---|---|---|
+| Ontario | arcgis-hub, ckan | 3208 | 6 | 0.2% |
