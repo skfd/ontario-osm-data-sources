@@ -95,7 +95,7 @@ the point. The wiki shows each source's latest line.
 
 ## `portals.csv`
 
-    jurisdiction,portal_url,platform,api_url,licence,layers_seen,surveyed_on,notes
+    jurisdiction,portal_url,platform,reach,reach_label,api_url,licence,layers_seen,surveyed_on,notes
 
 The denominator: every place Ontario publishes open data, so the catalogue can say how much of
 it has been looked at. Every municipality in `jurisdictions.csv` gets at least one row, a
@@ -107,18 +107,33 @@ sources. One row per `(jurisdiction, portal_url)`.
 | `jurisdiction` | Code from `jurisdictions.csv` |
 | `portal_url` | The portal's home page. Blank for `none-found` |
 | `platform` | `arcgis-hub`, `arcgis-rest`, `ckan`, `socrata`, `opendatasoft`, `custom` or `none-found` |
+| `reach`, `reach_label` | How good the data is likely to be, from how it is published (below): a number and its label |
 | `api_url` | The catalogue API (below). Blank for `custom` without one, and for `none-found` |
 | `licence` | Licence name as the portal publishes it, `None published`, or blank for `none-found`. Never a verdict |
 | `layers_seen` | Datasets the API listed on `surveyed_on`, by the method below. Blank if not counted |
 | `surveyed_on` | `YYYY-MM-DD` the row was last checked by hand |
-| `notes` | One short sentence. For `none-found`, what was checked |
+| `notes` | A sentence or two. For `none-found`, what was checked |
 
-**What is a portal.** A site whose purpose is publishing datasets anyone can download or query.
-A map viewer alone, a PDF map library or a request form is not one; neither is a dashboard or
-story-map hub. A Hub and the ArcGIS server behind it are one portal (the Hub); a CKAN site and
-a Hub run side by side are two. A county or consortium portal that publishes a member's own
-data gives the member a row too, with the same URL, blank `layers_seen` and `shared portal of
-<code>` in notes, so its layers are counted once.
+**Reach.** How good a municipality's data is likely to be, judged only by how it is published.
+The licence plays no part; it has its own column.
+
+| reach | label | the row is | platform |
+|---|---|---|---|
+| 4 | `own` | the jurisdiction's own open-data catalogue | a catalogue platform |
+| 3 | `catalogued` | its own datasets listed in a county or consortium catalogue | a catalogue platform |
+| 2 | `on-server` | queryable layers on a public map server, its own or the county's, that no catalogue lists | `arcgis-rest` |
+| 1 | `viewer` | a map viewer only: it can be looked at, not downloaded | `none-found` |
+| 0 | `none` | nothing found | `none-found` |
+
+A catalogue is a site whose purpose is publishing datasets: a Hub, CKAN, Socrata, OpenDataSoft,
+or a page listing downloads (`custom`). A dashboard or story-map hub is not one. A Hub and the
+ArcGIS server behind it are one row (the Hub); a server holding much more than its Hub lists
+gets a reach-2 row of its own. A CKAN site and a Hub run side by side are two rows. A
+municipality is graded by its best row.
+
+**Shared portals.** A county or consortium catalogue or server that holds a member's own layers
+gives the member a row too, with the same URL, blank `layers_seen` and `shared portal of <code>`
+in notes, so its layers are counted once, under the owner.
 
 **`api_url` and `layers_seen` by platform.** Next survey's count is comparable only if it is
 taken the same way.

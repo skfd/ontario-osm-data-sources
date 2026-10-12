@@ -23,8 +23,8 @@ SYNCED_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "t
                "lwg", "lwg_url", "feasibility", "status", "tools", "last_verified", "notes"]
 WORK_COLS = ["id", "source_id", "kind", "status", "lead", "started", "ended", "tools", "notes"]
 MEASURE_COLS = ["source_id", "measured_on", "measure", "value", "of", "unit", "method", "text"]
-PORTAL_COLS = ["jurisdiction", "portal_url", "platform", "api_url", "licence", "layers_seen",
-               "surveyed_on", "notes"]
+PORTAL_COLS = ["jurisdiction", "portal_url", "platform", "reach", "reach_label", "api_url",
+               "licence", "layers_seen", "surveyed_on", "notes"]
 
 FEASIBILITY = {
     "import": "Import",
@@ -46,6 +46,8 @@ WORK_STATUSES = ["Completed", "Ongoing", "Planned", "Parked"]
 PLATFORMS = ["arcgis-hub", "arcgis-rest", "ckan", "socrata", "opendatasoft", "custom",
              "none-found"]
 TIERS = ["upper", "single", "lower"]
+# How good the data is likely to be, judged only by how it is published. Licence plays no part.
+REACH = {4: "own", 3: "catalogued", 2: "on-server", 1: "viewer", 0: "none"}
 
 
 def read_csv(path: Path) -> list[dict]:
@@ -199,6 +201,15 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
         for k in ("portal_url", "api_url"):
             if p[k] and not p[k].startswith("http"):
                 errors.append(f"{where}: {k} is not a URL")
+        grade = int(p["reach"]) if p["reach"].isdigit() else None
+        if grade not in REACH or p["reach_label"] != REACH[grade]:
+            errors.append(f"{where}: reach {p['reach']!r} {p['reach_label']!r} is not one of {REACH}")
+        elif (grade <= 1) != (p["platform"] == "none-found"):
+            errors.append(f"{where}: reach {grade} with platform {p['platform']}")
+        elif grade == 2 and p["platform"] != "arcgis-rest":
+            errors.append(f"{where}: reach 2 is a map server, not {p['platform']}")
+        elif grade >= 3 and p["platform"] == "arcgis-rest":
+            errors.append(f"{where}: an uncatalogued map server is reach 2, not {grade}")
         if p["platform"] == "none-found":
             if any(p[k] for k in ("portal_url", "api_url", "licence", "layers_seen")):
                 errors.append(f"{where}: none-found with a portal, API, licence or count")

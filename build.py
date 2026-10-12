@@ -10,8 +10,8 @@ Writes  wiki/Canada_Open_data.wiki               the OSM wiki page
 from collections import Counter, defaultdict
 from datetime import date
 
-from common import (FEASIBILITY, HERE, PLATFORMS, STATUSES, THEMES, jurisdiction, latest,
-                    load, measure_text, tool_pairs)
+from common import (FEASIBILITY, HERE, PLATFORMS, REACH, STATUSES, THEMES, jurisdiction,
+                    latest, load, measure_text, tool_pairs)
 
 WIKI = HERE / "wiki"
 REPORT = HERE / "report"
@@ -286,16 +286,16 @@ def coverage(sources, juris, portals) -> str:
     in_counted = sum(catalogued[j] for j in {p["jurisdiction"] for p in live if p["layers_seen"]})
 
     shared = lambda p: "shared portal of" in p["notes"]
+    # each municipality at the best reach any of its rows has
+    best = {c: max(int(p["reach"]) for p in ps) for c, ps in by_j.items()}
+    grades = sorted(REACH, reverse=True)
     tiers = [("upper", "upper-tier"), ("single", "single-tier"), ("lower", "lower-tier")]
     t_rows = []
     for tier, label in tiers:
         codes = [c for c, j in juris.items() if j["tier"] == tier]
-        own = [c for c in codes if any(p in live and not shared(p) for p in by_j[c])]
-        via = [c for c in codes if c not in own and any(p in live for p in by_j[c])]
-        none = [c for c in codes if by_j[c] and c not in own and c not in via]
-        t_rows.append([label, len(codes), len(own), len(via), len(none),
-                       len(codes) - len(own) - len(via) - len(none)])
-    t_rows.append(["**all**"] + [sum(r[i] for r in t_rows) for i in range(1, 6)])
+        n = Counter(best[c] for c in codes if c in best)
+        t_rows.append([label, len(codes)] + [n[g] for g in grades] + [len(codes) - n.total()])
+    t_rows.append(["**all**"] + [sum(r[i] for r in t_rows) for i in range(1, len(grades) + 3)])
 
     p_rows = []
     for plat in PLATFORMS[:-1]:
@@ -323,8 +323,13 @@ for each municipality that has none. {len(set(p["portal_url"] for p in live))} p
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
-{md_table(["municipalities", "total", "own portal", "only on a shared one", "none found",
-           "not surveyed"], t_rows)}
+Each municipality at its best *reach*: how good its data is likely to be, judged only by how it
+is published (licence plays no part). 4 its own open-data catalogue; 3 its own datasets in a
+county or consortium catalogue; 2 queryable layers on a public map server, its own or the
+county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
+
+{md_table(["municipalities", "total"] + [f"{g} {REACH[g]}" for g in grades] + ["not surveyed"],
+          t_rows)}
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.
