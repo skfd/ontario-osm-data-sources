@@ -1,0 +1,69 @@
+==== Ontario ====
+OpenStreetMap includes data from the [https://data.ontario.ca/ Government Of Ontario.]  Data is provided by the Goverment Of Ontario and is licensed under [https://www.ontario.ca/page/open-government-licence-ontario Open Government Licence – Ontario.]
+
+OpenStreetMap includes data from [https://www.metrolinx.com/en/about-us/open-data Ontario – Metrolinx].  Data is provided by Metrolinx and is licensed under [https://assets.metrolinx.com/image/upload/v1663237565/Documents/Metrolinx/Open-Government-Licence-Ontario-Metrolinx.pdf Open Government Licence – Ontario – Metrolinx].
+
+Metrolinx is an agency of the Government of Ontario to deliver mobility solutions for the Greater Toronto and Hamilton Area (GTHA). Metrolinx uses OSM data to populate the addresses in the trip planner system (triplinx). To improve the precision of address ranges information in OSM, Metrolinx design and develop an import strategy to feed missing information from StatCan 92-500-G. The information is provided under Open Data license.
+
+===== Barrie =====
+OpenStreetMap data may include data provided by the City of Barrie under the [https://www.barrie.ca/Online%20Services/PublishingImages/OpenData_Images/COB_DataLicense.pdf Open Government Licence – Barrie].
+
+===== Cambridge =====
+Contains information licensed under the [https://www.cambridge.ca/en/your-city/resources/Open-Data-Licence-Version-2.pdf Open Government Licence – City of Cambridge].
+
+===== Cornwall =====
+OpenStreetMap data may include data provided by the [https://www.cornwall.ca/ City of Cornwall] under the [https://www.cornwall.ca/en/play-here/resources/Maps/City-of-Cornwall-Open-Government-Licence.pdf City of Cornwall Open Government Licence 1.0].
+
+===== Dufferin County =====
+OpenStreetMap data may include data provided by the County of Dufferin under the [https://www.dufferincounty.ca/wp-content/uploads/2024/03/Dufferin-Open-Government-License.pdf Open Government Licence – The County of Dufferin].
+
+===== Greater Sudbury =====
+OpenStreetMap data may include data provided by the City of Greater Sudbury under the [https://www.greatersudbury.ca/city-hall/open-government/open-data/licence/ Open Data Licence – City of Greater Sudbury].
+
+===== Guelph =====
+OpenStreetMap data may include data provided by the City of Guelph under the [https://explore.guelph.ca/pages/open-data-license Open Government Licence – City of Guelph].
+
+===== Haldimand County =====
+OpenStreetMap data may include data provided by Haldimand County under the [https://opendata-haldimand.hub.arcgis.com/#open-government-licence-haldimand-county Open Government Licence – Haldimand County].
+
+===== Hamilton =====
+Contains public sector Data made available under the [https://www.hamilton.ca/city-council/data-maps/open-data/open-data-licence-terms-and-conditions City of Hamilton’s Open Data Licence]
+
+===== Huron County =====
+OpenStreetMap data may include data provided by the County of Huron under the [https://www.arcgis.com/home/item.html?id=55ae362c840344cdb3422d496db10d64 Open Government Licence – The County of Huron].
+
+===== Kingston =====
+Contains information licensed under the [https://www.cityofkingston.ca/media/wtpgpkb0/gis_license_opendata.pdf Open Data Licence - City of Kingston].
+
+===== Kitchener =====
+Contains information licensed under the [https://www.kitchener.ca/en/council-and-city-administration/open-data-licence.aspx Open Government Licence - The Corporation of the City of Kitchener]. [[Waterloo_region/Kitchener_authorization|Explicit authorization]] has been granted to use their data in OpenStreetMap.
+
+===== Niagara Region =====
+OpenStreetMap data may include data provided by the Niagara Region under the [https://niagaraopendata.ca/pages/open-government-license-2-0-niagara-region Open Government License 2.0 – Niagara Region].
+
+===== Oakville =====
+OpenStreetMap data may include data provided by the Town of Oakville under the [https://www.oakville.ca/getmedia/3cb7902a-2220-433e-8aed-24f326b745b9/town-hall-oakville-open-data-licence.pdf Open Government Licence — Town of Oakville].
+
+===== Ottawa =====
+OpenStreetMap data may include data from the [https://open.ottawa.ca/ City of Ottawa]. [https://ottawa.ca/en/city-hall/get-know-your-city/open-data#open-data-licence-version-2-0 Contains information licensed under the Open Government Licence – City of Ottawa.]
+
+===== Quinte West =====
+OpenStreetMap data may include data provided by the City of Quinte West under the [https://quintewest.maps.arcgis.com/sharing/rest/content/items/2d74bbcab91441209f5669908ec31ad6/data City of Quinte West Open Data Licence 1.0].
+
+===== Thunder Bay =====
+OpenStreetMap data may include data provided by the City of Thunder Bay under the [https://www.thunderbay.ca/en/city-hall/open-data-licence.aspx The Corporation of the City of Thunder Bay Open Data Licence 1.0].
+
+===== Toronto =====
+OpenStreetMap data includes data provided by the [https://open.toronto.ca City of Toronto] under the [https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-licence/ Open Government Licence – Toronto].
+
+===== Waterloo (City) =====
+Contains information provided by the [https://data.waterloo.ca/pages/open-data-licence City of Waterloo under licence].
+
+===== Waterloo Region =====
+Contains information provided by the [https://www.regionofwaterloo.ca/en/regional-government/open-data.aspx#Open-Data-Licence Regional Municipality of Waterloo under licence].
+
+===== Windsor =====
+OpenStreetMap data may include data provided by the City of Windsor under the [https://opendata.citywindsor.ca/Documents/OpenDataTermsofUse.pdf Open Government Licence – The Corporation of the City of Windsor].
+
+===== York Region =====
+OpenStreetMap data may include data provided by York Region under the [https://insights-york.opendata.arcgis.com/documents/york-region-open-data-licence York Region Open Data Licence].
