@@ -7,8 +7,9 @@ ca/on/guelph/community-gardens-polygons,2026-10-09,missing,22,40,,audit,22 of 40
 ca/on/guelph/community-gardens,2026-10-09,missing,25,43,,audit,25 of 43 in-use food gardens have nothing within 50 m
 ca/on/guelph/stormwater-management-pond,2026-10-09,missing,33,93,,audit,33 of 93 basins absent; about 50 more tagged as bare water
 ca/on/guelph/aed-locations,2026-10-09,observation,,,,audit,1 AED in OSM; all 91 City sites unmapped
-ca/on/guelph/addresses-2025-import,2026-09-12,observation,,,,audit,"Imported 2025-10-23; 42,718 tagged addresses in OSM"
-ca/on/guelph/addresses-continuous-gap-fill,2026-08-28,missing,927,40684,,audit,"927 of 40,684 civic addresses missing (2026-08-28); 4,367 added by 2026-10-07"
+ca/on/guelph/addresses/2025-import,2026-09-12,observation,,,,audit,"Imported 2025-10-23; 42,718 tagged addresses in OSM"
+ca/on/guelph/addresses/gap-fill,2026-10-07,added,4367,,addresses,audit,"4,367 added"
+ca/on/guelph/addresses,2026-08-28,missing,927,40684,addresses,audit,"927 of 40,684 civic addresses missing"
 ca/on/guelph/buildings,2026-10-09,observation,,,,audit,"1,354 City buildings with no OSM building on them, 511 more under 30 m²"
 ca/on/guelph/streetcentrelines,2026-10-09,observation,,,,audit,Every active segment has an OSM road; about 16 City names absent
 ca/on/guelph/truck-routes-field-on-streetcentrelines,2026-10-09,missing,81.1,91.6,,audit,0 hgv=designated; 81.1 of 91.6 km carry no hgv tag

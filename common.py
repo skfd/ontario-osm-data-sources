@@ -13,11 +13,13 @@ SOURCES = CATALOGUE / "sources.csv"
 SYNCED = CATALOGUE / "synced" / "addresses.csv"
 MEASURES = CATALOGUE / "measures.csv"
 JURISDICTIONS = CATALOGUE / "jurisdictions.csv"
+WORK = CATALOGUE / "work.csv"
 
 SOURCE_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tier",
                "feasibility", "status", "tools", "lead", "last_verified", "notes"]
 SYNCED_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tracker_tier",
                "lwg", "lwg_url", "feasibility", "status", "tools", "last_verified", "notes"]
+WORK_COLS = ["id", "source_id", "kind", "status", "lead", "started", "ended", "tools", "notes"]
 MEASURE_COLS = ["source_id", "measured_on", "measure", "value", "of", "unit", "method", "text"]
 
 FEASIBILITY = {
@@ -34,7 +36,9 @@ THEMES = [
     "education", "community", "poi", "heritage", "boundaries", "planning", "elections",
     "waste", "environment", "topography", "imagery", "catalogue",
 ]
-MEASURES_VOCAB = ["missing", "matched", "observation", "note"]
+MEASURES_VOCAB = ["missing", "matched", "added", "observation", "note"]
+WORK_KINDS = ["import", "gap-fill", "maintenance", "conflation", "task-queue", "survey"]
+WORK_STATUSES = ["Completed", "Ongoing", "Planned", "Parked"]
 
 
 def read_csv(path: Path) -> list[dict]:
@@ -74,7 +78,8 @@ def tool_pairs(tools: str) -> list[tuple[str, str]]:
 
 def load() -> tuple[list[dict], list[dict], dict[str, dict]]:
     """(sources, measures, jurisdictions), validated. A hand row whose id is a synced row adds
-    to it: its non-empty cells win, and its tools follow the synced ones."""
+    to it: its non-empty cells win, and its tools follow the synced ones. Each source carries
+    its streams of work as r["work"]."""
     synced = read_csv(SYNCED)
     hand = read_csv(SOURCES)
     measures = read_csv(MEASURES)
@@ -123,10 +128,36 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict]]:
                 errors.append(f"{where}: pipe in {k}")
 
     ids = {r["id"] for r in sources}
+    for r in sources:
+        r["work"] = []
+    by_src = {r["id"]: r for r in sources}
+    work_ids = set()
+    for n, w in enumerate(read_csv(WORK), start=2):
+        where = f"work.csv:{n} {w['id']}"
+        if w["id"] in work_ids or w["id"] in ids:
+            errors.append(f"{where}: duplicate id")
+        work_ids.add(w["id"])
+        if w["source_id"] not in by_src:
+            errors.append(f"{where}: no such source {w['source_id']!r}")
+            continue
+        if not w["id"].startswith(w["source_id"] + "/") or w["id"].count("/") != w["source_id"].count("/") + 1:
+            errors.append(f"{where}: id must be <source_id>/<slug>")
+        if w["kind"] not in WORK_KINDS:
+            errors.append(f"{where}: kind {w['kind']!r}")
+        if w["status"] not in WORK_STATUSES:
+            errors.append(f"{where}: status {w['status']!r}")
+        for k in ("started", "ended"):
+            if w[k] and not is_date(w[k]):
+                errors.append(f"{where}: {k} {w[k]!r}")
+        for label, url in tool_pairs(w["tools"]):
+            if not url.startswith("http"):
+                errors.append(f"{where}: tool {label!r} has no URL")
+        by_src[w["source_id"]]["work"].append(w)
+    ids |= work_ids
     for n, m in enumerate(measures, start=2):
         where = f"measures.csv:{n} {m['source_id']}"
         if m["source_id"] not in ids:
-            errors.append(f"{where}: no such source")
+            errors.append(f"{where}: no such source or work")
         if not is_date(m["measured_on"]):
             errors.append(f"{where}: measured_on {m['measured_on']!r}")
         if m["measure"] not in MEASURES_VOCAB:

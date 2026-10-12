@@ -25,6 +25,7 @@ All of it is in [`catalogue/`](catalogue/); the format is in
 
 - `sources.csv`: hand-curated sources, one row each, with a stable id like
   `ca/on/guelph/hydrants`
+- `work.csv`: streams of work on a source (an import, a gap-fill, a MapRoulette queue)
 - `synced/addresses.csv`: the address datasets the tracker follows, written by `sync.py`
 - `measures.csv`: dated measurements, append only
 - `jurisdictions.csv`: the places an id can sit under
