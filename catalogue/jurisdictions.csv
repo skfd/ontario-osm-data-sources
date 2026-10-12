@@ -15,9 +15,9 @@ ca/on/amherstburg,Amherstburg,municipal,lower
 ca/on/armour,Armour,municipal,single
 ca/on/armstrong,Armstrong,municipal,single
 ca/on/arnprior,Arnprior,municipal,lower
-ca/on/arranelderslie,Arran–Elderslie,municipal,lower
-ca/on/ashfieldcolbornewawanosh,Ashfield–Colborne–Wawanosh,municipal,lower
-ca/on/asphodelnorwood,Asphodel–Norwood,municipal,lower
+ca/on/arran-elderslie,Arran–Elderslie,municipal,lower
+ca/on/ashfield-colborne-wawanosh,Ashfield–Colborne–Wawanosh,municipal,lower
+ca/on/asphodel-norwood,Asphodel–Norwood,municipal,lower
 ca/on/assiginack,Assiginack,municipal,single
 ca/on/athens,Athens,municipal,lower
 ca/on/atikokan,Atikokan,municipal,single
@@ -246,7 +246,7 @@ ca/on/mcmurrich-monteith,McMurrich/Monteith,municipal,single
 ca/on/mcnab-braeside,McNab/Braeside,municipal,lower
 ca/on/meaford,Meaford,municipal,lower
 ca/on/melancthon,Melancthon,municipal,lower
-ca/on/merrickvillewolford,Merrickville–Wolford,municipal,lower
+ca/on/merrickville-wolford,Merrickville–Wolford,municipal,lower
 ca/on/middlesex,Middlesex,municipal,upper
 ca/on/middlesex-centre,Middlesex Centre,municipal,lower
 ca/on/midland,Midland,municipal,lower
@@ -300,7 +300,7 @@ ca/on/orangeville,Orangeville,municipal,lower
 ca/on/orillia,Orillia,municipal,single
 ca/on/oro-medonte,Oro-Medonte,municipal,lower
 ca/on/oshawa,Oshawa,municipal,lower
-ca/on/otonabeesouth-monaghan,Otonabee–South Monaghan,municipal,lower
+ca/on/otonabee-south-monaghan,Otonabee–South Monaghan,municipal,lower
 ca/on/ottawa,Ottawa,municipal,single
 ca/on/owen-sound,Owen Sound,municipal,lower
 ca/on/oxford,Oxford,municipal,upper
@@ -323,7 +323,7 @@ ca/on/petrolia,Petrolia,municipal,lower
 ca/on/pickering,Pickering,municipal,lower
 ca/on/pickle-lake,Pickle Lake,municipal,single
 ca/on/plummer-additional,Plummer Additional,municipal,single
-ca/on/plymptonwyoming,Plympton–Wyoming,municipal,lower
+ca/on/plympton-wyoming,Plympton–Wyoming,municipal,lower
 ca/on/point-edward,Point Edward,municipal,lower
 ca/on/port-colborne,Port Colborne,municipal,lower
 ca/on/port-hope,Port Hope,municipal,lower

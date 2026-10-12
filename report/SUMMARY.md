@@ -131,23 +131,114 @@ tracked over time:
 ## Coverage of the catalogue
 
 `catalogue/portals.csv` lists every open-data portal found in Ontario and a `none-found` row
-for each municipality that has none. 2 portals are known,
-2 of them counted through their API: **3208 layers seen, against 6
+for each municipality that has none. 90 portals are known,
+85 of them counted through their API: **14889 layers seen, against 138
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
-| municipalities | total | with a portal | none found | not surveyed |
-|---|---|---|---|---|
-| upper-tier | 30 | 0 | 0 | 30 |
-| single-tier | 173 | 0 | 0 | 173 |
-| lower-tier | 241 | 0 | 0 | 241 |
-| **all** | 444 | 0 | 0 | 444 |
+| municipalities | total | own portal | only on a shared one | none found | not surveyed |
+|---|---|---|---|---|---|
+| upper-tier | 30 | 27 | 0 | 3 | 0 |
+| single-tier | 173 | 24 | 8 | 141 | 0 |
+| lower-tier | 241 | 29 | 52 | 160 | 0 |
+| **all** | 444 | 80 | 60 | 304 | 0 |
+
+An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
+higher than a Hub's count of curated datasets.
 
 | platform | portals | layers seen |
 |---|---|---|
-| arcgis-hub | 1 | 244 |
-| ckan | 1 | 2964 |
+| arcgis-hub | 69 | 5783 |
+| arcgis-rest | 17 | 5053 |
+| ckan | 3 | 4053 |
+| custom | 1 | — |
+
+Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
+100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
+worked from the server behind its Hub). The 60 municipalities found only on a county or
+consortium portal are in `portals.csv`.
 
 | jurisdiction | platform | layers seen | sources catalogued | share |
 |---|---|---|---|---|
 | Ontario | arcgis-hub, ckan | 3208 | 6 | 0.2% |
+| Simcoe | arcgis-rest | 1348 | 1 | 0.1% |
+| Haliburton | arcgis-rest | 1042 |  |  |
+| Renfrew | arcgis-rest | 598 | 1 | 0.2% |
+| Niagara | arcgis-hub, ckan | 578 | 1 | 0.2% |
+| Toronto | ckan | 555 | 7 | 1.3% |
+| Brampton | arcgis-hub | 352 | 1 | 0.3% |
+| Peterborough | arcgis-rest | 346 | 1 | 0.3% |
+| Hamilton | arcgis-hub | 334 | 1 | 0.3% |
+| York | arcgis-hub | 326 | 1 | 0.3% |
+| Markham | arcgis-hub | 321 |  |  |
+| Oshawa | arcgis-hub | 314 |  |  |
+| Stormont, Dundas and Glengarry | arcgis-rest | 311 | 1 | 0.3% |
+| Vaughan | arcgis-rest | 311 |  |  |
+| Elgin | arcgis-hub, arcgis-rest | 305 | 1 | 0.3% |
+| Ottawa | arcgis-hub | 303 | 1 | 0.3% |
+| Niagara Falls | arcgis-hub | 301 |  |  |
+| Mississauga | arcgis-hub | 268 |  |  |
+| Pickering | arcgis-hub | 268 |  |  |
+| Durham | arcgis-hub | 229 | 1 | 0.4% |
+| Kingston | arcgis-hub | 201 | 1 | 0.5% |
+| Northumberland | arcgis-rest | 179 |  |  |
+| Windsor | arcgis-hub | 177 | 1 | 0.6% |
+| Oakville | arcgis-hub | 157 | 1 | 0.6% |
+| Amherstburg | arcgis-hub, arcgis-rest | 153 | 1 | 0.7% |
+| Kitchener | arcgis-hub | 151 | 1 | 0.7% |
+| Quinte West | arcgis-rest | 135 | 1 | 0.7% |
+| London | arcgis-hub | 131 | 1 | 0.8% |
+| Waterloo | arcgis-hub | 116 | 1 | 0.9% |
+| Barrie | arcgis-hub | 113 | 1 | 0.9% |
+| Region of Waterloo | arcgis-hub | 110 |  |  |
+| Burlington | arcgis-hub | 99 | 1 | 1.0% |
+| City of Peterborough | arcgis-hub | 94 |  |  |
+| Peel | arcgis-hub | 88 | 1 | 1.1% |
+| Thunder Bay | arcgis-hub | 85 | 1 | 1.2% |
+| Perth | arcgis-rest | 81 | 1 | 1.2% |
+| Sault Ste. Marie | arcgis-rest | 74 |  |  |
+| Wellington | arcgis-rest | 74 | 1 | 1.4% |
+| Brockville | arcgis-rest | 67 |  |  |
+| Grey | arcgis-hub | 62 |  |  |
+| Dufferin | arcgis-hub | 51 | 1 | 2.0% |
+| Greater Sudbury | arcgis-hub | 50 | 1 | 2.0% |
+| Lennox and Addington | arcgis-hub | 47 | 1 | 2.1% |
+| Stratford | arcgis-rest | 47 | 1 | 2.1% |
+| Cambridge | arcgis-hub | 46 | 1 | 2.2% |
+| Cornwall | arcgis-hub | 46 | 1 | 2.2% |
+| Essex | arcgis-hub | 44 |  |  |
+| Belleville | arcgis-hub | 43 |  |  |
+| Guelph | arcgis-hub | 41 | 74 | 180.5% |
+| Frontenac | arcgis-hub | 36 | 1 | 2.8% |
+| Huron | arcgis-hub | 36 | 1 | 2.8% |
+| Welland | arcgis-hub | 32 |  |  |
+| Muskoka | arcgis-hub | 28 | 1 | 3.6% |
+| Ajax | arcgis-hub | 25 |  |  |
+| Milton | arcgis-hub | 25 | 1 | 4.0% |
+| Norfolk | arcgis-hub | 25 | 1 | 4.0% |
+| Woolwich | arcgis-hub | 23 |  |  |
+| Oxford | arcgis-hub | 21 |  |  |
+| Newmarket | arcgis-hub | 20 |  |  |
+| Brant | arcgis-hub | 19 | 1 | 5.3% |
+| Whitby | arcgis-hub | 19 |  |  |
+| Orangeville | arcgis-hub | 18 |  |  |
+| Brantford | arcgis-hub | 17 | 1 | 5.9% |
+| West Parry Sound | arcgis-hub | 17 | 1 | 5.9% |
+| Kawartha Lakes | arcgis-hub | 16 | 1 | 6.2% |
+| Sarnia | arcgis-hub | 14 | 1 | 7.1% |
+| Cobourg | arcgis-hub | 13 | 1 | 7.7% |
+| Leeds and Grenville | arcgis-hub | 13 | 1 | 7.7% |
+| St. Catharines | arcgis-hub | 12 |  |  |
+| Chatham-Kent | arcgis-hub | 11 | 1 | 9.1% |
+| Haldimand | arcgis-hub | 10 | 1 | 10.0% |
+| Hastings | arcgis-hub | 9 | 1 | 11.1% |
+| Prince Edward County | arcgis-hub | 8 | 1 | 12.5% |
+| Bruce | arcgis-hub | 7 | 1 | 14.3% |
+| Halton Hills | arcgis-rest | 7 | 1 | 14.3% |
+| Huntsville | arcgis-hub | 6 |  |  |
+| Mississippi Mills | arcgis-hub | 6 |  |  |
+| Caledon | arcgis-hub | 5 |  |  |
+| Port Hope | arcgis-hub | 5 |  |  |
+| Lambton | arcgis-hub | 3 | 1 | 33.3% |
+| Middlesex | arcgis-hub | 3 | 1 | 33.3% |
+| Erin | custom | — |  |  |

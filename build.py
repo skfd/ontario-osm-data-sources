@@ -285,30 +285,35 @@ def coverage(sources, juris, portals) -> str:
     seen = sum(counted.values())
     in_counted = sum(catalogued[j] for j in {p["jurisdiction"] for p in live if p["layers_seen"]})
 
+    shared = lambda p: "shared portal of" in p["notes"]
     tiers = [("upper", "upper-tier"), ("single", "single-tier"), ("lower", "lower-tier")]
     t_rows = []
     for tier, label in tiers:
         codes = [c for c, j in juris.items() if j["tier"] == tier]
-        has = [c for c in codes if any(p["platform"] != "none-found" for p in by_j[c])]
-        none = [c for c in codes if by_j[c] and c not in has]
-        t_rows.append([label, len(codes), len(has), len(none), len(codes) - len(has) - len(none)])
-    t_rows.append(["**all**"] + [sum(r[i] for r in t_rows) for i in range(1, 5)])
+        own = [c for c in codes if any(p in live and not shared(p) for p in by_j[c])]
+        via = [c for c in codes if c not in own and any(p in live for p in by_j[c])]
+        none = [c for c in codes if by_j[c] and c not in own and c not in via]
+        t_rows.append([label, len(codes), len(own), len(via), len(none),
+                       len(codes) - len(own) - len(via) - len(none)])
+    t_rows.append(["**all**"] + [sum(r[i] for r in t_rows) for i in range(1, 6)])
 
     p_rows = []
     for plat in PLATFORMS[:-1]:
         urls = {p["portal_url"] for p in live if p["platform"] == plat}
         if urls:
-            p_rows.append([plat, len(urls), sum(counted.get(u, 0) for u in urls)])
+            n = [counted[u] for u in urls if u in counted]
+            p_rows.append([plat, len(urls), sum(n) if n else "—"])
 
     j_rows = []
-    for code in sorted({p["jurisdiction"] for p in live}, key=lambda c: juris[c]["name"]):
-        ps = [p for p in by_j[code] if p["platform"] != "none-found"]
-        n = sum(int(p["layers_seen"]) for p in ps if p["layers_seen"])
-        shared = all(not p["layers_seen"] for p in ps)
+    owners = {p["jurisdiction"] for p in live if not shared(p)}
+    for code in owners:
+        ps = [p for p in by_j[code] if p in live and not shared(p)]
+        n = [int(p["layers_seen"]) for p in ps if p["layers_seen"]]
         j_rows.append([juris[code]["name"], ", ".join(sorted({p["platform"] for p in ps})),
-                       "—" if shared else n, catalogued[code] or "",
-                       f"{catalogued[code] / n:.1%}" if n and catalogued[code] else ""])
+                       sum(n) if n else "—", catalogued[code] or "",
+                       f"{catalogued[code] / sum(n):.1%}" if n and catalogued[code] else ""])
     j_rows.sort(key=lambda r: (-(r[2] if r[2] != "—" else -1), r[0]))
+    via_only = len({p["jurisdiction"] for p in live} - owners)
 
     return f"""## Coverage of the catalogue
 
@@ -318,9 +323,18 @@ for each municipality that has none. {len(set(p["portal_url"] for p in live))} p
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
-{md_table(["municipalities", "total", "with a portal", "none found", "not surveyed"], t_rows)}
+{md_table(["municipalities", "total", "own portal", "only on a shared one", "none found",
+           "not surveyed"], t_rows)}
+
+An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
+higher than a Hub's count of curated datasets.
 
 {md_table(["platform", "portals", "layers seen"], p_rows)}
+
+Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
+100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
+worked from the server behind its Hub). The {via_only} municipalities found only on a county or
+consortium portal are in `portals.csv`.
 
 {md_table(["jurisdiction", "platform", "layers seen", "sources catalogued", "share"], j_rows)}
 """

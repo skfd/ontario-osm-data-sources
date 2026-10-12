@@ -132,6 +132,13 @@ taken the same way.
 | `arcgis-rest` | the services root, ending `/rest/services` | layers in every service, folders walked one level |
 | `custom` | blank, or its JSON API | blank unless an API gives a count |
 
+A Hub site with no `dataset` collection uses `collections/all` (or its own datasets
+collection). A Hub that shows other organisations' items too (the four Waterloo-region hubs
+share one catalogue) adds `?orgid=<its org>`, so each item is counted once. An ArcGIS
+Enterprise Sites page has no Hub API; its `api_url` is the portal's `sharing/rest/search` over
+the site's group, and the count is `total`. An `arcgis-rest` count includes the layers behind
+map viewers, so it runs higher than a Hub's count of curated datasets: compare within a platform.
+
 ## `jurisdictions.csv`
 
     code,name,level,tier
