@@ -58,8 +58,6 @@ STATUS_STYLE = {
 
 # Where the licence holder on the OSMF page is not the dataset's provider.
 OSMF_NAME = {
-    "niagara-falls": "Niagara Region",
-    "durham": "Oshawa",
     "york": "York Region",
     "peel-region": "Peel",
     "toronto": "Toronto",
@@ -273,6 +271,8 @@ def address_rows(approvals, checks: list[str]) -> list[dict]:
             licence_note = f"licence matched via {OSMF_NAME[slug]}; confirm it covers this dataset"
         elif tier.startswith("green"):
             licence_note = "licence unverified (not on OSMF list)"
+        elif tier == "yellow-review":
+            licence_note = "custom licence: needs LWG review"
         else:
             licence_note = "no licence review yet"
 
