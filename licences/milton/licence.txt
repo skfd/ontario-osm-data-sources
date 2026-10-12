@@ -1,0 +1,101 @@
+Source: https://discover-milton.hub.arcgis.com/pages/disclaimer-and-terms-of-use
+Text read from the hub page's content item: https://www.arcgis.com/sharing/rest/content/items/66bc793c2cfa4b03874beed76f12080d/data?f=json (Hub Page "Disclaimer and Terms of Use", org FAgEZRLybpkpIX4O; item modified 2020-11-04). Fetched 2026-10-11.
+Bound to the open-data Address Points item 7b543a0d714a4930a90e771db838594b (url api.milton.ca/arcgis/rest/services/Datasets/Address_Pts/MapServer) via its licenseInfo.
+Note: the whole page is reproduced; the licence proper starts at the heading "Open Government Licence – Milton". Clauses 1-2 were an HTML ordered list and render as "- " bullets.
+
+
+Discover Milton Open Data – Disclaimer and Terms of Use
+
+Disclaimer
+
+The information contained in this website has been provided as a public service by the Town of Milton. Although every effort is made to ensure data is complete, accurate and reliable the Town of Milton cannot guarantee all information’s completeness, accuracy, reliability, suitability or availability. Therefore any reliance you place on such information is at your own risk.
+
+Unless otherwise specified, all material on the Discover Milton Open Data webpage is made available under the Open Government Licence – Milton. 
+
+Copyright
+
+The Town of Milton is the owner of copyright in all information found on the Discover Milton GeoHub unless otherwise stated.
+
+Open Government Licence – Milton
+
+The use of Discover Milton Open GeoHub is subject to the following Terms and Conditions and constitutes the user’s agreement to those terms and conditions. You are encouraged to use the Information that is available under this licence with only a few conditions.
+
+Using Information under this licence
+
+- Use of any Information indicates your acceptance of the terms below.
+
+- The Information Provider grants you a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information, including for commercial purposes, subject to the terms below.
+
+You are free to:
+
+3. Copy, modify, publish, translate, adapt, distribute or otherwise use the Information in any medium, mode or format for any lawful purpose.
+
+You must, where you do any of the above:
+
+4. Acknowledge the source of the Information by including any attribution statement specified by the Information Provider(s) and, where possible, provide a link to this licence. If the information provider does not provide a specific attribution statement, or if you are using Information from several Information Providers and multiple attributions are not practical for your product or application, you must use the following attribution statement:
+
+Contains information licensed under the Open Government Licence – Milton.
+
+5. The terms of this licence are important, and if you fail to comply with any of them, the rights granted to you under this licence, or any similar licence granted by the Information Provider, will end automatically.
+
+Exemptions
+
+6. This licence does not permit any right to use:
+
+a. Personal Information;
+
+b. third party information the Information Provider is not authorized to disclose according to Section 10(1) of the Municipal Freedom of Information and Protection of Privacy Act (MFIPPA), R.S.O. 1990, c.M.56;
+
+c. the names, crests, logos, or other official symbols of the Information Provider; and
+
+d. Information subject to other intellectual property rights, including patents, trade-marks and official marks.
+
+Non-endorsement
+
+7. This licence does not grant you any right to use the Information in a way that suggests any official status or that the Information Provider endorses you or your use of the Information.
+
+No Warranty
+
+8. The Information is licensed “as is”, and the Information Provider excludes all representations, warranties, obligations, and liabilities, whether express or implied, to the maximum extent permitted by law.
+
+9. The Information Provider is not liable for any errors or omissions in the Information, and will not under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use or otherwise arising in connection with this licence or the Information, even if specifically advised of the possibility of such loss, injury or damage.
+
+Governing Law
+
+10. This licence is governed by the laws of the province of Ontario and the applicable laws of Canada.
+
+11. Legal proceedings related to this licence may only be brought in the courts of Ontario.
+
+Definitions
+
+12. In this licence, the terms below have the following meanings:
+
+"Information"
+
+means information resources protected by copyright or other information that is offered for use under the terms of this licence.
+
+ "Information Provider"
+
+means Town of Milton.
+
+ “Personal Information”
+
+means “personal information” as defined in section 2 of the MFIPPA, R.S.O. 1990, c.M.56.
+
+"You"
+
+means the natural or legal person, or body of persons corporate or incorporate, acquiring rights under this licence.
+
+Versioning
+
+This is version 2.0 of the Open Government Licence – Milton. The Information Provider may make changes to the terms of this licence from time to time and issue a new version of the licence. Your use of the Information will be governed by the terms of the licence in force as of the date you accessed the information.
+
+Date Modified: 2020-11-03
+
+FAQ
+Disclaimer 
+Request Open Data
+
+Contact Us
+150 Mary St.
+Milton, Ontario

@@ -1,0 +1,79 @@
+Source (governing licence for the tracker's layer): Region of Durham - Open Data Licence v.1.0. Live HTML text at https://www.durham.ca/regional-government/access-to-information/open-data/ (reached from https://www.durham.ca/en/regional-government/open-data.aspx). The licence link on ArcGIS item 8dcfee4f8c904ef29248b2c82ef33175 ('Civic Addresses', owner GIS_DurhamRegion, url = https://maps.durham.ca/arcgis/rest/services/Open_Data/Durham_OpenData/MapServer/0) is https://www.durham.ca/en/regional-government/resources/Documents/OpenDataLicenceAgreement.pdf, which now returns 404; Wayback capture https://web.archive.org/web/20250914143117/https://www.durham.ca/en/regional-government/resources/Documents/OpenDataLicenceAgreement.pdf has the same wording as the live HTML (PDF digest unchanged 2020-10-21 .. 2026-04-16 in the Wayback CDX).
+Fetched: 2026-10-11 (text below is the live HTML page)
+
+Region of Durham - Open Data Licence v.1.0
+
+You are encouraged to use and re-use the information that is available under this licence, freely and flexibly, with only a few conditions.
+
+Using information under this licence
+
+Your use of information indicates your acceptance of the terms and conditions below.
+
+Durham Region grants you a worldwide, royalty-free, perpetual, non-exclusive licence to use the information subject to the conditions below.
+
+This licence does not affect any copyright exceptions or limitations available under the Copyright Act (Canada).
+
+You are free to:
+
+Copy, publish, distribute and transmit the information.
+
+Adapt the information.
+
+Use the information commercially, for example, by combining it with other information, or by including it in your own product or application.
+
+Provide credit to Durham Region when using information under this licence, but are not required to. If you choose to provide credit, please acknowledge the source of the information by including the following credit statement in a suitable location: "Contains public sector information made available under The Regional Municipality of Durham's Open Data Licence".
+
+You must, where you do any of the above:
+
+Upon the request of Durham Region, remove any Durham Region credit statement should Durham Region, in its sole discretion, decide that such credit is not in the public interest.
+
+Ensure that you do not use the information in a way that suggests any official status or that Durham Region endorses you or your use of the information.
+
+Ensure that you do not misrepresent the information or its source.
+
+Ensure that your use of the information complies with all applicable laws and is not harmful to others.
+
+These are important conditions of this licence, and if you fail to comply with them, the rights granted to you under this licence will end automatically.
+
+Exemptions
+
+This licence does not cover the use of:
+
+Personal information.
+
+Information or records that are not accessible pursuant to the Municipal Freedom of Information and Protection of Privacy Act (MFIPPA).
+
+Third-party rights that Durham Region is not authorized to licence, if any.
+
+Public sector organization logos, trademarks, slogans or crests.
+
+No warranty
+
+The information is licensed 'as is' and Durham Region excludes all representations, warranties, obligations and liabilities, whether express or implied, in relation to the information.
+
+Durham Region does not guarantee that the information will be available in any particular format, nor that the information will continue to be available.
+
+Durham Region is not liable for any errors or omissions in the information and will not, under any circumstances, be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use, even if specifically advised of the possibility of such loss, injury or damage.
+
+Governing law
+
+This licence is governed by the laws of the Province of Ontario.
+
+Definitions
+
+In this licence, the terms below have the following meanings:
+
+"Durham Region" means The Regional Municipality of Durham.
+
+"Information" means information protected by copyright that is made available under the terms of this licence through The Regional Municipality of Durham website.
+
+"Personal Information" has the meaning set out in the Municipal Freedom of Information and Protection of Privacy Act (MFIPPA).
+
+"Use" means doing any act that is restricted by copyright, whether in the original medium or in any other medium and includes without limitation distributing, copying, adapting, modifying as may be technically necessary to use it in a different mode or format.
+
+"You" or "Your" means the natural or legal person, or body of persons corporate or incorporate, as applicable, acquiring rights under this licence.
+
+About this licence
+
+The Region of Durham wishes to use this licence as a tool to enable the use and re-use of information under a common open licence. This is version 1.0 of the Open Data Licence for The Regional Municipality of Durham. The Regional Municipality of Durham may, from time to time, issue new versions of the Open Data Licence for Regional government information. You may continue to use information licensed under this version should you wish to do so. Notices of new versions of the Open Data Licence for The Regional Municipality of Durham will be posted at the Region's website.
+

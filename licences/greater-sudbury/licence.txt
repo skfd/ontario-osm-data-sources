@@ -1,0 +1,78 @@
+Source: https://www.greatersudbury.ca/city-hall/open-government/open-data/licence/ (HTML; licence body extracted from the page, page dated 'April 14, 2015'). The address item d3b94bd7d0a14b4b97b3757d1a383dd4 (owner Greater.Sudbury) links its licence as https://www.greatersudbury.ca/inside-city-hall/open-data/policy/ (redirects to .../city-hall/open-government/open-data/policy/), sibling page of the same section.
+Fetched: 2026-10-11
+
+City of Greater Sudbury Open Data Licence
+
+This licence is based on version 1.0 of the Open Government Licence – Ontario. This licence has been adapted for municipal use and jurisdiction. The only significant changes from the Ontario licence are the replacement of references to the Freedom of Information and Protection of Privacy Act (Ontario) with references to the Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A and the Municipal Freedom of Information and Protection of Privacy Act, R.S.O. 1990, c. M.56.
+
+You are encouraged to use the information that is available under this licence as described below.
+
+Using information under this licence
+
+Use of any information indicates your acceptance of the terms below.
+
+The Information Provider, the City of Greater Sudbury, grants you a worldwide, royalty-free, perpetual, non-exclusive licence to use the information provided for any purpose, including for commercial purposes, subject to the terms below.
+
+You are free to:
+
+Copy, modify, publish, translate, adapt, distribute or otherwise use the information in any medium, mode or format for any lawful purpose.
+
+You must, where you do any of the above:
+
+Acknowledge the source of the information by including any attribution statement specified by the City of Greater Sudbury and, where possible, provide a link to this licence.
+
+If the City does not provide a specific attribution statement, or if you are using information from other Information Providers as well as the City and multiple attributions are not practical for your product or application, you must use the following attribution statement:
+
+Contains information licensed under the Open Data Licence – City of Greater Sudbury.
+
+The terms of this licence are important, and if you fail to comply with any of them, the rights granted to you under this licence, or any similar licence granted by the City of Greater Sudbury, will end automatically.
+
+Exemptions
+
+This licence:
+
+Does not grant you any right to use Personal Information;
+
+Does not grant you any right to use information or records that are not accessible under the Municipal Freedom of Information and Protection of Privacy Act, R.S.O. 1990, c. M. 56, the Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A or any other act or by-law;
+
+Does not grant you any right to use third party rights the City of Greater Sudbury is not authorized to license;
+
+Does not grant you any right to use the names, crests, logos, or other official symbols of the City of Greater Sudbury; and
+
+Does not grant you any right to use information subject to other intellectual property rights, including patents, trade-marks and official marks.
+
+Non-endorsement
+
+This licence does not grant you any right to use the information in a way that suggests any official status or that the City of Greater Sudbury endorses you or your use of the information.
+
+No warranty
+
+The information is licensed "as is", and the City of Greater Sudbury excludes all representations, warranties, obligations, and liabilities, whether express or implied, to the maximum extent permitted by law.
+
+The City of Greater Sudbury is not liable for any errors or omissions in the information, and will not under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use or otherwise arising in connection with this licence or the information, even if specifically advised of the possibility of such loss, injury or damage.
+
+Governing Law
+
+This licence is governed by the laws of the Province of Ontario, the applicable laws of Canada and City of Greater Sudbury by-laws.
+
+Legal proceedings related to this licence may only be brought in the courts of Ontario.
+
+Definitions
+
+In this licence, the terms below have the following meanings:
+
+"Information" means information resources or Records protected by copyright or other information, resources or Records that are offered for use under the terms of this licence;
+
+"Personal Information" means “personal information” as defined in section 2 of the Municipal Freedom of Information and Protection of Privacy Act, R.S.O. 1990, c. M. 56 and includes “personal health information” as defined in section 4 of the Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A;
+
+"Records" means "record" as defined in section 2 of the Municipal Freedom of Information and Protection of Privacy Act, R.S.O. 1990, c. M. 56 and section 2 of the Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A;
+
+“Use” includes downloading; and
+
+"You" means the natural or legal person, or body of persons corporate or incorporate, as applicable, acquiring rights under this licence, and “Your” is the possessive tense of you.
+
+Versioning
+
+This is version 1.0 of the City of Greater Sudbury Open Data Licence. The City of Greater Sudbury may make changes to the terms of this licence from time to time and issue a new version of the licence. Your use of the information will be governed by the terms of the licence in force as of the date you accessed the information.
+
+Date: April 14, 2015

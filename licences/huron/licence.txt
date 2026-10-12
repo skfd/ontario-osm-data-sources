@@ -1,0 +1,59 @@
+Source: licenseInfo of ArcGIS item 55ae362c840344cdb3422d496db10d64 (Municipal_911_Address, owner Huron_County) — https://www.arcgis.com/home/item.html?id=55ae362c840344cdb3422d496db10d64 ; JSON: https://www.arcgis.com/sharing/rest/content/items/55ae362c840344cdb3422d496db10d64?f=json . Fetched 2026-10-11.
+The source is one unbroken HTML span; line breaks below were added only before clause numbers, lettered items, definitions and headings — no words changed.
+Title: Open Government Licence - The County of Huron (version 2.0, per clause 13)
+
+This licence is based on version 1.0 of the Open Government Licence – Ontario, which was developed through public consultation and a collaborative effort by the provincial and federal government. The only substantive changes in this licence are to replace direct references to the Province of Ontario with The County of Huron, the inclusion of a provision for the Ontario Personal Health Information Protection Act, 2004 and the referencing of Municipal Freedom of Information and Protection of Privacy Act instead of Freedom of Information and Protection of Privacy Act. Open Government Licence - The County of Huron You are encouraged to use the information that is available under this licence with only a few conditions. Using information under this licence means:
+
+1. Use of any information indicates your acceptance of the terms below.
+
+2. The information provider grants you a worldwide, royalty-free, perpetual, nonexclusive licence to use the information, including for commercial purposes, subject to the terms below.
+
+You are free to:
+
+3. Copy, modify, publish, translate, adapt, distribute or otherwise use the information in any medium, mode or format for any lawful purpose.
+
+You must, where you do any of the above:
+
+4. Acknowledge the source of the information by including any attribution statement specified by the information provider(s) and, where possible, provide a link to this licence. If the information provider does not provide a specific attribution statement, or if you are using information from several Information providers and multiple attributions are not practical for your product or application, you must use the following attribution statement: Contains information licensed under the Open Government Licence – The County of Huron.
+
+5. The terms of this licence are important, and if you fail to comply with any of them, the rights granted to you under this licence, or any similar licence granted by the information provider, will end automatically.
+
+Exemptions
+
+6. This licence does not grant you any right to use:
+a) Personal information;
+b) Information or records that are not accessible pursuant to the Municipal Freedom of Information and Protection of Privacy Act (Ontario) and the Personal Health Information Protection Act (Ontario);
+c) Third party rights the information provider is not authorized to license;
+d) The names, crests, logos, or other official symbols of the information provider; and
+e) Information subject to other intellectual property rights, including patents, trade-marks and official marks.
+
+Non-endorsement
+
+7. This licence does not grant you any right to use the information in a way that suggests any official status or that the information provider endorses you or your use of the information.
+
+No warranty
+
+8. The information is licensed "as is", and the information provider excludes all representations, warranties, obligations, and liabilities, whether express or implied, to the maximum extent permitted by law.
+
+9. The information provider is not liable for any errors or omissions in the information, and will not under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use or otherwise arising in connection with this licence or the information, even if specifically advised of the possibility of such loss, injury or damage.
+
+Governing Law
+
+10. This licence is governed by the laws of the Province of Ontario and the applicable laws of Canada.
+
+11. Legal proceedings related to this licence may only be brought in the courts of Ontario.
+
+Definitions
+
+12. In this licence, the terms below have the following meanings:
+"Information" means information resources or records protected by copyright or other information or records that are offered for use under the terms of this licence.
+"Information Provider" means The County of Huron.
+“Licence” means this County of Huron Open Government Licence.
+"Personal Information" has the meaning set out in section 2 of Municipal Freedom of Information and Protection of Privacy Act (Ontario).
+“Personal Health Information” has the meaning set out in section 4 of the Personal Health Information Protection Act 2004 (Ontario).
+"Records" has the meaning of "record" as set out in section 2 of the Municipal Freedom of Information and Protection of Privacy Act (Ontario) and section 2 of the Personal Health Information Protection Act 2004 (Ontario).
+"You" or “your” means the natural or legal person, or body of persons corporate or incorporate, as applicable, acquiring rights under this licence.
+
+Versioning
+
+13. This is version 2.0 of the Open Government Licence –The County of Huron. The information provider may make changes to the terms of this licence from time to time and issue a new version of the licence. Your use of the information will be governed by the terms of the licence in force as of the date you accessed the information.

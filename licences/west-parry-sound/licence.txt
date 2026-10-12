@@ -1,0 +1,99 @@
+Source: https://wpsgn.ca/OpenGovernmentLicense%E2%80%93TownshipofTheArchipelago.pdf
+(linked from re3data r3d100013016, West Parry Sound Geography Network). PDF metadata: Author Chris Mahon, Word 2010, created 2014-12-01. 3 pages. Fetched 2026-10-11; text extracted with pdftotext -layout.
+
+Open Government License - Township of The Archipelago
+
+The Open Government License - Township of The Archipelago is based on version 2.0 of the Open
+Government License - Canada, which was developed through public consultation and collaborative
+efforts by provincial and federal governments. The only substantive changes to the license are
+references to the province of jurisdiction and the name of the public body.
+
+Open Government License - Township of The Archipelago
+
+You are encouraged to use the Information that is available under this license with only a few
+conditions.
+
+Using Information under this license
+
+1. Use of any Information indicates your acceptance of the terms below.
+2. The Information Provider grants you a worldwide, royalty-free, perpetual, non-exclusive license to
+
+    use the Information, including for commercial purposes, subject to the terms below.
+You are free to:
+
+3. Copy, modify, publish, translate, adapt, distribute or otherwise use the Information in any medium,
+    mode or format for any lawful purpose.
+
+You must, where you do any of the above:
+
+4. Acknowledge the source of the Information by including any attribution statement specified by the
+    Information Provider and, where possible, provide a link to this license.
+    If the Information Provider does not provide a specific attribution statement, or if you are using
+    Information from several information providers and multiple attributions are not practical for your
+    product or application, you must use the following attribution statement:
+
+     Contains information licensed under the Open Government License - Township of The Archipelago.
+
+5. The terms of this license are important, and if you fail to comply with any of them, the rights
+    granted to you under this license, or any similar license granted by the Information Provider, will
+    end automatically.
+
+Exemptions
+
+6. This license does not grant you any right to use:
+    a) Personal Information;
+    b) Information not accessible under Ontario Municipal Freedom of Information and Protection of
+         Privacy Act.
+    c) third party rights the Information Provider is not authorized to license;
+    d) the names, crests, logos, or other official marks of the Information Provider; and
+    e) Information subject to other intellectual property rights, including patents, trade-marks and
+         official marks.
+
+Non-endorsement
+7. This license does not grant you any right to use the Information in a way that suggests any official
+    status or that the Information Provider endorses you or your use of the Information.
+
+No warranty
+
+8. The Information is licensed "as is", and the Information Provider excludes all representations,
+    warranties, obligations, and liabilities, whether express or implied, to the maximum extent
+    permitted by law.
+
+9. The Information Provider is not liable for any errors or omissions in the Information, and will not
+    under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other
+    loss, injury or damage caused by its use or otherwise arising in connection with this license or the
+    Information, even if specifically advised of the possibility of such loss, injury or damage.
+
+Governing Law
+
+10. This license is governed by the laws of Ontario and the applicable laws of Canada.
+11. Legal proceedings related to this license may only be brought in the courts of Ontario
+Definitions
+
+12. In this license, the terms below have the following meanings:
+"Information"
+
+     means information resources or Records protected by copyright or other information or Records
+     that are offered for use under the terms of this license.
+
+"Information Provider"
+     means Township of The Archipelago.
+
+"Personal Information"
+     has the meaning set out in Ontario Municipal Freedom of Information and Protection of Privacy
+     Act.
+
+"Records" (this definition is not necessary if "Records" is omitted from clause 6B)
+     has the meaning set out in Ontario Municipal Freedom of Information and Protection of Privacy
+     Act.
+
+"You"
+     means the natural or legal person, or body of persons corporate or incorporate, acquiring rights
+     under this license.
+
+Versioning
+13. This is version 2 of the Open Government License for Township of The Archipelago. The Information
+Provider may make changes to the terms of this license from time to time and issue a new version of the
+license. Your use of the Information will be governed by the terms of the license in force as of the date
+you accessed the Information.
+

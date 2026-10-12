@@ -1,0 +1,73 @@
+Source: https://www.brantford.ca/your-government/open-data/open-data-licence/ (City of Brantford website, page 'Open Data Licence'; brantford.ca/en/your-government/open-data-licence.aspx redirects here). Fetched 2026-10-11.
+Also checked: ArcGIS Hub page item 8f31590acfa3499cb8bbb0523ac40996 ('Licence', CoBOpenData, created 2017-05-25) — word-for-word identical text; the tracked layer's item 8fa270cb0c174bd99b52a11260f60f15 has licenseInfo 'See Licence'.
+Title: Open Government Licence – Brantford (version 1.0, per clause 10)
+
+Using Information under this licence
+
+1. Subject to the terms and conditions below, the Information Provider grants You a worldwide, royalty-free, perpetual, non-exclusive licence to Use the Information in any medium, mode or format for any lawful purpose, including for commercial purposes. Use of any Information indicates your acceptance of these terms and conditions.
+
+Acknowledgement
+
+2. You acknowledge that:
+
+- You have capacity and authority to accept the terms and conditions of this license, whether on your own behalf or that of a business, corporation or other entity;
+
+- This licence does not constitute a partnership, joint venture, or relationship of principal/agent or employer/employee between you and the Information Provider;
+
+- You have no authority to bind the Information Provider to any obligation of any nature or kind whatsoever, whether in law or in equity; and
+
+- Use of the Information is solely at your own risk.
+
+Requirements
+
+3. If You Use the Information, you must acknowledge the source of the Information by including any attribution statement specified by the Information Provider and, where possible, provide a link to this licence. If the Information Provider does not provide a specific attribution statement, or if you are using Information from several information providers and multiple attributions are not practical for your product or application, you must use the following attribution statement:
+“Contains information licensed under the Open Government Licence – Brantford.”
+4. This licence does not grant You any right to Use:
+
+- Personal Information;
+
+- Information not accessible under the Ontario Municipal Freedom of Information and Protection of Privacy Act or the Ontario Personal Health Information Protection Act, 2004;
+
+- Third party rights the Information Provider is not authorized to licence;
+
+- The names, crests, logos, or other official symbols of the Information Provider; or
+
+- Information subject to other intellectual property rights, including patents, trade-marks and official marks.
+
+5. This Licence does not permit, and expressly prohibits Use of the Information in a way that suggests any official status or that the Information Provider endorses You or your Use of the Information.
+
+Warranty, Limitation of Liability, Indemnity
+
+6. The Information is licensed “as is”, and the Information Provider excludes all representations, warranties, obligations, and liabilities, whether express or implied, to the maximum extent permitted by law, including without limitation any representations or warranties as to completeness, accuracy, currency, title, fitness for a particular use, or that the Information is free from any third party intellectual property rights.
+
+7. The Information Provider is not liable for any errors or omissions in the Information, and will not under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use or otherwise arising in connection with this licence or the Information, even if specifically advised of the possibility of such loss, injury or damage. You waive your right to any and all claims against the Information Provider arising either directly or indirectly from Use of the Information.
+
+Termination
+
+8. The terms of this licence are important, and if you fail to comply with any of them, the rights granted to you under this licence, or any similar licence granted by the Information Provider, will end automatically. Furthermore, the Information Provider may, in its sole discretion, cancel or suspend this license without notice and for any reason whatsoever, and in such case, You must immediately stop any Use of the Information.
+
+Definitions
+
+9. In this licence, the terms below have the following meanings:
+
+- "Information" means information resources or Records protected by copyright or other information resources or Records that are offered for Use under the terms of this licence, and which may be altered, amended, deleted, or updated at any time and from time to time, without prior notice to You.
+
+- "Information Provider" means The Corporation of the City of Brantford and includes its mayor, councillors, employees, successors and assigns.
+
+- “Personal Information” means “personal information” as defined in subsection 2(1) of the Ontario Municipal Freedom of Information and Protection of Privacy Act.
+
+- "Records" means "Records" as defined in subsection 2(1) of the Ontario Municipal Freedom of Information and Protection of Privacy Act.
+
+- "You" means the natural or legal person or body of persons corporate or incorporate, acquiring rights under this licence.
+
+- “Use” means to copy, modify, publish, translate, adapt, distribute or otherwise use the Information.
+
+General
+
+10. This is version 1.0 of the Open Government Licence – Brantford. The Information Provider may make changes to the terms of this licence from time to time and issue a new version of the licence. Your Use of the Information will be governed by the terms of the licence in force as of the date You accessed the Information.
+
+11. This license and its interpretation is governed by the laws of the province of Ontario and the applicable laws of Canada; and all legal proceedings related to this licence may only be brought against the Information Provider in the courts of the Province of Ontario.
+
+12. This licence is the entire agreement between You and the Information Provider with respect to the Information and its Use and replaces all prior agreements, understandings, negotiations or representations, whether oral or written.
+
+13. Failure to enforce any provisions of this licence by the Information Provider does not constitute a waiver of the Information Provider’s rights and any right or remedy remains available unless expressly waived in writing.
