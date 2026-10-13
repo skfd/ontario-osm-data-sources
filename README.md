@@ -5,8 +5,12 @@ each source is, what it is good for (import / conflate / validate / reference / 
 far it has been brought into OSM, as dated measurements that build up a history. It grows
 until it covers every source and every measure we track.
 
-Views are generated from it. Today there are two:
+Views are generated from it. Today there are three:
 
+- [`index.html`](index.html), served at
+  [skfd.github.io/ontario-osm-data-sources](https://skfd.github.io/ontario-osm-data-sources/):
+  every source and every portal as tables you can search, filter and sort, with each source's
+  measure history.
 - [`wiki/Canada_Open_data.wiki`](wiki/Canada_Open_data.wiki), for
   [Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). The live page is
   still a stub; nothing is pasted until the catalogue has been reviewed.

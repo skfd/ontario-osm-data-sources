@@ -1,7 +1,8 @@
 """Render the catalogue into its views. Reads only this repository.
 
 Reads   catalogue/*.csv, catalogue/synced/*.csv  (see catalogue/SCHEMA.md)
-Writes  wiki/Canada_Open_data.wiki               the OSM wiki page
+Writes  index.html                               the catalogue as tables, for GitHub Pages
+        wiki/Canada_Open_data.wiki               the OSM wiki page
         report/SUMMARY.md                        counts, freshness, gaps and coverage, for review
 
     python build.py
@@ -9,6 +10,7 @@ Writes  wiki/Canada_Open_data.wiki               the OSM wiki page
 
 from collections import Counter, defaultdict
 from datetime import date
+from html import escape as esc
 
 from common import (FEASIBILITY, HERE, PLATFORMS, REACH, STATUSES, THEMES, jurisdiction,
                     latest, load, measure_text, tool_pairs)
@@ -345,12 +347,327 @@ consortium portal are in `portals.csv`.
 """
 
 
+# ---------------------------------------------------------------- html
+
+REACH_STYLE = {4: "background:#c6ebd0", 3: "background:#dcf1d2", 2: "background:#eef3c9",
+               1: "background:#f6e6d2", 0: "background:#ececec"}
+TIER_LABEL = {"upper": "upper-tier", "single": "single-tier", "lower": "lower-tier"}
+
+
+def share_in_osm(m: dict | None) -> float | None:
+    """The share of the source that is in OSM, from a numeric missing or matched measure."""
+    if not m or not m["of"] or not float(m["of"]) or m["measure"] not in ("missing", "matched"):
+        return None
+    v, of = float(m["value"]), float(m["of"])
+    return (of - v) / of if m["measure"] == "missing" else v / of
+
+
+def pct(share: float) -> str:
+    """A whole percent, but never rounded up to 100% or down to 0%."""
+    return f"{share:.1%}" if 0 < share < 0.005 or 0.995 <= share < 1 else f"{share:.0%}"
+
+
+def a(url: str, label: str) -> str:
+    return f'<a href="{esc(url)}">{esc(label)}</a>' if url else esc(label)
+
+
+def select(name: str, label: str, values: list[str]) -> str:
+    opts = "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in values)
+    return (f'<label>{label} <select name="{name}" data-f="{name.split("-", 1)[1]}">'
+            f'<option value="">all</option>{opts}</select></label>')
+
+
+def bar(prefix: str, selects: str, more: bool = False) -> str:
+    toggle = (f'<label class="check"><input type="checkbox" name="{prefix}-more"> more columns</label>'
+              if more else "")
+    return (f'<div class="bar"><input type="search" name="{prefix}-q" placeholder="Search…" '
+            f'aria-label="Search">{selects}{toggle}<span class="count"></span></div>')
+
+
+def source_rows(sources, measures, juris, last) -> str:
+    history = defaultdict(list)
+    for m in measures:
+        history[m["source_id"]].append(m)
+    order = {s: i for i, s in enumerate(STATUSES)}
+    uses = list(FEASIBILITY)
+    rows = sorted(sources, key=lambda r: (order[r["status"]], jurisdiction(r["id"]).count("/"),
+                                          juris[jurisdiction(r["id"])]["name"], r["dataset"]))
+    out = []
+    for r in rows:
+        where = juris[jurisdiction(r["id"])]["name"]
+        use = FEASIBILITY[r["feasibility"]]
+        name = "Address points" if is_address_dataset(r) else r["dataset"]
+        notes = f'<div class="notes clamp">{esc(r["notes"])}</div>' if r["notes"] else ""
+
+        m = last.get(r["id"])
+        share = share_in_osm(m)
+        osm = ""
+        if share is not None:
+            osm = (f'<div class="meter" title="{pct(share)} in OSM"><span style="width:{share:.1%}">'
+                   f'</span></div><b>{pct(share)}</b> ')
+        osm += f'<span class="muted">{esc(r["coverage"])}</span>' if r["coverage"] else ""
+        past = sorted((x for i in [r["id"]] + [w["id"] for w in r["work"]] for x in history[i]),
+                      key=lambda x: x["measured_on"], reverse=True)
+        if len(past) > 1:
+            items = "".join(f'<li><time>{x["measured_on"]}</time> {esc(x["text"])}</li>' for x in past)
+            osm += f'<details><summary>{len(past)} measures</summary><ul>{items}</ul></details>'
+
+        tools = "".join(f'<a class="chip" href="{esc(u)}">{esc(l)}</a>' for l, u in tool_pairs(r["tools"]))
+        leads = ", ".join(a(f"https://www.openstreetmap.org/user/{u}", u)
+                          for u in r["lead"].split(", ") if u)
+        licence = esc(r["licence"])
+        if r["lwg"] == "self-listed":
+            licence += ' <span class="muted">· self-listed on the wiki</span>'
+        elif r["lwg"]:
+            licence += f' <span class="muted">· LWG {a(r.get("lwg_url", ""), r["lwg"])}</span>'
+
+        out.append(
+            f'<tr data-where="{esc(where)}" data-theme="{r["theme"]}" data-use="{use}" '
+            f'data-status="{r["status"]}">'
+            f'<td class="name">{a(r["source_url"], name)}{notes}</td>'
+            f"<td>{esc(where)}</td><td>{r['theme']}</td>"
+            f'<td data-sort="{uses.index(r["feasibility"])}">{use}</td>'
+            f'<td data-sort="{order[r["status"]]}"><span class="badge" '
+            f'style="{STATUS_STYLE[r["status"]]}">{r["status"]}</span></td>'
+            f'<td class="osm" data-sort="{"" if share is None else f"{share:.4f}"}">{osm}</td>'
+            f'<td class="tools">{tools}</td><td>{leads}</td>'
+            f'<td class="more">{licence}</td>'
+            f'<td class="more nowrap">{r["last_verified"]}</td>'
+            f'<td class="more"><code>{esc(r["id"])}</code></td></tr>')
+    return "\n".join(out)
+
+
+def portal_rows(portals, juris) -> str:
+    rows = sorted(portals, key=lambda p: (-int(p["reach"]), -int(p["layers_seen"] or -1),
+                                          juris[p["jurisdiction"]]["name"]))
+    out = []
+    for p in rows:
+        j = juris[p["jurisdiction"]]
+        tier = TIER_LABEL.get(j["tier"], j["level"])
+        reach = int(p["reach"])
+        host = p["portal_url"].split("//", 1)[-1].split("/", 1)[0]
+        layers = f"{int(p['layers_seen']):,}" if p["layers_seen"] else ""
+        out.append(
+            f'<tr data-tier="{tier}" data-reach="{reach} {p["reach_label"]}" '
+            f'data-platform="{p["platform"]}">'
+            f'<td class="name">{esc(j["name"])}</td><td class="nowrap">{tier}</td>'
+            f'<td data-sort="{reach}"><span class="badge" style="{REACH_STYLE[reach]}">'
+            f'{reach} {p["reach_label"]}</span></td>'
+            f'<td>{p["platform"]}</td><td>{a(p["portal_url"], host)}</td>'
+            f'<td class="num" data-sort="{p["layers_seen"]}">{layers}</td>'
+            f'<td class="licence">{esc(p["licence"])}</td><td class="nowrap">{p["surveyed_on"]}</td>'
+            f'<td><div class="clamp muted">{esc(p["notes"])}</div></td></tr>')
+    return "\n".join(out)
+
+
+def th(*cols: tuple[str, str]) -> str:
+    return "".join(f'<th{" " + attrs if attrs else ""}><button>{label}</button></th>'
+                   for label, attrs in cols)
+
+
+def html_page(sources, measures, juris, portals, last) -> str:
+    by_name = lambda codes: sorted({juris[c]["name"] for c in codes})
+    present = lambda vocab, key: [v for v in vocab if any(r[key] == v for r in sources)]
+    live = [p for p in portals if p["platform"] != "none-found"]
+    munis = {c for c, j in juris.items() if j["tier"]}
+    with_portal = {p["jurisdiction"] for p in live} & munis
+    src_bar = bar("s", select("s-where", "Where", by_name({jurisdiction(r["id"]) for r in sources}))
+                  + select("s-theme", "Theme", present(THEMES, "theme"))
+                  + select("s-use", "Use", [FEASIBILITY[f] for f in present(FEASIBILITY, "feasibility")])
+                  + select("s-status", "Status", present(STATUSES, "status")), more=True)
+    portal_bar = bar("p", select("p-tier", "Tier", ["province"] + list(TIER_LABEL.values()))
+                     + select("p-reach", "Reach", [f"{g} {REACH[g]}" for g in sorted(REACH, reverse=True)])
+                     + select("p-platform", "Platform", PLATFORMS))
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontario open data for OpenStreetMap</title>
+<style>{CSS}</style>
+</head>
+<body>
+<header>
+<h1>Ontario open data for OpenStreetMap</h1>
+<p>Every open data source we know of that could feed OSM in Ontario: what it is good for, and
+how much of it is already in OSM. <b>{len(sources)} sources</b> ({summarize(sources)});
+{len(measures)} measures. Generated {date.today()} from the
+<a href="{REPO_URL}/tree/main/catalogue">catalogue CSVs</a>;
+<a href="{REPO_URL}/blob/main/report/SUMMARY.md">summary</a> ·
+<a href="{REPO_URL}/blob/main/wiki/Canada_Open_data.wiki">wiki view</a> ·
+<a href="#portals">portals</a>.</p>
+<p class="muted">A row here is not permission to import. Licence verdicts live on
+<a href="https://wiki.openstreetmap.org/wiki/Canada#Open_Data">Canada#Open Data</a> and the OSMF
+<a href="{OSMF_PAGE}">OGL Canada and local variants</a> page.</p>
+</header>
+
+<section id="sources" data-table>
+{src_bar}
+<table>
+<thead><tr>{th(("Dataset", ""), ("Where", ""), ("Theme", ""), ("Use", 'data-type="num"'),
+              ("Status", 'data-type="num"'), ("In OSM", 'data-type="num" class="osm"'),
+              ("Tools", ""), ("Lead", ""), ("Licence", 'class="more"'),
+              ("Verified", 'class="more"'), ("Id", 'class="more"'))}</tr></thead>
+<tbody>
+{source_rows(sources, measures, juris, last)}
+</tbody>
+</table>
+</section>
+
+<section id="portals" data-table>
+<h2>Portals</h2>
+<p class="muted">Where Ontario publishes open data: the denominator the catalogue grows towards.
+{len(with_portal)} of {len(munis)} municipalities have data reachable on a portal or map server.
+<i>Reach</i> grades how good the data is likely to be, by how it is published: 4 its own
+catalogue, 3 listed in a county catalogue, 2 layers on a map server no catalogue lists, 1 a
+viewer only, 0 nothing found.</p>
+{portal_bar}
+<table>
+<thead><tr>{th(("Jurisdiction", ""), ("Tier", ""), ("Reach", 'data-type="num"'), ("Platform", ""),
+              ("Portal", ""), ("Layers", 'data-type="num" class="num"'), ("Licence", ""),
+              ("Surveyed", ""), ("Notes", ""))}</tr></thead>
+<tbody>
+{portal_rows(portals, juris)}
+</tbody>
+</table>
+</section>
+<script>{JS}</script>
+</body>
+</html>
+"""
+
+
+CSS = """
+:root{--bg:#fff;--fg:#1d2329;--muted:#5f6b76;--line:#e3e7eb;--zebra:#f8fafb;--head:#eef2f5;
+--link:#0b5cad;--hover:#fff8dc;--meter:#3d9a6a;--track:#e3e7eb}
+@media (prefers-color-scheme:dark){:root{--bg:#14181c;--fg:#e2e6e9;--muted:#98a3ad;--line:#2b3238;
+--zebra:#181d22;--head:#1f252b;--link:#80b8ff;--hover:#2a2a1e;--meter:#5cbf8a;--track:#2b3238}}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+background:var(--bg);color:var(--fg)}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:1.25rem 1.25rem .25rem;max-width:72rem}
+header p{margin:.35rem 0}
+h1{font-size:1.4rem;margin:0}
+h2{font-size:1.15rem;margin:2.5rem 1.25rem .25rem}
+section>p{margin:.25rem 1.25rem .5rem;max-width:72rem}
+.muted{color:var(--muted)}
+.bar{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;
+padding:.6rem 1.25rem;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar input[type=search]{min-width:14rem;flex:0 1 20rem}
+.bar input[type=search],.bar select{font:inherit;padding:.3rem .5rem;border:1px solid var(--line);
+border-radius:6px;background:var(--bg);color:var(--fg)}
+.bar label{color:var(--muted);white-space:nowrap}
+.bar .count{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%}
+th,td{padding:.45rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th:first-child,td:first-child{padding-left:1.25rem}
+thead th{position:sticky;top:var(--bar-h,3rem);z-index:1;background:var(--head);
+font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+th button{all:unset;cursor:pointer;color:var(--muted);font-weight:600}
+th[aria-sort] button{color:var(--fg)}
+th[aria-sort=ascending] button::after{content:" ▲"}
+th[aria-sort=descending] button::after{content:" ▼"}
+tbody tr:nth-child(even){background:var(--zebra)}
+tbody tr:hover{background:var(--hover)}
+td.name{min-width:14rem;max-width:28rem}
+td.name>a{font-weight:600}
+.notes{font-size:.85rem;color:var(--muted);margin-top:.15rem}
+.clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.clamp.open{display:block}
+td .clamp.muted{font-size:.85rem;min-width:20rem;max-width:32rem;overflow-wrap:anywhere}
+.badge{display:inline-block;padding:.05rem .5rem;border-radius:999px;color:#1d2329;font-size:.8rem;
+white-space:nowrap}
+td.osm{min-width:13rem;max-width:22rem;font-size:.85rem}
+.meter{display:inline-block;width:4.5rem;height:.5rem;margin-right:.35rem;border-radius:3px;
+background:var(--track);vertical-align:middle;overflow:hidden}
+.meter span{display:block;height:100%;background:var(--meter)}
+details{margin-top:.2rem}summary{cursor:pointer;color:var(--link)}
+details ul{margin:.25rem 0;padding-left:1rem}details time{color:var(--muted);font-variant-numeric:tabular-nums}
+td.tools{min-width:15rem;max-width:18rem}
+.chip{display:inline-block;margin:0 .25rem .25rem 0;padding:.05rem .45rem;border:1px solid var(--line);
+border-radius:4px;font-size:.8rem}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.nowrap{white-space:nowrap;font-variant-numeric:tabular-nums}
+td.licence{min-width:12rem}
+code{font-size:.8rem}
+.more{display:none}
+table.show-more .more{display:table-cell}
+"""
+
+JS = """
+const params = new URLSearchParams(location.hash.slice(1));
+for (const sec of document.querySelectorAll("section[data-table]")) {
+  const table = sec.querySelector("table"), tbody = table.tBodies[0], rows = [...tbody.rows];
+  const controls = [...sec.querySelectorAll(".bar [name]")], count = sec.querySelector(".count");
+  const barEl = sec.querySelector(".bar");
+  new ResizeObserver(() => sec.style.setProperty("--bar-h", barEl.offsetHeight + "px")).observe(barEl);
+
+  const apply = () => {
+    const words = sec.querySelector("[type=search]").value.toLowerCase().split(/\\s+/).filter(Boolean);
+    const picks = controls.filter(c => c.dataset.f && c.value);
+    let n = 0;
+    for (const tr of rows) {
+      let ok = picks.every(c => tr.dataset[c.dataset.f] === c.value);
+      if (ok && words.length) {
+        const text = tr.textContent.toLowerCase();
+        ok = words.every(w => text.includes(w));
+      }
+      tr.hidden = !ok;
+      n += ok;
+    }
+    count.textContent = n === rows.length ? `${n} rows` : `${n} of ${rows.length} rows`;
+    const more = sec.querySelector("[type=checkbox]");
+    if (more) table.classList.toggle("show-more", more.checked);
+  };
+  const save = () => {
+    const all = new URLSearchParams(location.hash.slice(1));
+    for (const c of controls) {
+      const v = c.type === "checkbox" ? (c.checked ? "1" : "") : c.value;
+      v ? all.set(c.name, v) : all.delete(c.name);
+    }
+    history.replaceState(null, "", all.size ? "#" + all : location.pathname);
+  };
+  for (const c of controls) {
+    if (params.has(c.name)) c.type === "checkbox" ? (c.checked = true) : (c.value = params.get(c.name));
+    c.addEventListener("input", () => { apply(); save(); });
+  }
+  apply();
+
+  table.tHead.addEventListener("click", ev => {
+    const th = ev.target.closest("th");
+    if (!th) return;
+    const i = th.cellIndex, num = th.dataset.type === "num";
+    const dir = th.getAttribute("aria-sort") === "ascending" ? -1 : 1;
+    for (const h of table.tHead.rows[0].cells) h.removeAttribute("aria-sort");
+    th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
+    const key = tr => {
+      const td = tr.cells[i], v = td.dataset.sort ?? td.textContent.trim();
+      return v === "" ? null : num ? +v : v;
+    };
+    rows.sort((a, b) => {
+      const x = key(a), y = key(b);
+      if (x === null || y === null) return (x === null) - (y === null);
+      return dir * (num ? x - y : x.localeCompare(y));
+    });
+    tbody.append(...rows);
+  });
+  tbody.addEventListener("click", ev => {
+    const c = ev.target.closest(".clamp");
+    if (c && !ev.target.closest("a")) c.classList.toggle("open");
+  });
+}
+"""
+
+
 def main():
     sources, measures, juris, portals = load()
     last = latest(measures)
     for r in sources:
         r["coverage"] = measure_text(last.get(r["id"]))
 
+    (HERE / "index.html").write_text(html_page([with_work(r) for r in sources], measures, juris,
+                                               portals, last), encoding="utf-8")
     WIKI.mkdir(exist_ok=True)
     (WIKI / "Canada_Open_data.wiki").write_text(wiki_page([with_work(r) for r in sources], juris),
                                                 encoding="utf-8")
