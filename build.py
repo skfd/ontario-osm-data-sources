@@ -568,7 +568,7 @@ th button{all:unset;cursor:pointer;color:var(--muted);font-weight:600}
 th[aria-sort] button{color:var(--fg)}
 th[aria-sort=ascending] button::after{content:" ▲"}
 th[aria-sort=descending] button::after{content:" ▼"}
-tbody tr:nth-child(even){background:var(--zebra)}
+tbody tr.odd{background:var(--zebra)}
 tbody tr:hover{background:var(--hover)}
 td.name{min-width:14rem;max-width:28rem}
 td.name>a{font-weight:600}
@@ -614,6 +614,7 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
         ok = words.every(w => text.includes(w));
       }
       tr.hidden = !ok;
+      if (ok) tr.classList.toggle("odd", n % 2 === 1);
       n += ok;
     }
     count.textContent = n === rows.length ? `${n} rows` : `${n} of ${rows.length} rows`;
@@ -651,6 +652,7 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
       return dir * (num ? x - y : x.localeCompare(y));
     });
     tbody.append(...rows);
+    apply();
   });
   tbody.addEventListener("click", ev => {
     const c = ev.target.closest(".clamp");
