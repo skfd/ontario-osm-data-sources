@@ -5,6 +5,7 @@ UTF-8 CSV, RFC 4180 quoting. `build.py` validates all of it and refuses to run o
 | file | written by | one row per |
 |---|---|---|
 | `sources.csv` | hand | data source: a dataset as its publisher publishes it |
+| `layers/<code>.csv` | `inventory.py --merge`, then hand | swept source, same columns as `sources.csv`; graded by `GRADING.md` |
 | `work.csv` | hand | stream of work bringing one source into OSM |
 | `synced/addresses.csv` | `sync.py` — never edit | address dataset in `../ontario-address-changes` |
 | `measures.csv` | hand, and `sync.py` appends | measurement of one source or stream on one day |

@@ -4,7 +4,7 @@ Reads   catalogue/portals.csv, catalogue/sources.csv, catalogue/jurisdictions.cs
 Writes  cache/inventory/<code>.csv       one row per dataset or layer, with its metadata
         cache/inventory/chunks/<n>.csv   the same rows in grading batches of at most CHUNK
         cache/inventory/chunks.json      the batches, for the grading agents
-        catalogue/layers/<code>.csv      --merge: the graded rows, in the sources.csv columns
+        catalogue/layers/<code>.csv      --merge: graded rows added, existing rows left alone
 
     python inventory.py [jurisdiction ...]   list the portals (network)
     python inventory.py --chunk              cut the batches again, no network
@@ -28,8 +28,8 @@ import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 
-from common import (CATALOGUE, FEASIBILITY, HERE, JURISDICTIONS, PORTALS, SOURCE_COLS, SOURCES,
-                    STATUSES, THEMES, read_csv, write_csv)
+from common import (FEASIBILITY, HERE, JURISDICTIONS, LAYERS, PORTALS, SOURCE_COLS, SOURCES,
+                    THEMES, read_csv, write_csv)
 import survey
 from survey import Secured, ServiceError, get_json, with_param
 
@@ -38,7 +38,6 @@ survey.SLOTS = threading.Semaphore(24)
 
 CACHE = HERE / "cache" / "inventory"
 GRADED = HERE / "cache" / "graded"
-LAYERS = CATALOGUE / "layers"
 CHUNK = 120
 SKIP = {"ca/on", "ca/on/guelph"}
 COLS = ["id", "jurisdiction", "portal_url", "origin", "dataset", "item_type", "source_url",
@@ -50,7 +49,7 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
 
 def text(s, limit: int) -> str:
     s = html.unescape(re.sub(r"<[^>]+>", " ", s or ""))
-    s = " ".join(s.split())
+    s = " ".join(s.split()).replace("|", "/")  # a pipe separates tools in the catalogue
     return s if len(s) <= limit else s[:limit - 1].rstrip() + "…"
 
 
@@ -369,8 +368,13 @@ def merge():
         for g in sorted(GRADED.glob(f"{f.stem}-*.csv")):
             if re.fullmatch(rf"{re.escape(f.stem)}-\d+", g.stem):
                 graded |= {r["id"]: r for r in read_csv(g)}
+        # A row already in catalogue/layers may have been edited by hand since: it stays.
+        kept = {r["id"]: r for r in read_csv(LAYERS / f.name)}
         out = []
         for r in rows:
+            if r["id"] in kept:
+                out.append(kept.pop(r["id"]))
+                continue
             g = graded.get(r["id"])
             if g is None:
                 pending.append(r["id"])
@@ -380,6 +384,7 @@ def merge():
                         "licence": r["licence"], "tier": g["tier"],
                         "feasibility": g["feasibility"], "status": g["status"], "tools": "",
                         "lead": "", "last_verified": today, "notes": g["notes"]})
+        out += kept.values()  # gone from the portal since; dropping them is a decision for a person
         if out:
             write_csv(LAYERS / f.name, SOURCE_COLS, out)
             done += len(out)

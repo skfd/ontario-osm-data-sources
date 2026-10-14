@@ -11,6 +11,7 @@ HERE = Path(__file__).resolve().parent
 CODE_DIR = HERE.parent
 CATALOGUE = HERE / "catalogue"
 SOURCES = CATALOGUE / "sources.csv"
+LAYERS = CATALOGUE / "layers"  # swept sources, one file per municipality, by inventory.py --merge
 SYNCED = CATALOGUE / "synced" / "addresses.csv"
 MEASURES = CATALOGUE / "measures.csv"
 JURISDICTIONS = CATALOGUE / "jurisdictions.csv"
@@ -90,7 +91,9 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
     row adds to it: its non-empty cells win, and its tools follow the synced ones. Each source
     carries its streams of work as r["work"]."""
     synced = read_csv(SYNCED)
-    hand = read_csv(SOURCES)
+    hand = [r | {"_file": SOURCES.name} for r in read_csv(SOURCES)]
+    for f in sorted(LAYERS.glob("*.csv")):
+        hand += [r | {"_file": f"layers/{f.name}"} for r in read_csv(f)]
     measures = read_csv(MEASURES)
     juris = {j["code"]: j for j in read_csv(JURISDICTIONS)}
     portals = read_csv(PORTALS)
@@ -107,8 +110,8 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
     by_id = {r["id"]: blank | r for r in synced}
     sources = list(by_id.values())
     seen = set()
-    for n, r in enumerate(hand, start=2):
-        where = f"sources.csv:{n} {r['id']}"
+    for r in hand:
+        where = f"{r.pop('_file')} {r['id']}"
         if r["id"] in seen:
             errors.append(f"{where}: duplicate id")
         seen.add(r["id"])
