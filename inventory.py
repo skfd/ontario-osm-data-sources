@@ -11,8 +11,9 @@ Writes  cache/inventory/<code>.csv       one row per dataset or layer, with its 
     python inventory.py --check <chunk>      validate cache/graded/<chunk>.csv
     python inventory.py --merge              graded batches -> catalogue/layers/
 
-Portals swept: reach 2 to 4 rows with an api_url, minus shared-portal and `not counted` rows,
-the provincial catalogues, and Guelph (audited by hand). A Hub item that names a whole service
+Portals swept: every reach 2 to 4 row with an api_url, minus shared-portal rows (their layers
+are listed under the owner) and the provincial catalogues. The goal is that no layer goes
+unlisted; a grade can be argued later, a missing row cannot. A Hub item that names a whole service
 becomes one row per layer. A server layer a Hub of the same jurisdiction already lists is
 dropped, and so is any URL already in sources.csv. Ids are assigned here, in URL order, so the
 graders never invent one.
@@ -39,7 +40,7 @@ survey.SLOTS = threading.Semaphore(24)
 CACHE = HERE / "cache" / "inventory"
 GRADED = HERE / "cache" / "graded"
 CHUNK = 120
-SKIP = {"ca/on", "ca/on/guelph"}
+SKIP = {"ca/on"}  # the provincial catalogues are not a municipality's
 COLS = ["id", "jurisdiction", "portal_url", "origin", "dataset", "item_type", "source_url",
         "geometry", "records", "fields", "edited", "licence", "description"]
 GRADE_COLS = ["id", "theme", "provider", "tier", "feasibility", "status", "notes"]
@@ -239,8 +240,7 @@ PLATFORM = {"arcgis-hub": from_hub, "ckan": from_ckan, "arcgis-rest": from_rest}
 
 def swept(p: dict) -> bool:
     return (p["reach"] in ("2", "3", "4") and p["api_url"] and p["platform"] in PLATFORM
-            and p["jurisdiction"] not in SKIP and "shared portal of" not in p["notes"]
-            and "not counted" not in p["notes"])
+            and p["jurisdiction"] not in SKIP and "shared portal of" not in p["notes"])
 
 
 def inventory(only: set[str]):

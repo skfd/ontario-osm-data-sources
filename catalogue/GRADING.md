@@ -1,9 +1,11 @@
 # Grading a layer
 
 How a layer from `inventory.py` gets its `theme`, `tier`, `feasibility`, `status` and `notes`.
-Written from the Guelph audit (74 layers, 2026-09 to 2026-10), so a grade in Barrie means what
-it means in Guelph. When this page and a Guelph row disagree, the Guelph row is the example to
-follow; read `sources.csv` rows starting `ca/on/guelph/`.
+
+The sweep's goal is completeness: every layer every portal publishes gets a row, so nothing
+worth having goes unseen. A grade is a first sort for a person to review, not a verdict, and a
+low grade is never a reason to leave a row out. The examples below come from the Guelph audit,
+only so that the scale means the same everywhere.
 
 ## Tier: what OSM would gain, 1 to 5
 
