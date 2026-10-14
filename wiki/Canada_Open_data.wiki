@@ -360,6 +360,20 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://open.toronto.ca/dataset/bike-share-toronto/ Bike Share Toronto] || OGL-CA v1.0 - Toronto || 42 of 1,072 stations missing (2026-08-31) || Validate || style="background:#e6f6d0" | Ongoing || [https://maproulette.org/browse/challenges/56663 MapRoulette missing stations]<br>[https://maproulette.org/browse/challenges/56664 MapRoulette removed stations]<br>[https://maproulette.org/browse/challenges/56665 MapRoulette duplicate refs] || {{User|skfd}} || 2026-10-09 || The GBFS station feed refreshes three MapRoulette challenges weekly, and CKAN lists its licence as not specified while the dataset page says OGL Toronto.
 |}
 
+=== Oakville ===
+3 layers (3 available). ''Value'' is a 1–5 score of what OSM would gain.
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/QJebCdoMf4PF8fJP/arcgis/rest/services/Wards/FeatureServer/0 Ward Boundaries] || Open Government Licence – Town of Oakville || 3/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-14 || Seven ward polygons revised 2024; whether OSM already has them was not checked.
+|-
+| [https://services5.arcgis.com/QJebCdoMf4PF8fJP/arcgis/rest/services/Town_Boundary/FeatureServer/0 Oakville Boundary] || Open Government Licence – Town of Oakville || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-14 || A check against the OSM municipal boundary, nothing to upload.
+|-
+| [https://services5.arcgis.com/QJebCdoMf4PF8fJP/arcgis/rest/services/Historic_Villages/FeatureServer/0 Historic Villages] || Open Government Licence – Town of Oakville || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-14 || Thirteen named points with aliases, a source for place names and old_name rather than areas.
+|}
+
 == Other provinces ==
 Licence status per portal: [[Canada#Open Data]]. Add a section here when you have
 dataset-level detail.
