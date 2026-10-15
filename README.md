@@ -9,8 +9,10 @@ Views are generated from it. Today there are three:
 
 - [`index.html`](index.html), served at
   [skfd.github.io/ontario-osm-data-sources](https://skfd.github.io/ontario-osm-data-sources/):
-  every source and every portal as tables you can search, filter and sort, with each source's
-  measure history.
+  every source as a table you can search, filter and sort, with its licence, the portal it
+  was found on, its value as a grade (A–F for tiers 5–1) and its measure history. On a phone
+  each row becomes a card. [`portals.html`](portals.html) lists every portal, with how many
+  sources the catalogue has taken from each.
 - [`wiki/Canada_Open_data.wiki`](wiki/Canada_Open_data.wiki), for
   [Canada/Open data](https://wiki.openstreetmap.org/wiki/Canada/Open_data). The live page is
   still a stub; nothing is pasted until the catalogue has been reviewed.
