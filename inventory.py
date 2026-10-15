@@ -454,8 +454,10 @@ def copies():
             original[r["id"]] = t["id"]
 
     # A layer listed by two jurisdictions (a Hub that shows its region's items) belongs to the
-    # upper tier; between equals, to the first by code.
-    rank = {j["code"]: ("upper", "single", "lower", "").index(j["tier"])
+    # upper tier. Between equals it belongs to a member before an association that gathers its
+    # members' layers (Conservation Ontario's shared org), then to the one whose Hub lists it,
+    # then to the first by code.
+    rank = {j["code"]: (("upper", "single", "lower", "").index(j["tier"]), j["level"] == "association")
             for j in read_csv(JURISDICTIONS)}
     by_url = {}
     for r in rows:
@@ -463,7 +465,9 @@ def copies():
             by_url.setdefault(key(r["source_url"]), []).append(r)
     for g in by_url.values():
         if len({r["id"].rsplit("/", 1)[0] for r in g}) > 1:
-            g.sort(key=lambda r: (rank.get(r["id"].rsplit("/", 1)[0], 3), r["id"]))
+            # One already marked stays the copy, so an earlier run's choice is not reversed.
+            g.sort(key=lambda r: (r["id"] in original, rank.get(r["id"].rsplit("/", 1)[0], (3, False)),
+                                  meta.get(r["id"], {}).get("origin") != "hub", r["id"]))
             for r in g[1:]:
                 original.setdefault(r["id"], g[0]["id"])
 
