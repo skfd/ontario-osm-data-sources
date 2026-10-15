@@ -2,7 +2,7 @@
 
 Reads   catalogue/portals.csv, catalogue/sources.csv, catalogue/jurisdictions.csv
 Writes  cache/inventory/<code>.csv       one row per dataset or layer, with its metadata
-        cache/inventory/chunks/<n>.csv   the same rows in grading batches of at most CHUNK
+        cache/inventory/chunks/<n>.csv   the rows not yet merged, in grading batches of at most CHUNK
         cache/inventory/chunks.json      the batches, for the grading agents
         catalogue/layers/<code>.csv      --merge: graded rows added, existing rows left alone
 
@@ -316,7 +316,8 @@ def chunk():
         f.unlink()
     chunks = []
     for f in sorted(CACHE.glob("*.csv")):
-        rows = read_csv(f)
+        merged = {r["id"] for r in read_csv(LAYERS / f.name)}
+        rows = [r for r in read_csv(f) if r["id"] not in merged]
         if not rows:
             continue
         code = rows[0]["jurisdiction"]
