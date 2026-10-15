@@ -10,6 +10,7 @@ Writes  cache/inventory/<code>.csv       one row per dataset or layer, with its 
     python inventory.py --chunk              cut the batches again, no network
     python inventory.py --check <chunk>      validate cache/graded/<chunk>.csv
     python inventory.py --merge              graded batches -> catalogue/layers/
+    python inventory.py --copies             mark layers that republish another source
 
 Portals swept: every reach 2 to 4 row with an api_url, minus shared-portal rows (their layers
 are listed under the owner) and the provincial catalogues. The goal is that no layer goes
@@ -29,8 +30,8 @@ import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 
-from common import (FEASIBILITY, HERE, JURISDICTIONS, LAYERS, PORTALS, SOURCE_COLS, SOURCES,
-                    SYNCED, THEMES, read_csv, write_csv)
+from common import (FEASIBILITY, HERE, JURISDICTIONS, LAYERS, MEASURES, PORTALS, SOURCE_COLS,
+                    SOURCES, SYNCED, THEMES, read_csv, write_csv)
 import survey
 from survey import Secured, ServiceError, get_json, with_param
 
@@ -61,7 +62,7 @@ def slug(s: str) -> str:
 
 def key(url: str) -> str:
     """One spelling per layer: MapServer and FeatureServer of the same service are one layer."""
-    u = url.strip().rstrip("/").lower().split("?", 1)[0]
+    u = urllib.parse.unquote(url.strip().rstrip("/").lower().split("?", 1)[0])
     return u.replace("/featureserver", "/mapserver").replace("http://", "https://")
 
 
@@ -352,7 +353,7 @@ def check(name: str) -> list[str]:
             bad.append(f"tier {r['tier']!r}")
         if r["feasibility"] not in FEASIBILITY:
             bad.append(f"feasibility {r['feasibility']!r}")
-        if r["status"] not in ("Available", "Not usable"):
+        if r["status"] not in ("Available", "No licence", "Not usable"):
             bad.append(f"status {r['status']!r}")
         if not r["provider"].strip():
             bad.append("empty provider")
@@ -395,6 +396,123 @@ def merge():
             done += len(out)
     print(f"{done} rows merged into {LAYERS}; {len(pending)} still ungraded")
 
+COPY = "Copy of "
+SAID = re.compile(r"(?:same (?:data|endpoint|layer|dataset|service) as|layer behind|tracked as|"
+                  r"copy of|copies|duplicates?) (ca/on/[a-z0-9/-]*[a-z0-9])", re.I)
+
+
+def copies():
+    """Mark each layer that republishes another: the address points the tracker already follows
+    (same service, or a record count within 1% of the tracker's); the same URL listed by two
+    jurisdictions; a copy the grader named in the note; or, within a jurisdiction, the same
+    geometry and record count with the same fields, or with the same theme when the count is
+    1,000 or more. The copy keeps its row, so nothing goes unlisted, but drops to
+    tier 2 at most, becomes reference, and its note starts with the id of the one it copies.
+    The kept layer is the best graded, then the Hub's, then the latest edited. Rows already
+    marked are left alone, so this can run after every --merge."""
+    meta = {r["id"]: r for f in CACHE.glob("*.csv") for r in read_csv(f)}
+    files = {f: read_csv(f) for f in sorted(LAYERS.glob("*.csv"))}
+    rows = [r for rs in files.values() for r in rs]
+    tracked = {}
+    for r in read_csv(SYNCED):
+        tracked[r["id"].rsplit("/", 1)[0]] = r
+    tracked_ids = {r["id"] for r in tracked.values()}
+    sizes = {}
+    for m in read_csv(MEASURES):
+        if m["of"] and m["source_id"].endswith("/addresses"):
+            sizes[m["source_id"]] = int(m["of"])  # measures.csv is in date order: the last wins
+
+    def service(url: str) -> str:
+        m = SERVICE.match(url or "")
+        return key(m.group(1)) if m else ""
+
+    def base(url: str) -> str:
+        """The service's name without the view suffixes AGOL adds: X_Public_View is X."""
+        name = service(url).rsplit("/", 2)[-2] if service(url) else ""
+        return re.sub(r"(_public)?(_view)?$", "", name)
+
+    # Copies marked on an earlier run, by hand or by this, still point a group outside itself.
+    original = {r["id"]: r["notes"][len(COPY):].split()[0].rstrip(".")
+                for r in rows if r["notes"].startswith(COPY)}
+    for r in rows:
+        if r["theme"] != "addresses" or r["notes"].startswith(COPY):
+            continue
+        t = tracked.get(r["id"].rsplit("/", 1)[0])
+        if not t:
+            continue
+        n, size = meta.get(r["id"], {}).get("records"), sizes.get(t["id"])
+        same_service = base(r["source_url"]) and base(r["source_url"]) == base(t["source_url"])
+        if same_service or (n and size and abs(int(n) - size) <= size / 100):
+            original[r["id"]] = t["id"]
+
+    # A layer listed by two jurisdictions (a Hub that shows its region's items) belongs to the
+    # upper tier; between equals, to the first by code.
+    rank = {j["code"]: ("upper", "single", "lower", "").index(j["tier"])
+            for j in read_csv(JURISDICTIONS)}
+    by_url = {}
+    for r in rows:
+        if service(r["source_url"]):
+            by_url.setdefault(key(r["source_url"]), []).append(r)
+    for g in by_url.values():
+        if len({r["id"].rsplit("/", 1)[0] for r in g}) > 1:
+            g.sort(key=lambda r: (rank.get(r["id"].rsplit("/", 1)[0], 3), r["id"]))
+            for r in g[1:]:
+                original.setdefault(r["id"], g[0]["id"])
+
+    # What the graders said in so many words: "a copy of <id>", "the same layer as <id>".
+    ids = {r["id"] for r in rows} | set(tracked_ids)
+    said = {}
+    for r in rows:
+        m = SAID.search(r["notes"])
+        if m and m.group(1) in ids and m.group(1) != r["id"] and not r["notes"].startswith(COPY):
+            said[r["id"]] = m.group(1)
+    for a, b in said.items():
+        if said.get(b) != a:
+            original.setdefault(a, b)
+
+    groups = {}
+    for r in rows:
+        m = meta.get(r["id"])
+        if m and m["records"] and int(m["records"]) >= 2 and m["fields"]:
+            k = (m["jurisdiction"], m["geometry"], m["records"], m["fields"].lower())
+            groups.setdefault(k, []).append(r)
+        if m and m["records"] and int(m["records"]) >= 1000:  # a big exact count is a fingerprint
+            k = (m["jurisdiction"], m["geometry"], m["records"], r["theme"])
+            groups.setdefault(k, []).append(r)
+    for g in groups.values():
+        if len(g) < 2:
+            continue
+        outside = next((original[r["id"]] for r in g if r["id"] in original), None)
+        g.sort(key=lambda r: (-int(r["tier"] or 0), meta[r["id"]]["origin"] != "hub",
+                              -int(meta[r["id"]]["edited"].replace("-", "") or 0),
+                              len(r["id"])))
+        for r in g if outside else g[1:]:
+            original.setdefault(r["id"], outside or g[0]["id"])
+
+    def root(i: str) -> str:
+        seen = {i}
+        while original.get(i) and original[i] not in seen:
+            i = original[i]
+            seen.add(i)
+        return i
+
+    marked = 0
+    for r in rows:
+        of = original.get(r["id"]) and root(r["id"])
+        if of == r["id"]:
+            continue
+        if not of or r["notes"].startswith(COPY):
+            continue
+        r["tier"] = str(min(int(r["tier"] or 2), 2))
+        if r["feasibility"] != "no":
+            r["feasibility"] = "reference"
+        note = f"{COPY}{of}. {r['notes']}"
+        r["notes"] = note if len(note) <= 300 else note[:299].rstrip() + "…"
+        marked += 1
+    for f, rs in files.items():
+        write_csv(f, SOURCE_COLS, rs)
+    print(f"{marked} layers marked as copies")
+
 
 def main():
     args = sys.argv[1:]
@@ -406,6 +524,8 @@ def main():
         sys.exit(1 if errors else 0)
     elif args[:1] == ["--merge"]:
         merge()
+    elif args[:1] == ["--copies"]:
+        copies()
     elif any(a.startswith("-") for a in args):
         sys.exit(__doc__)
     else:

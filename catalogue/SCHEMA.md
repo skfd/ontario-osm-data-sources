@@ -39,7 +39,7 @@ is the tracker slug. Ids never change once given, because measures point at them
 | `licence` | Licence name as published. Never a verdict; the verdict lives on the wiki's `Canada#Open_Data` table and the OSMF variants page |
 | `tier` | Optional 1–5 score of what OSM would gain (Guelph audit rubric) |
 | `feasibility` | `import`, `conflate`, `validate`, `reference` or `no` |
-| `status` | `Completed`, `Ongoing`, `Planned`, `Onboarding`, `Available`, `Parked` or `Not usable` |
+| `status` | `Completed`, `Ongoing`, `Planned`, `Onboarding`, `Available`, `Parked`, `No licence` (of use, but the publisher gives no open licence) or `Not usable` |
 | `tools` | `label\|url` pairs separated by `; `: tile layer, gaps page, MapRoulette, import page |
 | `lead` | OSM username leading the work, blank if none. Once a source has rows in `work.csv`, leads go there |
 | `last_verified` | `YYYY-MM-DD` the row's facts were last checked |
@@ -54,10 +54,12 @@ on the same layer are one source with three rows in `work.csv`, not three source
 with a single unnamed stream may keep its `lead` and work tools on its own row until a second
 stream appears.
 
-**Themes:** addresses, buildings, roads, traffic, parking, cycling, pedestrian, trails,
-transit, parks, recreation, trees, water, amenities, emergency, health, education, community,
-poi, heritage, boundaries, planning, elections, waste, environment, topography, imagery,
-catalogue. Add one here and in `common.py` together.
+**Themes:** addresses, buildings, property, roads, traffic, parking, cycling, pedestrian,
+trails, rail, transit, parks, recreation, trees, water, utilities, amenities, emergency,
+hazards, health, education, community, culture, tourism, poi, heritage, boundaries, planning,
+agriculture, landcover, environment, elections, statistics, operations, waste, topography,
+imagery, maps, catalogue. What each holds is in `GRADING.md`. Add one there and in
+`common.py` together.
 
 ## `work.csv`
 

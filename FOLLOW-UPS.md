@@ -15,14 +15,14 @@ Work the 2026-10-14 portal sweep (`inventory.py`, `catalogue/layers/`) left open
 
 ## Decisions pending
 
-- **Address duplicates.** 57 of the 78 tier-5 address rows are in municipalities whose
-  address points the tracker already follows (`synced/addresses.csv`), at another URL, and
-  several batches hold two copies of one layer (Lennox and Addington 26,613 twice, Simcoe
-  190,432 twice, Niagara `address-points` and `address-points-2`). Mark them as copies at
-  tier 2 under GRADING.md's duplicate rule, or add a column saying which source they copy.
+- **Copies not provable.** `inventory.py --copies` marked 3,485 layers. Some likely copies it
+  cannot prove remain at their own grade: Sault Ste. Marie's two address layers (33,316 and
+  33,354), Simcoe's municipal address layers beside the county's, Middlesex's county address
+  points on a second service. Mark them by hand (`Copy of <id>.`) if they are.
 - **Themes.** Graders filed railways under `roads` and census layers under `planning` or
   `community`, unevenly. Add `rail` and `statistics` to `THEMES`, or settle on one existing
   theme for each.
-- **Licence emails.** 179 layers graded 4 or 5 are `Not usable` only for want of a licence.
+- **Licence emails.** Layers of use with no open licence now have the status `No licence`;
+  `report/SUMMARY.md` "Licences to ask for" lists the 813 graded 3 to 5 by jurisdiction.
 - **OSM coverage.** No grade was checked against OSM; buildings in particular sit at 4
   whether OSM already has them or not.
