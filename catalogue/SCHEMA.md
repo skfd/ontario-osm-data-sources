@@ -168,9 +168,12 @@ keeps its old count.
 
     code,name,level,tier
 
-`level` is `country`, `province` or `municipal`. `tier` is `upper`, `single` or `lower` for the
-444 municipalities of the Ontario list, blank otherwise (`west-parry-sound` is a GIS
-consortium, not a municipality). The name is used as a wiki section heading, so no two rows
+`level` is `country`, `province` or `municipal`, or for a public body that publishes data of its
+own: `agency` (a ministry, agency, board or commission, or a province-wide body like Trans
+Canada Trail), `conservation-authority`, `school-board`, `health-unit`, or `association` (a
+body that gathers its members' layers, like Conservation Ontario). `tier` is `upper`, `single`
+or `lower` for the 444 municipalities of the Ontario list, blank otherwise (`west-parry-sound`
+is a GIS consortium, not a municipality). The name is used as a wiki section heading, so no two rows
 share one.
 
 A new code is the slug of the name: lowercase, accents and punctuation dropped, spaces and

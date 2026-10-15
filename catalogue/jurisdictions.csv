@@ -7,6 +7,7 @@ ca/on/adjala-tosorontio,Adjala-Tosorontio,municipal,lower
 ca/on/admaston-bromley,Admaston/Bromley,municipal,lower
 ca/on/ajax,Ajax,municipal,lower
 ca/on/alberton,Alberton,municipal,single
+ca/on/alcohol-and-gaming-commission-of-ontario,Alcohol and Gaming Commission of Ontario,agency,
 ca/on/alfred-and-plantagenet,Alfred and Plantagenet,municipal,lower
 ca/on/algonquin-highlands,Algonquin Highlands,municipal,lower
 ca/on/alnwick-haldimand,Alnwick/Haldimand,municipal,lower
@@ -100,6 +101,7 @@ ca/on/drummond-north-elmsley,Drummond/North Elmsley,municipal,lower
 ca/on/dryden,Dryden,municipal,single
 ca/on/dubreuilville,Dubreuilville,municipal,single
 ca/on/dufferin,Dufferin,municipal,upper
+ca/on/dufferin-peel-catholic-district-school-board,Dufferin-Peel Catholic District School Board,school-board,
 ca/on/durham,Durham,municipal,upper
 ca/on/dutton-dunwich,Dutton/Dunwich,municipal,lower
 ca/on/dysart-et-al,Dysart et al,municipal,lower
@@ -110,6 +112,7 @@ ca/on/east-gwillimbury,East Gwillimbury,municipal,lower
 ca/on/east-hawkesbury,East Hawkesbury,municipal,lower
 ca/on/east-zorra-tavistock,East Zorra-Tavistock,municipal,lower
 ca/on/edwardsburgh-cardinal,Edwardsburgh/Cardinal,municipal,lower
+ca/on/elections-ontario,Elections Ontario,agency,
 ca/on/elgin,Elgin,municipal,upper
 ca/on/elizabethtown-kitley,Elizabethtown-Kitley,municipal,lower
 ca/on/elliot-lake,Elliot Lake,municipal,single
@@ -153,9 +156,11 @@ ca/on/guelph-eramosa,Guelph/Eramosa,municipal,lower
 ca/on/haldimand,Haldimand,municipal,single
 ca/on/haliburton,Haliburton,municipal,upper
 ca/on/halton,Halton,municipal,upper
+ca/on/halton-catholic-district-school-board,Halton Catholic District School Board,school-board,
 ca/on/halton-hills,Halton Hills,municipal,lower
 ca/on/hamilton,Hamilton,municipal,single
 ca/on/hamilton-township,Township of Hamilton,municipal,lower
+ca/on/hamilton-wentworth-district-school-board,Hamilton-Wentworth District School Board,school-board,
 ca/on/hanover,Hanover,municipal,lower
 ca/on/harley,Harley,municipal,single
 ca/on/harris,Harris,municipal,single
@@ -247,11 +252,15 @@ ca/on/mcnab-braeside,McNab/Braeside,municipal,lower
 ca/on/meaford,Meaford,municipal,lower
 ca/on/melancthon,Melancthon,municipal,lower
 ca/on/merrickville-wolford,Merrickville–Wolford,municipal,lower
+ca/on/metrolinx,Metrolinx,agency,
 ca/on/middlesex,Middlesex,municipal,upper
 ca/on/middlesex-centre,Middlesex Centre,municipal,lower
 ca/on/midland,Midland,municipal,lower
 ca/on/milton,Milton,municipal,lower
 ca/on/minden-hills,Minden Hills,municipal,lower
+ca/on/ministry-of-agriculture-food-and-agribusiness,"Ontario Ministry of Agriculture, Food and Agribusiness",agency,
+ca/on/ministry-of-energy-and-mines,Ontario Ministry of Energy and Mines,agency,
+ca/on/ministry-of-transportation,Ontario Ministry of Transportation,agency,
 ca/on/minto,Minto,municipal,lower
 ca/on/mississauga,Mississauga,municipal,lower
 ca/on/mississippi-mills,Mississippi Mills,municipal,lower
@@ -295,6 +304,9 @@ ca/on/oakville,Oakville,municipal,lower
 ca/on/oconnor,O'Connor,municipal,single
 ca/on/oil-springs,Oil Springs,municipal,lower
 ca/on/oliver-paipoonge,Oliver Paipoonge,municipal,single
+ca/on/ontario-geological-survey,Ontario Geological Survey,agency,
+ca/on/ontario-heritage-trust,Ontario Heritage Trust,agency,
+ca/on/ontario-northland,Ontario Northland,agency,
 ca/on/opasatika,Opasatika,municipal,single
 ca/on/orangeville,Orangeville,municipal,lower
 ca/on/orillia,Orillia,municipal,single
@@ -302,6 +314,7 @@ ca/on/oro-medonte,Oro-Medonte,municipal,lower
 ca/on/oshawa,Oshawa,municipal,lower
 ca/on/otonabee-south-monaghan,Otonabee–South Monaghan,municipal,lower
 ca/on/ottawa,Ottawa,municipal,single
+ca/on/ottawa-catholic-district-school-board,Ottawa Catholic District School Board,school-board,
 ca/on/owen-sound,Owen Sound,municipal,lower
 ca/on/oxford,Oxford,municipal,upper
 ca/on/papineau-cameron,Papineau-Cameron,municipal,single
@@ -357,6 +370,8 @@ ca/on/severn,Severn,municipal,lower
 ca/on/shelburne,Shelburne,municipal,lower
 ca/on/shuniah,Shuniah,municipal,single
 ca/on/simcoe,Simcoe,municipal,upper
+ca/on/simcoe-county-district-school-board,Simcoe County District School Board,school-board,
+ca/on/simcoe-muskoka-district-health-unit,Simcoe Muskoka District Health Unit,health-unit,
 ca/on/sioux-lookout,Sioux Lookout,municipal,single
 ca/on/sioux-narrows-nestor-falls,Sioux Narrows-Nestor Falls,municipal,single
 ca/on/smiths-falls,Smiths Falls,municipal,single
@@ -397,6 +412,7 @@ ca/on/temagami,Temagami,municipal,single
 ca/on/temiskaming-shores,Temiskaming Shores,municipal,single
 ca/on/terrace-bay,Terrace Bay,municipal,single
 ca/on/thames-centre,Thames Centre,municipal,lower
+ca/on/thames-valley-district-school-board,Thames Valley District School Board,school-board,
 ca/on/the-archipelago,The Archipelago,municipal,single
 ca/on/the-blue-mountains,The Blue Mountains,municipal,lower
 ca/on/the-nation,The Nation,municipal,lower
@@ -409,6 +425,9 @@ ca/on/tillsonburg,Tillsonburg,municipal,lower
 ca/on/timmins,Timmins,municipal,single
 ca/on/tiny,Tiny,municipal,lower
 ca/on/toronto,Toronto,municipal,single
+ca/on/toronto-catholic-district-school-board,Toronto Catholic District School Board,school-board,
+ca/on/toronto-district-school-board,Toronto District School Board,school-board,
+ca/on/trans-canada-trail,Trans Canada Trail,agency,
 ca/on/trent-hills,Trent Hills,municipal,lower
 ca/on/trent-lakes,Trent Lakes,municipal,lower
 ca/on/tudor-and-cashel,Tudor and Cashel,municipal,lower
@@ -422,10 +441,12 @@ ca/on/warwick,Warwick,municipal,lower
 ca/on/wasaga-beach,Wasaga Beach,municipal,lower
 ca/on/waterloo,Waterloo,municipal,lower
 ca/on/waterloo-region,Region of Waterloo,municipal,upper
+ca/on/waterloo-region-district-school-board,Waterloo Region District School Board,school-board,
 ca/on/wawa,Wawa,municipal,single
 ca/on/welland,Welland,municipal,lower
 ca/on/wellesley,Wellesley,municipal,lower
 ca/on/wellington,Wellington,municipal,upper
+ca/on/wellington-dufferin-guelph-public-health,Wellington-Dufferin-Guelph Public Health,health-unit,
 ca/on/wellington-north,Wellington North,municipal,lower
 ca/on/west-elgin,West Elgin,municipal,lower
 ca/on/west-grey,West Grey,municipal,lower
