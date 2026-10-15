@@ -13,6 +13,7 @@ import json
 import re
 from collections import Counter, defaultdict
 from datetime import date
+from hashlib import sha1
 from html import escape as esc
 from urllib.parse import quote
 
@@ -652,7 +653,9 @@ def html_page(sources, measures, juris, rows) -> str:
                   + facet("s-status", "Status", plain(present(STATUSES, "status"))),
                   [("nocopy", "hide copies"), ("more", "more columns")])
     legend = " ".join(f'{grade(t)} {GRADE_MEANS[g]}' for t, g in GRADE.items())
-    deferred = " ".join(f"{g}:rows-{g.lower()}.js" for g in DEFERRED)
+    # The file's hash in its URL: a cached rows-f.js from an older build would not fit this page.
+    deferred = " ".join(f"{g}:rows-{g.lower()}.js?v={sha1(deferred_rows(g, rows[g]).encode()).hexdigest()[:8]}"
+                        for g in DEFERRED)
     shown = sum(len(rows[g]) for g in grades if g not in DEFERRED)
     intro = f"""<p>Every open data source we know of that could feed OSM in Ontario: what it is good
 for, and how much of it is already in OSM. <b>{len(sources)} sources</b> ({summarize(sources)});
