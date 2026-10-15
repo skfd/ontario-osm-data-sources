@@ -1,0 +1,2 @@
+id,theme,dataset,provider,source_url,licence,tier,feasibility,status,tools,lead,last_verified,notes
+ca/on/erin/west-credit-river-water-quality,environment,Water Resource Recovery Facility Reporting,Town of Erin,https://www.erin.ca/town-hall/community-engagement/open-data-portal/water-resource-recovery-facility-reporting,None published,1,no,Not usable,,,2026-10-15,"River water-quality readings at three West Credit stations, served as CSV from a station picker; monitoring data, nothing OSM maps. The only dataset on the page."
