@@ -85,6 +85,7 @@ one a mapper would look under.
 | `trails` | trails and multi-use paths |
 | `rail` | railways, spurs, rail crossings, rail corridors |
 | `transit` | transit routes, stops, stations, GTFS |
+| `aviation` | airports, aerodromes, runways, helipads |
 | `parks` | parks and green space as places |
 | `recreation` | sports fields, courts, playgrounds, arenas, pools, recreation centres |
 | `trees` | street and park trees, canopy |
@@ -105,7 +106,9 @@ one a mapper would look under.
 | `agriculture` | farms, agricultural designations, soils |
 | `landcover` | woodlands, wetlands, vegetation and other mapped ground cover |
 | `environment` | natural-heritage designations, protected areas, species, monitoring, climate |
+| `resources` | geology, mineral and aggregate resources, pits and quarries, oil and gas wells |
 | `elections` | polling stations, voting subdivisions, results |
+| `government` | municipal offices, council records (attendance, votes, contacts), freedom-of-information logs |
 | `statistics` | census, demographics, surveys, budgets, counts and indicators |
 | `operations` | maintenance zones, snow and plow routes, collection schedules, work orders, inspections, service requests |
 | `waste` | depots, landfills, transfer stations, recycling and waste bins |

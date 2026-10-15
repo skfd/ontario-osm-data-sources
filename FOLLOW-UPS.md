@@ -19,9 +19,10 @@ Work the 2026-10-14 portal sweep (`inventory.py`, `catalogue/layers/`) left open
   cannot prove remain at their own grade: Sault Ste. Marie's two address layers (33,316 and
   33,354), Simcoe's municipal address layers beside the county's, Middlesex's county address
   points on a second service. Mark them by hand (`Copy of <id>.`) if they are.
-- **Themes.** Graders filed railways under `roads` and census layers under `planning` or
-  `community`, unevenly. Add `rail` and `statistics` to `THEMES`, or settle on one existing
-  theme for each.
+- **Themes left fuzzy.** The list grew to 42 (2026-10-15). Graders still found no clean home
+  for fences and barriers (topography or amenities), source-water protection zones
+  (environment), cartographic masks and label layers (maps), and Survey123 forms and staff
+  records (statistics or community).
 - **Licence emails.** Layers of use with no open licence now have the status `No licence`;
   `report/SUMMARY.md` "Licences to ask for" lists the 813 graded 3 to 5 by jurisdiction.
 - **OSM coverage.** No grade was checked against OSM; buildings in particular sit at 4

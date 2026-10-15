@@ -55,11 +55,11 @@ with a single unnamed stream may keep its `lead` and work tools on its own row u
 stream appears.
 
 **Themes:** addresses, buildings, property, roads, traffic, parking, cycling, pedestrian,
-trails, rail, transit, parks, recreation, trees, water, utilities, amenities, emergency,
-hazards, health, education, community, culture, tourism, poi, heritage, boundaries, planning,
-agriculture, landcover, environment, elections, statistics, operations, waste, topography,
-imagery, maps, catalogue. What each holds is in `GRADING.md`. Add one there and in
-`common.py` together.
+trails, rail, transit, aviation, parks, recreation, trees, water, utilities, amenities,
+emergency, hazards, health, education, community, culture, tourism, poi, heritage, boundaries,
+planning, agriculture, landcover, environment, resources, elections, government, statistics,
+operations, waste, topography, imagery, maps, catalogue. What each holds is in `GRADING.md`.
+Add one there and in `common.py` together.
 
 ## `work.csv`
 

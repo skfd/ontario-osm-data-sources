@@ -38,11 +38,11 @@ STATUSES = ["Completed", "Ongoing", "Planned", "Onboarding", "Available", "Parke
             "Not usable"]
 THEMES = [
     "addresses", "buildings", "property", "roads", "traffic", "parking", "cycling", "pedestrian",
-    "trails", "rail", "transit", "parks", "recreation", "trees", "water", "utilities",
-    "amenities", "emergency", "hazards", "health", "education", "community", "culture",
-    "tourism", "poi", "heritage", "boundaries", "planning", "agriculture", "landcover",
-    "environment", "elections", "statistics", "operations", "waste", "topography", "imagery",
-    "maps", "catalogue",
+    "trails", "rail", "transit", "aviation", "parks", "recreation", "trees", "water",
+    "utilities", "amenities", "emergency", "hazards", "health", "education", "community",
+    "culture", "tourism", "poi", "heritage", "boundaries", "planning", "agriculture",
+    "landcover", "environment", "resources", "elections", "government", "statistics",
+    "operations", "waste", "topography", "imagery", "maps", "catalogue",
 ]
 MEASURES_VOCAB = ["missing", "matched", "added", "observation", "note"]
 WORK_KINDS = ["import", "gap-fill", "maintenance", "conflation", "task-queue", "survey"]
