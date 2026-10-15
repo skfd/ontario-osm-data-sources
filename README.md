@@ -30,6 +30,9 @@ All of it is in [`catalogue/`](catalogue/); the format is in
 
 - `sources.csv`: hand-curated sources, one row each, with a stable id like
   `ca/on/guelph/hydrants`
+- `layers/<code>.csv`: every layer the portals publish, graded 1–5 by `GRADING.md` and
+  written by `inventory.py --merge`; open ends of that sweep are in
+  [`FOLLOW-UPS.md`](FOLLOW-UPS.md)
 - `work.csv`: streams of work on a source (an import, a gap-fill, a MapRoulette queue)
 - `synced/addresses.csv`: the address datasets the tracker follows, written by `sync.py`
 - `measures.csv`: dated measurements, append only
