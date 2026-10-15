@@ -20,6 +20,8 @@ REPORT = HERE / "report"
 REPO_URL = "https://github.com/skfd/ontario-osm-data-sources"
 OSMF_PAGE = "https://osmfoundation.org/wiki/OGL_Canada_and_local_variants"
 SURVEY_DATE = "2026-08-12"
+PAGES_URL = "https://skfd.github.io/ontario-osm-data-sources/"
+WIKI_MIN_TIER = 3  # swept layers below this stay off the wiki page
 
 STATUS_STYLE = {
     "Completed": "background:#d4f4d4",
@@ -142,10 +144,18 @@ def wiki_page(sources, juris) -> str:
     cols = ["licence", "coverage", "feasibility", "status", "tools", "lead", "last_verified",
             "notes"]
     sections = []
-    for code, rs in sorted(by_muni.items(), key=lambda kv: -len(kv[1])):
+    for code, every in sorted(by_muni.items(), key=lambda kv: -len(kv[1])):
+        # The sweep lists every layer; the wiki shows the ones worth a mapper's time and
+        # index.html all of them. A page over 2 MB will not save.
+        rs = [r for r in every if not r["swept"] or int(r["tier"] or 0) >= WIKI_MIN_TIER]
+        hidden = len(every) - len(rs)
         scored = any(r["tier"] for r in rs)
         intro = (f"{len(rs)} layers ({summarize(rs)}). ''Value'' is a 1–5 score of what OSM "
-                 "would gain.\n\n" if scored else "")
+                 "would gain." if scored else "")
+        if hidden:
+            intro += (f" {hidden} more swept layers scored below {WIKI_MIN_TIER}; they are in "
+                      f"the [{PAGES_URL} catalogue].")
+        intro += "\n\n" if intro else ""
         sections.append(f"=== {juris[code]['name']} ===\n{intro}"
                         + table(rs, "dataset", cols[:1] + (["tier"] if scored else []) + cols[1:]))
     munis_text = "\n\n".join(sections)

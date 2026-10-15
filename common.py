@@ -111,7 +111,8 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
     sources = list(by_id.values())
     seen = set()
     for r in hand:
-        where = f"{r.pop('_file')} {r['id']}"
+        file = r.pop("_file")
+        where = f"{file} {r['id']}"
         if r["id"] in seen:
             errors.append(f"{where}: duplicate id")
         seen.add(r["id"])
@@ -124,7 +125,7 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
         for k in ("dataset", "feasibility", "status"):
             if not r[k]:
                 errors.append(f"{where}: no {k} (and no synced row to add to)")
-        sources.append(blank | r)
+        sources.append(blank | r | {"swept": "yes" if file.startswith("layers/") else ""})
 
     for r in sources:
         where = r["id"]

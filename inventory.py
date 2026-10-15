@@ -30,7 +30,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 
 from common import (FEASIBILITY, HERE, JURISDICTIONS, LAYERS, PORTALS, SOURCE_COLS, SOURCES,
-                    THEMES, read_csv, write_csv)
+                    SYNCED, THEMES, read_csv, write_csv)
 import survey
 from survey import Secured, ServiceError, get_json, with_param
 
@@ -245,7 +245,9 @@ def swept(p: dict) -> bool:
 
 def inventory(only: set[str]):
     portals = [p for p in read_csv(PORTALS) if swept(p) and (not only or p["jurisdiction"] in only)]
-    known = {key(r["source_url"]) for r in read_csv(SOURCES) if r["source_url"]}
+    existing = read_csv(SOURCES) + read_csv(SYNCED)
+    known = {key(r["source_url"]) for r in existing if r["source_url"]}
+    taken_ids = {r["id"] for r in existing}
     CACHE.mkdir(parents=True, exist_ok=True)
 
     def fetch(p):
@@ -291,6 +293,9 @@ def inventory(only: set[str]):
             n = taken.get(base, 0) + 1
             taken[base] = n
             r["id"] = base if n == 1 else f"{base}-{n}"
+        # The tracker follows each municipality's address points under <code>/addresses, often
+        # at another URL; the same dataset found on a portal is that source, not a new one.
+        rows[:] = [r for r in rows if r["id"] not in taken_ids or not r["id"].endswith("/addresses")]
         write_csv(CACHE / f"{code.split('/')[-1]}.csv", COLS, rows)
     print(f"{sum(map(len, by_juris.values()))} rows in {len(by_juris)} jurisdictions")
 
