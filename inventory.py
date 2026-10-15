@@ -13,7 +13,7 @@ Writes  cache/inventory/<code>.csv       one row per dataset or layer, with its 
     python inventory.py --copies             mark layers that republish another source
 
 Portals swept: every reach 2 to 4 row with an api_url, minus shared-portal rows (their layers
-are listed under the owner) and the provincial catalogues. The goal is that no layer goes
+are listed under the owner). The goal is that no layer goes
 unlisted; a grade can be argued later, a missing row cannot. A Hub item that names a whole service
 becomes one row per layer. A server layer a Hub of the same jurisdiction already lists is
 dropped, and so is any URL already in sources.csv. Ids are assigned here, in URL order, so the
@@ -41,7 +41,7 @@ survey.SLOTS = threading.Semaphore(24)
 CACHE = HERE / "cache" / "inventory"
 GRADED = HERE / "cache" / "graded"
 CHUNK = 120
-SKIP = {"ca/on"}  # the provincial catalogues are not a municipality's
+SKIP: set[str] = set()  # jurisdictions left out of a sweep
 COLS = ["id", "jurisdiction", "portal_url", "origin", "dataset", "item_type", "source_url",
         "geometry", "records", "fields", "edited", "licence", "description"]
 GRADE_COLS = ["id", "theme", "provider", "tier", "feasibility", "status", "notes"]
@@ -189,6 +189,11 @@ def from_ckan(p: dict) -> list[dict]:
         for pk in d["results"]:
             formats = sorted({(r.get("format") or "").upper() for r in pk.get("resources") or []} - {""})
             site = p["portal_url"].rstrip("/")
+            # A ministry's catalogue names the ministry only as the package's organization, and
+            # many of the province's packages only point at the same layer on GeoHub.
+            org = (pk.get("organization") or {}).get("title") or ""
+            hub = any("geohub" in (r.get("url") or "") for r in pk.get("resources") or [])
+            notes = text(pk.get("notes"), 300)
             rows.append({
                 "origin": "ckan",
                 "dataset": text(pk.get("title") or pk.get("name"), 200),
@@ -196,7 +201,9 @@ def from_ckan(p: dict) -> list[dict]:
                 "source_url": f"{site}/dataset/{pk['name']}",
                 "edited": (pk.get("metadata_modified") or "")[:10],
                 "licence": licence(text(pk.get("license_title"), 150), p["licence"]),
-                "description": text(pk.get("notes"), 300),
+                "description": text(" ".join(filter(None, [f"{org}." if org else "",
+                                                           "Links to GeoHub." if hub else "",
+                                                           notes])), 300),
             })
         start += len(d["results"])
         if not d["results"] or start >= d["count"]:
