@@ -433,9 +433,10 @@ def source_rows(sources, measures, juris, last) -> str:
 
         out.append(
             f'<tr data-where="{esc(where)}" data-theme="{r["theme"]}" data-use="{use}" '
-            f'data-status="{r["status"]}">'
+            f'data-status="{r["status"]}" data-value="{r["tier"]}">'
             f'<td class="name">{a(r["source_url"], name)}{notes}</td>'
             f"<td>{esc(where)}</td><td>{r['theme']}</td>"
+            f'<td class="num" data-sort="{r["tier"] or 0}">{r["tier"]}</td>'
             f'<td data-sort="{uses.index(r["feasibility"])}">{use}</td>'
             f'<td data-sort="{order[r["status"]]}"><span class="badge" '
             f'style="{STATUS_STYLE[r["status"]]}">{r["status"]}</span></td>'
@@ -483,6 +484,7 @@ def html_page(sources, measures, juris, portals, last) -> str:
     with_portal = {p["jurisdiction"] for p in live} & munis
     src_bar = bar("s", select("s-where", "Where", by_name({jurisdiction(r["id"]) for r in sources}))
                   + select("s-theme", "Theme", present(THEMES, "theme"))
+                  + select("s-value", "Value", sorted({r["tier"] for r in sources if r["tier"]}, reverse=True))
                   + select("s-use", "Use", [FEASIBILITY[f] for f in present(FEASIBILITY, "feasibility")])
                   + select("s-status", "Status", present(STATUSES, "status")), more=True)
     portal_bar = bar("p", select("p-tier", "Tier", ["province"] + list(TIER_LABEL.values()))
@@ -514,7 +516,8 @@ how much of it is already in OSM. <b>{len(sources)} sources</b> ({summarize(sour
 <section id="sources" data-table>
 {src_bar}
 <table>
-<thead><tr>{th(("Dataset", ""), ("Where", ""), ("Theme", ""), ("Use", 'data-type="num"'),
+<thead><tr>{th(("Dataset", ""), ("Where", ""), ("Theme", ""), ("Value", 'data-type="num"'),
+              ("Use", 'data-type="num"'),
               ("Status", 'data-type="num"'), ("In OSM", 'data-type="num" class="osm"'),
               ("Tools", ""), ("Lead", ""), ("Licence", 'class="more"'),
               ("Verified", 'class="more"'), ("Id", 'class="more"'))}</tr></thead>
