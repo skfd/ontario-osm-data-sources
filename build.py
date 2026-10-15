@@ -2,12 +2,14 @@
 
 Reads   catalogue/*.csv, catalogue/synced/*.csv  (see catalogue/SCHEMA.md)
 Writes  index.html, portals.html                 the catalogue as tables, for GitHub Pages
+        rows-d.js, rows-f.js                     index.html's D and F rows, loaded on request
         wiki/Canada_Open_data.wiki               the OSM wiki page
         report/SUMMARY.md                        counts, freshness, gaps and coverage, for review
 
     python build.py
 """
 
+import json
 import re
 from collections import Counter, defaultdict
 from datetime import date
@@ -388,6 +390,11 @@ REACH_STYLE = {4: "background:#c6ebd0", 3: "background:#dcf1d2", 2: "background:
 TIER_LABEL = {"upper": "upper-tier", "single": "single-tier", "lower": "lower-tier"}
 # The page shows the 1–5 tier as a school grade; the CSVs, the wiki and SUMMARY.md keep 1–5.
 GRADE = {"5": "A", "4": "B", "3": "C", "2": "D", "1": "F"}
+UNGRADED = "ungraded"
+GRADE_MEANS = {"A": "a large gap filled", "B": "features OSM lacks in bulk",
+               "C": "a gaps list or reference", "D": "small, or OSM has it",
+               "F": "not something OSM maps", UNGRADED: "hand-catalogued, not graded"}
+DEFERRED = ("D", "F")  # rows-d.js and rows-f.js: loaded when the Value filter asks for them
 GRADE_STYLE = {"A": "background:#8fd19e", "B": "background:#c8ebb4", "C": "background:#f7e79a",
                "D": "background:#f8c99a", "F": "background:#f1cfcf"}
 SHARED_ARCGIS = re.compile(r"^services\d*\.arcgis\.com$|^utility\.arcgis\.com$")
@@ -445,19 +452,32 @@ def a(url: str, label: str) -> str:
     return f'<a href="{esc(url)}">{esc(label)}</a>' if url else esc(label)
 
 
-def select(name: str, label: str, values: list[str]) -> str:
-    opts = "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in values)
-    return (f'<label>{label} <select name="{name}" data-f="{name.split("-", 1)[1]}">'
-            f'<option value="">all</option>{opts}</select></label>')
+def facet(name: str, label: str, values: list[tuple[str, str]], find: bool = False,
+          default: list[str] | None = None, totals: dict | None = None) -> str:
+    """A filter that picks several values: a button opening a list of checkboxes with counts.
+    `default` is what it holds when the URL says nothing; `totals` count rows not yet loaded."""
+    attrs = f' data-default="{esc("|".join(default))}"' if default else ""
+    box = '<input type="search" class="find" placeholder="Find…" aria-label="Find">' if find else ""
+    opts = "".join(
+        f'<label><input type="checkbox" value="{esc(v)}"'
+        + (f' data-total="{totals[v]}"' if totals and v in totals else "")
+        + f'><span>{shown}</span><i></i></label>' for v, shown in values)
+    return (f'<details class="facet" data-name="{name}" data-f="{name.split("-", 1)[1]}"{attrs}>'
+            f'<summary>{label}<b></b></summary><div class="opts">{box}{opts}</div></details>')
 
 
-def bar(prefix: str, selects: str, more: bool = False) -> str:
-    toggle = (f'<label class="check"><input type="checkbox" name="{prefix}-more"> more columns</label>'
-              if more else "")
-    # On a phone the selects fold behind the Filters button, so the bar stays one line.
+def plain(values) -> list[tuple[str, str]]:
+    return [(v, esc(v)) for v in values]
+
+
+def bar(prefix: str, facets: str, checks: list[tuple[str, str]] = ()) -> str:
+    boxes = "".join(f'<label class="check"><input type="checkbox" name="{prefix}-{n}"> {label}</label>'
+                    for n, label in checks)
+    # On a phone the filters fold behind the Filters button, so the bar stays one line.
     return (f'<div class="bar"><input type="search" name="{prefix}-q" placeholder="Search…" '
             f'aria-label="Search"><button type="button" class="filters" aria-expanded="false">'
-            f'Filters</button><span class="count"></span><div class="picks">{selects}{toggle}</div></div>')
+            f'Filters</button><span class="count"></span><div class="picks">{facets}{boxes}</div>'
+            f'<div class="active"></div><div class="hint" hidden></div></div>')
 
 
 def grade(tier: str) -> str:
@@ -477,7 +497,8 @@ def badge_css() -> str:
     return "\n".join(rules)
 
 
-def source_rows(sources, measures, juris, portals, last) -> str:
+def source_rows(sources, measures, juris, portals, last) -> dict[str, list[str]]:
+    """Each row's HTML, by the grade letter that decides which file it ships in."""
     find = portal_finder(portals)
     history = defaultdict(list)
     for m in measures:
@@ -486,8 +507,8 @@ def source_rows(sources, measures, juris, portals, last) -> str:
     uses = list(FEASIBILITY)
     rows = sorted(sources, key=lambda r: (order[r["status"]], jurisdiction(r["id"]).count("/"),
                                           juris[jurisdiction(r["id"])]["name"], r["dataset"]))
-    out = []
-    for r in rows:
+    out = defaultdict(list)
+    for i, r in enumerate(rows):
         where = juris[jurisdiction(r["id"])]["name"]
         use = FEASIBILITY[r["feasibility"]]
         name = "Address points" if is_address_dataset(r) else r["dataset"]
@@ -516,11 +537,12 @@ def source_rows(sources, measures, juris, portals, last) -> str:
             licence += f' <span class="muted">· LWG {a(r.get("lwg_url", ""), r["lwg"])}</span>'
         p = find(r)
         portal = a(p["portal_url"], portal_label(p["portal_url"])) if p else ""
-        g = GRADE.get(r["tier"], "")
+        g = GRADE.get(r["tier"], UNGRADED)
+        copy = ' data-copy="1"' if r["notes"].startswith("Copy of ") else ""
 
-        out.append(
-            f'<tr data-where="{esc(where)}" data-theme="{r["theme"]}" data-use="{use}" '
-            f'data-status="{r["status"]}" data-value="{g}">'
+        out[g].append(
+            f'<tr data-i="{i}" data-where="{esc(where)}" data-theme="{r["theme"]}" data-use="{use}" '
+            f'data-status="{r["status"]}" data-value="{g}"{copy}>'
             f'<td class="name">{a(r["source_url"], name)}{notes}</td>'
             f"<td>{esc(where)}</td><td>{r['theme']}</td>"
             f'<td class="value">{grade(r["tier"])}</td>'
@@ -533,7 +555,7 @@ def source_rows(sources, measures, juris, portals, last) -> str:
             + cell("tools", tools) + cell("lead", leads)
             + f'<td class="more nowrap">{r["last_verified"]}</td>'
             f'<td class="more"><code>{esc(r["id"])}</code></td></tr>')
-    return "\n".join(out)
+    return out
 
 
 def cell(cls: str, html: str, sort: str | None = None) -> str:
@@ -561,7 +583,8 @@ def portal_rows(sources, portals, juris) -> str:
         layers = f"{int(p['layers_seen']):,}" if p["layers_seen"] else ""
         n = catalogued[(p["jurisdiction"], p["portal_url"])]
         # The datasets page finds a portal's rows by searching its label within the jurisdiction.
-        listed = (f'<a href="index.html#s-q={quote(label)}&amp;s-where={quote(j["name"])}">{n:,}</a>'
+        listed = (f'<a href="index.html#s-q={quote(label)}&amp;s-where={quote(j["name"])}'
+                  f'&amp;s-value=all">{n:,}</a>'
                   if n else "")
         out.append(
             f'<tr data-tier="{tier}" data-reach="{reach} {p["reach_label"]}" '
@@ -612,28 +635,35 @@ def shell(title: str, here: str, intro: str, body: str) -> str:
 """
 
 
-def html_page(sources, measures, juris, portals, last) -> str:
+def html_page(sources, measures, juris, rows) -> str:
+    """The datasets page. Its rows are A to C and the ungraded; D and F wait in their files."""
     by_name = lambda codes: sorted({juris[c]["name"] for c in codes})
     present = lambda vocab, key: [v for v in vocab if any(r[key] == v for r in sources)]
-    src_bar = bar("s", select("s-where", "Where", by_name({jurisdiction(r["id"]) for r in sources}))
-                  + select("s-theme", "Theme", present(THEMES, "theme"))
-                  + select("s-value", "Value", [g for t, g in GRADE.items()
-                                                if any(r["tier"] == t for r in sources)])
-                  + select("s-use", "Use", [FEASIBILITY[f] for f in present(FEASIBILITY, "feasibility")])
-                  + select("s-status", "Status", present(STATUSES, "status")), more=True)
-    grades = " ".join(f'{grade(t)} {w}' for t, w in
-                      (("5", "a large gap filled"), ("4", "features OSM lacks in bulk"),
-                       ("3", "a gaps list or reference"), ("2", "small, or OSM has it"),
-                       ("1", "not something OSM maps")))
+    grades = [g for g in list(GRADE.values()) + [UNGRADED] if rows[g]]
+    src_bar = bar("s", facet("s-where", "Where", plain(by_name({jurisdiction(r["id"]) for r in sources})),
+                             find=True)
+                  + facet("s-theme", "Theme", plain(present(THEMES, "theme")), find=True)
+                  + facet("s-value", "Value",
+                          [(g, (f'<b class="grade {g}">{g}</b> ' if g != UNGRADED else "")
+                            + GRADE_MEANS[g]) for g in grades],
+                          default=[g for g in grades if g not in DEFERRED],
+                          totals={g: len(rows[g]) for g in DEFERRED})
+                  + facet("s-use", "Use", plain(FEASIBILITY[f] for f in present(FEASIBILITY, "feasibility")))
+                  + facet("s-status", "Status", plain(present(STATUSES, "status"))),
+                  [("nocopy", "hide copies"), ("more", "more columns")])
+    legend = " ".join(f'{grade(t)} {GRADE_MEANS[g]}' for t, g in GRADE.items())
+    deferred = " ".join(f"{g}:rows-{g.lower()}.js" for g in DEFERRED)
+    shown = sum(len(rows[g]) for g in grades if g not in DEFERRED)
     intro = f"""<p>Every open data source we know of that could feed OSM in Ontario: what it is good
 for, and how much of it is already in OSM. <b>{len(sources)} sources</b> ({summarize(sources)});
 {len(measures)} measures. Generated {date.today()}.</p>
 <p class="muted grades"><i>Value</i> is what OSM would gain (<a href="{REPO_URL}/blob/main/catalogue/GRADING.md">how it is graded</a>):
-{grades}.</p>
+{legend}. The page opens on the {shown:,} rows graded A to C or not graded; D and F load when
+you pick them. Grades are a first pass and unreviewed.</p>
 <p class="muted">A row here is not permission to import. Licence verdicts live on
 <a href="https://wiki.openstreetmap.org/wiki/Canada#Open_Data">Canada#Open Data</a> and the OSMF
 <a href="{OSMF_PAGE}">OGL Canada and local variants</a> page.</p>"""
-    body = f"""<section id="sources" data-table>
+    body = f"""<section id="sources" data-table data-total="{len(sources)}" data-deferred="{deferred}">
 {src_bar}
 <table>
 <thead><tr>{th(("Dataset", ""), ("Where", ""), ("Theme", ""), ("Value", ""),
@@ -643,20 +673,25 @@ for, and how much of it is already in OSM. <b>{len(sources)} sources</b> ({summa
               ("Tools", ""), ("Lead", ""),
               ("Verified", 'class="more"'), ("Id", 'class="more"'))}</tr></thead>
 <tbody>
-{source_rows(sources, measures, juris, portals, last)}
+{chr(10).join(tr for g in grades if g not in DEFERRED for tr in rows[g])}
 </tbody>
 </table>
 </section>"""
     return shell("Ontario open data for OpenStreetMap", "index.html", intro, body)
 
 
+def deferred_rows(g: str, rows: list[str]) -> str:
+    """A script, not JSON for fetch(): a script loads from file:// too."""
+    return f"window.ROWS_{g} = {json.dumps(chr(10).join(rows), ensure_ascii=False)};\n"
+
+
 def portals_page(sources, juris, portals) -> str:
     live = [p for p in portals if p["platform"] != "none-found"]
     munis = {c for c, j in juris.items() if j["tier"]}
     with_portal = {p["jurisdiction"] for p in live} & munis
-    portal_bar = bar("p", select("p-tier", "Tier", ["province"] + list(TIER_LABEL.values()))
-                     + select("p-reach", "Reach", [f"{g} {REACH[g]}" for g in sorted(REACH, reverse=True)])
-                     + select("p-platform", "Platform", PLATFORMS))
+    portal_bar = bar("p", facet("p-tier", "Tier", plain(["province"] + list(TIER_LABEL.values())))
+                     + facet("p-reach", "Reach", plain(f"{g} {REACH[g]}" for g in sorted(REACH, reverse=True)))
+                     + facet("p-platform", "Platform", plain(PLATFORMS)))
     intro = f"""<p>Where Ontario publishes open data: the denominator the catalogue grows towards.
 {len(with_portal)} of {len(munis)} municipalities have data reachable on a portal or map server.
 <i>Reach</i> grades how good the data is likely to be, by how it is published: 4 its own
@@ -697,9 +732,38 @@ h1{font-size:1.4rem;margin:0}
 padding:.6rem 1.25rem;background:var(--bg);border-bottom:1px solid var(--line)}
 .bar .picks{display:contents}
 .bar .filters{display:none}
-.bar input[type=search]{min-width:14rem;flex:0 1 20rem}
-.bar input[type=search],.bar select,.bar button{font:inherit;padding:.3rem .5rem;
+.bar>input[type=search]{min-width:14rem;flex:0 1 20rem}
+.bar input[type=search],.bar>button{font:inherit;padding:.3rem .5rem;
 border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+.facet{position:relative}
+.facet summary{list-style:none;cursor:pointer;padding:.3rem .6rem;border:1px solid var(--line);
+border-radius:6px;color:var(--fg);white-space:nowrap;user-select:none}
+.facet summary::-webkit-details-marker{display:none}
+.facet summary::after{content:" ▾";color:var(--muted)}
+.facet summary b{font-weight:600;margin-left:.4rem;color:var(--link)}
+.facet[open] summary{background:var(--head)}
+.facet .opts{position:absolute;top:calc(100% + .3rem);left:0;z-index:5;min-width:16rem;
+max-height:60vh;overflow:auto;padding:.35rem;background:var(--bg);border:1px solid var(--line);
+border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.facet .opts label{display:flex;align-items:center;gap:.5rem;padding:.3rem .45rem;border-radius:5px;
+color:var(--fg);white-space:nowrap;cursor:pointer}
+.facet .opts label[hidden]{display:none}
+.facet .opts label:hover{background:var(--hover)}
+.facet .opts label span{flex:1}
+.facet .opts label.zero{opacity:.45}
+.facet .opts i{font-style:normal;color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums}
+.facet .opts i.away::after{content:" to load"}
+.facet .find{width:100%;margin-bottom:.3rem}
+.bar .active{order:10;flex:1 1 100%;display:flex;flex-wrap:wrap;gap:.35rem}
+.bar .active:empty{display:none}
+.active button{font:inherit;font-size:.8rem;padding:.1rem .55rem;border:1px solid var(--line);
+border-radius:999px;background:var(--head);color:var(--fg);cursor:pointer}
+.active button:not(.reset)::after{content:" ×";color:var(--muted)}
+.active button.reset{background:none;border-color:transparent;color:var(--link)}
+.bar .hint{order:11;flex:1 1 100%;font-size:.85rem;color:var(--muted)}
+.bar .hint[hidden]{display:none}
+.hint button{font:inherit;padding:0;border:0;background:none;color:var(--link);cursor:pointer;
+text-decoration:underline}
 .bar label{color:var(--muted);white-space:nowrap}
 .bar .count{order:9;margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}
 table{border-collapse:collapse;width:100%}
@@ -752,8 +816,11 @@ header{padding:1rem 1rem .25rem}
 .bar .count{order:0;margin:0;font-size:.85rem}
 .bar .picks{display:none;flex:1 1 100%;grid-template-columns:1fr 1fr;gap:.5rem}
 .bar.open .picks{display:grid}
-.bar .picks label{display:flex;flex-direction:column;gap:.15rem;font-size:.8rem;white-space:normal}
-.bar .picks select{width:100%;padding:.45rem .4rem}
+.bar .picks .facet[open]{grid-column:1/-1}
+.facet summary{display:flex;padding:.45rem .6rem}
+.facet summary b{flex:1;overflow:hidden;text-overflow:ellipsis}
+.facet .opts{position:static;box-shadow:none;max-height:55vh;margin-top:.3rem;min-width:0}
+.facet .opts label{padding:.45rem .45rem;white-space:normal}
 .bar .picks label.check{flex-direction:row;align-items:center;gap:.4rem}
 table,thead,tbody{display:block}
 thead{position:sticky;top:var(--bar-h,3rem);z-index:1;background:var(--head)}
@@ -789,11 +856,30 @@ td .grade{width:1.8rem;line-height:1.8rem}
 
 JS = """
 const params = new URLSearchParams(location.hash.slice(1));
+const same = (a, b) => a.length === b.length && a.every(x => b.includes(x));
+const fmt = n => n.toLocaleString();
 for (const sec of document.querySelectorAll("section[data-table]")) {
-  const table = sec.querySelector("table"), tbody = table.tBodies[0], rows = [...tbody.rows];
-  const controls = [...sec.querySelectorAll(".bar [name]")], count = sec.querySelector(".count");
-  const barEl = sec.querySelector(".bar"), search = sec.querySelector("[type=search]");
-  const toggle = sec.querySelector(".filters"), more = sec.querySelector("[type=checkbox]");
+  const table = sec.querySelector("table"), tbody = table.tBodies[0];
+  const rows = [...tbody.rows];
+  const barEl = sec.querySelector(".bar"), search = sec.querySelector(".bar > [type=search]");
+  const count = sec.querySelector(".count"), toggle = sec.querySelector(".filters");
+  const active = sec.querySelector(".active"), hint = sec.querySelector(".hint");
+  const checks = [...sec.querySelectorAll(".picks > label > [type=checkbox]")];
+  const more = checks.find(c => c.name.endsWith("-more"));
+  const nocopy = checks.find(c => c.name.endsWith("-nocopy"));
+  const total = +sec.dataset.total || rows.length;
+  // Grades whose rows ship in their own file, and what has arrived.
+  const deferred = Object.fromEntries((sec.dataset.deferred || "").split(" ").filter(Boolean)
+    .map(s => s.split(":")));
+  const loading = {}, done = {};
+  const facets = [...sec.querySelectorAll(".facet")].map(el => ({
+    el, f: el.dataset.f, name: el.dataset.name,
+    label: el.querySelector("summary").firstChild.textContent,
+    boxes: [...el.querySelectorAll(".opts label > input")],
+    def: el.dataset.default ? el.dataset.default.split("|") : [],
+  }));
+  const valueFacet = facets.find(fc => fc.f === "value");
+  const chosen = fc => fc.boxes.filter(b => b.checked).map(b => b.value);
   new ResizeObserver(() => sec.style.setProperty("--bar-h", barEl.offsetHeight + "px")).observe(barEl);
   // Reading 15,000 rows' text on every keystroke is what made typing lag; read each once.
   const text = new Map();
@@ -803,54 +889,40 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
     return t;
   };
 
-  const apply = () => {
-    const words = search.value.toLowerCase().split(/\\s+/).filter(Boolean);
-    const picks = controls.filter(c => c.dataset.f && c.value);
-    let n = 0;
-    for (const tr of rows) {
-      let ok = picks.every(c => tr.dataset[c.dataset.f] === c.value);
-      if (ok && words.length) {
-        const t = textOf(tr);
-        ok = words.every(w => t.includes(w));
-      }
-      if (tr.hidden === ok) tr.hidden = !ok;
-      if (ok) tr.classList.toggle("odd", n % 2 === 1);
-      n += ok;
-    }
-    count.textContent = n === rows.length ? `${n.toLocaleString()} rows`
-      : `${n.toLocaleString()} of ${rows.length.toLocaleString()}`;
-    toggle.textContent = picks.length ? `Filters (${picks.length})` : "Filters";
-    if (more) table.classList.toggle("show-more", more.checked);
-  };
-  const save = () => {
-    const all = new URLSearchParams(location.hash.slice(1));
-    for (const c of controls) {
-      const v = c.type === "checkbox" ? (c.checked ? "1" : "") : c.value;
-      v ? all.set(c.name, v) : all.delete(c.name);
-    }
-    history.replaceState(null, "", all.size ? "#" + all : location.pathname);
-  };
-  let timer;
-  const update = () => { clearTimeout(timer); apply(); save(); };
-  for (const c of controls) {
-    if (params.has(c.name)) c.type === "checkbox" ? (c.checked = true) : (c.value = params.get(c.name));
-    // Some phones fire only change on a select; typing waits for a pause.
-    c.addEventListener("change", update);
-    c.addEventListener("input", c === search
-      ? () => { clearTimeout(timer); timer = setTimeout(update, 200); } : update);
+  // The URL holds what differs from the defaults: a facet is repeated once per value.
+  for (const fc of facets) {
+    const vals = !params.has(fc.name) ? fc.def
+      : params.getAll(fc.name).includes("all") ? [] : params.getAll(fc.name);
+    for (const b of fc.boxes) b.checked = vals.includes(b.value);
   }
-  toggle.addEventListener("click", () => {
-    toggle.setAttribute("aria-expanded", barEl.classList.toggle("open"));
-  });
-  apply();
+  for (const c of checks) c.checked = params.has(c.name);
+  if (params.has(search.name)) search.value = params.get(search.name);
 
-  table.tHead.addEventListener("click", ev => {
-    const th = ev.target.closest("th");
-    if (!th) return;
-    const i = th.cellIndex, num = th.dataset.type === "num";
-    const dir = th.getAttribute("aria-sort") === "ascending" ? -1 : 1;
-    for (const h of table.tHead.rows[0].cells) h.removeAttribute("aria-sort");
-    th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
+  const wanted = () => {
+    const vals = valueFacet ? chosen(valueFacet) : [];
+    return Object.keys(deferred).filter(g => !vals.length || vals.includes(g));
+  };
+  const load = g => loading[g] || (loading[g] = new Promise((ok, fail) => {
+    const s = document.createElement("script");
+    s.src = deferred[g];
+    s.onerror = () => { delete loading[g]; fail(new Error(deferred[g])); };
+    s.onload = () => {
+      const t = document.createElement("tbody");
+      t.innerHTML = window["ROWS_" + g];
+      delete window["ROWS_" + g];
+      rows.push(...t.rows);
+      done[g] = true;
+      order();
+      tbody.append(...rows);
+      ok();
+    };
+    document.head.append(s);
+  }));
+
+  let sorting = null;
+  const order = () => {
+    if (!sorting) return rows.sort((a, b) => a.dataset.i - b.dataset.i);
+    const {i, num, dir} = sorting;
     const key = tr => {
       const td = tr.cells[i], v = td.dataset.sort ?? td.textContent.trim();
       return v === "" ? null : num ? +v : v;
@@ -861,6 +933,167 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
       if (x === null || y === null) return (x === null) - (y === null);
       return dir * (num ? x - y : x.localeCompare(y));
     });
+  };
+
+  const apply = () => {
+    const words = search.value.toLowerCase().split(/\\s+/).filter(Boolean);
+    const sel = facets.map(fc => new Set(chosen(fc)));
+    // A row failing only facet k still counts towards k's options: that is what picking one
+    // of them would add.
+    const tally = facets.map(() => new Map());
+    const add = (k, tr) => {
+      const v = tr.dataset[facets[k].f];
+      tally[k].set(v, (tally[k].get(v) || 0) + 1);
+    };
+    const hideCopies = nocopy && nocopy.checked;
+    let n = 0;
+    for (const tr of rows) {
+      let fails = 0, miss = -1;
+      if (hideCopies && tr.dataset.copy) fails = 9;
+      else if (words.length) {
+        const t = textOf(tr);
+        if (!words.every(w => t.includes(w))) fails = 9;
+      }
+      for (let k = 0; k < facets.length && fails < 2; k++) {
+        if (sel[k].size && !sel[k].has(tr.dataset[facets[k].f])) { fails++; miss = k; }
+      }
+      if (fails === 0) for (let k = 0; k < facets.length; k++) add(k, tr);
+      else if (fails === 1) add(miss, tr);
+      const ok = fails === 0;
+      if (tr.hidden === ok) tr.hidden = !ok;
+      if (ok) tr.classList.toggle("odd", n % 2 === 1);
+      n += ok;
+    }
+
+    facets.forEach((fc, k) => {
+      for (const b of fc.boxes) {
+        const label = b.parentElement, i = label.querySelector("i");
+        // Not loaded yet: the whole grade's size, before any other filter.
+        const away = b.dataset.total && !done[b.value];
+        const c = away ? +b.dataset.total : tally[k].get(b.value) || 0;
+        i.textContent = fmt(c);
+        i.classList.toggle("away", !!away);
+        label.classList.toggle("zero", !c);
+      }
+      const v = chosen(fc);
+      fc.el.querySelector("summary b").textContent =
+        !v.length ? "" : v.length <= 2 ? v.join(", ") : `${v.slice(0, 2).join(", ")} +${v.length - 2}`;
+    });
+
+    const pending = Object.keys(deferred).filter(g => loading[g] && !done[g]);
+    count.textContent = pending.length ? `${fmt(n)} … loading ${pending.join(", ")}`
+      : n === total ? `${fmt(n)} rows` : `${fmt(n)} of ${fmt(total)}`;
+
+    const changed = facets.filter(fc => !same(chosen(fc), fc.def));
+    toggle.textContent = changed.length ? `Filters (${changed.length})` : "Filters";
+    active.replaceChildren();
+    for (const fc of changed) {
+      // A facet with a default is one chip that puts the default back; others, one per value.
+      const v = chosen(fc);
+      const chips = fc.def.length ? [v.length ? v.join(", ") : "all"] : v;
+      for (const x of chips) {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.textContent = `${fc.label}: ${x}`;
+        chip.title = fc.def.length ? "Back to the default" : "Remove";
+        chip.onclick = () => {
+          if (fc.def.length) fc.boxes.forEach(b => (b.checked = fc.def.includes(b.value)));
+          else fc.boxes.find(b => b.value === x).checked = false;
+          update();
+        };
+        active.append(chip);
+      }
+    }
+    if (changed.length) {
+      const reset = document.createElement("button");
+      reset.type = "button";
+      reset.className = "reset";
+      reset.textContent = "Reset filters";
+      reset.onclick = () => {
+        for (const fc of facets) fc.boxes.forEach(b => (b.checked = fc.def.includes(b.value)));
+        update();
+      };
+      active.append(reset);
+    }
+
+    // Say what the default leaves out, so a search never silently misses a D or F row.
+    const out = Object.keys(deferred).filter(g => !wanted().includes(g));
+    hint.hidden = !out.length;
+    if (out.length) {
+      const away = out.reduce((s, g) => s + +valueFacet.boxes.find(b => b.value === g).dataset.total, 0);
+      hint.replaceChildren(`${fmt(away)} rows graded ${out.join(" or ")} ${
+        words.length ? "not searched" : "hidden"} · `);
+      const show = document.createElement("button");
+      show.type = "button";
+      show.textContent = "show them";
+      show.onclick = () => {
+        for (const b of valueFacet.boxes) if (out.includes(b.value)) b.checked = true;
+        update();
+      };
+      hint.append(show);
+    }
+    if (more) table.classList.toggle("show-more", more.checked);
+  };
+
+  const save = () => {
+    const all = new URLSearchParams(location.hash.slice(1));
+    search.value ? all.set(search.name, search.value) : all.delete(search.name);
+    for (const c of checks) c.checked ? all.set(c.name, "1") : all.delete(c.name);
+    for (const fc of facets) {
+      all.delete(fc.name);
+      const v = chosen(fc);
+      if (same(v, fc.def)) continue;
+      if (!v.length) all.set(fc.name, "all");
+      else for (const x of v) all.append(fc.name, x);
+    }
+    history.replaceState(null, "", all.size ? "#" + all : location.pathname);
+  };
+
+  let timer;
+  const update = () => {
+    clearTimeout(timer);
+    const need = wanted().filter(g => !done[g]);
+    apply();
+    save();
+    if (need.length) Promise.all(need.map(load)).then(apply, err => {
+      count.textContent = `Could not load ${err.message}`;
+    });
+  };
+  search.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(update, 200); });
+  search.addEventListener("change", update);
+  for (const c of checks) c.addEventListener("change", update);
+  for (const fc of facets) {
+    for (const b of fc.boxes) b.addEventListener("change", update);
+    const find = fc.el.querySelector(".find");
+    if (find) find.addEventListener("input", () => {
+      const q = find.value.toLowerCase();
+      for (const b of fc.boxes) b.parentElement.hidden = !b.value.toLowerCase().includes(q);
+    });
+    fc.el.addEventListener("toggle", () => {
+      if (!fc.el.open) return;
+      for (const o of facets) if (o !== fc) o.el.open = false;
+      if (find && matchMedia("(hover:hover)").matches) find.focus();
+    });
+  }
+  document.addEventListener("click", ev => {
+    for (const fc of facets) if (fc.el.open && !fc.el.contains(ev.target)) fc.el.open = false;
+  });
+  document.addEventListener("keydown", ev => {
+    if (ev.key === "Escape") for (const fc of facets) fc.el.open = false;
+  });
+  toggle.addEventListener("click", () => {
+    toggle.setAttribute("aria-expanded", barEl.classList.toggle("open"));
+  });
+  update();
+
+  table.tHead.addEventListener("click", ev => {
+    const th = ev.target.closest("th");
+    if (!th) return;
+    const dir = th.getAttribute("aria-sort") === "ascending" ? -1 : 1;
+    for (const h of table.tHead.rows[0].cells) h.removeAttribute("aria-sort");
+    th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
+    sorting = {i: th.cellIndex, num: th.dataset.type === "num", dir};
+    order();
     tbody.append(...rows);
     apply();
   });
@@ -879,8 +1112,10 @@ def main():
         r["coverage"] = measure_text(last.get(r["id"]))
 
     shown = [with_work(r) for r in sources]
-    (HERE / "index.html").write_text(html_page(shown, measures, juris, portals, last),
-                                     encoding="utf-8")
+    rows = source_rows(shown, measures, juris, portals, last)
+    (HERE / "index.html").write_text(html_page(shown, measures, juris, rows), encoding="utf-8")
+    for g in DEFERRED:
+        (HERE / f"rows-{g.lower()}.js").write_text(deferred_rows(g, rows[g]), encoding="utf-8")
     (HERE / "portals.html").write_text(portals_page(shown, juris, portals), encoding="utf-8")
     WIKI.mkdir(exist_ok=True)
     (WIKI / "Canada_Open_data.wiki").write_text(wiki_page([with_work(r) for r in sources], juris),
