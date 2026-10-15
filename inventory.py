@@ -17,7 +17,7 @@ are listed under the owner). The goal is that no layer goes
 unlisted; a grade can be argued later, a missing row cannot. A Hub item that names a whole service
 becomes one row per layer. A server layer a Hub of the same jurisdiction already lists is
 dropped, and so is any URL already in sources.csv. Ids are assigned here, in URL order, so the
-graders never invent one.
+graders never invent one; a layer already in catalogue/layers keeps the id it has there.
 """
 
 import csv
@@ -153,11 +153,18 @@ def sharing_items(api_url: str) -> list[dict]:
     return items
 
 
+# A Hub's own pages and site items are its navigation, not anything it publishes.
+SITE_TYPES = {"Hub Page", "Hub Site Application", "Hub Initiative", "Site Page", "Site Application",
+              "Solution", "Code Sample"}
+
+
 def from_hub(p: dict) -> list[dict]:
     url = p["api_url"]
     items = sharing_items(url) if "/sharing/rest/search" in url else hub_items(url)
     rows = []
     for it in items:
+        if it.get("type") in SITE_TYPES:
+            continue
         base = {
             "origin": "hub",
             "dataset": text(it.get("title"), 200),
@@ -295,12 +302,21 @@ def inventory(only: set[str]):
                 print(f"  {i} counted", flush=True)
 
     for code, rows in by_juris.items():
-        taken = {}
+        # A layer already merged keeps its id, so a new portal or a rerun cannot shift the
+        # suffixes and hand an old grade to another layer.
+        # A Hub item and a server row for one layer are the same layer under two spellings.
+        spell = lambda u: key(u) if SERVICE.match(u) else u
+        merged = {spell(r["source_url"]): r["id"] for r in read_csv(LAYERS / f"{code.split('/')[-1]}.csv")}
+        used = set(merged.values())
         for r in sorted(rows, key=lambda r: key(r["source_url"]) or r["dataset"]):
-            base = f"{code}/{slug(r['dataset'])}"
-            n = taken.get(base, 0) + 1
-            taken[base] = n
-            r["id"] = base if n == 1 else f"{base}-{n}"
+            if spell(r["source_url"]) in merged:
+                r["id"] = merged[spell(r["source_url"])]
+                continue
+            base, n = f"{code}/{slug(r['dataset'])}", 1
+            while (i := base if n == 1 else f"{base}-{n}") in used:
+                n += 1
+            used.add(i)
+            r["id"] = i
         # The tracker follows each municipality's address points under <code>/addresses, often
         # at another URL; the same dataset found on a portal is that source, not a new one.
         rows[:] = [r for r in rows if r["id"] not in taken_ids or not r["id"].endswith("/addresses")]

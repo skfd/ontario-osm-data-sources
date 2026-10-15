@@ -143,16 +143,17 @@ taken the same way.
 
 | platform | `api_url` | `layers_seen` |
 |---|---|---|
-| `arcgis-hub` | `<site>/api/search/v1/collections/dataset/items` | `numberMatched` of `?limit=1` |
+| `arcgis-hub` | `<site>/api/search/v1/collections/all/items` | `numberMatched` of `?limit=1` |
 | `ckan` | `<base>/api/3/action/package_search` | `result.count` of `?rows=0` (all datasets, not only spatial) |
 | `opendatasoft` | `<base>/api/explore/v2.1/catalog/datasets` | `total_count` of `?limit=0` |
 | `socrata` | `https://api.us.socrata.com/api/catalog/v1?domains=<domain>` | `resultSetSize` of `&limit=0` |
 | `arcgis-rest` | the services root, ending `/rest/services` | layers in every service, folders walked one level |
 | `custom` | blank, or its JSON API | blank unless an API gives a count |
 
-A Hub site with no `dataset` collection uses `collections/all` (or its own datasets
-collection). A Hub that shows other organisations' items too (the four Waterloo-region hubs
-share one catalogue) adds `?orgid=<its org>`, so each item is counted once. An ArcGIS
+Until 2026-10-15 a Hub was counted on its `dataset` collection, which leaves out map services,
+spreadsheets, document links and apps: on most Hubs `all` lists 10–130% more, so a count before
+that date is not comparable with one after. A Hub that shows other organisations' items too
+(the four Waterloo-region hubs share one catalogue) adds `?orgid=<its org>`, so each item is counted once. An ArcGIS
 Enterprise Sites page has no Hub API; its `api_url` is the portal's `sharing/rest/search` over
 the site's group, and the count is `total`. An `arcgis-rest` count includes the layers behind
 map viewers, so it runs higher than a Hub's count of curated datasets: compare within a platform.

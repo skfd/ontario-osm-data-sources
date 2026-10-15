@@ -24,6 +24,7 @@ ca/on/athens,Athens,municipal,lower
 ca/on/atikokan,Atikokan,municipal,single
 ca/on/augusta,Augusta,municipal,lower
 ca/on/aurora,Aurora,municipal,lower
+ca/on/ausable-bayfield-conservation,Ausable Bayfield Conservation,conservation-authority,
 ca/on/aylmer,Aylmer,municipal,lower
 ca/on/baldwin,Baldwin,municipal,single
 ca/on/bancroft,Bancroft,municipal,lower
@@ -64,10 +65,13 @@ ca/on/carling,Carling,municipal,single
 ca/on/carlow-mayo,Carlow/Mayo,municipal,lower
 ca/on/casey,Casey,municipal,single
 ca/on/casselman,Casselman,municipal,lower
+ca/on/cataraqui-conservation,Cataraqui Conservation,conservation-authority,
+ca/on/catfish-creek-conservation-authority,Catfish Creek Conservation Authority,conservation-authority,
 ca/on/cavan-monaghan,Cavan Monaghan,municipal,lower
 ca/on/central-elgin,Central Elgin,municipal,lower
 ca/on/central-frontenac,Central Frontenac,municipal,lower
 ca/on/central-huron,Central Huron,municipal,lower
+ca/on/central-lake-ontario-conservation-authority,Central Lake Ontario Conservation Authority,conservation-authority,
 ca/on/central-manitoulin,Central Manitoulin,municipal,single
 ca/on/centre-hastings,Centre Hastings,municipal,lower
 ca/on/centre-wellington,Centre Wellington,municipal,lower
@@ -89,8 +93,13 @@ ca/on/cockburn-island,Cockburn Island,municipal,single
 ca/on/coleman,Coleman,municipal,single
 ca/on/collingwood,Collingwood,municipal,lower
 ca/on/conmee,Conmee,municipal,single
+ca/on/conservation-halton,Conservation Halton,conservation-authority,
+ca/on/conservation-ontario,Conservation Ontario,association,
+ca/on/conservation-sudbury,Conservation Sudbury,conservation-authority,
 ca/on/cornwall,Cornwall,municipal,single
 ca/on/cramahe,Cramahe,municipal,lower
+ca/on/credit-valley-conservation,Credit Valley Conservation,conservation-authority,
+ca/on/crowe-valley-conservation-authority,Crowe Valley Conservation Authority,conservation-authority,
 ca/on/dawn-euphemia,Dawn-Euphemia,municipal,lower
 ca/on/dawson,Dawson,municipal,single
 ca/on/deep-river,Deep River,municipal,lower
@@ -124,6 +133,7 @@ ca/on/espanola,Espanola,municipal,single
 ca/on/essa,Essa,municipal,lower
 ca/on/essex,Town of Essex,municipal,lower
 ca/on/essex-county,Essex,municipal,upper
+ca/on/essex-region-conservation-authority,Essex Region Conservation Authority,conservation-authority,
 ca/on/evanturel,Evanturel,municipal,single
 ca/on/faraday,Faraday,municipal,lower
 ca/on/fauquier-strickland,Fauquier-Strickland,municipal,single
@@ -134,6 +144,7 @@ ca/on/front-of-yonge,Front of Yonge,municipal,lower
 ca/on/frontenac,Frontenac,municipal,upper
 ca/on/frontenac-islands,Frontenac Islands,municipal,lower
 ca/on/gananoque,Gananoque,municipal,single
+ca/on/ganaraska-region-conservation-authority,Ganaraska Region Conservation Authority,conservation-authority,
 ca/on/gauthier,Gauthier,municipal,single
 ca/on/georgian-bay,Georgian Bay,municipal,lower
 ca/on/georgian-bluffs,Georgian Bluffs,municipal,lower
@@ -142,6 +153,7 @@ ca/on/gillies,Gillies,municipal,single
 ca/on/goderich,Goderich,municipal,lower
 ca/on/gordon-barrie-island,Gordon/Barrie Island,municipal,single
 ca/on/gore-bay,Gore Bay,municipal,single
+ca/on/grand-river-conservation-authority,Grand River Conservation Authority,conservation-authority,
 ca/on/grand-valley,Grand Valley,municipal,lower
 ca/on/gravenhurst,Gravenhurst,municipal,lower
 ca/on/greater-madawaska,Greater Madawaska,municipal,lower
@@ -150,6 +162,7 @@ ca/on/greater-sudbury,Greater Sudbury,municipal,single
 ca/on/greenstone,Greenstone,municipal,single
 ca/on/grey,Grey,municipal,upper
 ca/on/grey-highlands,Grey Highlands,municipal,lower
+ca/on/grey-sauble-conservation-authority,Grey Sauble Conservation Authority,conservation-authority,
 ca/on/grimsby,Grimsby,municipal,lower
 ca/on/guelph,Guelph,municipal,single
 ca/on/guelph-eramosa,Guelph/Eramosa,municipal,lower
@@ -159,6 +172,7 @@ ca/on/halton,Halton,municipal,upper
 ca/on/halton-catholic-district-school-board,Halton Catholic District School Board,school-board,
 ca/on/halton-hills,Halton Hills,municipal,lower
 ca/on/hamilton,Hamilton,municipal,single
+ca/on/hamilton-conservation-authority,Hamilton Conservation Authority,conservation-authority,
 ca/on/hamilton-township,Township of Hamilton,municipal,lower
 ca/on/hamilton-wentworth-district-school-board,Hamilton-Wentworth District School Board,school-board,
 ca/on/hanover,Hanover,municipal,lower
@@ -192,10 +206,12 @@ ca/on/jocelyn,Jocelyn,municipal,single
 ca/on/johnson,Johnson,municipal,single
 ca/on/joly,Joly,municipal,single
 ca/on/kapuskasing,Kapuskasing,municipal,single
+ca/on/kawartha-conservation,Kawartha Conservation,conservation-authority,
 ca/on/kawartha-lakes,Kawartha Lakes,municipal,single
 ca/on/kearney,Kearney,municipal,single
 ca/on/kenora,Kenora,municipal,single
 ca/on/kerns,Kerns,municipal,single
+ca/on/kettle-creek-conservation-authority,Kettle Creek Conservation Authority,conservation-authority,
 ca/on/killaloe-hagarty-and-richards,"Killaloe, Hagarty and Richards",municipal,lower
 ca/on/killarney,Killarney,municipal,single
 ca/on/kincardine,Kincardine,municipal,lower
@@ -208,6 +224,8 @@ ca/on/la-vallee,La Vallee,municipal,single
 ca/on/laird,Laird,municipal,single
 ca/on/lake-of-bays,Lake of Bays,municipal,lower
 ca/on/lake-of-the-woods,Lake of the Woods,municipal,single
+ca/on/lake-simcoe-region-conservation-authority,Lake Simcoe Region Conservation Authority,conservation-authority,
+ca/on/lakehead-region-conservation-authority,Lakehead Region Conservation Authority,conservation-authority,
 ca/on/lakeshore,Lakeshore,municipal,lower
 ca/on/lambton,Lambton,municipal,upper
 ca/on/lambton-shores,Lambton Shores,municipal,lower
@@ -225,6 +243,9 @@ ca/on/lennox-addington,Lennox and Addington,municipal,upper
 ca/on/limerick,Limerick,municipal,lower
 ca/on/lincoln,Lincoln,municipal,lower
 ca/on/london,London,municipal,single
+ca/on/long-point-region-conservation-authority,Long Point Region Conservation Authority,conservation-authority,
+ca/on/lower-thames-valley-conservation-authority,Lower Thames Valley Conservation Authority,conservation-authority,
+ca/on/lower-trent-conservation,Lower Trent Conservation,conservation-authority,
 ca/on/loyalist,Loyalist,municipal,lower
 ca/on/lucan-biddulph,Lucan Biddulph,municipal,lower
 ca/on/macdonald-meredith-and-aberdeen-additional,"Macdonald, Meredith and Aberdeen Additional",municipal,single
@@ -233,6 +254,7 @@ ca/on/machin,Machin,municipal,single
 ca/on/madawaska-valley,Madawaska Valley,municipal,lower
 ca/on/madoc,Madoc,municipal,lower
 ca/on/magnetawan,Magnetawan,municipal,single
+ca/on/maitland-valley-conservation-authority,Maitland Valley Conservation Authority,conservation-authority,
 ca/on/malahide,Malahide,municipal,lower
 ca/on/manitouwadge,Manitouwadge,municipal,single
 ca/on/mapleton,Mapleton,municipal,lower
@@ -241,6 +263,7 @@ ca/on/markham,Markham,municipal,lower
 ca/on/markstay-warren,Markstay-Warren,municipal,single
 ca/on/marmora-and-lake,Marmora and Lake,municipal,lower
 ca/on/matachewan,Matachewan,municipal,single
+ca/on/mattagami-region-conservation-authority,Mattagami Region Conservation Authority,conservation-authority,
 ca/on/mattawa,Mattawa,municipal,single
 ca/on/mattawan,Mattawan,municipal,single
 ca/on/mattice-val-cote,Mattice-Val Côté,municipal,single
@@ -264,6 +287,7 @@ ca/on/ministry-of-transportation,Ontario Ministry of Transportation,agency,
 ca/on/minto,Minto,municipal,lower
 ca/on/mississauga,Mississauga,municipal,lower
 ca/on/mississippi-mills,Mississippi Mills,municipal,lower
+ca/on/mississippi-valley-conservation-authority,Mississippi Valley Conservation Authority,conservation-authority,
 ca/on/mono,Mono,municipal,lower
 ca/on/montague,Montague,municipal,lower
 ca/on/moonbeam,Moonbeam,municipal,single
@@ -281,11 +305,13 @@ ca/on/newmarket,Newmarket,municipal,lower
 ca/on/niagara-falls,Niagara,municipal,upper
 ca/on/niagara-falls-city,Niagara Falls,municipal,lower
 ca/on/niagara-on-the-lake,Niagara-on-the-Lake,municipal,lower
+ca/on/niagara-peninsula-conservation-authority,Niagara Peninsula Conservation Authority,conservation-authority,
 ca/on/nipigon,Nipigon,municipal,single
 ca/on/nipissing,Nipissing,municipal,single
 ca/on/norfolk,Norfolk,municipal,single
 ca/on/north-algona-wilberforce,North Algona Wilberforce,municipal,lower
 ca/on/north-bay,North Bay,municipal,single
+ca/on/north-bay-mattawa-conservation-authority,North Bay-Mattawa Conservation Authority,conservation-authority,
 ca/on/north-dumfries,North Dumfries,municipal,lower
 ca/on/north-dundas,North Dundas,municipal,lower
 ca/on/north-frontenac,North Frontenac,municipal,lower
@@ -300,6 +326,7 @@ ca/on/northeastern-manitoulin-and-the-islands,Northeastern Manitoulin and the Is
 ca/on/northern-bruce-peninsula,Northern Bruce Peninsula,municipal,lower
 ca/on/northumberland,Northumberland,municipal,upper
 ca/on/norwich,Norwich,municipal,lower
+ca/on/nottawasaga-valley-conservation-authority,Nottawasaga Valley Conservation Authority,conservation-authority,
 ca/on/oakville,Oakville,municipal,lower
 ca/on/oconnor,O'Connor,municipal,single
 ca/on/oil-springs,Oil Springs,municipal,lower
@@ -312,6 +339,7 @@ ca/on/orangeville,Orangeville,municipal,lower
 ca/on/orillia,Orillia,municipal,single
 ca/on/oro-medonte,Oro-Medonte,municipal,lower
 ca/on/oshawa,Oshawa,municipal,lower
+ca/on/otonabee-conservation,Otonabee Conservation,conservation-authority,
 ca/on/otonabee-south-monaghan,Otonabee–South Monaghan,municipal,lower
 ca/on/ottawa,Ottawa,municipal,single
 ca/on/ottawa-catholic-district-school-board,Ottawa Catholic District School Board,school-board,
@@ -346,8 +374,10 @@ ca/on/prescott-russell,Prescott and Russell,municipal,upper
 ca/on/prince,Prince,municipal,single
 ca/on/prince-edward-county,Prince Edward County,municipal,single
 ca/on/puslinch,Puslinch,municipal,lower
+ca/on/quinte-conservation,Quinte Conservation,conservation-authority,
 ca/on/quinte-west,Quinte West,municipal,single
 ca/on/rainy-river,Rainy River,municipal,single
+ca/on/raisin-region-conservation-authority,Raisin Region Conservation Authority,conservation-authority,
 ca/on/ramara,Ramara,municipal,lower
 ca/on/red-lake,Red Lake,municipal,single
 ca/on/red-rock,Red Rock,municipal,single
@@ -355,12 +385,15 @@ ca/on/renfrew,Renfrew,municipal,upper
 ca/on/renfrew-town,Town of Renfrew,municipal,lower
 ca/on/richmond-hill,Richmond Hill,municipal,lower
 ca/on/rideau-lakes,Rideau Lakes,municipal,lower
+ca/on/rideau-valley-conservation-authority,Rideau Valley Conservation Authority,conservation-authority,
 ca/on/russell,Russell,municipal,lower
 ca/on/ryerson,Ryerson,municipal,single
 ca/on/sables-spanish-rivers,Sables-Spanish Rivers,municipal,single
 ca/on/sarnia,Sarnia,municipal,lower
 ca/on/saugeen-shores,Saugeen Shores,municipal,lower
+ca/on/saugeen-valley-conservation-authority,Saugeen Valley Conservation Authority,conservation-authority,
 ca/on/sault-ste-marie,Sault Ste. Marie,municipal,single
+ca/on/sault-ste-marie-region-conservation-authority,Sault Ste. Marie Region Conservation Authority,conservation-authority,
 ca/on/schreiber,Schreiber,municipal,single
 ca/on/scugog,Scugog,municipal,lower
 ca/on/sdg,"Stormont, Dundas and Glengarry",municipal,upper
@@ -383,6 +416,7 @@ ca/on/south-dundas,South Dundas,municipal,lower
 ca/on/south-frontenac,South Frontenac,municipal,lower
 ca/on/south-glengarry,South Glengarry,municipal,lower
 ca/on/south-huron,South Huron,municipal,lower
+ca/on/south-nation-conservation,South Nation Conservation,conservation-authority,
 ca/on/south-river,South River,municipal,single
 ca/on/south-stormont,South Stormont,municipal,lower
 ca/on/south-west-oxford,South-West Oxford,municipal,lower
@@ -394,6 +428,7 @@ ca/on/springwater,Springwater,municipal,lower
 ca/on/st-catharines,St. Catharines,municipal,lower
 ca/on/st-charles,St.-Charles,municipal,single
 ca/on/st-clair,St. Clair,municipal,lower
+ca/on/st-clair-region-conservation-authority,St. Clair Region Conservation Authority,conservation-authority,
 ca/on/st-joseph,St. Joseph,municipal,single
 ca/on/st-marys,St. Marys,municipal,single
 ca/on/st-thomas,St. Thomas,municipal,single
@@ -425,6 +460,7 @@ ca/on/tillsonburg,Tillsonburg,municipal,lower
 ca/on/timmins,Timmins,municipal,single
 ca/on/tiny,Tiny,municipal,lower
 ca/on/toronto,Toronto,municipal,single
+ca/on/toronto-and-region-conservation-authority,Toronto and Region Conservation Authority,conservation-authority,
 ca/on/toronto-catholic-district-school-board,Toronto Catholic District School Board,school-board,
 ca/on/toronto-district-school-board,Toronto District School Board,school-board,
 ca/on/trans-canada-trail,Trans Canada Trail,agency,
@@ -433,6 +469,7 @@ ca/on/trent-lakes,Trent Lakes,municipal,lower
 ca/on/tudor-and-cashel,Tudor and Cashel,municipal,lower
 ca/on/tweed,Tweed,municipal,lower
 ca/on/tyendinaga,Tyendinaga,municipal,lower
+ca/on/upper-thames-river-conservation-authority,Upper Thames River Conservation Authority,conservation-authority,
 ca/on/uxbridge,Uxbridge,municipal,lower
 ca/on/val-rita-harty,Val Rita-Harty,municipal,single
 ca/on/vaughan,Vaughan,municipal,lower
