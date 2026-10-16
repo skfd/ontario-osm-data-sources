@@ -61,9 +61,11 @@ def slug(s: str) -> str:
 
 
 def key(url: str) -> str:
-    """One spelling per layer: MapServer and FeatureServer of the same service are one layer."""
+    """One spelling per layer: MapServer and FeatureServer of the same service are one layer, and
+    a CKAN package is one page in either language."""
     u = urllib.parse.unquote(url.strip().rstrip("/").lower().split("?", 1)[0])
-    return u.replace("/featureserver", "/mapserver").replace("http://", "https://")
+    return (u.replace("/featureserver", "/mapserver").replace("http://", "https://")
+            .replace("/en/dataset/", "/dataset/").replace("/fr/dataset/", "/dataset/"))
 
 
 def licence(item_text: str, portal: str) -> str:
@@ -114,7 +116,7 @@ def layer_row(service: str, layer: dict) -> dict:
         "geometry": geometry or ("table" if layer.get("type") == "Table" else ""),
         "fields": text(" ".join(fields), 300),
         "edited": day((layer.get("editingInfo") or {}).get("lastEditDate")),
-        "layer_name": layer.get("name", ""),
+        "layer_name": text(layer.get("name"), 200),
         "layer_description": text(layer.get("description"), 300),
     }
 
@@ -286,7 +288,8 @@ def inventory(only: set[str]):
         rows.sort(key=lambda r: (-int(r["reach"]), r["origin"] != "hub", key(r["source_url"])))
         seen, kept = set(known), []
         for r in rows:
-            k = key(r["source_url"]) if SERVICE.match(r["source_url"]) else r["source_url"]
+            u = r["source_url"]
+            k = key(u) if SERVICE.match(u) or key(u) in known else u
             if k and k in seen:
                 continue
             seen.add(k)
@@ -307,7 +310,7 @@ def inventory(only: set[str]):
         # A Hub item and a server row for one layer are the same layer under two spellings.
         spell = lambda u: key(u) if SERVICE.match(u) else u
         merged = {spell(r["source_url"]): r["id"] for r in read_csv(LAYERS / f"{code.split('/')[-1]}.csv")}
-        used = set(merged.values())
+        used = set(merged.values()) | taken_ids
         for r in sorted(rows, key=lambda r: key(r["source_url"]) or r["dataset"]):
             if spell(r["source_url"]) in merged:
                 r["id"] = merged[spell(r["source_url"])]
