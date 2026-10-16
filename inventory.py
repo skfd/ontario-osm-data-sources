@@ -33,7 +33,7 @@ from datetime import date, datetime, timezone
 from common import (FEASIBILITY, HERE, JURISDICTIONS, LAYERS, MEASURES, PORTALS, SOURCE_COLS,
                     SOURCES, SYNCED, THEMES, read_csv, write_csv)
 import survey
-from survey import Secured, ServiceError, get_json, with_param
+from survey import Secured, ServiceError, get_json, get_text, with_param
 
 # Hundreds of servers, few requests each: more in flight than survey.py's count needs.
 survey.SLOTS = threading.Semaphore(24)
@@ -250,7 +250,62 @@ def from_rest(p: dict) -> list[dict]:
     return rows
 
 
-PLATFORM = {"arcgis-hub": from_hub, "ckan": from_ckan, "arcgis-rest": from_rest}
+def from_grin(p: dict) -> list[dict]:
+    """GRIN, Grand River's download catalogue: one zip per layer, each under its own licence."""
+    return [{"origin": "grin", "dataset": text(d.get("Download_Alias"), 200),
+             "item_type": "GRIN download (zip)", "source_url": d.get("Download_URL") or "",
+             "edited": d.get("MaxDate") or "",
+             "licence": text(d.get("AccessConstraint"), 150) or p["licence"],
+             "description": text(d.get("AbstractShort"), 300)}
+            for d in get_json(p["api_url"])["results"]]
+
+
+JKAN_LINK = re.compile(r'href="([^"]+)"[^>]*property=.dcat:accessURL.', re.I)
+JKAN_LICENCE = re.compile(r'property="dct:license"[^>]*>\s*(?:<[^>]+>\s*)*([^<]+)', re.I)
+
+
+def from_jkan(p: dict) -> list[dict]:
+    """A JKAN site: datasets.json lists the datasets, each page its links and licence. A dataset
+    that links a layer on a map server is that layer, as with a Hub item."""
+    site = urllib.parse.urlsplit(p["api_url"])
+    rows = []
+    for d in get_json(p["api_url"]):
+        if "Licence Agreements" in (d.get("category") or []):  # the licence texts themselves
+            continue
+        page = f"{site.scheme}://{site.netloc}{d['url']}"
+        body = get_text(page)
+        links = JKAN_LINK.findall(body)
+        name = JKAN_LICENCE.search(body)
+        updated = re.search(r"(\d\d)-(\d\d)-(\d{4})", d.get("lastUpdate") or "")
+        base = {"origin": "jkan", "dataset": text(d.get("title"), 200),
+                "item_type": "JKAN dataset: " + ", ".join(d.get("category") or []),
+                "source_url": page,
+                "edited": f"{updated[3]}-{updated[1]}-{updated[2]}" if updated else "",
+                "licence": text(name[1], 150) if name else p["licence"],
+                "description": text(re.sub(r"^Last Update \(mm-dd-yyyy\):\s*[\d-]*\s*", "",
+                                           text(d.get("notes"), 400)), 300)}
+        service = next((u for u in links if SERVICE.match(u)), None)
+        layers = expand(service) if service else []
+        if not layers:
+            rows.append(base)
+        for l in layers:
+            rows.append(base | {k: v for k, v in l.items() if k in COLS and v}
+                        | {"dataset": base["dataset"] if len(layers) == 1
+                           else f"{base['dataset']} — {l['layer_name']}"})
+    return rows
+
+
+def from_custom(p: dict) -> list[dict]:
+    """A download page with a JSON list behind it; one without has no api_url and is not swept."""
+    if "/metadata-api/" in p["api_url"]:
+        return from_grin(p)
+    if p["api_url"].endswith("/datasets.json"):
+        return from_jkan(p)
+    raise ValueError(f"no reader for the custom catalogue {p['api_url']}")
+
+
+PLATFORM = {"arcgis-hub": from_hub, "ckan": from_ckan, "arcgis-rest": from_rest,
+            "custom": from_custom}
 
 
 # ---------------------------------------------------------------- inventory

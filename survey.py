@@ -33,13 +33,16 @@ class Secured(ServiceError):
     """The server wants a token: not public, so nothing to count."""
 
 
-def get_json(url: str) -> dict:
+def get_text(url: str) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in (1, 2):
         try:
             with SLOTS, urllib.request.urlopen(req, timeout=60) as r:
-                data = json.load(r)
-            break
+                body = r.read()
+            try:
+                return body.decode("utf-8-sig")
+            except UnicodeDecodeError:  # a hand-edited JSON list saved as Windows-1252
+                return body.decode("cp1252", "replace")
         except urllib.error.HTTPError as e:
             if 400 <= e.code < 500:  # an answer, not a failure: retrying will not change it
                 raise ServiceError(f"{url}: HTTP {e.code}") from None
@@ -48,6 +51,10 @@ def get_json(url: str) -> dict:
         except OSError:  # URLError, 5xx and timeouts
             if attempt == 2:
                 raise
+
+
+def get_json(url: str) -> dict:
+    data = json.loads(get_text(url))
     if isinstance(data, dict) and "error" in data and len(data) == 1:
         error = data["error"]
         if isinstance(error, dict) and error.get("code") in (403, 498, 499):
@@ -114,6 +121,9 @@ def count(p: dict, warnings: list[str]) -> int:
         return int(get_json(with_param(url, "limit=0"))["resultSetSize"])
     if platform == "arcgis-rest":
         return rest_layers(url.rstrip("/"), warnings)
+    if platform == "custom":  # a download list with a JSON API: GRIN's, or a JKAN site's
+        d = get_json(url)
+        return len(d["results"] if isinstance(d, dict) else d)
     raise ValueError(f"no counting method for platform {platform!r}")
 
 
