@@ -7143,7 +7143,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Simcoe ===
-201 layers (201 available). ''Value'' is a 1–5 score of what OSM would gain. 1249 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+195 layers (195 available). ''Value'' is a 1–5 score of what OSM would gain. 1255 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -7153,11 +7153,9 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/BaseMap_Cwood_MIL1/MapServer/3 BaseMap Cwood MIL1 — Parks] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names, types and amenities for 38 Collingwood parks.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Bond_Head_Heritage_Conservation_District/MapServer/2 Bond Head Heritage Conservation District — Heritage Registry] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of the 360-property heritage registry; the live layer is ca/on/simcoe/heritage-registry-map-heritage-registry.
+| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Bradford_West_Gwillimbury_Public_Interactive_Map/FeatureServer/24 Bradford West Gwillimbury Public Interactive Map — Speed Limits] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 1125 BWG road centrelines with Speed_Limit, lanes, oneway and surface; maxspeed and lanes are the usual gain.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/Bradford_West_Gwillimbury_Public_Interactive_Map/FeatureServer/30 Bradford West Gwillimbury Public Interactive Map — Historical Sites] || Open Government Licence - Simcoe County || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 10 named historical points of interest with descriptions; a small heritage check list.
-|-
-| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Bradford_West_Gwillimbury_Public_Interactive_Map/FeatureServer/34 Bradford West Gwillimbury Public Interactive Map — Heritage Registry] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of the 360-property heritage registry; the live layer is ca/on/simcoe/heritage-registry-map-heritage-registry.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/Bradford_West_Gwillimbury_Public_Interactive_Map/FeatureServer/37 Bradford West Gwillimbury Public Interactive Map — Bridge] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 25 bridges with names, numbers and span details; bridge names and refs are a small gain.
 |-
@@ -7165,25 +7163,19 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/BWG_Roads/MapServer/0 BWG Roads — BWG Roads] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || BWG road centrelines with names and speed limits, the same fields as the Speed Limits layer; the record count did not answer.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/BWG/BWG_Wards/MapServer/1 BWG Wards — Civic Address] || Open Government Licence - Simcoe County || 4/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 15446 BWG civic addresses with split number, street and unit; overlaps the county-wide basemap-cwood-mil1-civic-address-points.
+| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Heritage_Registry_Map/FeatureServer/1 Heritage Registry Map — Heritage Registry] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 360 listed and designated heritage properties with known-as names and designation by-laws; heritage tags OSM lacks.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/Hydrants/FeatureServer/0 Hydrants — Hydrants] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 1642 BWG fire hydrants with status and colour; above-ground objects OSM rarely has in bulk.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Red_Light_Cameras_Public_Interactive_Map/MapServer/5 Red Light Cameras Public Interactive Map — Parks] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of BWG parks; the layer is ca/on/simcoe/bradford-west-gwillimbury-public-interactive-map-parks.
-|-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/Simcoe_Muskoka_On_The_Move/FeatureServer/1 Simcoe Muskoka On The Move — Traffic Calming Measures] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 43 traffic calming measures by type; traffic_calming tags OSM usually lacks.
-|-
-| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Simcoe_Muskoka_On_The_Move/FeatureServer/13 Simcoe Muskoka On The Move — Parks] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of BWG parks; the layer is ca/on/simcoe/bradford-west-gwillimbury-public-interactive-map-parks.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/Simcoe_Muskoka_On_The_Move/FeatureServer/9 Simcoe Muskoka On The Move — Sidewalks] || Open Government Licence - Simcoe County || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 1088 sidewalk, walkway, path and trail segments with surface, width and winter maintenance; OSM traces most sidewalks.
 |-
+| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Town_of_Bradford_West_Gwillimbury_Wards/FeatureServer/1 Town of Bradford West Gwillimbury Wards — Ward Boundaries] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || The 7 BWG wards as of 2022 with councillors; ward boundaries OSM can carry as boundary=political.
+|-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/Trails_and_POI/FeatureServer/0 Trails and POI — Points of Interest] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 268 named park features (playgrounds, courts, splash pads, fields, trail access points); facilities OSM usually lacks in bulk.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/BWG/Trails_and_POI/FeatureServer/5 Trails and POI — Parks ] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of BWG parks; the layer is ca/on/simcoe/bradford-west-gwillimbury-public-interactive-map-parks.
-|-
 | [https://maps.simcoe.ca/arcgis/rest/services/BWG/VeteranHistory_Poppies/FeatureServer/0 VeteranHistory Poppies — Veteran History] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 73 streets named after veterans with the veteran named; name:etymology for BWG streets.
-|-
-| [https://maps.simcoe.ca/arcgis/rest/services/Clearview/CLE_AddressPointsClearview/FeatureServer/0 CLE AddressPointsClearview — Civic Address Points] || Open Government Licence - Simcoe County || 4/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 8220 Clearview civic address points as a FULL_ADDRESS string with ward; overlaps the county-wide basemap-cwood-mil1-civic-address-points.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Clearview/CLE_Cemetery_Features_Public/FeatureServer/0 CLE Cemetery Features Public — Cemeteries] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names and aliases for 16 Clearview cemeteries with status; names OSM often lacks.
 |-
@@ -7228,8 +7220,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://maps.simcoe.ca/arcgis/rest/services/Innisfil/INN_PUBLIC_Facilities/MapServer/0 INN PUBLIC Facilities — Facility Site] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 267 named facility sites, mostly parks; overlaps INN Parks but adds other municipal sites.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Innisfil/INN_PUBLIC_Facilities/MapServer/1 INN PUBLIC Facilities — Parks] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names for 87 Innisfil parks with addresses.
-|-
-| [https://maps.simcoe.ca/arcgis/rest/services/Innisfil/INN_PUBLIC_ResidentObservations/MapServer/3 INN PUBLIC ResidentObservations — Address Points] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 20540 Innisfil address points with full street names; the same area is in the county NG911 Site Structure Address Points.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Innisfil/INN_PUBLIC_RoadJurisdiction/MapServer/0 INN PUBLIC RoadJurisdiction — Road Jurisdiction] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 1829 road segments with owner, width, bicycle lane and winter class; useful attributes for a conflation.
 |-
@@ -7294,8 +7284,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://maps.simcoe.ca/arcgis/rest/services/OroMedonte/OM_CulturalHeritageResources/FeatureServer/0 OM CulturalHeritageResources — Heritage Register] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 96 heritage register properties with designation by-laws and dates; heritage attributes OSM usually lacks.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/OroMedonte/OM_SMP2025_Schedule/FeatureServer/0 OM SMP2025 Schedule — Watercourse] || Open Government Licence - Simcoe County || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 765 watercourse lines with WATERCOURSENAME and stream order; names may fill gaps on OSM waterways.
-|-
-| [https://maps.simcoe.ca/arcgis/rest/services/OroMedonte/Oro_Medonte_Addresses/MapServer/0 Oro Medonte Addresses — OroMedonteAddresses] || Open Government Licence - Simcoe County || 4/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 11029 Oro-Medonte address points; a township slice of the county Address Numbers layer (ca/on/simcoe/operational-layers-dynamic-address-numbers).
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/OroMedonte/Rail_Trail/FeatureServer/0 Rail Trail — Rail Trail POI] || Open Government Licence - Simcoe County || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 59 named points along the Oro-Medonte Rail Trail (parking, food, access); useful as a gap check along the trail.
 |-
@@ -7493,6 +7481,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/SimcoeCounty/SimcoeCountyCommunityMap/MapServer/20 SimcoeCountyCommunityMap — Schools - Polygon] || Open Government Licence - Simcoe County || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 165 school grounds polygons with names; a check for amenity=school areas.
 |-
+| [https://maps.simcoe.ca/arcgis/rest/services/SimcoeCounty/SimcoeCountyCommunityMap/MapServer/26 SimcoeCountyCommunityMap — E911 Single Line Road Network Only] || Open Government Licence - Simcoe County || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 21905 E911 road segments with official names and address ranges; a reference for street names.
+|-
 | [https://maps.simcoe.ca/arcgis/rest/services/SimcoeCounty/SimcoeCountyCommunityMap/MapServer/27 SimcoeCountyCommunityMap — Municipal Parks and Recreation Areas] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names for 412 municipal parks and recreation areas, which OSM often has unnamed.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/SimcoeCounty/SimcoeCountyCommunityMap/MapServer/28 SimcoeCountyCommunityMap — Lakes, Ponds and Rivers] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 6141 lake, pond and river polygons with names; names for unnamed water in OSM.
@@ -7521,8 +7511,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Springwater/Hydrants/MapServer/0 Hydrants — Hydrants] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 672 hydrant positions; OSM usually has few hydrants in rural townships.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/Springwater/Ward_Boundary/MapServer/0 Ward Boundary — Civic_Address_Points] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 9902 Springwater address points, likely the same data as the county layer ca/on/simcoe/addresses.
-|-
 | [https://maps.simcoe.ca/arcgis/rest/services/Springwater/Ward_Boundary_2026/MapServer/1 Ward Boundary 2026 — ADM_Ward_Boundaries_2026] || Open Government Licence - Simcoe County || 3/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Five 2026 ward boundaries, mappable as boundary=political.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Tay_Township_Memorial_Benches_and_Tables/FeatureServer/0 Tay Township Memorial Benches and Tables — Memorial Benches and Tables] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 60 GNSS-located memorial benches and tables, which OSM often lacks.
@@ -7535,7 +7523,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Tiny/TINY_PollinatorPatches/MapServer/0 TINY PollinatorPatches — Pollinator Patches] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 16 named pollinator garden patches, which OSM seldom maps.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/Public_Beach_Access/FeatureServer/11 Public Beach Access — Municipal Parks & Recreation Areas] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of the Wasaga Beach Municipal Parks and Recreation Areas layer.
+| [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/Public_Beach_Access/FeatureServer/11 Public Beach Access — Municipal Parks & Recreation Areas] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || A copy of the Wasaga Beach Municipal Parks and Recreation Areas layer.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/Public_Beach_Access/FeatureServer/12 Public Beach Access — Municipal Parking Lots] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 10 named municipal parking lots with accessibility, names OSM lots often lack.
 |-
@@ -7547,13 +7535,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/WB_ParkingOptions/FeatureServer/2 WB ParkingOptions — Accessible Parking Spaces] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Accessible space counts for 48 locations, a capacity:disabled gain.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/WB_Parks_Recreation_Areas_Website/FeatureServer/1 WB Parks Recreation Areas Website — Municipal Parks & Recreation Areas] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of the Wasaga Beach Municipal Parks and Recreation Areas layer.
+| [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/WB_Parks_And_Recreation_Areas/MapServer/0 WB Parks And Recreation Areas — Wasaga Beach Municipal Parks and Recreation Areas] || Open Government Licence - Simcoe County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names of 41 Wasaga Beach parks with type and features.
 |-
-| [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/WB_ZoningWebsite/FeatureServer/0 WB ZoningWebsite — Civic Address Points] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of the Wasaga Beach civic address points (17078).
+| [https://maps.simcoe.ca/arcgis/rest/services/WasagaBeach/WB_Parks_Recreation_Areas_Website/FeatureServer/0 WB Parks Recreation Areas Website — Municipal Playground Inventory] || Open Government Licence - Simcoe County || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 14 municipal playground points, which OSM often lacks.
 |}
 
 === Haliburton ===
-56 layers (56 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1098 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+57 layers (57 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1097 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -7574,6 +7562,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/CountyBasemap/MapServer/3 CountyBasemap — Rail Trail] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 23 segments of the county rail trail; OSM likely has it, useful to check alignment and name, but no licence.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/DynamicLayers/MapServer/14 DynamicLayers — Cemeteries] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 37 named cemeteries; small rural cemeteries are often missing or unnamed in OSM, but no licence.
+|-
+| [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/DynamicLayers/MapServer/15 DynamicLayers — Churches] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 36 named churches with addresses; a gap list for places of worship, but no licence.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/DynamicLayers/MapServer/20 DynamicLayers — Historic and Heritage Sites] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 91 named historic sites, churches and cemeteries with addresses from cultural mapping, but no licence.
 |-
@@ -7605,6 +7595,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/105 DynamicLayers — Road Network] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 4511 road segments with names, address ranges and jurisdiction; a check of OSM names, near-copy of searchlayers-3-streets, but no licence.
 |-
+| [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/109 DynamicLayers — Rail Trail] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 22 lines of the former IB&O railway now a multi-use rail trail; OSM likely has it, useful to check name and extent, but no licence.
+|-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/111 DynamicLayers — Lakes Medium] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 474 medium lakes with names, alternate names and cottage associations; names are the gain, but no licence.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/112 DynamicLayers — Lakes Large] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 103 large lakes with names, alternate names and cottage associations; names are the gain, but no licence.
@@ -7622,8 +7614,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/213 DynamicLayers — Lakes/Rivers] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 1709 waterbody polygons with lake names and alternate names; names are the gain; no licence published.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/244 DynamicLayers — LandFill] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 5 named waste sites with addresses and summer and winter opening hours OSM usually lacks; no licence published.
-|-
-| [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/26 DynamicLayers — Cemeteries] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of ca/on/haliburton/dynamiclayers-cemeteries: 37 named cemeteries and family plots, names OSM often lacks; no licence published.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Secure/DynamicLayers/MapServer/285 DynamicLayers — Private Road] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Names for 578 private road segments, cottage lanes OSM often lacks or leaves unnamed; a subset of Road Network, but no licence.
 |-
@@ -8287,7 +8277,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Leeds and Grenville ===
-31 layers (26 no licence, 5 available). ''Value'' is a 1–5 score of what OSM would gain. 563 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+32 layers (26 no licence, 6 available). ''Value'' is a 1–5 score of what OSM would gain. 562 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -8298,6 +8288,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services3.arcgis.com/KQcdsE7S72bcD7R8/arcgis/rest/services/LG_Municipal_Boundary/FeatureServer/0 LG_Municipal_Boundary_OpenData] || Open Government Licence - United Counties of Leeds and Grenville v1.0 || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 26 lower-tier and separated municipality boundaries edited 2025, a check for OSM admin boundaries.
 |-
 | [https://services3.arcgis.com/KQcdsE7S72bcD7R8/arcgis/rest/services/LG_RoadNetwork_OpenData/FeatureServer/0 LG_RoadNetwork_OpenData] || Before using this data you must read and understand the United Counties of Leeds and Grenville's Open Data Terms of Use. Open Data License || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 7977 road segments edited 2026 with official names, county road numbers, private roads and address ranges; names and numbers are the gain.
+|-
+| [https://services3.arcgis.com/KQcdsE7S72bcD7R8/arcgis/rest/services/LG_Waterbody_OpenData/FeatureServer/2 LG_Waterbody_OpenData] || Open Government Licence - United Counties of Leeds and Grenville v1.0 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 2847 OHN waterbodies with official names, clipped by the county; names for unnamed lakes are the gain, OSM often has the outlines.
 |-
 | [https://services3.arcgis.com/KQcdsE7S72bcD7R8/arcgis/rest/services/LG_Watercourse/FeatureServer/1 LG_Watercourse_OpenDate] || Open Government Licence - United Counties of Leeds and Grenville v1.0 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 22688 OHN watercourse lines with official names; creek names are the gain, OSM often has the geometry from CanVec.
 |-
@@ -8745,7 +8737,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Ontario Ministry of Transportation ===
-31 layers (16 no licence, 15 available). ''Value'' is a 1–5 score of what OSM would gain. 524 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+35 layers (20 no licence, 15 available). ''Value'' is a 1–5 score of what OSM would gain. 520 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -8803,7 +8795,15 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Plan_Discussion_Paper_Data/FeatureServer/19 Ontario Plan Discussion Paper Data — Winter Roads (Seasonal)] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 282 seasonal winter road segments in the Far North from the Ontario Road Network; a gap list, as OSM often lacks winter roads.
 |-
+| [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Plan_Discussion_Paper_Data/FeatureServer/26 Ontario Plan Discussion Paper Data — Ferry Route] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 27 ferry routes with names, operators and service status across Ontario; a check for OSM route=ferry lines.
+|-
 | [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Plan_Discussion_Paper_Data/FeatureServer/4 Ontario Plan Discussion Paper Data — Ferry] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 53 ferry terminals with names, operators and addresses across Ontario; a check for ferry terminals and their operators.
+|-
+| [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Plan_Discussion_Paper_Data/FeatureServer/51 Ontario Plan Discussion Paper Data — Existing Level 3 Chargers] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 361 DC fast charging stations with names and addresses, apparently from the US AFDC station list; a gap check for EV chargers.
+|-
+| [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Plan_Discussion_Paper_Data/FeatureServer/8 Ontario Plan Discussion Paper Data — Freeway] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 462 MTO freeway segments with route numbers, speed limits and lane counts; a check for OSM speed and lane tags.
+|-
+| [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Plan_Discussion_Paper_Data/FeatureServer/9 Ontario Plan Discussion Paper Data — Major Highway] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 1193 MTO major highway segments with route numbers, shields, speed limits and lanes; a check for OSM highway tags.
 |-
 | [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Ontario_Travel_Information_Centres_Centres_d%E2%80%99information_tourist_2/FeatureServer/0 Ontario Travel Information Centres Centres d’information tourist 2 — Travel Information Centres Emergency] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 11 Ontario Travel Information Centres with names, operators, addresses and phones; a check for tourism=information offices, last edited 2020.
 |-
@@ -8815,7 +8815,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === York ===
-19 layers (19 available). ''Value'' is a 1–5 score of what OSM would gain. 501 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+15 layers (15 available). ''Value'' is a 1–5 score of what OSM would gain. 505 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -8824,14 +8824,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services1.arcgis.com/GzvOwaQBbX7KLiuG/arcgis/rest/services/Business_Directory_2024/FeatureServer/1 Business Directory 2024] || Please refer to "York Region Open Data Licence", searchable on this website. || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 33626 businesses with name and address from the 2024 employment survey, a gap list for shops and offices that churns.
 |-
 | [https://services8.arcgis.com/lYI034SQcOoxRCR7/arcgis/rest/services/PoliceStation/FeatureServer/0 Police Station] || York Region Open Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 York Regional Police stations with names and addresses; a quick check of police stations OSM usually has.
-|-
-| [https://utility.arcgis.com/usrsvcs/servers/19e0783e1b1840129fe066e14369920b/rest/services/OpenData/OD_BIKEROUTES/FeatureServer/0 Bicycle Routes] || This work is licensed under The City of Markham's Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of ca/on/markham/bicycle-routes republished on York's hub; 846 typed bike route segments, cycleway tags OSM often lacks.
-|-
-| [https://utility.arcgis.com/usrsvcs/servers/7791a0d2e3d3422b8eab3c800be5c4e7/rest/services/OpenData/OD_ADDRESSES/FeatureServer/0 Civic Addresses] || This work is licensed under The City of Markham's Terms of Use || 4/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of ca/on/markham/civic-addresses republished on York's hub; 98261 address points, also covered by ca/on/york/address-point.
-|-
-| [https://utility.arcgis.com/usrsvcs/servers/c445d4d0a22041d2a961e919a8df59ed/rest/services/OpenData/OD_TRAILS/FeatureServer/0 Trails] || This work is licensed under The City of Markham's Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of ca/on/markham/trails republished on York's hub; 3424 segments with official trail names and surface.
-|-
-| [https://utility.arcgis.com/usrsvcs/servers/d6d3ca08120741798181e187650defc0/rest/services/OpenData/OD_PARKS/FeatureServer/0 Parks] || This work is licensed under The City of Markham's Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Copy of ca/on/markham/parks republished on York's hub; official names for 1745 parks and open spaces.
 |-
 | [https://ww2.yorkmaps.ca/arcgis/rest/services/CacheMaps/YR_Imagery2022/MapServer/3 2022 Imagery] || Please refer to "York Region Open Data License", searchable on this website. || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 2022 high-resolution regional orthoimagery under the York Region Open Data Licence; the newest year here for tracing.
 |-
@@ -9405,7 +9397,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Elgin ===
-39 layers (32 no licence, 7 available). ''Value'' is a 1–5 score of what OSM would gain. 315 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+36 layers (29 no licence, 7 available). ''Value'' is a 1–5 score of what OSM would gain. 318 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9467,8 +9459,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://gisdata.elginmapping.ca/arcgis/rest/services/EEMS_Planning_Geocortex/MapServer/6 EEMS Planning Geocortex — ElginCounty.DBO.Elgin_County_OP_Appendix_1_1] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 3517 provincially evaluated wetland polygons; a gap check for natural=wetland, though the province is the authority; no licence published.
 |-
-| [https://gisdata.elginmapping.ca/arcgis/rest/services/EEMS_Property_Layers/MapServer/0 EEMS Property Layers — E911] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of the 21788 E911 address points (ca/on/elgin/elgin-e911-e911); same data, but no licence.
-|-
 | [https://gisdata.elginmapping.ca/arcgis/rest/services/EEMS_Road_Network/MapServer/1 EEMS Road Network — Elgin Road Network] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 1427 arterial road segments with official names and 911 address ranges; OSM has the roads, useful to check names; no licence published.
 |-
 | [https://gisdata.elginmapping.ca/arcgis/rest/services/EEMS_Road_Network/MapServer/3 EEMS Road Network — Elgin Road Network] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 5294 local road segments with official names and 911 address ranges; OSM has the roads, useful to check names; no licence published.
@@ -9483,11 +9473,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://gisdata.elginmapping.ca/arcgis/rest/services/Public/MapServer/6 Public — Aylmer Disk Golf] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 36 disc golf baskets and tee pads in Aylmer; course detail OSM usually lacks; no licence published.
 |-
-| [https://gisdata.elginmapping.ca/arcgis/rest/services/Public2/MapServer/1 Public2 — E911] || None published || 3/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of ca/on/elgin/public-e911 in the Public2 service; no licence published.
-|-
 | [https://gisdata.elginmapping.ca/arcgis/rest/services/Wards/MapServer/0 Wards — WARDS] || None published || 3/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 13 ward polygons across lower-tier municipalities with ward numbers, for boundary=political; no licence published.
-|-
-| [https://gisdata.elginmapping.ca/arcgis/rest/services/Public/MapServer/1 Public — E911] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of the 21788 E911 address points (ca/on/elgin/elgin-e911-e911); same data, but no licence.
 |}
 
 === Peterborough ===
@@ -9573,7 +9559,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Dryden ===
-25 layers (25 no licence). ''Value'' is a 1–5 score of what OSM would gain. 324 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+22 layers (22 no licence). ''Value'' is a 1–5 score of what OSM would gain. 327 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9609,17 +9595,11 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Cartegraph/TransportationNetwork/FeatureServer/6 TransportationNetwork — Signs] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 3036 traffic signs by Ontario sign code, including 242 stop signs and speed limits OSM usually lacks, but no licence.
 |-
+| [https://maps.dryden.ca/arcgisdryd/rest/services/Cartegraph/TransportationNetwork/FeatureServer/9 TransportationNetwork — Bridges] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Nine bridges with common names, width and capacity; names are the gain for bridge ways, but no licence.
+|-
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Cartegraph/WaterNetwork/FeatureServer/4 WaterNetwork — Water Hydrants] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 336 hydrants with positions, a gap list for emergency=fire_hydrant, but no licence.
 |-
-| [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/Airport_portal/MapServer/77 Airport portal — Buildings] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of ca/on/dryden/drydenbase-buildings; 6375 footprints with address, year built and storeys, but no licence.
-|-
-| [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/Airport_portal/MapServer/81 Airport portal — Parks] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of ca/on/dryden/drydenbase-parks; official names for 35 parks, but no licence.
-|-
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/BuildingandPlanning/MapServer/0 BuildingandPlanning — Addresses] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 4753 civic address points with full address and postal code, the only address layer Dryden publishes, but no licence.
-|-
-| [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/BuildingandPlanning/MapServer/54 BuildingandPlanning — Buildings] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of ca/on/dryden/publicworksportal-buildings in the BuildingandPlanning service, but no licence.
-|-
-| [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/BuildingandPlanning/MapServer/61 BuildingandPlanning — Parks] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Copy of ca/on/dryden/publicworksportal-parks in the BuildingandPlanning service, but no licence.
 |-
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/PublicWorksPortal/MapServer/48 PublicWorksPortal — Street Signs] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 2688 signs by Ontario sign code, incl. about 257 RA-1 stop signs worth a gap list, but no licence.
 |-
@@ -10111,7 +10091,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Sault Ste. Marie ===
-34 layers (34 no licence). ''Value'' is a 1–5 score of what OSM would gain. 246 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+32 layers (32 no licence). ''Value'' is a 1–5 score of what OSM would gain. 248 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -10133,8 +10113,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://enterprise.ssmic.com/server/rest/services/SooMaps/SooMaps_GeneralLayers/MapServer/8 SooMaps GeneralLayers — Bridges] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 38 bridge points with names such as Town Line Road - Big Carp River; names for bridge ways, but no licence.
 |-
-| [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/Address_Mar2026_view/FeatureServer/0 Address Mar2026 view — Address_Export_Mar2026] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || A March 2026 export of 31209 addresses copying ca/on/sault-ste-marie/soomaps-generallayers-addresses, but no licence.
-|-
 | [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/BikeTrails_LS_gdb/FeatureServer/0 BikeTrails LS gdb — BikeTrails_LS] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 163 GPS tracks of named Hiawatha Highlands mountain bike trails, apparently from Trailforks, but no licence.
 |-
 | [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/CrossingGuards_Mar2023/FeatureServer/0 CrossingGuards Mar2023 — CROSSING GUARD] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 21 crossing guard locations marking school crossings, a check for crossing tags, but no licence.
@@ -10144,8 +10122,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/Outdoor_Rec_Map_gdb/FeatureServer/0 Outdoor Rec Map gdb — Outdoor_Activity] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 64 named outdoor sites such as rinks and trailheads with amenities; names and attributes to conflate, last edited 2021, but no licence.
 |-
 | [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/Playgrounds_2018_Collector_ViewLayer/FeatureServer/0 Playgrounds 2018 Collector ViewLayer — SchoolandCity_ParkswPlaygrounds_Eval2018_Collector] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 107 school and city playgrounds with equipment and surface from 2018; a gap list for playground details, but no licence.
-|-
-| [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/SooMaps_Addresses_View/FeatureServer/0 SooMaps Addresses View — Addresses] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 33354 civic address points with unit, street and postal code, kept current; the core address import, but no licence.
 |-
 | [https://services1.arcgis.com/nlLTq2Zj0Jwv1qft/arcgis/rest/services/SooMaps_Bridges_view/FeatureServer/0 SooMaps Bridges view — Bridges] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 38 bridges with names, lanes and year built; names and attributes to add to OSM bridges, but no licence.
 |-
@@ -10271,11 +10247,15 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Wellington ===
-19 layers (19 no licence). ''Value'' is a 1–5 score of what OSM would gain. 232 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+21 layers (21 no licence). ''Value'' is a 1–5 score of what OSM would gain. 230 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://gis.wellington.ca/server/rest/services/BaseData/Boundaries/MapServer/19 Boundaries — Municipal Ward Boundaries] || None published || 3/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 24 named ward polygons across the county lower tiers, mappable as boundary=political, but no licence.
+|-
+| [https://gis.wellington.ca/server/rest/services/BaseData/Boundaries/MapServer/20 Boundaries — County Ward Boundaries] || None published || 3/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 9 county council wards, mappable as boundary=political, but no licence.
 |-
 | [https://gis.wellington.ca/server/rest/services/BaseData/Land_Data_Roads/MapServer/0 Land Data Roads — Roads] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 5,619 road segments with official street names and address ranges to check OSM names against; OSM has the roads, but no licence.
 |-
@@ -10317,7 +10297,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Middlesex ===
-28 layers (28 no licence). ''Value'' is a 1–5 score of what OSM would gain. 216 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+27 layers (27 no licence). ''Value'' is a 1–5 score of what OSM would gain. 217 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -10326,8 +10306,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://utility.arcgis.com/usrsvcs/servers/4288f676a54a47949ba60dfa3526d086/rest/services/MiddlesexCounty/Base_Layers/MapServer/5 Municipal Boundaries] || None published || 3/5 ||  || Reference || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Boundaries of the 8 lower-tier municipalities; OSM carries municipal boundaries, so a reference to check them against.
 |-
 | [https://utility.arcgis.com/usrsvcs/servers/7d7b31fb8cf144939edc0a4436706dfe/rest/services/MiddlesexCounty/SLRN/MapServer/0 Single Line Road Network] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 4806 road segments with official names, county road numbers and address ranges to check OSM road names against.
-|-
-| [https://utility.arcgis.com/usrsvcs/servers/f4dd79bdd35a456c87c0c20668138c05/rest/services/MiddlesexCounty/Base_Layers/MapServer/1 Middlesex County Address Points] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 34308 county-wide address points, a large gap in rural Middlesex, but no licence.
 |-
 | [https://services.arcgis.com/vhh9rYcMiBEBPGYb/arcgis/rest/services/Adel_Met_Water_shp/FeatureServer/0 Adel Met Water shp — AM_Hydrants] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 42 fire hydrants with numbers and colour codes; hydrants are a visible feature OSM often lacks, but no licence.
 |-
