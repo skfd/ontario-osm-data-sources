@@ -40,9 +40,12 @@ All of it is in [`catalogue/`](catalogue/); the format is in
 - `work.csv`: streams of work on a source (an import, a gap-fill, a MapRoulette queue)
 - `synced/addresses.csv`: the address datasets the tracker follows, written by `sync.py`
 - `measures.csv`: dated measurements, append only
-- `portals.csv`: every open-data portal in Ontario, and a `none-found` row for each
-  municipality without one: the denominator the catalogue grows towards
-- `jurisdictions.csv`: the places an id can sit under, including all 444 municipalities
+- `portals.csv`: every open-data portal in Ontario, the province's and its public bodies' as
+  well as the municipalities', and a `none-found` row for each municipality or conservation
+  authority without one: the denominator the catalogue grows towards
+- `jurisdictions.csv`: the places and bodies an id can sit under: all 444 municipalities, the
+  36 conservation authorities, and the ministries, agencies, school boards and health units
+  found publishing map data
 
 ## Run
 
