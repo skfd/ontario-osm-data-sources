@@ -3987,11 +3987,11 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 |-
 | [https://data.ontario.ca/dataset/ministry-of-natural-resources-sign-site Ministry of Natural Resources Sign Site] || Ontario Ministry of Natural Resources || Open Government Licence – Ontario || Reference || style="background:#e8eef8" | Available ||  || 2026-10-15 || Copy of ca/on/mnr-sign-site. Ministry information and warning sign locations, republished from GeoHub.
 |-
-| [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-alienations Ministry of Northern Development and Mines alienations] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-15 || Lands withdrawn from staking are a legal designation; under review and not downloadable.
+| [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-alienations Ministry of Northern Development and Mines alienations] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-16 || Lands withdrawn from staking are a legal designation; the package is under review, but OGSEarth serves a viewing copy in mlas_operational_gis_data.zip.
 |-
-| [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-disposition-areas Ministry of Northern Development and Mines disposition areas] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-15 || Crown land dispositions are legal tenure; under review and not downloadable.
+| [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-disposition-areas Ministry of Northern Development and Mines disposition areas] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-16 || Crown land dispositions are legal tenure; the package is under review, but OGSEarth serves a viewing copy in mlas_operational_gis_data.zip.
 |-
-| [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-mining-claims Ministry of Northern Development and Mines mining claims] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-15 || Unpatented mining claims are legal tenure; under review and not downloadable.
+| [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-mining-claims Ministry of Northern Development and Mines mining claims] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-16 || Unpatented mining claims are legal tenure; the package is under review, but OGSEarth serves a viewing copy in mlas_operational_gis_data.zip.
 |-
 | [https://data.ontario.ca/dataset/ministry-of-northern-development-and-mines-ontario-mineral-tenure-grid-250 Ministry of Northern Development and Mines Ontario Mineral Tenure GRID 250] || Ontario Ministry of Mines || Licence Not Specified || No || style="background:#eeeeee" | Not usable ||  || 2026-10-15 || Mineral tenure grid of map sheets; an index, nothing to map.
 |-
@@ -8992,18 +8992,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://maps2.grca.on.ca/server/rest/services/ORCA_Public/ORCA_Annual_Report_2023/MapServer/2 ORCA Annual Report 2023 — Conservation Area Boundaries] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 99 Otonabee conservation area boundaries with names and designations (it also carries roll numbers); a check for protected-area names.
 |}
 
-=== Markham ===
-1 layers (1 available). ''Value'' is a 1–5 score of what OSM would gain. 446 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://www.yrt.ca/en/about-us/open-data.aspx YRT/VIVA Scheduled General Transit Feed Specification (GTFS) Data] || Please refer to "York Region Open Data Licence", searchable on this website. || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || The YRT and Viva GTFS feed, the authority for stop names, codes and routes; ca/on/york/bus-stops-from-gtfs is derived from it.
-|}
-
 === Rideau Valley Conservation Authority ===
-7 layers (7 no licence). ''Value'' is a 1–5 score of what OSM would gain. 429 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+7 layers (4 no licence, 3 available). ''Value'' is a 1–5 score of what OSM would gain. 441 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9013,15 +9003,25 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/4 RVCA ConservationArea Service — Structures] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 55 weirs, boardwalks and other structures in conservation areas; boardwalk and weir details OSM trails often lack.
 |-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/6 RVCA ConservationArea Service — CA Trails] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 297 trail lines in RVCA conservation areas with maintenance and some trail names, mapped by staff in 2022; a check for OSM paths.
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/6 RVCA ConservationArea Service — CA Trails] || RVCA Open Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 297 trail lines in RVCA conservation areas with maintenance and some trail names, mapped by staff in 2022; a check for OSM paths.
 |-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/8 RVCA ConservationArea Service — Conservation Areas] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 10 RVCA conservation areas with official names, addresses and web links; OSM likely has most, but boundaries and names can be checked.
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/8 RVCA ConservationArea Service — Conservation Areas] || RVCA Open Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 10 RVCA conservation areas with official names, addresses and web links; OSM likely has most, but boundaries and names can be checked.
 |-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_LandCover_Cache/MapServer/0 RVCA LandCover Cache — Land Cover] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 104,636 land cover polygons classed for 2008, 2014 and 2020; a check list for woods, wetlands and fields in the Rideau watershed.
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_LandCover_Cache/MapServer/0 RVCA LandCover Cache — Land Cover] || RVCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 104,636 land cover polygons classed for 2008, 2014 and 2020; a check list for woods, wetlands and fields in the Rideau watershed.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_naturalHazardAtlas_Service/MapServer/39 RVCA naturalHazardAtlas Service — Woodlands - RVCA] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 30,401 RVCA woodland polygons classed for 2008, 2014 and 2020 with change flags; a gap list for wooded areas.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_naturalHazardAtlas_Service/MapServer/9 RVCA naturalHazardAtlas Service — Wetlands - Name - MNRF] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 530 evaluated wetlands with names and significance; wetland names OSM often lacks on its wetland areas.
+|}
+
+=== Markham ===
+1 layers (1 available). ''Value'' is a 1–5 score of what OSM would gain. 446 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://www.yrt.ca/en/about-us/open-data.aspx YRT/VIVA Scheduled General Transit Feed Specification (GTFS) Data] || Please refer to "York Region Open Data Licence", searchable on this website. || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || The YRT and Viva GTFS feed, the authority for stop names, codes and routes; ca/on/york/bus-stops-from-gtfs is derived from it.
 |}
 
 === Grey ===
@@ -10696,6 +10696,64 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://mappmycity.ca/arcgis/rest/services/OpenDataServices/Transportation/MapServer/4 Bike Parking] || Open Government Licence - The Corporation of the City of Windsor || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 29 bike parking sites; small, but a gap list for amenity=bicycle_parking.
 |}
 
+=== Essex ===
+25 layers (25 available). ''Value'' is a 1–5 score of what OSM would gain. 184 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Community_Information/MapServer/0 Places of Worship] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 137 named places of worship as points, a gap list for missing or unnamed churches; edited 2020.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Community_Information/MapServer/1 Schools] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 69 schools with board and French-language flag, a check list OSM mostly has; edited 2020.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Community_Information/MapServer/3 Recreational Areas] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 192 named park, arena, community centre and golf course polygons across the county; official names are the gain. Edited 2020.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Public_Safety/MapServer/0 Ambulance Stations] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 Windsor-Essex EMS base points with names and addresses, a check list for emergency=ambulance_station; edited 2020.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Public_Safety/MapServer/1 Fire Stations] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 25 fire stations with names and addresses, a check list OSM usually mostly has; edited 2020.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Transportation/MapServer/1 Load Limits on County Roads] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 23 county road segments with seasonal or 5-tonne axle load limits, maxweight restrictions OSM rarely carries; edited 2020.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Transportation/MapServer/5 Existing CWATS trails] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 252 segments of the signed CWATS active transportation network with facility type and sign status, edited 2026; network and types are the gain.
+|-
+| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Transportation/MapServer/6 Traffic Signals] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 41 county traffic signals with intersection names, a check list for highway=traffic_signals; edited 2020.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/1 Transit Bus Stops] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh transit stop points, a check list for bus stops; server did not answer, count unknown.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/10 OpenData_TransParkIntrstDrainConserv_Layers — Bike Lanes] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 Tecumseh bike lane segments with a type field, last edited 2022; a small network to check cycleway tags against.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/12 OpenData_TransParkIntrstDrainConserv_Layers — Memorial Bench] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 115 Tecumseh memorial bench points with names and material; OSM rarely maps benches this thoroughly.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/14 OpenData_TransParkIntrstDrainConserv_Layers — Basket] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 20 disc golf basket points with elevations; detail OSM rarely has for a disc golf course.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/17 OpenData_TransParkIntrstDrainConserv_Layers — Play Equipment and Park Amenities] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 62 play equipment points tied to park names; a gaps list for playgrounds, though fields are mostly asset condition.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/18 OpenData_TransParkIntrstDrainConserv_Layers — Park Point Location] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 42 park points with amenity flags (pavilion, play area, courts, fields), useful to check park facilities against.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/19 Trails] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh trail lines, possibly with official trail names; server did not answer, fields unknown.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/2 Parking: Public and Municipal Lots] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh public and municipal parking lots, a gap list for amenity=parking; server did not answer, count unknown.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/21 OpenData_TransParkIntrstDrainConserv_Layers — Parks] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names for 42 Tecumseh park polygons, the usual gain for leisure=park areas.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/22 OpenData_TransParkIntrstDrainConserv_Layers — Municipal ROW Trees] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 10256 Tecumseh street trees with species and DBH, last edited 2022; street trees OSM is usually missing in bulk.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/29 Cemetery Lands] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh cemetery land polygons, a check list for landuse=cemetery with names; server did not answer.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/32 OpenData_TransParkIntrstDrainConserv_Layers — Municipal Drain] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 175 municipal drain lines with drain names; names OSM ditches and drains in Essex usually lack.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/6 OpenData_TransParkIntrstDrainConserv_Layers — Street Centreline] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 886 Tecumseh street centrelines with names, one-way direction and address ranges; the county StreetCenterline layer covers it too.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/9 Walkways (Public)] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh public walkways between streets, short paths OSM often misses.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenDataMAP_InfraZonePropBound_Layers/MapServer/33 Town of Tecumseh Address Points] || Open Government Licence - The Corporation of the County of Essex || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 9860 Tecumseh civic address points with number, street and suffix, the core material of an address import.
+|-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenDataMAP_InfraZonePropBound_Layers/MapServer/34 Building Footprints] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 17869 Tecumseh building footprints with names and unit counts, updated 2025; missing buildings and names are the gain.
+|-
+| [https://services6.arcgis.com/baycHE2iKJaT7Upn/arcgis/rest/services/StreetCenterline/FeatureServer/0 StreetCenterline] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 7602 county street segments with names, surface, lanes, speed and one-way, edited 2026; speed limits and lanes are the gain.
+|}
+
 === Thames Valley District School Board ===
 1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 184 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -11362,6 +11420,38 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://utility.arcgis.com/usrsvcs/servers/fad117ba47bb47b68a916f95fac7cd2f/rest/services/OpenData/OpenData/MapServer/22 Child Care Centres] || https://www.regionofwaterloo.ca/en/regional-government/open-data.aspx#Open-Data-Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 288 child care centres with names and addresses, a gaps list for amenity=childcare; positions are geocoded.
 |}
 
+=== Grand River Conservation Authority ===
+12 layers (12 available). ''Value'' is a 1–5 score of what OSM would gain. 99 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://data.grandriver.ca/downloads/gis/Dams.zip Dams] || GRCA Open Data Licence v2 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || GRCA-owned and operated dams with names and types (flood control, weirs, ponds); names and dam types to conflate onto waterway=dam, open licence.
+|-
+| [https://data.grandriver.ca/downloads/gis/GRCA_Parks.zip Conservation Areas (Parks)] || GRCA Open Data Licence v2 || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || Outer limits and official names of GRCA conservation areas (Elora Gorge, Guelph Lake, Luther Marsh) under the open licence; names and extents to conflate.
+|-
+| [https://data.grandriver.ca/downloads/gis/Rail_Trail.zip Rail Trail] || GRCA Open Data Licence v2 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || The four GRCA rail trails with official names (Elora Cataract Trailway, Cambridge to Paris); names OSM usually has, open licence.
+|-
+| [https://data.grandriver.ca/downloads/gis/Sewage_Treatment_Plants.zip Sewage Treatment Plants] || GRCA Open Data Licence v2 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || Municipal and private sewage treatment plants with names and operators, last edited 2017; points are often at the outfall, so names over positions.
+|-
+| [https://data.grandriver.ca/downloads/gis/Waterbody.zip Waterbody] || GRCA Open Data Licence v2 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || GRCA's connected hydrology waterbodies (ponds, reservoirs, wide rivers) with names, updated 2026; names and a gap check for water areas.
+|-
+| [https://data.grandriver.ca/downloads/gis/Watercourse.zip Watercourse] || GRCA Open Data Licence v2 || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || GRCA's connected stream network with common names, updated 2026; creek names and a gap check for the Grand watershed, open licence.
+|-
+| [https://data.grandriver.ca/downloads/gis/Wetland.zip Wetlands] || GRCA Open Data Licence v2 || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || Regulated wetland boundaries across the watershed, updated 2026; a gap check for natural=wetland.
+|-
+| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/11 GRCA GIS v2 — Watercourse - Major] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 7,390 major watercourse segments with common names and flow class; creek and river names for the Grand watershed.
+|-
+| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/12 GRCA GIS v2 — Watercourse - Regional] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 33,618 regional watercourse segments with common names and Strahler order; a name and gap check for streams.
+|-
+| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/31 GRCA GIS v2 — Waterbody - Major] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 157 major waterbodies (reservoirs, lakes) with common names; names to check against OSM water areas.
+|-
+| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/32 GRCA GIS v2 — Waterbody - Regional] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 3,369 regional waterbodies with type and some names; a gap check for ponds and lakes.
+|-
+| [https://maps.grandriver.ca/arcgis/rest/services/PublicApp/GRCF_Public/MapServer/0 GRCF Public — GRCF Commemorative] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 232 commemorative benches, trees and km markers on GRCA trails with inscriptions; benches and markers OSM often lacks.
+|}
+
 === Hamilton-Wentworth District School Board ===
 1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 108 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -11370,64 +11460,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services3.arcgis.com/xa1UBgwOXoenQ2Ob/arcgis/rest/services/HWDSB_Schools/FeatureServer/0 HWDSB Schools — T2024_25_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 94 current HWDSB schools for 2024-25 with names, addresses, grades, French immersion and year built; OSM usually has the schools, names are a conflation source.
-|}
-
-=== Essex ===
-25 layers (25 available). ''Value'' is a 1–5 score of what OSM would gain. 82 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Community_Information/MapServer/0 Places of Worship] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 137 named places of worship as points, a gap list for missing or unnamed churches; edited 2020.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Community_Information/MapServer/1 Schools] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 69 schools with board and French-language flag, a check list OSM mostly has; edited 2020.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Community_Information/MapServer/3 Recreational Areas] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 192 named park, arena, community centre and golf course polygons across the county; official names are the gain. Edited 2020.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Public_Safety/MapServer/0 Ambulance Stations] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 Windsor-Essex EMS base points with names and addresses, a check list for emergency=ambulance_station; edited 2020.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Public_Safety/MapServer/1 Fire Stations] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 25 fire stations with names and addresses, a check list OSM usually mostly has; edited 2020.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Transportation/MapServer/1 Load Limits on County Roads] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 23 county road segments with seasonal or 5-tonne axle load limits, maxweight restrictions OSM rarely carries; edited 2020.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Transportation/MapServer/5 Existing CWATS trails] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 252 segments of the signed CWATS active transportation network with facility type and sign status, edited 2026; network and types are the gain.
-|-
-| [https://cwserver.countyofessex.ca/arcgis/rest/services/OpenData/Transportation/MapServer/6 Traffic Signals] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 41 county traffic signals with intersection names, a check list for highway=traffic_signals; edited 2020.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/1 Transit Bus Stops] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh transit stop points, a check list for bus stops; server did not answer, count unknown.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/10 OpenData_TransParkIntrstDrainConserv_Layers — Bike Lanes] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 Tecumseh bike lane segments with a type field, last edited 2022; a small network to check cycleway tags against.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/12 OpenData_TransParkIntrstDrainConserv_Layers — Memorial Bench] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 115 Tecumseh memorial bench points with names and material; OSM rarely maps benches this thoroughly.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/14 OpenData_TransParkIntrstDrainConserv_Layers — Basket] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 20 disc golf basket points with elevations; detail OSM rarely has for a disc golf course.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/17 OpenData_TransParkIntrstDrainConserv_Layers — Play Equipment and Park Amenities] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 62 play equipment points tied to park names; a gaps list for playgrounds, though fields are mostly asset condition.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/18 OpenData_TransParkIntrstDrainConserv_Layers — Park Point Location] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 42 park points with amenity flags (pavilion, play area, courts, fields), useful to check park facilities against.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/19 Trails] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh trail lines, possibly with official trail names; server did not answer, fields unknown.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/2 Parking: Public and Municipal Lots] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh public and municipal parking lots, a gap list for amenity=parking; server did not answer, count unknown.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/21 OpenData_TransParkIntrstDrainConserv_Layers — Parks] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names for 42 Tecumseh park polygons, the usual gain for leisure=park areas.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/22 OpenData_TransParkIntrstDrainConserv_Layers — Municipal ROW Trees] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 10256 Tecumseh street trees with species and DBH, last edited 2022; street trees OSM is usually missing in bulk.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/29 Cemetery Lands] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh cemetery land polygons, a check list for landuse=cemetery with names; server did not answer.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/32 OpenData_TransParkIntrstDrainConserv_Layers — Municipal Drain] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 175 municipal drain lines with drain names; names OSM ditches and drains in Essex usually lack.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/6 OpenData_TransParkIntrstDrainConserv_Layers — Street Centreline] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 886 Tecumseh street centrelines with names, one-way direction and address ranges; the county StreetCenterline layer covers it too.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenData_TransParkIntrstDrainConserv_Layers/MapServer/9 Walkways (Public)] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Tecumseh public walkways between streets, short paths OSM often misses.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenDataMAP_InfraZonePropBound_Layers/MapServer/33 Town of Tecumseh Address Points] || Open Government Licence - The Corporation of the County of Essex || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 9860 Tecumseh civic address points with number, street and suffix, the core material of an address import.
-|-
-| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenDataMAP_InfraZonePropBound_Layers/MapServer/34 Building Footprints] || Open Government Licence - The Corporation of the County of Essex || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 17869 Tecumseh building footprints with names and unit counts, updated 2025; missing buildings and names are the gain.
-|-
-| [https://services6.arcgis.com/baycHE2iKJaT7Upn/arcgis/rest/services/StreetCenterline/FeatureServer/0 StreetCenterline] || Open Government Licence - The Corporation of the County of Essex || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 7602 county street segments with names, surface, lanes, speed and one-way, edited 2026; speed limits and lanes are the gain.
 |}
 
 === Meaford ===
@@ -11664,6 +11696,48 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services3.arcgis.com/pCmV4YWmyIH9CmGq/arcgis/rest/services/Trail/FeatureServer/0 Trail] || Open Government Licence - Orangeville || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 168 trail segments with surface, width and permitted uses; most segments carry no name, so the gain is surface and access tags.
 |-
 | [https://services3.arcgis.com/pCmV4YWmyIH9CmGq/arcgis/rest/services/trnBikeSharrows/FeatureServer/0 Bike Sharrows] || Open Government Licence - Orangeville || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 94 sharrow markings from 2019; marks streets for cycleway=shared_lane, which OSM often lacks.
+|}
+
+=== Ontario Geological Survey ===
+17 layers (11 not usable, 6 available). ''Value'' is a 1–5 score of what OSM would gain. 52 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://www.geologyontario.mines.gov.on.ca/persistent-linking?publication=MRD297 Aggregate Test Results for Various Rock Types: Northern, Central and Southern Ontario] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Lab results (Micro-Deval, abrasion, freeze-thaw) for rock samples, MRD297; material testing, not something OSM maps.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#elevation Elevation] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Shuttle Radar Topography Mission shaded relief and elevation repackaged by OGS as a KML dated 2017; elevation models are not something OSM maps.
+|-
+| [https://www.geologyontario.mines.gov.on.ca/persistent-linking?publication=LakeGeochemON Lake Geochemistry of Ontario (LakeGeochemON)] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Over 65 000 lake sample sites with 5.7 million geochemical analyses; sampling data, not something OSM maps.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#ogsfocus OGSFocus] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || A data-rating grid and hot spots of open ground for mineral exploration, rebuilt bi-weekly (zip 2026-10-08); an exploration index, not features.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#ogsgeodata OGS GeoData Listing] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || A per-township list of OGS publications, assessment files, drill holes and mineral inventory records; a document index with no download.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#admin-boundaries-spatial-reference-grids Administrative Boundaries and Spatial Reference Grids] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || Copy of ca/on/geographic-township-improved. A 2024 KML bundling LIO townships, lots, municipal, reserve, park and CA boundaries with UTM and NTS grids.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#ontarios-critical-minerals Ontario's Critical Minerals] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || Copy of ca/on/ontario-mineral-inventory. Only the OMI records listing one of Ontario's 33 critical minerals as a commodity, KMZ of 2026-06-25.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#far-north-predictive-mapping Far North Predictive Mapping] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Surficial materials and landforms (eskers, palsas, moraines) predicted from imagery and DEMs for the Far North, 2021 edition; interpretation, not OSM features.
+|-
+| [https://www.geologyontario.mines.gov.on.ca/persistent-linking?publication=MRD160 Geology Terrain (NOEGTS)] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Northern engineering terrain mapping (MRD160) of landforms, materials and drainage with old pit points; geological interpretation, not features OSM maps.
+|-
+| [https://www.geologyontario.mndm.gov.on.ca/ogsearth.html#three-d-mapping-surficial-aquifers 3D Mapping of Surficial Aquifers] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Boreholes, isopachs and structural contours of aquifers and aquitards in southern Ontario, KML only; subsurface modelling, not something OSM maps.
+|-
+| [https://www.geologyontario.mines.gov.on.ca/persistent-linking?publication=MRD207 Bedrock Topography and Overburden Thickness] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || An interpolated bedrock surface and drift thickness grid for southern Ontario, MRD207; subsurface modelling, not something OSM maps.
+|-
+| [https://www.geologyontario.mines.gov.on.ca/persistent-linking?publication=MRD302 Southern Ontario Stream Sediment Geochemistry Survey] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Metals, loss-on-ignition and grain size for 2113 stream sediment samples, MRD302; sampling data, not something OSM maps.
+|-
+| [https://www.geologyontario.mines.gov.on.ca/persistent-linking?publication=GRS020 Tritium in Shallow Groundwater of Southern Ontario (GRS020)] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Interpolated groundwater tritium rasters and the wells sampled; groundwater readings, not something OSM maps.
+|-
+| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/AMIS_FEATURES_2025/FeatureServer/0 AMIS FEATURES 2025 — AMIS_FEATURES_2025] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 20,751 abandoned mine features (shafts, pits, tailings, structures), 2025; a gaps list, positions need checking. The CKAN package ca/on/abandoned-mines-information points here.
+|-
+| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/AMIS_SITES_2025/FeatureServer/0 AMIS SITES 2025 — AMIS_SITES_2025] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 6,202 abandoned mine sites with official names, 2025; a gaps list for disused mines. The CKAN package ca/on/abandoned-mines-information points here.
+|-
+| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/Karst_Of_Southern_Ontario/FeatureServer/2 Karst Of Southern Ontario — Karst Features] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 327 observed caves, sinkholes and disappearing streams in southern Ontario; a gaps list for natural=cave_entrance and sinkhole, positions need checking.
+|-
+| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/Operating_mines_and_significant_projects/FeatureServer/6 Operating mines and significant projects — Operating mine] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 37 operating mines with names, companies and commodities, current 2026; OSM likely has the larger ones, names and operators can be checked.
 |}
 
 === Belleville ===
@@ -11922,22 +11996,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://utility.arcgis.com/usrsvcs/servers/bc15a6e1af9141bc9348cc8a2dd86077/rest/services/Trails/Trails_Service/FeatureServer/0 Trails - Points of Interest] || District Municipality of Muskoka Open Data License v.1.0 || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 377 trail points (parking, lookouts, features) tied to named trails; a gap list for trailhead parking and viewpoints.
 |}
 
-=== Ontario Geological Survey ===
-4 layers (4 available). ''Value'' is a 1–5 score of what OSM would gain. 52 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/AMIS_FEATURES_2025/FeatureServer/0 AMIS FEATURES 2025 — AMIS_FEATURES_2025] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 20,751 abandoned mine features (shafts, pits, tailings, structures), 2025; a gaps list, positions need checking. The CKAN package ca/on/abandoned-mines-information points here.
-|-
-| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/AMIS_SITES_2025/FeatureServer/0 AMIS SITES 2025 — AMIS_SITES_2025] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 6,202 abandoned mine sites with official names, 2025; a gaps list for disused mines. The CKAN package ca/on/abandoned-mines-information points here.
-|-
-| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/Karst_Of_Southern_Ontario/FeatureServer/2 Karst Of Southern Ontario — Karst Features] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 327 observed caves, sinkholes and disappearing streams in southern Ontario; a gaps list for natural=cave_entrance and sinkhole, positions need checking.
-|-
-| [https://services2.arcgis.com/zVN3OC2fz0Sgv7ip/arcgis/rest/services/Operating_mines_and_significant_projects/FeatureServer/6 Operating mines and significant projects — Operating mine] || Terms of Use Ministry of Energy and Mines Electronic Information Products || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 37 operating mines with names, companies and commodities, current 2026; OSM likely has the larger ones, names and operators can be checked.
-|}
-
 === Dufferin ===
 3 layers (3 available). ''Value'' is a 1–5 score of what OSM would gain. 52 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -12018,34 +12076,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services2.arcgis.com/tPtW2sjE3XOR63A7/arcgis/rest/services/Water/FeatureServer/0 Water] || Open Government Licence - City of Cornwall || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 72 water polygons incl. named stormwater ponds and the St Lawrence; a gap check for ponds and basin=stormwater.
 |-
 | [https://services2.arcgis.com/tPtW2sjE3XOR63A7/arcgis/rest/services/WaterBottleFillingStations/FeatureServer/0 Water Bottle Filling Stations] || Open Government Licence - City of Cornwall || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Six bottle filling stations described by location; a small gaps list for amenity=drinking_water; last edited 2018.
-|}
-
-=== Grand River Conservation Authority ===
-10 layers (10 available). ''Value'' is a 1–5 score of what OSM would gain. 39 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/0 GRCA GIS v2 — Dam (GRCA)] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 39 named dams with operator and type (Conestogo, Baden, Wellesley); names and dam types to conflate onto waterway=dam features.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/11 GRCA GIS v2 — Watercourse - Major] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 7,390 major watercourse segments with common names and flow class; creek and river names for the Grand watershed.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/12 GRCA GIS v2 — Watercourse - Regional] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 33,618 regional watercourse segments with common names and Strahler order; a name and gap check for streams.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/19 GRCA GIS v2 — CA Boundary - Local (GRCA)] || GRCA Standard Data Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 conservation areas with official names, address, phone and website (Elora Gorge, Guelph Lake, Luther Marsh); names and contacts OSM often lacks.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/27 GRCA GIS v2 — Wetland (GRCA)] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 14,514 wetland polygons across the watershed with source and verification; a gap check for natural=wetland.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/31 GRCA GIS v2 — Waterbody - Major] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 157 major waterbodies (reservoirs, lakes) with common names; names to check against OSM water areas.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/32 GRCA GIS v2 — Waterbody - Regional] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 3,369 regional waterbodies with type and some names; a gap check for ponds and lakes.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/4 GRCA GIS v2 — Sewage Treatment Plant (GRCA)] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 49 sewage treatment plants with names, operator and receiving watercourse; names and operators for man_made=wastewater_plant.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/Public/GRCA_GIS_v2/MapServer/8 GRCA GIS v2 — Rail Trail Line (GRCA)] || GRCA Standard Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 4 named rail trails (Elora Cataract Trailway, Cambridge to Paris, SC Johnson, Hamilton to Brantford); official names OSM usually has.
-|-
-| [https://maps.grandriver.ca/arcgis/rest/services/PublicApp/GRCF_Public/MapServer/0 GRCF Public — GRCF Commemorative] || GRCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 232 commemorative benches, trees and km markers on GRCA trails with inscriptions; benches and markers OSM often lacks.
 |}
 
 === Stratford ===
@@ -12634,6 +12664,30 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://gis.haldimandcounty.ca/server/rest/services/Topo/Parks/FeatureServer/0 Parks] || Open Government Licence - Haldimand County || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names, active/passive class and addresses for 62 County-owned parks, which OSM often has unnamed.
 |}
 
+=== Metrolinx ===
+8 layers (4 available, 4 not usable). ''Value'' is a 1–5 score of what OSM would gain.
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://www.gotransit.com/en/information-resources/software-developers GO Transit GTFS] || Metrolinx Access and Use Agreement || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || The authority for GO stations, stops and routes, refreshed every few weeks (last 2026-10-05); for validating, not importing.
+|-
+| [https://www.gotransit.com/en/information-resources/software-developers UP Express GTFS] || Metrolinx Access and Use Agreement || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Five stations on one line that OSM already maps; updated 2026-10-07.
+|-
+| [https://metrolinx.com/en/about-us/open-data Frequent Rapid Transit Network Shapefile] || Open Government Licence – Ontario – Metrolinx || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Existing and planned rapid transit from the 2041 Regional Transportation Plan, 2023 edition; planned lines are not on the ground.
+|-
+| [https://assets.metrolinx.com/raw/upload/v1662043582/Documents/Metrolinx/Open%20Data/201912_Parking_By_Facility_All.csv GO Rail Parking & Utilization] || Open Government Licence – Ontario – Metrolinx || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Parking spaces per GO station lot as of 2019-12, a table with no geometry joinable by station name for capacity tags.
+|-
+| [https://assets.metrolinx.com/image/upload/v1669220996/Documents/Metrolinx/Fiscal-Year-Train-Ridership-Map-April-to-September-2020.pdf Fiscal Year-To-Date Ridership Report (Archived)] || Open Government Licence – Ontario – Metrolinx || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || A PDF map of GO boardings by station and corridor for April to September 2020, archived; ridership statistics, not features.
+|-
+| [https://api.openmetrolinx.com/OpenDataAPI/Help/Index/en GO API] || None published || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || Keyed real-time predictions, alerts, GTFS-realtime and fleet occupancy; operational data, and its stops repeat ca/on/metrolinx/go-transit-gtfs.
+|-
+| [https://www.metrolinx.com/en/metrolinx-technical-standards Metrolinx Technical Standards] || None published || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || A library of engineering and architectural standard documents (linked as Engineering References); documents, not a dataset.
+|-
+| [https://assets.metrolinx.com/image/upload/v1663237565/Documents/Metrolinx/2020-Metrolinx-Open-Data-Inventory.pdf 2020 Open Data Inventory] || Open Government Licence – Ontario – Metrolinx || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || A 2020 PDF list of 164 Metrolinx datasets, 5 open and 159 under review; a document, and its open ones already have rows.
+|}
+
 === Prince Edward County ===
 1 layers (1 available). ''Value'' is a 1–5 score of what OSM would gain. 7 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -12698,22 +12752,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://mph-northumbercounty.hub.arcgis.com/datasets/9b5d8d6f77b041559d3fa9382a1c6a9c LiDAR Ground Model Hillshade 2026] || Open Port Hope Data Licence and Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Recent 0.5m 2026 bare-earth hillshade, openly licensed; a tracing aid for trails, ditches, embankments and watercourses.
 |-
 | [https://mph-northumbercounty.hub.arcgis.com/datasets/c1fa4e29c83243c9b75f799f8492e5e4 LiDAR Full Features Hillshade 2026] || Open Port Hope Data Licence and Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Recent 0.5m 2026 full-features hillshade, openly licensed; shows buildings and tree cover, useful to check footprints and alignments.
-|}
-
-=== Metrolinx ===
-4 layers (4 available). ''Value'' is a 1–5 score of what OSM would gain.
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://www.gotransit.com/en/information-resources/software-developers GO Transit GTFS] || Metrolinx Access and Use Agreement || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || The authority for GO stations, stops and routes, refreshed every few weeks (last 2026-10-05); for validating, not importing.
-|-
-| [https://www.gotransit.com/en/information-resources/software-developers UP Express GTFS] || Metrolinx Access and Use Agreement || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Five stations on one line that OSM already maps; updated 2026-10-07.
-|-
-| [https://metrolinx.com/en/about-us/open-data Frequent Rapid Transit Network Shapefile] || Open Government Licence – Ontario – Metrolinx || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Existing and planned rapid transit from the 2041 Regional Transportation Plan, 2023 edition; planned lines are not on the ground.
-|-
-| [https://assets.metrolinx.com/raw/upload/v1662043582/Documents/Metrolinx/Open%20Data/201912_Parking_By_Facility_All.csv GO Rail Parking & Utilization] || Open Government Licence – Ontario – Metrolinx || 2/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Parking spaces per GO station lot as of 2019-12, a table with no geometry joinable by station name for capacity tags.
 |}
 
 === Ontario Heritage Trust ===
