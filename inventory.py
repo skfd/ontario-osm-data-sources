@@ -421,6 +421,8 @@ def check(name: str) -> list[str]:
             return [f"header must be {','.join(GRADE_COLS)}, is {','.join(reader.fieldnames or [])}"]
         got = list(reader)
     errors = []
+    known = (set(want) | {r["id"] for f in LAYERS.glob("*.csv") for r in read_csv(f)}
+             | {r["id"] for r in read_csv(SOURCES) + read_csv(SYNCED)})
     ids = [r["id"] for r in got]
     if missing := [i for i in want if i not in ids]:
         errors.append(f"{len(missing)} ids missing, e.g. {missing[:3]}")
@@ -442,6 +444,8 @@ def check(name: str) -> list[str]:
             bad.append("empty provider")
         if not r["notes"].strip() or "\n" in r["notes"] or len(r["notes"]) > 300:
             bad.append("notes must be one line of 1-300 characters")
+        if r["notes"].startswith(COPY) and marked(r) not in known:
+            bad.append("a note starting 'Copy of ' must go on 'Copy of <known id>. '")
         if bad:
             errors.append(f"{r['id']}: {', '.join(bad)}")
     return errors
@@ -480,8 +484,17 @@ def merge():
     print(f"{done} rows merged into {LAYERS}; {len(pending)} still ungraded")
 
 COPY = "Copy of "
+MARK = re.compile(r"^Copy of (ca/on/[a-z0-9/-]*[a-z0-9])\.(?: |$)")
 SAID = re.compile(r"(?:same (?:data|endpoint|layer|dataset|service) as|layer behind|tracked as|"
-                  r"copy of|copies|duplicates?) (ca/on/[a-z0-9/-]*[a-z0-9])", re.I)
+                  r"copy of|copies|copying|duplicates?|the source is|the live layer is) "
+                  r"(ca/on/[a-z0-9/-]*[a-z0-9])", re.I)
+
+
+def marked(r: dict) -> str:
+    """The id a row's note names as its original, or "" when the note does not start with one.
+    "Copy of the county's layer" is a grader's sentence, not a mark."""
+    m = MARK.match(r["notes"])
+    return m.group(1) if m and m.group(1) != r["id"] else ""
 
 
 def copies():
@@ -514,11 +527,11 @@ def copies():
         name = service(url).rsplit("/", 2)[-2] if service(url) else ""
         return re.sub(r"(_public)?(_view)?$", "", name)
 
+    ids = {r["id"] for r in rows} | set(tracked_ids) | {r["id"] for r in read_csv(SOURCES)}
     # Copies marked on an earlier run, by hand or by this, still point a group outside itself.
-    original = {r["id"]: r["notes"][len(COPY):].split()[0].rstrip(".")
-                for r in rows if r["notes"].startswith(COPY)}
+    original = {r["id"]: marked(r) for r in rows if marked(r) in ids}
     for r in rows:
-        if r["theme"] != "addresses" or r["notes"].startswith(COPY):
+        if r["theme"] != "addresses" or marked(r):
             continue
         t = tracked.get(r["id"].rsplit("/", 1)[0])
         if not t:
@@ -547,11 +560,10 @@ def copies():
                 original.setdefault(r["id"], g[0]["id"])
 
     # What the graders said in so many words: "a copy of <id>", "the same layer as <id>".
-    ids = {r["id"] for r in rows} | set(tracked_ids)
     said = {}
     for r in rows:
         m = SAID.search(r["notes"])
-        if m and m.group(1) in ids and m.group(1) != r["id"] and not r["notes"].startswith(COPY):
+        if m and m.group(1) in ids and m.group(1) != r["id"] and not marked(r):
             said[r["id"]] = m.group(1)
     for a, b in said.items():
         if said.get(b) != a:
@@ -588,7 +600,7 @@ def copies():
         of = original.get(r["id"]) and root(r["id"])
         if of == r["id"]:
             continue
-        if not of or r["notes"].startswith(COPY):
+        if not of or marked(r):
             continue
         r["tier"] = str(min(int(r["tier"] or 2), 2))
         if r["feasibility"] != "no":

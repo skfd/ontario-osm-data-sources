@@ -34,6 +34,8 @@ Rules of thumb from the audit:
 - **Duplicates**: a layer that republishes another (a "view", a "public" copy, a region's
   layer on a member's Hub, the address points the tracker already follows) keeps its row but
   scores 2 at most, is `reference`, and its note starts `Copy of <id>.` naming the original.
+  Never start a note with "Copy of" otherwise: "Copy of the county's layer" is not a mark, and
+  `--check` refuses it. Write "A copy of …", or find the id.
   `python inventory.py --copies` marks the ones it can prove after each merge; mark the rest
   by hand the same way. Historic yearly copies score 1 unless the history itself is the value.
 - **Tables with no geometry** score 1 unless they can be joined to a mappable layer by an id
