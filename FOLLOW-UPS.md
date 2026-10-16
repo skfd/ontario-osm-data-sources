@@ -19,8 +19,9 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
   searching ArcGIS Online by name. Left out on purpose: Watson & Associates' org
   (`f8lLPHShq1QkdT5J`, hosting layers for five boards), an org mixing three health units
   (`IrGlfUdWCDMTtRnk`), and BWDSB's classroom org.
-- **Conservation authorities with only viewers.** Kawartha and St. Clair have a shared row on
-  Conservation Ontario's org but no portal of their own. Long Point, Catfish Creek, Kettle
+- **Conservation authorities with only viewers.** Kawartha, St. Clair, Lower Trent, Mississippi
+  Valley, South Nation, Raisin Region and Crowe Valley have layers on Conservation Ontario's org
+  but no portal of their own. Long Point, Catfish Creek, Kettle
   Creek, Mattagami and Sault Ste. Marie Region publish nothing but viewers or PDFs. Essex
   Region's vector folder on the county server needs a token, and its imagery folder
   (`gisimagery.countyofessex.ca/arcgis/rest/services/ERCA`) has no row.

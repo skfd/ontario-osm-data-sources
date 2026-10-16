@@ -310,7 +310,8 @@ def inventory(only: set[str]):
         # A Hub item and a server row for one layer are the same layer under two spellings.
         spell = lambda u: key(u) if SERVICE.match(u) else u
         merged = {spell(r["source_url"]): r["id"] for r in read_csv(LAYERS / f"{code.split('/')[-1]}.csv")}
-        used = set(merged.values()) | taken_ids
+        # The tracker's address points are left free: the same dataset found here is dropped below.
+        used = set(merged.values()) | {i for i in taken_ids if not i.endswith("/addresses")}
         for r in sorted(rows, key=lambda r: key(r["source_url"]) or r["dataset"]):
             if spell(r["source_url"]) in merged:
                 r["id"] = merged[spell(r["source_url"])]
