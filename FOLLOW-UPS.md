@@ -12,8 +12,9 @@ downloads as hand rows, and repaired the copy marks (below).
 
 - **GeologyOntario.** Both Hubs still list 0 datasets (the French one lists 10 site pages);
   the search app behind `www.geologyontario.mines.gov.on.ca` queries a keyed Elasticsearch API.
-  OGSEarth's 38 downloads are covered by hand rows, 13 of them under `ca/on` (the province's
-  CKAN) rather than `ontario-geological-survey`, where they were found first.
+  OGSEarth's 38 downloads all have rows: 25 were swept already (13 of them under `ca/on`, from
+  the province's CKAN, not under `ontario-geological-survey`), and 13 are new hand rows in
+  `sources.csv`.
 - **School boards and health units.** Only 9 of 72 boards and 2 of 34 units were found, by
   searching ArcGIS Online by name. Left out on purpose: Watson & Associates' org
   (`f8lLPHShq1QkdT5J`, hosting layers for five boards), an org mixing three health units
