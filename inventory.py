@@ -595,7 +595,7 @@ def copies():
             seen.add(i)
         return i
 
-    marked = 0
+    count = 0
     for r in rows:
         of = original.get(r["id"]) and root(r["id"])
         if of == r["id"]:
@@ -607,10 +607,10 @@ def copies():
             r["feasibility"] = "reference"
         note = f"{COPY}{of}. {r['notes']}"
         r["notes"] = note if len(note) <= 300 else note[:299].rstrip() + "…"
-        marked += 1
+        count += 1
     for f, rs in files.items():
         write_csv(f, SOURCE_COLS, rs)
-    print(f"{marked} layers marked as copies")
+    print(f"{count} layers marked as copies")
 
 
 def main():
