@@ -74,7 +74,8 @@ downloads as hand rows, and repaired the copy marks (below).
 - **Middlesex's tracker URL is stale.** `ca/on/middlesex/addresses` follows
   MiddlesexCountyAddressPoints, a 2023 snapshot (31,571 points); the live county layer is
   `middlesex/middlesex-county-address-points` (34,308), marked as its copy here. The fix
-  belongs in `../ontario-address-changes`.
+  belongs in `../ontario-address-changes`, whose TODO §2 has it (2026-10-16) along with West
+  Parry Sound's dead endpoint, Elgin's frozen layer, Tecumseh and Grey.
 - **Provincial tenure downloads.** The province's mining claims, alienations and disposition
   areas are not downloadable from data.ontario.ca, but OGSEarth serves a viewing copy
   (`mlas_operational_gis_data.zip`, 206 MB). They stay tier 1.
