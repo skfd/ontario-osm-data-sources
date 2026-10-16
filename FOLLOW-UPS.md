@@ -4,17 +4,16 @@ Work the portal sweeps (`inventory.py`, `catalogue/layers/`) left open. The firs
 (2026-10-14) covered the municipalities; the second (2026-10-15) added the province, 21
 ministries, agencies, school boards and health units, the 36 conservation authorities and
 Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists beyond its
-`dataset` collection.
+`dataset` collection. The third (2026-10-16) read GRIN and RVCA's JKAN through new `custom`
+readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's remaining
+downloads as hand rows, and repaired the copy marks (below).
 
 ## Not swept
 
-- **Download catalogues with no API.** These are `custom` rows, so `inventory.py` cannot read
-  them; grade them by hand into `catalogue/layers/<code>.csv`:
-  - Grand River's GRIN, 62 layers (`data.grandriver.ca/metadata-api/v2/downloads` is JSON)
-  - RVCA's JKAN, 22 datasets (`rvcagis.github.io/jkan/datasets.json`); most are also layers
-    on `gis.rvca.ca`, which was swept
-  - the Geological Survey's GeologyOntario site, whose Hub answers with 0 items
-  - Metrolinx's open-data page beyond the four GTFS and shapefile rows in `sources.csv`
+- **GeologyOntario.** Both Hubs still list 0 datasets (the French one lists 10 site pages);
+  the search app behind `www.geologyontario.mines.gov.on.ca` queries a keyed Elasticsearch API.
+  OGSEarth's 38 downloads are covered by hand rows, 13 of them under `ca/on` (the province's
+  CKAN) rather than `ontario-geological-survey`, where they were found first.
 - **School boards and health units.** Only 9 of 72 boards and 2 of 34 units were found, by
   searching ArcGIS Online by name. Left out on purpose: Watson & Associates' org
   (`f8lLPHShq1QkdT5J`, hosting layers for five boards), an org mixing three health units
@@ -22,13 +21,16 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
 - **Conservation authorities with only viewers.** Kawartha, St. Clair, Lower Trent, Mississippi
   Valley, South Nation, Raisin Region and Crowe Valley have layers on Conservation Ontario's org
   but no portal of their own. Long Point, Catfish Creek, Kettle
-  Creek, Mattagami and Sault Ste. Marie Region publish nothing but viewers or PDFs. Essex
-  Region's vector folder on the county server needs a token, and its imagery folder
-  (`gisimagery.countyofessex.ca/arcgis/rest/services/ERCA`) has no row.
-- **Servers shared with municipalities.** Ganaraska's `maps2.grca.on.ca` also holds folders for
-  Clarington, Durham, Northumberland, and Peterborough city and county. Their layers were swept
-  under Ganaraska. Those municipalities may want `shared portal of
-  ca/on/ganaraska-region-conservation-authority` rows.
+  Creek, Mattagami and Sault Ste. Marie Region publish nothing but viewers or PDFs. Their
+  layers on the shared org are credited to the right authority by service-name prefix. Essex
+  Region's vector folder on the county server needs a token.
+- **Server folders named for a municipality, left without a row.** On Ganaraska's
+  `maps2.grca.on.ca`, the Durham, Northumberland_County and PTBO_City folders hold only the
+  authorities' own floodplain and SWP layers, so those municipalities get no shared row;
+  Clarington's folder has building footprints whose authorship nothing states, and gave
+  Clarington a shared row (reach 2, up from viewer) on that alone. On Essex's imagery server
+  the seven municipal folders are the county's orthophotos clipped to each town (same 10 cm
+  pixels, inside the county extent): no municipal rows.
 - **Grading cut short, then redone.** A usage limit stopped the second sweep's grading after
   43 of 148 batches. The rest were graded in a second run with the same prompt, and every batch
   passes `--check`.
@@ -51,16 +53,30 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
   including a layer named "CONFIDENTIAL DO NOT PRINT - MPAC Parcel 2009" (North Bay-Mattawa)
   and "Parcels (Owners)" (Conservation Sudbury). They are graded 1; the authorities may want to
   know.
-- **Copies not provable.** 6,279 layers are marked copies in all, by `inventory.py --copies`
-  or by the graders. Some likely copies nobody could prove remain at their own grade:
-  - Sault Ste. Marie's two address layers (33,316 and 33,354)
-  - Simcoe's municipal address layers beside the county's
-  - Middlesex's county address points on a second service
-  - school boards' and health units' republished municipal address points, boundaries and
-    school points, whose notes often name the original without an id
-  - the ORN road-net-element beside the ORN composite
+- **Copy marks repaired (2026-10-16).** `copies()` took any first word after "Copy of" as
+  the original, so prose ("Copy of the county's layer") and stray punctuation ("Copy of
+  <id>;") counted as marks, and 50 originals were demoted to copies of themselves or of "the".
+  Those 50 have their graded tier back; notes naming an id became marks and dropped to tier 2;
+  139 naming none now read "A copy of" and keep their grade. 6,269 layers are marked copies.
+  Worth a look in review: the rows whose tier moved in commit `5b29458`.
+- **Copies still not provable.** Left at their own grade:
+  - Simcoe: New Tecumseth's public address points (15% fewer than the county's, 4 fields) and
+    Orillia's (`addresses-sc-addresspoints`, county field names but empty ADDRESSID)
+  - Halton Catholic DSB's 193,636 Halton addresses: Halton Region has no portal row to name
+    (`maps.halton.ca` still answers 503)
+  - municipal-boundary layers of Simcoe County DSB (22), Simcoe Muskoka health unit (35) and
+    Dufferin-Peel CDSB (4), which match no layer's count
   
-  Mark them by hand (`Copy of <id>.`) if they are copies.
+  Proved not to be copies: the ORN road-net-element (no names; the composite joins them),
+  TDSB's ward-attributed schools, and three merged address layers of TVDSB and WDG Public
+  Health that were wrongly marked.
+- **Middlesex's tracker URL is stale.** `ca/on/middlesex/addresses` follows
+  MiddlesexCountyAddressPoints, a 2023 snapshot (31,571 points); the live county layer is
+  `middlesex/middlesex-county-address-points` (34,308), marked as its copy here. The fix
+  belongs in `../ontario-address-changes`.
+- **Provincial tenure downloads.** The province's mining claims, alienations and disposition
+  areas are not downloadable from data.ontario.ca, but OGSEarth serves a viewing copy
+  (`mlas_operational_gis_data.zip`, 206 MB). They stay tier 1.
 - **Themes left fuzzy.** The list grew to 42 (2026-10-15). Graders still found no clean home
   for these:
   - fences and barriers (topography or amenities)
@@ -71,7 +87,9 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
   `report/SUMMARY.md` "Licences to ask for" lists those graded 3 to 5 by jurisdiction. The
   provincial bodies add some good ones: the Heritage Trust's plaques (terms forbid
   redistribution), AGCO's cannabis stores, and MTO's carpool lots and rest areas on its AGOL
-  server.
+  server. Essex County's 2026 10 cm orthophotos are on a server that names no licence; the
+  county's Hub has one, and asking whether it covers the imagery could be worth more than any
+  single layer.
 - **OSM coverage.** No grade was checked against OSM. In particular:
   - buildings sit at 4 whether OSM already has them or not
   - CanVec imports may already carry much of the province's water, wooded areas and
