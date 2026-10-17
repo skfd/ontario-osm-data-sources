@@ -86,6 +86,13 @@ downloads as hand rows, and repaired the copy marks (below).
   under the municipality) before the next sync, or they become jurisdictions. Also new as
   jurisdiction codes: `gorham-ware`, `oliver-paipoonge` (LRCA layers filed here under NVCA).
   The matching layer rows will then be "found again" as tracker sources, not catalogued twice.
+- **L&A's township address views skip the county's redaction (2026-10-16).** The county's
+  `L_and_A_County_Civic_Address_Point_(Public)` view filters out `SUBUNITTYPE = 'Public Redact'`
+  and `'Unknown Address'` rows (26,613). GN_Civics, Loyalist civics (public), Addington Highlands
+  civics, Stone Mills Civic Address (View) and Civic Addresses (Public View) carry no such filter
+  (27,383 together), so they expose ~37 points the county redacts plus 733 unknowns. GN_Civics and
+  Loyalist are graded 5/import here; an import should take the filtered county view instead, and
+  the county may want to know.
 - **Provincial tenure downloads.** The province's mining claims, alienations and disposition
   areas are not downloadable from data.ontario.ca, but OGSEarth serves a viewing copy
   (`mlas_operational_gis_data.zip`, 206 MB). They stay tier 1.
