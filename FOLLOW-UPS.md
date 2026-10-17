@@ -76,6 +76,16 @@ downloads as hand rows, and repaired the copy marks (below).
   `middlesex/middlesex-county-address-points` (34,308), marked as its copy here. The fix
   belongs in `../ontario-address-changes`, whose TODO §2 has it (2026-10-16) along with West
   Parry Sound's dead endpoint, Elgin's frozen layer, Tecumseh and Grey.
+- **The tracker took in the sweep's address layers (2026-10-16).** `../ontario-address-changes`
+  onboarded 24 of them as datasets (every live, non-copy one it lacked; licence now gates only
+  publishing), and re-pointed waterloo and dufferin (Entrances -> address points) to their live
+  layers. `sync.py` has not been run:
+  it builds ids as `ca/on/<slug>/addresses`, and two new slugs are not places -
+  `vaughan-ng911` (Vaughan's frozen NG911 layer beside `vaughan`) and `grey-assigned-addresses`
+  (Grey's assigned-number work list beside `grey`). They need an id rule (a second dataset id
+  under the municipality) before the next sync, or they become jurisdictions. Also new as
+  jurisdiction codes: `gorham-ware`, `oliver-paipoonge` (LRCA layers filed here under NVCA).
+  The matching layer rows will then be "found again" as tracker sources, not catalogued twice.
 - **Provincial tenure downloads.** The province's mining claims, alienations and disposition
   areas are not downloadable from data.ontario.ca, but OGSEarth serves a viewing copy
   (`mlas_operational_gis_data.zip`, 206 MB). They stay tier 1.
