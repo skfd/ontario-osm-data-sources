@@ -109,7 +109,8 @@ def load() -> tuple[list[dict], list[dict], dict[str, dict], list[dict]]:
         if j["tier"] not in TIERS + [""]:
             errors.append(f"jurisdictions.csv {j['code']}: tier {j['tier']!r}")
 
-    blank = dict.fromkeys(SOURCE_COLS + SYNCED_COLS, "")
+    # "swept" is blank on synced rows: a tracked layer the sweep also found shows like a hand row.
+    blank = dict.fromkeys(SOURCE_COLS + SYNCED_COLS + ["swept"], "")
     by_id = {r["id"]: blank | r for r in synced}
     sources = list(by_id.values())
     seen = set()

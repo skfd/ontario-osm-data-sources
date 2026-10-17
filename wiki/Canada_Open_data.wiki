@@ -6825,7 +6825,7 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 |}
 
 === Address points ===
-54 municipal and county address-point datasets (25 parked, 15 onboarding, 7 not usable, 5 available, 1 ongoing, 1 completed).
+74 municipal and county address-point datasets (40 parked, 15 onboarding, 12 not usable, 5 available, 1 ongoing, 1 completed).
 ''In OSM'' is the share of source addresses with no matching OSM address, measured from a
 Geofabrik extract on 2026-08-12 unless the row says otherwise.
 
@@ -6833,9 +6833,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 ! Municipality !! Licence !! LWG !! In OSM !! Use !! Status !! Tools !! Lead !! Notes
 |-
+| [https://ajaxmaps.ajax.ca/gisernie/rest/services/Public/Ajax_Open_Data/MapServer/10 Town of Ajax] || Town of Ajax - Open Data Licence v.1.0 ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
+|-
 | [https://mapamherstburg.ca/arcgis/rest/services/Address_Points/FeatureServer/0 Town of Amherstburg] || None published (confirmed 2026-08-20) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
 | [https://gispublic.barrie.ca/arcgis/rest/services/Open_Data/AddressVW/MapServer/0 City of Barrie] || Open Government Licence - Barrie || [[Contributors#Ontario|self-listed]] || 80% of 63,341 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/barrie-address-import import checkout] ||  || few addresses in OSM yet
+|-
+| [https://gis.grey.ca/server/rest/services/Public/Service_ParcelLabels/MapServer/2 Town of The Blue Mountains (via Grey County GIS)] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
 | [https://maps1.brampton.ca/arcgis/rest/services/COB/OpenData_Address_Points/MapServer/14 City of Brampton] || Creative Commons Attribution 4.0 (CC BY 4.0) ||  || 82% of 249,143 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || CC BY: needs an OSMF waiver
 |-
@@ -6847,6 +6851,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://mapping.burlington.ca/arcgisweb/rest/services/COB/AddressPoints/MapServer/0 City of Burlington] || Terms of Use for Open Data Burlington (2011) ||  || 79% of 60,326 missing (2026-08-12) || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
 |-
+| [https://maps.caledon.ca/calgis/rest/services/Basemaps/Common/MapServer/2 Town of Caledon] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
 | [https://maps.cambridge.ca/arcgispub03/rest/services/OpenData1/FeatureServer/13 City of Cambridge] || Open Government Licence - City of Cambridge || 2025-2-10 || 74% of 54,025 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/cambridge-address-import import checkout] ||  || few addresses in OSM yet
 |-
 | [https://services1.arcgis.com/BlSm9A1poQIGIz9S/arcgis/rest/services/Municipality_of_Chatham_Kent_Addesses/FeatureServer/9 Municipality of Chatham-Kent] || None published (confirmed 2026-08-20) ||  || 89% of 58,809 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
@@ -6855,19 +6861,25 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services2.arcgis.com/tPtW2sjE3XOR63A7/arcgis/rest/services/AddressPoints/FeatureServer/34 City of Cornwall] || Open Government Licence - City of Cornwall || 2025-10-08 || 81% of 20,640 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked || [https://github.com/skfd/cornwall-address-import import checkout] ||  || a local mapper adds addresses by hand; coordinate first
 |-
-| [https://services5.arcgis.com/C0BEdgagVaXzcw0W/arcgis/rest/services/Dufferin_County_Entrances/FeatureServer/0 County of Dufferin] || Open Government Licence - County of Dufferin || [[Contributors#Ontario|self-listed]] || 86% of 27,075 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || a better address layer exists on the same portal
+| [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/BuildingandPlanning/MapServer/0 City of Dryden] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
+| [https://services5.arcgis.com/C0BEdgagVaXzcw0W/arcgis/rest/services/Address_Points_DufferinCounty_Open_Data/FeatureServer/0 County of Dufferin] || Open Government Licence - County of Dufferin || [[Contributors#Ontario|self-listed]] || 86% of 27,075 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || a better address layer exists on the same portal
 |-
 | [https://maps.durham.ca/arcgis/rest/services/Open_Data/Durham_OpenData/MapServer/0 Regional Municipality of Durham] || Region of Durham Open Data Licence v1.0 ||  || 78% of 253,559 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
-| [https://gisdata.elginmapping.ca/arcgis/rest/services/Public/MapServer/1 County of Elgin] || None published (confirmed 2026-08-20) ||  || 85% of 21,785 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+| [https://services6.arcgis.com/TCQ78XR5HqDZ1SDc/arcgis/rest/services/Elgin_Civic_Numbers_2026/FeatureServer/0 County of Elgin] || Open Government Licence - County of Elgin (open-data hub, portal-wide) ||  || 85% of 21,785 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://services2.arcgis.com/vJlmDE1PmdTcJF0N/arcgis/rest/services/Civic_Address_Points_View_2/FeatureServer/0 County of Frontenac] || Open Government Licence - County of Frontenac v1.0 ||  || 90% of 22,365 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://services.arcgis.com/q3mIlR87lZlZsds3/arcgis/rest/services/Address_and_Building_Roofline/FeatureServer/2 City of Greater Sudbury] || Open Data Licence - City of Greater Sudbury || [[Contributors#Ontario|self-listed]] || 54% of 70,061 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/greater-sudbury-address-import import checkout] ||  || few addresses in OSM yet
 |-
+| [https://gis.grey.ca/server/rest/services/Public/Service_ParcelLabels/MapServer/3 County of Grey] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
 | [https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData1/FeatureServer/0 City of Guelph] || Open Government Licence - City of Guelph || 2024-09-09 || 927 of 40,684 civic addresses missing (2026-08-28) || Validate || style="background:#e6f6d0" | Ongoing || [https://github.com/guelph-maps/guelph-address-import import checkout]<br>[https://wiki.openstreetmap.org/wiki/Guelph/Address_Import import page]<br>[https://guelph-maps.github.io/guelph-address-layer/ Address layer]<br>[https://github.com/guelph-maps/guelph-address-layer guelph-address-layer repo]<br>[https://github.com/guelph-maps/guelph-beholder guelph-beholder repo]<br>[https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous Continuous import wiki page] || {{User|skfd}} || already imported; gap-fill only; import completed 2025-10-23, gap fill ongoing
 |-
 | [https://gis.haldimandcounty.ca/server/rest/services/Topo/AddressPoints/FeatureServer/0 Haldimand County] || Open Government Licence - Haldimand County v1.0 || [[Contributors#Ontario|self-listed]] ||  || Import || style="background:#e8eef8" | Available ||  ||  || 
+|-
+| [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/SearchLayers_3/MapServer/4 County of Haliburton] ||  ||  ||  || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
 |-
 | [https://services3.arcgis.com/Nn3SWZrtm4WZaUtd/arcgis/rest/services/Civic_Address_(od)/FeatureServer/152 Town of Halton Hills] || Open Data License - Town of Halton Hills ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
@@ -6891,25 +6903,43 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://maps.london.ca/server/rest/services/OpenData/OpenData_Community/MapServer/0 City of London] || Terms of Use - City of London Open Data ||  || 85% of 143,000 missing (2026-08-12) || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
 |-
-| [https://services.arcgis.com/vhh9rYcMiBEBPGYb/arcgis/rest/services/MiddlesexCountyAddressPoints/FeatureServer/0 County of Middlesex] || None published beyond as-is disclaimer (confirmed 2026-08-20) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+| [https://utility.arcgis.com/usrsvcs/servers/f4dd79bdd35a456c87c0c20668138c05/rest/services/MiddlesexCounty/Base_Layers/MapServer/1 County of Middlesex] || None published beyond as-is disclaimer (confirmed 2026-08-20, rechecked 2026-10-16) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
 | [https://api.milton.ca/arcgis/rest/services/WebMaps/MGIS/MapServer/63 Town of Milton] || Open Government Licence - Milton ||  || 86% of 46,379 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
+| [https://services6.arcgis.com/hM5ymMLbxIyWTjn2/arcgis/rest/services/Address/FeatureServer/0 City of Mississauga] || City of Mississauga Terms of Use ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
+|-
 | [https://utility.arcgis.com/usrsvcs/servers/21293eed759e41848ccb92619633de03/rest/services/Addressing/Addressing_Service_Public/FeatureServer/0 District Municipality of Muskoka] || Custom terms - no reuse grant (King's Printer copyright) ||  || 95% of 66,440 missing (2026-08-12) || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
+|-
+| [https://services3.arcgis.com/tSwsWwbYRimLwcCZ/arcgis/rest/services/OPENNewmarket_Address_3_view/FeatureServer/0 Town of Newmarket] || Town of Newmarket Open Data Licence ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
+| [https://services9.arcgis.com/oMFQlUUrLd1Uh1bd/arcgis/rest/services/Niagara_Falls_Address_Points/FeatureServer/0 City of Niagara Falls] || Open Government Licence - Niagara Falls ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://services1.arcgis.com/WxiLK82TWf8W3O3f/arcgis/rest/services/OpenData_Address_Points/FeatureServer/43 Niagara Region] || Open Government Licence - Niagara Region || 2024-06-10 || 79% of 208,004 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |-
 | [https://services1.arcgis.com/mSGV2hCLXHNsfQqK/arcgis/rest/services/Civic_Addresses/FeatureServer/0 Norfolk County] || Norfolk County Open Data Licence Agreement ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
+| [https://services5.arcgis.com/ItUGraUlQOjvSGOV/arcgis/rest/services/CivicAddress_Point/FeatureServer/0 City of North Bay] ||  ||  ||  || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
+|-
 | [https://maps.oakville.ca/oakgis/rest/services/ArcGISOnline/AGO_Oakville_Misc_Layers/MapServer/15 Town of Oakville] || Open Government Licence — Town of Oakville || 2026-09-14 || 76% of 71,049 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/oakville-address-import import checkout]<br>[https://skfd.github.io/oakville-address-layer/ Address layer]<br>[https://maproulette.org/browse/challenges/55881 MapRoulette] || {{User|TronnaLegacy}} || local mappers active; coordinate first; task queue ongoing
 |-
+| [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/40 Oliver Paipoonge (Lakehead Region Conservation Authority map service)] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
+| [https://map.oshawa.ca/arcgis/rest/services/Operational/Parcels_AddPts/MapServer/0 City of Oshawa] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
 | [https://maps.ottawa.ca/arcgis/rest/services/Municipal_Address/MapServer/0 City of Ottawa] || Open Government Licence – City of Ottawa 2.0 || 2017-03-02 || 15% of 402,984 missing (2026-08-12) || Conflate || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/ottawa-address-import import checkout] ||  || local community maps from City data; coordinate first
+|-
+| [https://public.oxfordcounty.ca/gis/rest/services/OpenData/OXFORD_OpenData/MapServer/0 County of Oxford] ||  ||  ||  || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
 |-
 | [https://services6.arcgis.com/ONZht79c8QWuX759/arcgis/rest/services/Address_Points/FeatureServer/0 Regional Municipality of Peel] || Open Data Licence - Regional Municipality of Peel v1.0 ||  || 100% of 503,923 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
 | [https://services3.arcgis.com/FkQ7EeWcZFoXIXH7/arcgis/rest/services/NG911_Addresses_and_Roads_Public_View/FeatureServer/0 County of Perth] || None published (confirmed 2026-08-20) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
 | [https://services3.arcgis.com/08bk1ZSzqef9JX5q/arcgis/rest/services/Public_View_Site_Addresses_/FeatureServer/0 County of Peterborough] || County website Terms of Use (restrictive - no copying to other websites) ||  || 91% of 40,532 missing (2026-08-12) || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
+|-
+| [https://services1.arcgis.com/JOTjMnANji9YTrZ2/arcgis/rest/services/Address/FeatureServer/0 City of Peterborough] || City of Peterborough Open Data Terms of Use ||  ||  || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
+|-
+| [https://services8.arcgis.com/PE9fNg6S0CDTs96v/arcgis/rest/services/OpenData/FeatureServer/0 City of Pickering] || City of Pickering Open Data License ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
 | [https://services1.arcgis.com/4HnHVMMKSNypEIkS/arcgis/rest/services/HostedFeatures___Property_Info/FeatureServer/0 The Corporation of the County of Prince Edward] || Open Government Licence - The Corporation of the County of Prince Edward v1.0 (sibling items; not stamped on this item) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
@@ -6919,27 +6949,37 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services1.arcgis.com/ICybsLmBXrZCZV3x/arcgis/rest/services/Addresses_Open_Data_AGOL/FeatureServer/0 City of Sarnia] || City of Sarnia Open Data Terms of Use (OGL-Canada 2.0 based) ||  || 82% of 26,896 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/sarnia-address-import import checkout] ||  || OGL variant: LWG review pending; few addresses in OSM yet
 |-
+| [https://enterprise.ssmic.com/server/rest/services/SooMaps/SooMaps_GeneralLayers/MapServer/0 City of Sault Ste. Marie] ||  ||  ||  || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
+|-
 | [https://services5.arcgis.com/zEv9BLFdYq38maPG/ArcGIS/rest/services/CivicAddress_Public/FeatureServer/0 United Counties of Stormont, Dundas and Glengarry] || Proprietary - all rights reserved (item licenseInfo) ||  || 90% of 31,660 missing (2026-08-12) || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
 |-
 | [https://maps.simcoe.ca/arcgis/rest/services/Public/Operational_Layers_Dynamic/MapServer/1 County of Simcoe] || Open Government Licence - Simcoe County ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
 | [https://maps.stratford.ca/gisserver/rest/services/Addressing/Civic_Address/FeatureServer/0 City of Stratford] || None published (confirmed 2026-08-20) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
+| [https://gisweb.tecumseh.ca/arcgis/rest/services/OpenDataMaps/OpenDataMAP_InfraZonePropBound_Layers/MapServer/33 Town of Tecumseh] || Open Government Licence - The Corporation of the County of Essex ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
+|-
 | [https://services5.arcgis.com/h9xShea49ZANgOtx/arcgis/rest/services/Municipal_Address_Feature_Layer/FeatureServer/0 City of Thunder Bay] || City of Thunder Bay Open Data Licence || 2025-09-08 || 79% of 45,098 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/thunder-bay-address-import import checkout] ||  || few addresses in OSM yet
 |-
 | [https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/abedd8bc-e3dd-4d45-8e69-79165a76e4fa/resource/b1c2ab72-dfe7-4b29-8550-6d1cfaa61733/download/address-points-4326.geojson City of Toronto] || Open Government Licence – Toronto || 2024-04-08 || 452 of 523,835 missing (2026-08-28) || Validate || style="background:#d4f4d4" | Completed || [https://github.com/skfd/toronto-2-address-import import checkout]<br>[https://skfd.github.io/toronto-addresses-layer/ Address layer]<br>[https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints Import page]<br>[https://skfd.github.io/toronto-2-address-import/ Import evidence]<br>[https://community.openstreetmap.org/t/address-import-for-toronto/119368 Forum thread]<br>[https://skfd.github.io/toronto-addresses-import/ Change tracker] || {{User|skfd}} || import completed 2026-05-28, maintenance ongoing since 2026-06-05
 |-
-| [https://opendata.arcgis.com/api/v3/datasets/fb1ce9625c634b2dbe1d2be36d419711_0/downloads/data?format=shp&spatialRefId=4326&where=1%3D1 City of Waterloo] || Open Government Licence – City of Waterloo || 2025-2-10 || 65% of 55,541 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/waterloo-address-import import checkout] ||  || few addresses in OSM yet
+| [https://services2.arcgis.com/9LnN9037wYhPG904/arcgis/rest/services/AddressDetailApps/FeatureServer/0 City of Vaughan] ||  ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
+| [https://utility.arcgis.com/usrsvcs/servers/d4d0c6dedec14e59930688f3830776c6/rest/services/OpenData/OpenData/MapServer/1 Region of Waterloo] || https://www.regionofwaterloo.ca/en/regional-government/open-data.aspx#Open-Data-Licence || 2025-2-10 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 262,919 civic address points for the whole region, placed within parcels or footprints, edited 2026; the core of an address import.
+|-
+| [https://services.arcgis.com/ZpeBVw5o1kjit7LT/arcgis/rest/services/Addresses/FeatureServer/0 City of Waterloo] || Open Government Licence – City of Waterloo || 2025-2-10 || 65% of 55,541 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/waterloo-address-import import checkout] ||  || few addresses in OSM yet
+|-
+| [https://arcgisweb.welland.ca/serverprodpub/rest/services/OpenData/OPENDATA_Civic_Addresses_Active/MapServer/0 City of Welland] || Open Government Licence - City of Welland ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://services8.arcgis.com/qu8yojONWhklwVA3/arcgis/rest/services/Wellington_County_Base_Data_view/FeatureServer/0 County of Wellington] || None published (confirmed 2026-08-20) ||  || 80% of 42,925 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
 |-
-| [https://www.wpsgn.ca/s22/rest/services/wpsgnPublic/wpsgn_opendata/FeatureServer/0 West Parry Sound Geography Network] || Open Government License - Township of The Archipelago (v2, based on OGL-Canada 2.0) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
+| [https://www.wpsgn.ca/s22/rest/services/NG911/NG911/FeatureServer/9112 West Parry Sound Geography Network] || Open Government License - Township of The Archipelago (v2, based on OGL-Canada 2.0) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
+|-
+| [https://services5.arcgis.com/ATdLnvuMRJk8AGkQ/arcgis/rest/services/Whitby_Address_Points/FeatureServer/0 Town of Whitby] || The Corporation of the Town of Whitby Open Government License ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://mappmycity.ca/arcgis/rest/services/OpenDataServices/PropertyParcels/MapServer/1 City of Windsor] || Open Government Licence - City of Windsor v1.0 || [[Contributors#Ontario|self-listed]] || 91% of 118,841 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |-
 | [https://ww3.yorkmaps.ca/arcgis/rest/services/Geocortex/OpenData/MapServer/6 Regional Municipality of York] || York Region Open Data Licence || 2024-04-08 || 76% of 431,809 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
-|-
-| [https://utility.arcgis.com/usrsvcs/servers/d4d0c6dedec14e59930688f3830776c6/rest/services/OpenData/OpenData/MapServer/1 Region of Waterloo] || https://www.regionofwaterloo.ca/en/regional-government/open-data.aspx#Open-Data-Licence ||  ||  || Import || style="background:#e8eef8" | Available ||  ||  || 262,919 civic address points for the whole region, placed within parcels or footprints, edited 2026; the core of an address import.
 |}
 
 === Conservation Ontario ===
@@ -7541,7 +7581,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Haliburton ===
-57 layers (57 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1097 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+56 layers (56 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1098 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -7588,8 +7628,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/IdentifyLayers/MapServer/3 IdentifyLayers — Churches] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 36 named churches; a gaps list for places of worship and their names, but no licence.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/IdentifyLayers/MapServer/8 IdentifyLayers — Cultural Spaces and Facilities] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 136 named galleries, halls and venues with addresses from the tourism roster; a gaps list for names, but no licence.
-|-
-| [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/SearchLayers_3/MapServer/4 SearchLayers 3 — Address] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 33978 civic addresses on assessment parcel polygons, which would need centroiding; rural addresses are a large OSM gap, but no licence.
 |-
 | [https://gis.haliburtoncounty.ca/arcgis/rest/services/Public/Tourism/FeatureServer/0 Tourism — TourismFeatures] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 491 named tourism points with category, address and website; the source of the IdentifyLayers cultural and heritage sets, but no licence.
 |-
@@ -9017,11 +9055,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Grey ===
-58 layers (44 no licence, 14 available). ''Value'' is a 1–5 score of what OSM would gain. 358 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+56 layers (42 no licence, 14 available). ''Value'' is a 1–5 score of what OSM would gain. 360 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://gis.grey.ca/server/rest/services/Public/Service_ParcelLabels/MapServer/4 Service ParcelLabels — Assigned Address Points] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 1703 recently assigned civic numbers, some on bridges and structures: a gap list for new addresses, but no licence.
 |-
 | [https://gis.grey.ca/server/rest/services/Public/GC_GTR/FeatureServer/4 Grey Transit Route (GTR) Bus Stops] || Licensed under Grey County Open Data: https://maps.grey.ca/pages/terms || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 13 GTR stop points with names and stop ids from GTFS; a small gap list for rural bus stops.
 |-
@@ -9115,12 +9155,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://gis.grey.ca/server/rest/services/Public/Service_HanoverAssets/FeatureServer/3 Service HanoverAssets — Fire Hydrant (Flow Rate in Gallons/min.)] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 307 hydrants with flow rates, which OSM can carry as fire_hydrant:flow_capacity, but no licence.
 |-
-| [https://gis.grey.ca/server/rest/services/Public/Service_ParcelLabels/MapServer/2 Service ParcelLabels — Address Number (Blue Mountains)] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 10509 address points with street names maintained by town GIS staff, ready for an address import, but no licence.
-|-
-| [https://gis.grey.ca/server/rest/services/Public/Service_ParcelLabels/MapServer/3 Service ParcelLabels — Address Number] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 51458 county-wide civic addresses on parcel polygons, which need converting to points before import, but no licence.
-|-
-| [https://gis.grey.ca/server/rest/services/Public/Service_ParcelLabels/MapServer/4 Service ParcelLabels — Assigned Address Points] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 1703 recently assigned civic numbers, some on bridges and structures: a gap list for new addresses, but no licence.
-|-
 | [https://gis.grey.ca/server/rest/services/Public/Service_ReferenceLayersSettlements/MapServer/0 Service ReferenceLayersSettlements — Settlements] || None published || 3/5 ||  || Reference || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 56 named hamlets and urban settlement areas; OSM has the place names, the polygons are planning limits, but no licence.
 |-
 | [https://gis.grey.ca/server/rest/services/Public/Service_SouthgateAssets/MapServer/19 Service SouthgateAssets — Tourism Point of Interest] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 31 named tourism points with address, phone and website, good for names and contact tags, but no licence.
@@ -9141,7 +9175,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Oshawa ===
-14 layers (14 available). ''Value'' is a 1–5 score of what OSM would gain. 391 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+13 layers (13 available). ''Value'' is a 1–5 score of what OSM would gain. 392 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9167,8 +9201,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://map.oshawa.ca/arcgis/rest/services/Operational/OpenData/MapServer/9 Oshawa Park Locations] || Open Data Licence Agreement This data is for reference use only. The City assumes no responsibility for the correctness of the data as it changes fre… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Official names for 141 city parks with boundaries, last edited 2018; names for leisure=park areas.
 |-
-| [https://map.oshawa.ca/arcgis/rest/services/Operational/Parcels_AddPts/MapServer/0 Oshawa Addresses] || Open Data Licence Agreement This data is for reference use only. The City assumes no responsibility for the correctness of the data as it changes fre… || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 64,226 city address points last edited 2017; superseded by the newer regional layer ca/on/durham/civic-addresses.
-|-
 | [https://map.oshawa.ca/arcgis/rest/services/Operational/PopularLayers/MapServer/15 Oshawa Municipal Parking] || Open Data Licence Agreement This data is for reference use only. The City assumes no responsibility for the correctness of the data as it changes fre… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 216 municipal parking areas with facility type, spaces, time limits and fees (2017); capacity and fee tags OSM lots often lack.
 |-
 | [https://map.oshawa.ca/arcgis/rest/services/Operational/PopularLayers/MapServer/16 Oshawa Trails] || Open Data Licence Agreement This data is for reference use only. The City assumes no responsibility for the correctness of the data as it changes fre… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 299 trail segments with trail names (Michael Starr, Harmony) and type; names to merge into OSM paths.
@@ -9183,6 +9215,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
+| [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/39 LRCA Municipal — Gorham & Ware House Numbers] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 2,482 Gorham and Ware parcels carrying civic addresses; a rural address source where OSM has few.
+|-
 | [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/HCA/HCAMap4/MapServer/11 HCAMap4 — H.C.A. CONSERVATION LANDS] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 200 HCA conservation land parcels with area names such as Mount Albion and addresses; names and extents for OSM parks.
 |-
 | [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/32 LRCA Municipal — Waterbody] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 7,449 water bodies with type, permanency and some names around Thunder Bay; a name and gap check.
@@ -9190,8 +9224,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/34 LRCA Municipal — Wetland] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 5,921 wetlands with type and ecosite around Thunder Bay; a gap check for natural=wetland.
 |-
 | [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/35 LRCA Municipal — Watercourse] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 19,249 watercourse segments with type, permanency and some names, traced from 2012 imagery; a gap and name check.
-|-
-| [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/39 LRCA Municipal — Gorham & Ware House Numbers] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 2,482 Gorham and Ware parcels carrying civic addresses; a rural address source where OSM has few.
 |-
 | [https://co-gis.nvca.on.ca:6443/arcgis/rest/services/LRCA/LRCA_Municipal/MapServer/40 LRCA Municipal — Oliver Paipoonge House Numbers] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 3,494 Oliver Paipoonge parcels carrying civic addresses; a rural address source where OSM has few.
 |-
@@ -9397,15 +9429,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Elgin ===
-36 layers (29 no licence, 7 available). ''Value'' is a 1–5 score of what OSM would gain. 318 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+35 layers (29 no licence, 6 available). ''Value'' is a 1–5 score of what OSM would gain. 319 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services6.arcgis.com/TCQ78XR5HqDZ1SDc/arcgis/rest/services/Elgin_Building_Footprints/FeatureServer/0 Building Footprints] || Open Government Licence - County of Elgin || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 44985 footprints with type and floors across the county under OGL; a fill for rural buildings and building=* tags.
-|-
-| [https://services6.arcgis.com/TCQ78XR5HqDZ1SDc/arcgis/rest/services/Elgin_Civic_Numbers_2026/FeatureServer/0 Elgin Civic Numbers 2026] || Open Government Licence - County of Elgin || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 24177 civic address points with street and unit for the whole county, edited Oct 2026 under OGL; ready for an address import.
 |-
 | [https://services6.arcgis.com/TCQ78XR5HqDZ1SDc/arcgis/rest/services/Elgin_County_Roads/FeatureServer/0 Elgin County Road Network 2026] || Open Government Licence - County of Elgin || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || County road numbers (Road_No) and names for 238 segments, edited 2026; a check for ref tags on county roads.
 |-
@@ -9559,7 +9589,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Dryden ===
-22 layers (22 no licence). ''Value'' is a 1–5 score of what OSM would gain. 327 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+21 layers (21 no licence). ''Value'' is a 1–5 score of what OSM would gain. 328 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9598,8 +9628,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Cartegraph/TransportationNetwork/FeatureServer/9 TransportationNetwork — Bridges] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Nine bridges with common names, width and capacity; names are the gain for bridge ways, but no licence.
 |-
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Cartegraph/WaterNetwork/FeatureServer/4 WaterNetwork — Water Hydrants] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 336 hydrants with positions, a gap list for emergency=fire_hydrant, but no licence.
-|-
-| [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/BuildingandPlanning/MapServer/0 BuildingandPlanning — Addresses] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 4753 civic address points with full address and postal code, the only address layer Dryden publishes, but no licence.
 |-
 | [https://maps.dryden.ca/arcgisdryd/rest/services/Portal/PublicWorksPortal/MapServer/48 PublicWorksPortal — Street Signs] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 2688 signs by Ontario sign code, incl. about 257 RA-1 stop signs worth a gap list, but no licence.
 |-
@@ -9715,13 +9743,11 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Pickering ===
-8 layers (8 available). ''Value'' is a 1–5 score of what OSM would gain. 339 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+7 layers (7 available). ''Value'' is a 1–5 score of what OSM would gain. 340 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://services8.arcgis.com/PE9fNg6S0CDTs96v/arcgis/rest/services/OpenData/FeatureServer/0 OpenData — Municipal Address] || Subject to the City of Pickering's Open Data License . || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 42,743 civic address points with house number, street and unit for the whole city, edited 2026; overlaps the regional ca/on/durham/civic-addresses layer.
 |-
 | [https://services8.arcgis.com/PE9fNg6S0CDTs96v/arcgis/rest/services/OpenData/FeatureServer/1 OpenData — Points of Interest] || Subject to the City of Pickering's Open Data License . || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 68 named schools, places of worship, libraries, stations and conservation areas with addresses; a gap list, OSM usually has most.
 |-
@@ -9739,7 +9765,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Niagara Falls ===
-27 layers (27 available). ''Value'' is a 1–5 score of what OSM would gain. 301 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+26 layers (26 available). ''Value'' is a 1–5 score of what OSM would gain. 302 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9748,8 +9774,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://portal.niagarafalls.ca/arcgis/rest/services/Public/NF_Ortho_2018_ImageService/ImageServer Niagara Falls 2018 Ortho Imagery] || Open Government Licence – Niagara Falls || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Spring 2018 10 cm orthophoto under an open licence, the newest the city publishes; worth tracing from if it can be served to editors.
 |-
 | [https://portal.niagarafalls.ca/arcgis/rest/services/Public/Transportation_CrossingGuard_Locations_Public_WGS1984/MapServer/0 Niagara Falls Crossing Guard Locations WGS 1984] || Open Government Licence – Niagara Falls || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 43 school crossing guard locations, a gap list for supervised crossings.
-|-
-| [https://services9.arcgis.com/oMFQlUUrLd1Uh1bd/arcgis/rest/services/Niagara_Falls_Address_Points/FeatureServer/0 Niagara Falls Address Points] || Open Government Licence – Niagara Falls || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 35700 civic address points, edited 2026-10-10; Niagara Region’s tracked layer (ca/on/niagara-falls/addresses) found 79% of regional addresses missing.
 |-
 | [https://services9.arcgis.com/oMFQlUUrLd1Uh1bd/arcgis/rest/services/Niagara_Falls_Building_Footprints_2018/FeatureServer/0 Niagara Falls Building Footprints 2018] || Open Government Licence – Niagara Falls || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 42,247 building outlines with height and eave elevation from 2018 imagery; fills gaps and adds height where OSM lacks them.
 |-
@@ -9801,7 +9825,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Mississauga ===
-37 layers (37 available). ''Value'' is a 1–5 score of what OSM would gain. 287 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+36 layers (36 available). ''Value'' is a 1–5 score of what OSM would gain. 288 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -9820,8 +9844,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services6.arcgis.com/hM5ymMLbxIyWTjn2/arcgis/rest/services/2023_City_Owned_Tree_Inventory/FeatureServer/0 City Owned Tree Inventory] || City of Mississauga Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 499,331 city trees with botanical names and diameters, updated 2026; OSM usually lacks street trees in bulk.
 |-
 | [https://services6.arcgis.com/hM5ymMLbxIyWTjn2/arcgis/rest/services/2025_Mississauga_Business_Directory/FeatureServer/0 2025 Mississauga Business Directory] || City of Mississauga Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 14,637 opted-in businesses with names, sectors, phones and websites; a gap list for shops and offices, though it churns.
-|-
-| [https://services6.arcgis.com/hM5ymMLbxIyWTjn2/arcgis/rest/services/Address/FeatureServer/0 Address] || City of Mississauga Terms of Use || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 219,790 civic address points at building centres, updated 2026-10; ready for an address import where OSM lacks them.
 |-
 | [https://services6.arcgis.com/hM5ymMLbxIyWTjn2/arcgis/rest/services/BldgRoof/FeatureServer/0 Building Footprints] || City of Mississauga Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 239,505 footprints from 2024 imagery, updated 2026-09; fills or refreshes building outlines where OSM is thin.
 |-
@@ -9883,15 +9905,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Vaughan ===
-46 layers (46 no licence). ''Value'' is a 1–5 score of what OSM would gain. 271 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+45 layers (45 no licence). ''Value'' is a 1–5 score of what OSM would gain. 272 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services2.arcgis.com/9LnN9037wYhPG904/arcgis/rest/services/address_COV/FeatureServer/0 address COV — address_COV] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 94002 NG911-schema civic addresses with units and street parts; overlaps ca/on/vaughan/addressdetailapps-address, but no licence.
-|-
-| [https://services2.arcgis.com/9LnN9037wYhPG904/arcgis/rest/services/AddressDetailApps/FeatureServer/0 AddressDetailApps — Address] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 140497 civic address points with number and street name for the whole city, updated 2026-09; a large gain, but no licence.
 |-
 | [https://services2.arcgis.com/9LnN9037wYhPG904/arcgis/rest/services/BUILDINGS/FeatureServer/0 BUILDINGS — BUILDINGS] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 127 named city buildings (community centres, libraries, halls) with addresses and use, last edited 2020, but no licence.
 |-
@@ -10091,13 +10111,11 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Sault Ste. Marie ===
-32 layers (32 no licence). ''Value'' is a 1–5 score of what OSM would gain. 248 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+31 layers (31 no licence). ''Value'' is a 1–5 score of what OSM would gain. 249 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://enterprise.ssmic.com/server/rest/services/SooMaps/SooMaps_GeneralLayers/MapServer/0 SooMaps GeneralLayers — Addresses] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 33316 civic address points for the whole city, the layer OpenAddresses uses; a large gap filler, but no licence.
 |-
 | [https://enterprise.ssmic.com/server/rest/services/SooMaps/SooMaps_GeneralLayers/MapServer/1 SooMaps GeneralLayers — Streets] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 3709 street centrelines with names and address ranges; a check for street names OSM mostly has, but no licence.
 |-
@@ -10359,7 +10377,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === City of Peterborough ===
-23 layers (23 available). ''Value'' is a 1–5 score of what OSM would gain. 221 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+22 layers (22 available). ''Value'' is a 1–5 score of what OSM would gain. 222 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -10368,8 +10386,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://data-ptbo.opendata.arcgis.com/datasets/6b4e2c11afbc4e1ebbe75aaf7ae1ad7d LiDAR Full Feature & Bare Earth Hillshade 2024] || City of Peterborough Open Data Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 2024 LiDAR full feature and bare earth hillshades on the city's open data terms; recent, a tracing aid for paths and streams under canopy.
 |-
 | [https://data-ptbo.opendata.arcgis.com/pages/imagery_download_2020 Imagery Download Page 2020] || City of Peterborough Open Data Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Download page for May 2020 leaf-off aerial imagery at 5 cm, sharper than the provincial mosaic editors show.
-|-
-| [https://services1.arcgis.com/JOTjMnANji9YTrZ2/arcgis/rest/services/Address/FeatureServer/0 Address] || City of Peterborough Open Data Terms of Use || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 34,096 civic address points with number, unit and street for the whole city, edited 2026; the core material of an address import.
 |-
 | [https://services1.arcgis.com/JOTjMnANji9YTrZ2/arcgis/rest/services/Baseball_Diamonds/FeatureServer/0 Baseball Diamond] || City of Peterborough Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 55 ball diamonds with park and diamond names and softball/slo-pitch use, which OSM pitches usually lack; last edited 2022.
 |-
@@ -11251,7 +11267,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === North Bay ===
-24 layers (24 no licence). ''Value'' is a 1–5 score of what OSM would gain. 103 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+23 layers (23 no licence). ''Value'' is a 1–5 score of what OSM would gain. 104 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -11260,8 +11276,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services5.arcgis.com/ItUGraUlQOjvSGOV/arcgis/rest/services/AirportAircraftParking_Point/FeatureServer/0 AirportAircraftParking Point — AirportAircraftParking_Point] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 10 named aircraft parking positions at North Bay airport, which OSM rarely maps as aeroway=parking_position, but no licence.
 |-
 | [https://services5.arcgis.com/ItUGraUlQOjvSGOV/arcgis/rest/services/BuildingFootprints_Poly/FeatureServer/0 BuildingFootprints Poly — BuildingFootprints_Poly] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 30,146 city building footprints with class and status, a bulk gap-filler where OSM lacks buildings; last edited 2018, but no licence.
-|-
-| [https://services5.arcgis.com/ItUGraUlQOjvSGOV/arcgis/rest/services/CivicAddress_Point/FeatureServer/0 CivicAddress Point — CivicAddress_Point] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 21,964 civic address points with number, street and unit for the whole city, the core of an address import, but no licence.
 |-
 | [https://services5.arcgis.com/ItUGraUlQOjvSGOV/arcgis/rest/services/CommonData_Buildings/FeatureServer/0 CommonData Buildings — GIS.BuildingFootprints_Poly] || None published || 3/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 30,354 footprints with fewer fields, a copy of BuildingFootprints_Poly; last edited 2018, but no licence.
 |-
@@ -11755,7 +11769,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Welland ===
-17 layers (17 available). ''Value'' is a 1–5 score of what OSM would gain. 50 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+16 layers (16 available). ''Value'' is a 1–5 score of what OSM would gain. 51 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -11780,8 +11794,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://arcgisweb.welland.ca/serverprodpub/rest/services/OpenData/OPENDATA_Active_Trees/MapServer/0 Welland Trees] || Open Government Licence – City of Welland || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 11654 city-owned trees with genus, species and trunk diameter, last edited 2023; street trees OSM mostly lacks.
 |-
 | [https://arcgisweb.welland.ca/serverprodpub/rest/services/OpenData/OPENDATA_Business_Layers/MapServer/2 Welland Business Directory] || Open Government Licence – City of Welland || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 923 businesses with names, addresses, phone and web, edited 2026; no geometry but joinable by address to welland-civic-address-points as a POI gap list.
-|-
-| [https://arcgisweb.welland.ca/serverprodpub/rest/services/OpenData/OPENDATA_Civic_Addresses_Active/MapServer/0 Welland Civic Address Points] || Open Government Licence – City of Welland || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 22461 civic address points with number and street for the whole city, edited 2026; the core material of an address import.
 |-
 | [https://arcgisweb.welland.ca/serverprodpub/rest/services/OpenData/OPENDATA_Community_Services/MapServer/0 Welland Nursing and Retirement Homes] || Open Government Licence – City of Welland || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 12 nursing and retirement homes with names and websites, last edited 2023; a small roster to check OSM amenity=nursing_home against.
 |-
@@ -11851,15 +11863,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Whitby ===
-12 layers (12 available). ''Value'' is a 1–5 score of what OSM would gain. 48 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+11 layers (11 available). ''Value'' is a 1–5 score of what OSM would gain. 49 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services5.arcgis.com/ATdLnvuMRJk8AGkQ/arcgis/rest/services/Trees/FeatureServer/0 Trees] || The Corporation of the Town of Whitby Open Government License || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 53,079 boulevard trees with species, DBH and height, a bulk set of street trees OSM usually lacks; edited 2025.
-|-
-| [https://services5.arcgis.com/ATdLnvuMRJk8AGkQ/arcgis/rest/services/Whitby_Address_Points/FeatureServer/0 Address Points] || The Corporation of the Town of Whitby Open Government License. || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 49,090 municipal address points with number, street and unit for the whole town, the core of an address import; edited 2026.
 |-
 | [https://services5.arcgis.com/ATdLnvuMRJk8AGkQ/arcgis/rest/services/Whitby_Parks_Points/FeatureServer/1 Parks] || The Corporation of the Town of Whitby Open Government License || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 131 park points with official names, class and amenities; the polygon layer Parks and Open Spaces is the better source for the same names.
 |-
@@ -11897,15 +11907,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Newmarket ===
-10 layers (10 available). ''Value'' is a 1–5 score of what OSM would gain. 48 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+9 layers (9 available). ''Value'' is a 1–5 score of what OSM would gain. 49 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services3.arcgis.com/tSwsWwbYRimLwcCZ/arcgis/rest/services/Cycling_Trails_3_view/FeatureServer/0 OPENNewmarket Cycling Trails] || Town of Newmarket Open Data Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 331 cycling segments with route names and facility class (bike lane, buffered lane, sharrows), detail OSM cycleways often lack; check STATUS for proposed.
-|-
-| [https://services3.arcgis.com/tSwsWwbYRimLwcCZ/arcgis/rest/services/OPENNewmarket_Address_3_view/FeatureServer/0 OPENNewmarket Address] || Town of Newmarket Open Data Licence || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 34923 civic address points with number, street and unit for the whole town, the core material of an address import; edited 2026.
 |-
 | [https://services3.arcgis.com/tSwsWwbYRimLwcCZ/arcgis/rest/services/OPENNewmarket_Buildings_View/FeatureServer/0 OPENNewmarket Buildings] || Town of Newmarket Open Data Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 30657 building footprints with storey counts and some names; heights and any missing buildings are the gain.
 |-
@@ -11975,15 +11983,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Dufferin ===
-3 layers (3 available). ''Value'' is a 1–5 score of what OSM would gain. 52 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+2 layers (2 available). ''Value'' is a 1–5 score of what OSM would gain. 53 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://data-dufferincounty.opendata.arcgis.com/datasets/de97c9bc5edc4e558e9c1fe1719d7e60 Dufferin County - Public Defibrillator Locations 2017] || Open Government Licence - The County of Dufferin || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || AED sites with building name, civic address and placement directions, no geometry; joinable to address points by civic address, last edited 2018.
-|-
-| [https://services5.arcgis.com/C0BEdgagVaXzcw0W/arcgis/rest/services/Address_Points_DufferinCounty_Open_Data/FeatureServer/0 Address_Points_DufferinCounty_Open_Data] || Open Government Licence - The County of Dufferin || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 28305 county-wide address points, edited 2026-10-08; the 2026-08-12 survey found 23176 of 27075 missing from OSM.
 |-
 | [https://services5.arcgis.com/C0BEdgagVaXzcw0W/arcgis/rest/services/Road_Centerlines_DufferinCounty_Open_Data/FeatureServer/0 Road_Centerlines_DufferinCounty_Open_Data] || Open Government Licence - The County of Dufferin || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 2649 county-wide road segments with official names, speed limits and surface, edited 2026-08-13; maxspeed and surface are the gain.
 |}
@@ -12091,15 +12097,13 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Ajax ===
-15 layers (15 available). ''Value'' is a 1–5 score of what OSM would gain. 33 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+14 layers (14 available). ''Value'' is a 1–5 score of what OSM would gain. 34 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://ajaxmaps.ajax.ca/gisernie/rest/services/Public/Ajax_Open_Data/MapServer/0 Cultural Inventory] || Ajax Open Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 254 cultural points, many public art with names, artists and notes; OSM rarely has tourism=artwork in this detail, but last edited 2023 and some items are in storage.
-|-
-| [https://ajaxmaps.ajax.ca/gisernie/rest/services/Public/Ajax_Open_Data/MapServer/10 Civic Addresses (Ajax Only)] || Town of Ajax - Open Data Licence v.1.0 || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 38,381 civic address points with full street address for the whole town, the core material of an address import; edited 2024.
 |-
 | [https://ajaxmaps.ajax.ca/gisernie/rest/services/Public/Ajax_Open_Data/MapServer/14 Recreational Trails] || Ajax Open Data Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 645 trail segments with trail names, surface, width and year built; the names and surface are the gain over unnamed OSM paths.
 |-
@@ -12427,13 +12431,11 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Oxford ===
-5 layers (5 no licence). ''Value'' is a 1–5 score of what OSM would gain. 16 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+4 layers (4 no licence). ''Value'' is a 1–5 score of what OSM would gain. 17 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://public.oxfordcounty.ca/gis/rest/services/OpenData/OXFORD_OpenData/MapServer/0 Oxford County Civic Address Points] || None published || 5/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 56,913 county-wide civic address points with road name, community and postal code, the core of an address import, but no licence.
 |-
 | [https://public.oxfordcounty.ca/gis/rest/services/OpenData/OXFORD_OpenData/MapServer/16 Oxford County Building Footprints] || None published || 4/5 ||  || Import || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 69,459 county-wide building outlines from aerial photography, a bulk gap in rural areas, though last edited 2019, not always accurate, and no licence.
 |-
@@ -12545,7 +12547,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === West Parry Sound ===
-12 layers (12 available). ''Value'' is a 1–5 score of what OSM would gain. 5 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+11 layers (11 available). ''Value'' is a 1–5 score of what OSM would gain. 6 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -12570,8 +12572,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services1.arcgis.com/rC2NOGn7lIsp3hfc/arcgis/rest/services/WPSGNWaterbodies_View/FeatureServer/0 West Parry Sound Waterbodies] || Open Government License - West Parry Sound Geography Network || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 1881 lakes and waterbodies with official names, edited 2026; names are the gain for many unnamed natural=water areas.
 |-
 | [https://www.wpsgn.ca/s22/rest/services/NG911/NG911/FeatureServer/9111 West Parry Sound Road Centre Lines NENA] || Open Government License - West Parry Sound Geography Network || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 4924 NG911 road segments with official names, route numbers and address ranges; names and ranges to conflate onto OSM roads.
-|-
-| [https://www.wpsgn.ca/s22/rest/services/NG911/NG911/FeatureServer/9112 West Parry Sound Civic Addresses NENA] || Open Government License - West Parry Sound Geography Network || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 21734 NG911 civic address points, the authoritative regional address set under an open licence; a ready import source.
 |-
 | [https://www.wpsgn.ca/s22/rest/services/wpsgnPublic/Parry_Sound_Area_Business_Directory/FeatureServer/0 Parry Sound Area Businesses] || Open Government License - West Parry Sound Geography Network || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 1304 businesses with addresses and contacts, a gap list for shops and offices; a directory that churns.
 |}

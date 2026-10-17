@@ -41,6 +41,19 @@ OSMF_NAME = {
     "toronto": "Toronto",
 }
 
+# Tracker datasets that are not a municipality's one address-point layer at <code>/addresses: a
+# second layer beside it, a slug that is not the jurisdiction's code, or a place with no code.
+# A layer the portal sweep already listed keeps its id there, so the synced row adds to that row
+# rather than listing the layer twice, and no slug becomes a jurisdiction.
+SOURCE_ID = {
+    "blue-mountains": "ca/on/the-blue-mountains/addresses",
+    "vaughan-ng911": "ca/on/vaughan/address-cov-address-cov",
+    "grey-assigned-addresses": "ca/on/grey/service-parcellabels-assigned-address-points",
+    # Gorham and Ware are unorganized townships; LRCA publishes them on NVCA's server.
+    "gorham-ware": "ca/on/nottawasaga-valley-conservation-authority/"
+                   "lrca-municipal-gorham-ware-house-numbers",
+}
+
 # Municipalities that granted OSM explicit permission, recorded on the wiki Contributors page.
 AUTHORIZED = {
     "kitchener": "https://wiki.openstreetmap.org/wiki/Waterloo_region/Kitchener_authorization",
@@ -140,7 +153,7 @@ def address_rows(approvals, checks: list[str], measures: list[dict]) -> list[dic
     rows = []
     for path in sorted(TRACKER.glob("*.toml")):
         slug = path.stem
-        sid = f"ca/on/{slug}/addresses"
+        sid = SOURCE_ID.get(slug, f"ca/on/{slug}/addresses")
         t = tomllib.loads(path.read_text(encoding="utf-8"))
         tier = t.get("osm_compatible", "")
         provider = t.get("provider", slug)

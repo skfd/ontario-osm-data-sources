@@ -510,8 +510,10 @@ def copies():
     files = {f: read_csv(f) for f in sorted(LAYERS.glob("*.csv"))}
     rows = [r for rs in files.values() for r in rs]
     tracked = {}
+    synced_ids = {r["id"] for r in read_csv(SYNCED)}
     for r in read_csv(SYNCED):
-        tracked[r["id"].rsplit("/", 1)[0]] = r
+        if r["id"].endswith("/addresses"):  # a second tracked layer is not the one others copy
+            tracked[r["id"].rsplit("/", 1)[0]] = r
     tracked_ids = {r["id"] for r in tracked.values()}
     sizes = {}
     for m in read_csv(MEASURES):
@@ -522,6 +524,10 @@ def copies():
         m = SERVICE.match(url or "")
         return key(m.group(1)) if m else ""
 
+    def layer(url: str) -> str:
+        m = re.search(r"/(?:Map|Feature)Server/(\d+)", url or "")
+        return m.group(1) if m else ""
+
     def base(url: str) -> str:
         """The service's name without the view suffixes AGOL adds: X_Public_View is X."""
         name = service(url).rsplit("/", 2)[-2] if service(url) else ""
@@ -531,13 +537,17 @@ def copies():
     # Copies marked on an earlier run, by hand or by this, still point a group outside itself.
     original = {r["id"]: marked(r) for r in rows if marked(r) in ids}
     for r in rows:
-        if r["theme"] != "addresses" or marked(r):
+        if r["theme"] != "addresses" or marked(r) or r["id"] in synced_ids:  # a tracked layer is its own
             continue
         t = tracked.get(r["id"].rsplit("/", 1)[0])
         if not t:
             continue
         n, size = meta.get(r["id"], {}).get("records"), sizes.get(t["id"])
         same_service = base(r["source_url"]) and base(r["source_url"]) == base(t["source_url"])
+        # Another sublayer of the very same service is another layer (Grey's ParcelLabels holds
+        # the county's numbers, Blue Mountains' points and the assigned-number list side by side).
+        if service(r["source_url"]) == service(t["source_url"]) and layer(r["source_url"]) != layer(t["source_url"]):
+            same_service = False
         if same_service or (n and size and abs(int(n) - size) <= size / 100):
             original[r["id"]] = t["id"]
 
