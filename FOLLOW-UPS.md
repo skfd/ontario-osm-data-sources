@@ -38,6 +38,29 @@ downloads as hand rows, and repaired the copy marks (below).
 
 ## Decisions pending
 
+- **Hub portals are swept through their catalogue only (measured 2026-10-22).** `from_hub`
+  reads the Hub's search, so a service the org publishes without cataloguing it is never seen.
+  Essex County's org (`services6.arcgis.com/baycHE2iKJaT7Upn`) lists 288 services at its REST
+  root against about 209 Hub items, and the missing ones include Leamington's live civic
+  address points (`SDEAddressPts/FeatureServer/3`, 11,424 points) and `Parcels_CIVIC` (edited
+  2026-08). It was found through a note in OpenAddresses' `lasalle.json`, not by the sweep.
+  Measured for every org: 97 AGOL org roots appear in `catalogue/layers/`, 57 of them never
+  listed as an `arcgis-rest` portal. Their roots hold 11,300 services. Filtering the names for
+  address words and dropping what the catalogue or the tracker already has leaves Leamington as
+  the only new jurisdiction; the rest are alternate views of tracked layers (Whitby's five
+  `For_Apps` versions, Frontenac's `NF_View`), census household layers, and Survey123 forms.
+  An ArcGIS Online search by name for the tracker's 165 gap municipalities (under 5% of the
+  National Address Register's locations) found nothing else Ontarian: the hits were US
+  namesakes (Brighton MI, Marathon WI) or tracked county layers.
+  **Decision:** whether the catalogue should hold REST-only services at all. For: they are
+  publicly served and sometimes the only copy (Leamington). Against: no item, so no
+  `licenseInfo`, and the Hub is the publisher's own statement of what it releases; 11,300 names
+  of mostly staff and survey layers would swamp the grading. A middle path is a cheap
+  name-only pass over each Hub's org roots, run with the quarterly re-probe, that reports
+  uncatalogued services matching a theme's words here rather than adding rows. Probe script
+  used for the measurement: list each root and its folders, keyword-match service names,
+  subtract catalogued and tracked service paths: `rootcheck.py`.
+
 - **Conservation authorities consolidate on 2027-02-01.** The 36 authorities become 9
   regional ones; Long Point, Grand River, Catfish Creek and Kettle Creek become the Eastern
   Lake Erie Regional Conservation Authority. The CA codes in `jurisdictions.csv`, and the ids
