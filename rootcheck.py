@@ -73,7 +73,7 @@ def services(root):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--words", default=r"addr|civic|911|siteadd|site_add|address",
+    ap.add_argument("--words", default=r"addr|civic|(?<![0-9a-f])911(?![0-9a-f])|siteadd|site_add",
                     help="regex matched against service names (default: address words)")
     args = ap.parse_args()
     words = re.compile(args.words, re.I)
