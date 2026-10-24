@@ -622,6 +622,7 @@ def shell(title: str, here: str, intro: str, body: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <style>{CSS}{badge_css()}</style>
+<script data-goatcounter="https://osm-ontario.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header>
