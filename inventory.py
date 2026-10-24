@@ -16,7 +16,7 @@ Portals swept: every reach 2 to 4 row with an api_url, minus shared-portal rows 
 are listed under the owner). The goal is that no layer goes
 unlisted; a grade can be argued later, a missing row cannot. A Hub item that names a whole service
 becomes one row per layer. A server layer a Hub of the same jurisdiction already lists is
-dropped, and so is any URL already in sources.csv. Ids are assigned here, in URL order, so the
+dropped, and so is any URL already in sources.csv, and any layer of pupil records. Ids are assigned here, in URL order, so the
 graders never invent one; a layer already in catalogue/layers keeps the id it has there.
 """
 
@@ -47,6 +47,9 @@ COLS = ["id", "jurisdiction", "portal_url", "origin", "dataset", "item_type", "s
 GRADE_COLS = ["id", "theme", "provider", "tier", "feasibility", "status", "notes"]
 BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st_area.*|"
                            r"st_length.*|created_.*|last_edited_.*)$", re.I)
+# Pupil records a board or its consultant left public: never listed, so the catalogue does not
+# point anyone at them.
+PERSONAL_FIELDS = re.compile(r"(^|\s)(student_?id|stu_?id|oen)(\s|$)", re.I)
 
 
 def text(s, limit: int) -> str:
@@ -345,7 +348,7 @@ def inventory(only: set[str]):
         for r in rows:
             u = r["source_url"]
             k = key(u) if SERVICE.match(u) or key(u) in known else u
-            if k and k in seen:
+            if k and k in seen or PERSONAL_FIELDS.search(r.get("fields", "")):
                 continue
             seen.add(k)
             kept.append(r)
