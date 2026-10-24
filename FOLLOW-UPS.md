@@ -23,8 +23,8 @@ downloads as hand rows, and repaired the copy marks (below).
   viewer, 13 nothing. No board or unit licenses any layer; 43 of the 1,148 new layers reach
   tier 3 (school rosters, approved wards, HDSB's surveyed school grounds), none higher.
   Not reachable: the Sudbury Student Services Consortium (`oY8XdPA3KnPpc0c8`) and
-  Windsor-Essex's health unit list public items whose services all need a token; Hamilton-
-  Wentworth Catholic's and five units' orgs are private. Classroom orgs (student story maps)
+  Windsor-Essex's health unit list public items whose services all need a token;
+  Hamilton-Wentworth Catholic's and five units' orgs are private. Classroom orgs (student story maps)
   are named in each board's notes and not swept. Layers of pupil records turned up on public
   servers; they are kept out by `PERSONAL_FIELDS` in `inventory.py` and listed nowhere here.
   Worth a look in review: Watson's ward-review layers, where the existing wards of six

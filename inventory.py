@@ -49,7 +49,7 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
                            r"st_length.*|created_.*|last_edited_.*)$", re.I)
 # Pupil records a board or its consultant left public: never listed, so the catalogue does not
 # point anyone at them.
-PERSONAL_FIELDS = re.compile(r"(^|\s)(student_?id|stu_?id|oen)(\s|$)", re.I)
+PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen", re.I)
 
 
 def text(s, limit: int) -> str:
@@ -133,7 +133,8 @@ def expand(url: str) -> list[dict]:
     layers = [l for l in service_layers(service) if not l.get("subLayerIds")]
     if index is not None:
         layers = [l for l in layers if str(l.get("id")) == index] or [{"id": int(index)}]
-    return [layer_row(service, l) for l in layers]
+    return [layer_row(service, l) for l in layers
+            if not any(PERSONAL_FIELDS.fullmatch(f["name"]) for f in l.get("fields") or [])]
 
 
 # ---------------------------------------------------------------- platforms
@@ -348,7 +349,7 @@ def inventory(only: set[str]):
         for r in rows:
             u = r["source_url"]
             k = key(u) if SERVICE.match(u) or key(u) in known else u
-            if k and k in seen or PERSONAL_FIELDS.search(r.get("fields", "")):
+            if k and k in seen:
                 continue
             seen.add(k)
             kept.append(r)
