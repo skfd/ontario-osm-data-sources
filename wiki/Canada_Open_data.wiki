@@ -8852,6 +8852,66 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Truck_Inspection_Stations__Centres_d%E2%80%99Inspection_des_Camions_2/FeatureServer/0 Truck Inspection Stations  Centres d’Inspection des Camions 2 — Truck Inspection Stations v2] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 37 truck inspection stations with names, highway and status, from 2021; a check for weigh stations OSM often lacks.
 |}
 
+=== Watson & Associates Economists ===
+26 layers (26 no licence). ''Value'' is a 1–5 score of what OSM would gain. 509 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/AMDSB_Schools_2025/FeatureServer/0 AMDSB Schools 2025 — AMDSB_Schools_2025] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 70 current board schools with names, grades and status; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/BHNCDSB_Elementary_Schools/FeatureServer/0 BHNCDSB Elementary Schools — Elementary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 30 current board schools with names, addresses and grade ranges; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/BHNCDSB_Secondary_Schools/FeatureServer/1 BHNCDSB Secondary Schools — Secondary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 4 current board schools with names, addresses and grade ranges; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/BWDSB_Elem_Schools/FeatureServer/0 BWDSB Elem Schools — BWDSB_Elem_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 40 current board schools with names, addresses and grade ranges; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/BWDSB_Sec_Schools/FeatureServer/0 BWDSB Sec Schools — BWDSB_Sec_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 11 current board schools with names, grades and status; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/CDSBEO_Schools_2025/FeatureServer/0 CDSBEO Schools 2025 — CDSBEO_Schools_2025] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 61 current board schools with names, addresses and grade ranges; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/CR_Council_Approved_Wards/FeatureServer/0 CR Council Approved Wards — CouncilApproved_CR2026Wards_Upd01082026] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || The council-approved 2026 ward configuration for Clarence-Rockland (8 wards); the source for OSM's boundary=political wards.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/GECDSB_Schools_2025/FeatureServer/0 GECDSB Schools 2025 — GECDSB_Schools_2025] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 66 current board schools with names, addresses and grade ranges; OSM usually has the schools, so names and grades are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/Gravenhurst_ApprovedWards_WFL1/FeatureServer/0 Gravenhurst ApprovedWards WFL1 — Approved Wards for 2026-2030] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || The approved 2026-2030 ward configuration for Gravenhurst (5 wards); the source for OSM's boundary=political wards.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/Lincoln_2025_CCWBR_Interactive_Map_WFL1/FeatureServer/1 Lincoln 2025 CCWBR Interactive Map WFL1 — Existing Wards] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || Lincoln's 4 wards in force at the 2025 review; the current configuration, to check OSM boundary=political wards against.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/LKDSB_Elementary_Schools/FeatureServer/3 LKDSB Elementary Schools — Elementary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 52 current LKDSB elementary schools with names and numbers, edited Dec 2025; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/LKDSB_Secondary_Schools/FeatureServer/2 LKDSB Secondary Schools — Secondary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 12 current LKDSB secondary schools with names and numbers, edited Dec 2025; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/Municipality_of_Port_Hope_Interactive_Map_WFL1/FeatureServer/0 Municipality of Port Hope Interactive Map WFL1 — ExistingWards (Outline)] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || Port Hope's 2 wards in force at the 2025 review; the current configuration, to check OSM boundary=political wards against.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/NCDSB_Schools_WFL1/FeatureServer/0 NCDSB Schools WFL1 — Niagara Catholic Elementary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 51 current Niagara Catholic elementary schools with names, edited Jan 2026; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/NCDSB_Schools_WFL1/FeatureServer/1 NCDSB Schools WFL1 — Niagara Catholic Secondary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 8 current Niagara Catholic secondary schools with names, edited Jan 2026; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/NT_Interactive_Map_Phase2_WFL1/FeatureServer/1 NT Interactive Map Phase2 WFL1 — Existing Wards (Colour)] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || New Tecumseth's 8 wards in force at the 2025 review, with population; the current configuration, to check OSM wards against.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/PickeringWBR_WFL1/FeatureServer/2 PickeringWBR WFL1 — 2026 Approved Ward Configuration] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || Pickering's 3 wards approved for the 2026 term, with councillors; the configuration OSM wards should match from November 2026.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/Port_Colborne_Interactive_Map_Phase_2_WFL1/FeatureServer/1 Port Colborne Interactive Map Phase 2 WFL1 — Existing Wards (Colour)] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || Port Colborne's 4 wards in force at the 2025 review, with names; the current configuration, to check OSM wards against.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/PVNCCDSB_Elem_Schools/FeatureServer/0 PVNCCDSB Elem Schools — PVNCCDSB_Elem_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 31 PVNC Catholic elementary schools with names and codes, edited Jan 2026; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/PVNCCDSB_Sec_Schools/FeatureServer/0 PVNCCDSB Sec Schools — PVNCCDSB_Sec_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 6 PVNC Catholic secondary schools with names and codes, edited 2025; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/SCCDSB_All_Schools_2025/FeatureServer/0 SCCDSB All Schools 2025 — SCCDSB_All_Schools_2025] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 24 St. Clair Catholic schools with names and panels, edited Nov 2025; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/SMCDSB_Schools_2025/FeatureServer/0 SMCDSB Schools 2025 — SMCDSB_Schools_2025] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 70 SMCDSB school sites with names, addresses and status, edited Jan 2026; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/Springwater_Interactive_Ward_Map_WFL1/FeatureServer/1 Springwater Interactive Ward Map WFL1 — Springwater Wards] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || Springwater's 5 wards in force at the 2024 review, with population; the current configuration, to check OSM wards against.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/TVDSB_Interactive_Map_WFL1/FeatureServer/1 TVDSB Interactive Map WFL1 — Elem Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 144 TVDSB elementary schools with names and addresses, edited Nov 2024; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/TVDSB_Interactive_Map_WFL1/FeatureServer/2 TVDSB Interactive Map WFL1 — Sec Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 27 TVDSB secondary schools with names and addresses, edited Nov 2024; OSM usually has the schools, the names are the check.
+|-
+| [https://services9.arcgis.com/f8lLPHShq1QkdT5J/arcgis/rest/services/Vaughan_WBR_Interactive_Map_WFL1/FeatureServer/0 Vaughan WBR Interactive Map WFL1 — VaughanWards] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || Vaughan's 5 wards in force at the 2024 review, with population; the current configuration, to check OSM wards against.
+|}
+
 === York ===
 15 layers (15 available). ''Value'' is a 1–5 score of what OSM would gain. 505 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -9029,15 +9089,15 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/1 RVCA ConservationArea Service — Features] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 263 points in RVCA conservation areas, mostly parking and other facilities by type; a check list for amenities OSM may lack.
-|-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/4 RVCA ConservationArea Service — Structures] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 55 weirs, boardwalks and other structures in conservation areas; boardwalk and weir details OSM trails often lack.
-|-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/6 RVCA ConservationArea Service — CA Trails] || RVCA Open Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 297 trail lines in RVCA conservation areas with maintenance and some trail names, mapped by staff in 2022; a check for OSM paths.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/8 RVCA ConservationArea Service — Conservation Areas] || RVCA Open Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 10 RVCA conservation areas with official names, addresses and web links; OSM likely has most, but boundaries and names can be checked.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_LandCover_Cache/MapServer/0 RVCA LandCover Cache — Land Cover] || RVCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 104,636 land cover polygons classed for 2008, 2014 and 2020; a check list for woods, wetlands and fields in the Rideau watershed.
+|-
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/1 RVCA ConservationArea Service — Features] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 263 points in RVCA conservation areas, mostly parking and other facilities by type; a check list for amenities OSM may lack.
+|-
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/4 RVCA ConservationArea Service — Structures] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 55 weirs, boardwalks and other structures in conservation areas; boardwalk and weir details OSM trails often lack.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_naturalHazardAtlas_Service/MapServer/39 RVCA naturalHazardAtlas Service — Woodlands - RVCA] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 30,401 RVCA woodland polygons classed for 2008, 2014 and 2020 with change flags; a gap list for wooded areas.
 |-
@@ -10618,6 +10678,18 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services1.arcgis.com/qAo1OsXi67t7XgmS/arcgis/rest/services/Water_Hydrant/FeatureServer/0 Water_Hydrant] || Using information under this licence means: You accept the terms below. The information provider grants you a worldwide, royalty-free, perpetual, non… || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 4854 hydrants, which OSM usually lacks in bulk but adds little beyond position.
 |}
 
+=== York Catholic District School Board ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 217 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://locator.ycdsb.ca/appserver/rest/services/SchoolLocator/School_Locator_Map/MapServer/0 School Locator Map — Elementary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 86 current elementary schools with names, addresses and programmes from the live School Locator; OSM usually has the schools, names are the check.
+|-
+| [https://locator.ycdsb.ca/appserver/rest/services/SchoolLocator/School_Locator_Map/MapServer/4 School Locator Map — Secondary Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 17 current secondary schools with names, addresses and programmes from the live School Locator; OSM usually has them, names are the check.
+|}
+
 === Windsor ===
 32 layers (32 available). ''Value'' is a 1–5 score of what OSM would gain. 182 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -11808,6 +11880,16 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://arcgisweb.welland.ca/serverprodpub/rest/services/OpenData/OPENDATA_Ward_Poll/MapServer/1 Welland Ward and Poll Boundaries — Ward Boundaries] || Open Government Licence – City of Welland || 3/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || The 6 Welland wards with councillor names, 2024; ward boundaries OSM carries as boundary=political.
 |}
 
+=== District School Board of Niagara ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 65 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services3.arcgis.com/AjoSajwQwuOZWdW2/arcgis/rest/services/NSTSDev/FeatureServer/0 NSTSDev — DSBN Schools NSTS] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 101 DSBN school points with names, grade ranges, addresses and websites, edited 2026; OSM usually has the schools, names and grades are the check.
+|}
+
 === Woolwich ===
 8 layers (8 no licence). ''Value'' is a 1–5 score of what OSM would gain. 58 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -11930,6 +12012,20 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services3.arcgis.com/tSwsWwbYRimLwcCZ/arcgis/rest/services/OPENNewmarket_Ward_Boundaries_View/FeatureServer/0 OPENNewmarket Ward Boundaries] || Town of Newmarket Open Data Licence || 3/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 7 named ward polygons, which OSM carries as boundary=political; edited 2022.
 |-
 | [https://services3.arcgis.com/tSwsWwbYRimLwcCZ/arcgis/rest/services/Trail_Points_4_view/FeatureServer/0 OPENNewmarket Trail Points] || Town of Newmarket Open Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 268 trail points: access points, parking, bridges, washrooms and bike repair stations; small amenities OSM may lack along named trails.
+|}
+
+=== Halton District School Board ===
+3 layers (3 no licence). ''Value'' is a 1–5 score of what OSM would gain. 54 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/e0gAxpJEEEPzcOG4/arcgis/rest/services/HDSB_Schools/FeatureServer/0 HDSB Schools — HDSB_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 154 HDSB school points with names, grades, addresses, year built and daycare, edited 2026; OSM usually has the schools, names and grades are the check.
+|-
+| [https://services5.arcgis.com/e0gAxpJEEEPzcOG4/arcgis/rest/services/PointsOfInterest_Polygon_Coop_view/FeatureServer/0 PointsOfInterest Polygon Coop view — PointsOfInterest_Polygon_Coop] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 763 GNSS-surveyed school-ground areas (playgrounds, ball diamonds, soccer fields, woodlots), 2026; sports fields and playgrounds OSM often lacks.
+|-
+| [https://services5.arcgis.com/e0gAxpJEEEPzcOG4/arcgis/rest/services/PointsOfInterest_View_Layer/FeatureServer/0 PointsOfInterest View Layer — PointsOfInterest] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 1,003 GNSS-surveyed school-ground features (play structures, gardens, outdoor classrooms, portables, signs), 2026; detail OSM often lacks.
 |}
 
 === Niagara Peninsula Conservation Authority ===
@@ -12132,6 +12228,24 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://ajaxmaps.ajax.ca/gisernie/rest/services/Public/Ajax_Open_Data/MapServer/8 Town Trees] || Ajax Open Data Licence || 4/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 53,910 boulevard and park trees with species code, DBH and condition; individual-tree imports are contested, survey data from before 2021.
 |}
 
+=== North Bay Parry Sound District Health Unit ===
+ 48 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|}
+
+=== Conseil scolaire Viamonde ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 46 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services.arcgis.com/8F7s01AIA0Z6ZtLN/arcgis/rest/services/zdf_ecole_july2023/FeatureServer/0 zdf ecole july2023 — schools_2023_final] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 57 Viamonde school points with names, addresses and panel, edited 2026; OSM usually has the schools, names and grades are the check.
+|}
+
 === Cobourg ===
 4 layers (4 available). ''Value'' is a 1–5 score of what OSM would gain. 39 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -12146,16 +12260,6 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services5.arcgis.com/bD7yhukP2irPxz1v/arcgis/rest/services/Storm_Sewer_Lines/FeatureServer/1 Storm Sewer Lines — Storm water management pond] || Town of Cobourg Open Data Terms of Use (revised November 1, 2021) || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 15 stormwater and decorative pond outlines with location and ownership but no names; a small gap list for ponds.
 |-
 | [https://services5.arcgis.com/bD7yhukP2irPxz1v/arcgis/rest/services/Water_Distribution_Points/FeatureServer/1 Water Distribution Points — Hydrant] || Town of Cobourg Open Data Terms of Use (revised November 1, 2021) || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 986 fire hydrants with street address and colour code; visible objects OSM rarely has in bulk, useful as a gap list.
-|}
-
-=== Dufferin-Peel Catholic District School Board ===
-1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 41 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://services5.arcgis.com/OTdNpvC9YulsqUyQ/arcgis/rest/services/HR_MAP_WFL1/FeatureServer/8 HR MAP WFL1 — DPCDSB_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 156 board schools with names, addresses, grades, phone and website; OSM usually has the schools, a name and address check.
 |}
 
 === Brant ===
@@ -12218,6 +12322,24 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services3.arcgis.com/am4R94sgLsJVGxwB/arcgis/rest/services/SWFacilities/FeatureServer/0 SWFacilities — SWFacilities_Beaches] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 71 named public beaches inspected by the health unit; names and positions to check OSM beaches against.
 |}
 
+=== Dufferin-Peel Catholic District School Board ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 37 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/OTdNpvC9YulsqUyQ/arcgis/rest/services/HR_MAP_WFL1/FeatureServer/8 HR MAP WFL1 — DPCDSB_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 156 board schools with names, addresses, grades, phone and website; OSM usually has the schools, a name and address check.
+|}
+
+=== Middlesex-London Health Unit ===
+ 35 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|}
+
 === Mississippi Mills ===
 6 layers (6 no licence). ''Value'' is a 1–5 score of what OSM would gain. 29 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -12236,6 +12358,16 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services2.arcgis.com/LYkuMVpuqr7gjn5F/arcgis/rest/services/MM_Parcel_Fabric_Open_Data/FeatureServer/1 MM Parcel Fabric Open Data] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 7584 assessment parcels carrying civic number and street name; parcels score 1, but the addresses could gap-check OSM, but no licence.
 |-
 | [https://services2.arcgis.com/LYkuMVpuqr7gjn5F/arcgis/rest/services/MM_Roads_Open_Data/FeatureServer/0 MM_Roads Open Data] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 950 road segments with names, owner and pavement class; surface for rural roads is the gain, OSM has the roads, but no licence.
+|}
+
+=== Peterborough Victoria Northumberland and Clarington Catholic District School Board ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 34 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services9.arcgis.com/7t7WAQcMAP2svZzG/arcgis/rest/services/Schools/FeatureServer/0 Schools — Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 37 PVNC Catholic school points with names and school codes, edited 2026; OSM usually has the schools, names are the check.
 |}
 
 === Brockville ===
@@ -12354,6 +12486,18 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services1.arcgis.com/BlSm9A1poQIGIz9S/arcgis/rest/services/Secondary_Urban_Areas_(view)/FeatureServer/4 Municipality of Chatham Kent - Secondary Urban Areas] || None published || 3/5 ||  || Reference || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || Named urban extents for 6 villages (Bothwell, Thamesville...) usable as place=* areas; planning limits, but no licence.
 |}
 
+=== Grand Erie Public Health ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 27 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services3.arcgis.com/HBYicTKkCf7o5Bge/arcgis/rest/services/Childcare_centres_with_postal_codes_/FeatureServer/0 Childcare centres with postal codes  — Childcare centres in Brant Coun] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 33 Brant County child care centres with names, addresses and lat/lon (2025); a gaps list for child care.
+|-
+| [https://services3.arcgis.com/HBYicTKkCf7o5Bge/arcgis/rest/services/GEPH_20260128/FeatureServer/5 GEPH 20260128 — GEPH_Offices] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 4 named Grand Erie Public Health office points; small, but positions to check OSM offices against.
+|}
+
 === Espanola ===
 2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 25 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -12444,6 +12588,28 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://public.oxfordcounty.ca/gis/rest/services/OpenData/OXFORD_OpenData/MapServer/7 Oxford County Roads] || None published || 3/5 ||  || Reference || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 6,421 road centrelines with full names, address ranges and route shields; a reference for checking names and ref tags, but no licence.
 |-
 | [https://public.oxfordcounty.ca/gis/rest/services/OpenData/OXFORD_OpenData/MapServer/8 Oxford County Waterline] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 15,877 watercourse lines, about 1,327 with a name label; a source for creek names and intermittent flags, but last edited 2019 and no licence.
+|}
+
+=== Conseil des écoles publiques de l'Est de l'Ontario ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 19 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services8.arcgis.com/Vff0sq4QMCvTK4mY/arcgis/rest/services/SchoolDistricts_public/FeatureServer/0 SchoolDistricts public — Educational Facilities] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 73 CEPEO school points with names, addresses and student counts, edited 2026; OSM usually has the schools, names and grades are the check.
+|}
+
+=== Grand Erie District School Board ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 18 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services8.arcgis.com/XcIMWbWgADdwHqBM/arcgis/rest/services/Elementary_Schools_2025/FeatureServer/0 Elementary Schools 2025 — Elementary_Schools_2025] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 59 Grand Erie elementary schools with names, addresses and status, edited 2025; OSM usually has the schools, names and grades are the check.
+|-
+| [https://services8.arcgis.com/XcIMWbWgADdwHqBM/arcgis/rest/services/Secondary_Schools/FeatureServer/0 Secondary Schools — Secondary_Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 14 Grand Erie secondary schools with names, addresses and status, edited 2025; OSM usually has the schools, names are the check.
 |}
 
 === Kawartha Lakes ===
@@ -12544,6 +12710,16 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services.arcgis.com/aji2lCmjXt0KpGzI/arcgis/rest/services/OP_Voting_District/FeatureServer/0 City of Brantford Ward Boundaries] || Please refer to Open Data Licence available on the City of Brantford Open Data Portal || 3/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Five ward polygons with names, mappable as boundary=political.
 |-
 | [https://services.arcgis.com/aji2lCmjXt0KpGzI/arcgis/rest/services/Trails_Paths_Select_Merge/FeatureServer/0 City of Brantford Paths and Trails] || Please refer to Open Data Licence available on the City of Brantford Open Data Portal || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || 258 path segments with official trail names and Trans Canada Trail network membership; names and routes are the gain.
+|}
+
+=== Southeast Public Health ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 16 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services6.arcgis.com/IrGlfUdWCDMTtRnk/arcgis/rest/services/popn_density_map_export/FeatureServer/0 popn density map export — SEPH_Office_Loc] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 13 geocoded Southeast Public Health offices with addresses (2025); positions and names to check OSM offices against.
 |}
 
 === West Parry Sound ===
@@ -12666,6 +12842,16 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://assets.metrolinx.com/image/upload/v1663237565/Documents/Metrolinx/2020-Metrolinx-Open-Data-Inventory.pdf 2020 Open Data Inventory] || Open Government Licence – Ontario – Metrolinx || 1/5 ||  || No || style="background:#eeeeee" | Not usable ||  ||  || 2026-10-16 || A 2020 PDF list of 164 Metrolinx datasets, 5 open and 159 under review; a document, and its open ones already have rows.
 |}
 
+=== Kawartha Pine Ridge District School Board ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 7 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/zWVGGWdq5YnrBtnA/arcgis/rest/services/School_WGS84/FeatureServer/0 School WGS84 — Schools] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 91 KPR school points with names, addresses, grades and year built, edited 2026; OSM usually has the schools, names and grades are the check.
+|}
+
 === Prince Edward County ===
 1 layers (1 available). ''Value'' is a 1–5 score of what OSM would gain. 7 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -12674,6 +12860,16 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services1.arcgis.com/4HnHVMMKSNypEIkS/arcgis/rest/services/Current_Voting_Ward_Boundaries/FeatureServer/6 Current Voting Ward Boundaries] || Use of this dataset is subject to the Open Government Licence – The Corporation of the County of Prince Edward, Version 1.0. Attribution: Contains in… || 3/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Current 9 ward boundaries with names and councillors, mappable as boundary=political; edited 2026-10.
+|}
+
+=== York Region District School Board ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 7 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services.arcgis.com/RFHWU0rfXmpzrbn0/arcgis/rest/services/pubsch/FeatureServer/0 pubsch — pubsch] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 218 YRDSB school points with names, panel, addresses and phone, edited 2026; OSM usually has the schools, names and grades are the check.
 |}
 
 === Halton Hills ===
@@ -12730,6 +12926,16 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://mph-northumbercounty.hub.arcgis.com/datasets/9b5d8d6f77b041559d3fa9382a1c6a9c LiDAR Ground Model Hillshade 2026] || Open Port Hope Data Licence and Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Recent 0.5m 2026 bare-earth hillshade, openly licensed; a tracing aid for trails, ditches, embankments and watercourses.
 |-
 | [https://mph-northumbercounty.hub.arcgis.com/datasets/c1fa4e29c83243c9b75f799f8492e5e4 LiDAR Full Features Hillshade 2026] || Open Port Hope Data Licence and Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-10-15 || Recent 0.5m 2026 full-features hillshade, openly licensed; shows buildings and tree cover, useful to check footprints and alignments.
+|}
+
+=== Conseil scolaire de district catholique du Centre-Est de l'Ontario ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 3 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services1.arcgis.com/83G5wCQTfp8zABMm/arcgis/rest/services/Ecole_2026_pub/FeatureServer/0 Ecole 2026 pub — General Data] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-24 || 85 CECCE school points with names, addresses, grade range and daycare partners, edited 2026; OSM usually has the schools, names and grades are the check.
 |}
 
 === Ontario Heritage Trust ===

@@ -15,10 +15,20 @@ downloads as hand rows, and repaired the copy marks (below).
   OGSEarth's 38 downloads all have rows: 25 were swept already (13 of them under `ca/on`, from
   the province's CKAN, not under `ontario-geological-survey`), and 13 are new hand rows in
   `sources.csv`.
-- **School boards and health units.** Only 9 of 72 boards and 2 of 34 units were found, by
-  searching ArcGIS Online by name. Left out on purpose: Watson & Associates' org
-  (`f8lLPHShq1QkdT5J`, hosting layers for five boards), an org mixing three health units
-  (`IrGlfUdWCDMTtRnk`), and BWDSB's classroom org.
+- **School boards and health units (swept 2026-10-24).** Every one of the province's 72 boards
+  and 29 units (the 2025 mergers brought 34 down) has a portal row. Boards: 19 publish layers of
+  their own, 14 only on another body's server (Watson & Associates Economists' org, coded as an
+  `association`, or a busing consortium's), 35 have a school locator only, 4 nothing. Units: 6
+  on their own org, 8 through their municipality's portal, Renfrew only on Southeast's org, 1
+  viewer, 13 nothing. No board or unit licenses any layer; 43 of the 1,148 new layers reach
+  tier 3 (school rosters, approved wards, HDSB's surveyed school grounds), none higher.
+  Not reachable: the Sudbury Student Services Consortium (`oY8XdPA3KnPpc0c8`) and
+  Windsor-Essex's health unit list public items whose services all need a token; Hamilton-
+  Wentworth Catholic's and five units' orgs are private. Classroom orgs (student story maps)
+  are named in each board's notes and not swept. Layers of pupil records turned up on public
+  servers; they are kept out by `PERSONAL_FIELDS` in `inventory.py` and listed nowhere here.
+  Worth a look in review: Watson's ward-review layers, where the existing wards of six
+  municipalities are tier 3 on the assumption that no new wards were adopted for 2026.
 - **Conservation authorities with only viewers.** Kawartha, St. Clair, Lower Trent, Mississippi
   Valley, South Nation, Raisin Region and Crowe Valley have layers on Conservation Ontario's org
   but no portal of their own. Long Point, Catfish Creek, Kettle
@@ -59,7 +69,9 @@ downloads as hand rows, and repaired the copy marks (below).
   name-only pass over each Hub's org roots, run with the quarterly re-probe, that reports
   uncatalogued services matching a theme's words here rather than adding rows. Probe script
   used for the measurement: list each root and its folders, keyword-match service names,
-  subtract catalogued and tracked service paths: `rootcheck.py`.
+  subtract catalogued and tracked service paths: `rootcheck.py`. Another case from the board
+  and unit sweep: Peel's Hub sits on `services6.arcgis.com/ONZht79c8QWuX759` (321 services),
+  whose six public `PHDZ_*` health data-zone services the Hub does not list.
 
 - **Conservation authorities consolidate on 2027-02-01.** The 36 authorities become 9
   regional ones; Long Point, Grand River, Catfish Creek and Kettle Creek become the Eastern
