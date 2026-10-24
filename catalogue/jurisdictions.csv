@@ -9,6 +9,9 @@ ca/on/ajax,Ajax,municipal,lower
 ca/on/alberton,Alberton,municipal,single
 ca/on/alcohol-and-gaming-commission-of-ontario,Alcohol and Gaming Commission of Ontario,agency,
 ca/on/alfred-and-plantagenet,Alfred and Plantagenet,municipal,lower
+ca/on/algoma-district-school-board,Algoma District School Board,school-board,
+ca/on/algoma-public-health,Algoma Public Health,health-unit,
+ca/on/algonquin-and-lakeshore-catholic-district-school-board,Algonquin and Lakeshore Catholic District School Board,school-board,
 ca/on/algonquin-highlands,Algonquin Highlands,municipal,lower
 ca/on/alnwick-haldimand,Alnwick/Haldimand,municipal,lower
 ca/on/amaranth,Amaranth,municipal,lower
@@ -25,6 +28,7 @@ ca/on/atikokan,Atikokan,municipal,single
 ca/on/augusta,Augusta,municipal,lower
 ca/on/aurora,Aurora,municipal,lower
 ca/on/ausable-bayfield-conservation,Ausable Bayfield Conservation,conservation-authority,
+ca/on/avon-maitland-district-school-board,Avon Maitland District School Board,school-board,
 ca/on/aylmer,Aylmer,municipal,lower
 ca/on/baldwin,Baldwin,municipal,single
 ca/on/bancroft,Bancroft,municipal,lower
@@ -37,12 +41,14 @@ ca/on/black-river-matheson,Black River-Matheson,municipal,single
 ca/on/blandford-blenheim,Blandford-Blenheim,municipal,lower
 ca/on/blind-river,Blind River,municipal,single
 ca/on/bluewater,Bluewater,municipal,lower
+ca/on/bluewater-district-school-board,Bluewater District School Board,school-board,
 ca/on/bonfield,Bonfield,municipal,single
 ca/on/bonnechere-valley,Bonnechere Valley,municipal,lower
 ca/on/bracebridge,Bracebridge,municipal,lower
 ca/on/bradford-west-gwillimbury,Bradford West Gwillimbury,municipal,lower
 ca/on/brampton,Brampton,municipal,lower
 ca/on/brant,Brant,municipal,single
+ca/on/brant-haldimand-norfolk-catholic-district-school-board,Brant Haldimand Norfolk Catholic District School Board,school-board,
 ca/on/brantford,Brantford,municipal,single
 ca/on/brethour,Brethour,municipal,single
 ca/on/brighton,Brighton,municipal,lower
@@ -51,6 +57,7 @@ ca/on/brockton,Brockton,municipal,lower
 ca/on/brockville,Brockville,municipal,single
 ca/on/brooke-alvinston,Brooke-Alvinston,municipal,lower
 ca/on/bruce,Bruce,municipal,upper
+ca/on/bruce-grey-catholic-district-school-board,Bruce-Grey Catholic District School Board,school-board,
 ca/on/bruce-mines,Bruce Mines,municipal,single
 ca/on/brudenell-lyndoch-and-raglan,"Brudenell, Lyndoch and Raglan",municipal,lower
 ca/on/burks-falls,Burk's Falls,municipal,single
@@ -67,6 +74,7 @@ ca/on/casey,Casey,municipal,single
 ca/on/casselman,Casselman,municipal,lower
 ca/on/cataraqui-conservation,Cataraqui Conservation,conservation-authority,
 ca/on/catfish-creek-conservation-authority,Catfish Creek Conservation Authority,conservation-authority,
+ca/on/catholic-district-school-board-of-eastern-ontario,Catholic District School Board of Eastern Ontario,school-board,
 ca/on/cavan-monaghan,Cavan Monaghan,municipal,lower
 ca/on/central-elgin,Central Elgin,municipal,lower
 ca/on/central-frontenac,Central Frontenac,municipal,lower
@@ -81,6 +89,7 @@ ca/on/chapleau,Chapleau,municipal,single
 ca/on/chapple,Chapple,municipal,single
 ca/on/charlton-and-dack,Charlton and Dack,municipal,single
 ca/on/chatham-kent,Chatham-Kent,municipal,single
+ca/on/chatham-kent-public-health,Chatham-Kent Public Health,health-unit,
 ca/on/chatsworth,Chatsworth,municipal,lower
 ca/on/chisholm,Chisholm,municipal,single
 ca/on/clarence-rockland,Clarence-Rockland,municipal,lower
@@ -93,6 +102,18 @@ ca/on/cockburn-island,Cockburn Island,municipal,single
 ca/on/coleman,Coleman,municipal,single
 ca/on/collingwood,Collingwood,municipal,lower
 ca/on/conmee,Conmee,municipal,single
+ca/on/conseil-des-ecoles-publiques-de-lest-de-lontario,Conseil des écoles publiques de l'Est de l'Ontario,school-board,
+ca/on/conseil-scolaire-catholique-monavenir,Conseil scolaire catholique MonAvenir,school-board,
+ca/on/conseil-scolaire-catholique-providence,Conseil scolaire catholique Providence,school-board,
+ca/on/conseil-scolaire-de-district-catholique-de-lest-ontarien,Conseil scolaire de district catholique de l'Est ontarien,school-board,
+ca/on/conseil-scolaire-de-district-catholique-des-aurores-boreales,Conseil scolaire de district catholique des Aurores boréales,school-board,
+ca/on/conseil-scolaire-de-district-catholique-des-grandes-rivieres,Conseil scolaire de district catholique des Grandes Rivières,school-board,
+ca/on/conseil-scolaire-de-district-catholique-du-centre-est,Conseil scolaire de district catholique du Centre-Est de l'Ontario,school-board,
+ca/on/conseil-scolaire-de-district-catholique-du-nouvel-ontario,Conseil scolaire de district catholique du Nouvel-Ontario,school-board,
+ca/on/conseil-scolaire-de-district-catholique-franco-nord,Conseil scolaire de district catholique Franco-Nord,school-board,
+ca/on/conseil-scolaire-public-du-grand-nord-de-lontario,Conseil scolaire public du Grand Nord de l'Ontario,school-board,
+ca/on/conseil-scolaire-public-du-nord-est-de-lontario,Conseil scolaire public du Nord-Est de l'Ontario,school-board,
+ca/on/conseil-scolaire-viamonde,Conseil scolaire Viamonde,school-board,
 ca/on/conservation-halton,Conservation Halton,conservation-authority,
 ca/on/conservation-ontario,Conservation Ontario,association,
 ca/on/conservation-sudbury,Conservation Sudbury,conservation-authority,
@@ -104,6 +125,8 @@ ca/on/dawn-euphemia,Dawn-Euphemia,municipal,lower
 ca/on/dawson,Dawson,municipal,single
 ca/on/deep-river,Deep River,municipal,lower
 ca/on/deseronto,Deseronto,municipal,lower
+ca/on/district-school-board-of-niagara,District School Board of Niagara,school-board,
+ca/on/district-school-board-ontario-north-east,District School Board Ontario North East,school-board,
 ca/on/dorion,Dorion,municipal,single
 ca/on/douro-dummer,Douro-Dummer,municipal,lower
 ca/on/drummond-north-elmsley,Drummond/North Elmsley,municipal,lower
@@ -112,6 +135,9 @@ ca/on/dubreuilville,Dubreuilville,municipal,single
 ca/on/dufferin,Dufferin,municipal,upper
 ca/on/dufferin-peel-catholic-district-school-board,Dufferin-Peel Catholic District School Board,school-board,
 ca/on/durham,Durham,municipal,upper
+ca/on/durham-catholic-district-school-board,Durham Catholic District School Board,school-board,
+ca/on/durham-district-school-board,Durham District School Board,school-board,
+ca/on/durham-region-health-department,Durham Region Health Department,health-unit,
 ca/on/dutton-dunwich,Dutton/Dunwich,municipal,lower
 ca/on/dysart-et-al,Dysart et al,municipal,lower
 ca/on/ear-falls,Ear Falls,municipal,single
@@ -120,6 +146,7 @@ ca/on/east-garafraxa,East Garafraxa,municipal,lower
 ca/on/east-gwillimbury,East Gwillimbury,municipal,lower
 ca/on/east-hawkesbury,East Hawkesbury,municipal,lower
 ca/on/east-zorra-tavistock,East Zorra-Tavistock,municipal,lower
+ca/on/eastern-ontario-health-unit,Eastern Ontario Health Unit,health-unit,
 ca/on/edwardsburgh-cardinal,Edwardsburgh/Cardinal,municipal,lower
 ca/on/elections-ontario,Elections Ontario,agency,
 ca/on/elgin,Elgin,municipal,upper
@@ -153,14 +180,18 @@ ca/on/gillies,Gillies,municipal,single
 ca/on/goderich,Goderich,municipal,lower
 ca/on/gordon-barrie-island,Gordon/Barrie Island,municipal,single
 ca/on/gore-bay,Gore Bay,municipal,single
+ca/on/grand-erie-district-school-board,Grand Erie District School Board,school-board,
+ca/on/grand-erie-public-health,Grand Erie Public Health,health-unit,
 ca/on/grand-river-conservation-authority,Grand River Conservation Authority,conservation-authority,
 ca/on/grand-valley,Grand Valley,municipal,lower
 ca/on/gravenhurst,Gravenhurst,municipal,lower
+ca/on/greater-essex-county-district-school-board,Greater Essex County District School Board,school-board,
 ca/on/greater-madawaska,Greater Madawaska,municipal,lower
 ca/on/greater-napanee,Greater Napanee,municipal,lower
 ca/on/greater-sudbury,Greater Sudbury,municipal,single
 ca/on/greenstone,Greenstone,municipal,single
 ca/on/grey,Grey,municipal,upper
+ca/on/grey-bruce-public-health,Grey Bruce Public Health,health-unit,
 ca/on/grey-highlands,Grey Highlands,municipal,lower
 ca/on/grey-sauble-conservation-authority,Grey Sauble Conservation Authority,conservation-authority,
 ca/on/grimsby,Grimsby,municipal,lower
@@ -170,16 +201,21 @@ ca/on/haldimand,Haldimand,municipal,single
 ca/on/haliburton,Haliburton,municipal,upper
 ca/on/halton,Halton,municipal,upper
 ca/on/halton-catholic-district-school-board,Halton Catholic District School Board,school-board,
+ca/on/halton-district-school-board,Halton District School Board,school-board,
 ca/on/halton-hills,Halton Hills,municipal,lower
+ca/on/halton-region-health-department,Halton Region Health Department,health-unit,
 ca/on/hamilton,Hamilton,municipal,single
 ca/on/hamilton-conservation-authority,Hamilton Conservation Authority,conservation-authority,
+ca/on/hamilton-public-health-services,Hamilton Public Health Services,health-unit,
 ca/on/hamilton-township,Township of Hamilton,municipal,lower
+ca/on/hamilton-wentworth-catholic-district-school-board,Hamilton-Wentworth Catholic District School Board,school-board,
 ca/on/hamilton-wentworth-district-school-board,Hamilton-Wentworth District School Board,school-board,
 ca/on/hanover,Hanover,municipal,lower
 ca/on/harley,Harley,municipal,single
 ca/on/harris,Harris,municipal,single
 ca/on/hastings,Hastings,municipal,upper
 ca/on/hastings-highlands,Hastings Highlands,municipal,lower
+ca/on/hastings-prince-edward-district-school-board,Hastings & Prince Edward District School Board,school-board,
 ca/on/havelock-belmont-methuen,Havelock-Belmont-Methuen,municipal,lower
 ca/on/hawkesbury,Hawkesbury,municipal,lower
 ca/on/head-clara-and-maria,"Head, Clara and Maria",municipal,lower
@@ -196,7 +232,10 @@ ca/on/huntsville,Huntsville,municipal,lower
 ca/on/huron,Huron,municipal,upper
 ca/on/huron-east,Huron East,municipal,lower
 ca/on/huron-kinloss,Huron-Kinloss,municipal,lower
+ca/on/huron-perth-catholic-district-school-board,Huron Perth Catholic District School Board,school-board,
+ca/on/huron-perth-public-health,Huron Perth Public Health,health-unit,
 ca/on/huron-shores,Huron Shores,municipal,single
+ca/on/huron-superior-catholic-district-school-board,Huron-Superior Catholic District School Board,school-board,
 ca/on/ignace,Ignace,municipal,single
 ca/on/ingersoll,Ingersoll,municipal,lower
 ca/on/innisfil,Innisfil,municipal,lower
@@ -208,8 +247,11 @@ ca/on/joly,Joly,municipal,single
 ca/on/kapuskasing,Kapuskasing,municipal,single
 ca/on/kawartha-conservation,Kawartha Conservation,conservation-authority,
 ca/on/kawartha-lakes,Kawartha Lakes,municipal,single
+ca/on/kawartha-pine-ridge-district-school-board,Kawartha Pine Ridge District School Board,school-board,
 ca/on/kearney,Kearney,municipal,single
+ca/on/keewatin-patricia-district-school-board,Keewatin-Patricia District School Board,school-board,
 ca/on/kenora,Kenora,municipal,single
+ca/on/kenora-catholic-district-school-board,Kenora Catholic District School Board,school-board,
 ca/on/kerns,Kerns,municipal,single
 ca/on/kettle-creek-conservation-authority,Kettle Creek Conservation Authority,conservation-authority,
 ca/on/killaloe-hagarty-and-richards,"Killaloe, Hagarty and Richards",municipal,lower
@@ -225,9 +267,13 @@ ca/on/laird,Laird,municipal,single
 ca/on/lake-of-bays,Lake of Bays,municipal,lower
 ca/on/lake-of-the-woods,Lake of the Woods,municipal,single
 ca/on/lake-simcoe-region-conservation-authority,Lake Simcoe Region Conservation Authority,conservation-authority,
+ca/on/lakehead-district-school-board,Lakehead District School Board,school-board,
 ca/on/lakehead-region-conservation-authority,Lakehead Region Conservation Authority,conservation-authority,
+ca/on/lakelands-public-health,Lakelands Public Health,health-unit,
 ca/on/lakeshore,Lakeshore,municipal,lower
 ca/on/lambton,Lambton,municipal,upper
+ca/on/lambton-kent-district-school-board,Lambton Kent District School Board,school-board,
+ca/on/lambton-public-health,Lambton Public Health,health-unit,
 ca/on/lambton-shores,Lambton Shores,municipal,lower
 ca/on/lanark,Lanark,municipal,upper
 ca/on/lanark-highlands,Lanark Highlands,municipal,lower
@@ -241,8 +287,10 @@ ca/on/leeds-and-the-thousand-islands,Leeds and the Thousand Islands,municipal,lo
 ca/on/leeds-grenville,Leeds and Grenville,municipal,upper
 ca/on/lennox-addington,Lennox and Addington,municipal,upper
 ca/on/limerick,Limerick,municipal,lower
+ca/on/limestone-district-school-board,Limestone District School Board,school-board,
 ca/on/lincoln,Lincoln,municipal,lower
 ca/on/london,London,municipal,single
+ca/on/london-district-catholic-school-board,London District Catholic School Board,school-board,
 ca/on/long-point-region-conservation-authority,Long Point Region Conservation Authority,conservation-authority,
 ca/on/lower-thames-valley-conservation-authority,Lower Thames Valley Conservation Authority,conservation-authority,
 ca/on/lower-trent-conservation,Lower Trent Conservation,conservation-authority,
@@ -278,6 +326,7 @@ ca/on/merrickville-wolford,Merrickville–Wolford,municipal,lower
 ca/on/metrolinx,Metrolinx,agency,
 ca/on/middlesex,Middlesex,municipal,upper
 ca/on/middlesex-centre,Middlesex Centre,municipal,lower
+ca/on/middlesex-london-health-unit,Middlesex-London Health Unit,health-unit,
 ca/on/midland,Midland,municipal,lower
 ca/on/milton,Milton,municipal,lower
 ca/on/minden-hills,Minden Hills,municipal,lower
@@ -298,20 +347,25 @@ ca/on/mulmur,Mulmur,municipal,lower
 ca/on/muskoka,Muskoka,municipal,upper
 ca/on/muskoka-lakes,Muskoka Lakes,municipal,lower
 ca/on/nairn-and-hyman,Nairn and Hyman,municipal,single
+ca/on/near-north-district-school-board,Near North District School Board,school-board,
 ca/on/neebing,Neebing,municipal,single
 ca/on/new-tecumseth,New Tecumseth,municipal,lower
 ca/on/newbury,Newbury,municipal,lower
 ca/on/newmarket,Newmarket,municipal,lower
+ca/on/niagara-catholic-district-school-board,Niagara Catholic District School Board,school-board,
 ca/on/niagara-falls,Niagara,municipal,upper
 ca/on/niagara-falls-city,Niagara Falls,municipal,lower
 ca/on/niagara-on-the-lake,Niagara-on-the-Lake,municipal,lower
 ca/on/niagara-peninsula-conservation-authority,Niagara Peninsula Conservation Authority,conservation-authority,
+ca/on/niagara-region-public-health,Niagara Region Public Health,health-unit,
 ca/on/nipigon,Nipigon,municipal,single
 ca/on/nipissing,Nipissing,municipal,single
+ca/on/nipissing-parry-sound-catholic-district-school-board,Nipissing-Parry Sound Catholic District School Board,school-board,
 ca/on/norfolk,Norfolk,municipal,single
 ca/on/north-algona-wilberforce,North Algona Wilberforce,municipal,lower
 ca/on/north-bay,North Bay,municipal,single
 ca/on/north-bay-mattawa-conservation-authority,North Bay-Mattawa Conservation Authority,conservation-authority,
+ca/on/north-bay-parry-sound-district-health-unit,North Bay Parry Sound District Health Unit,health-unit,
 ca/on/north-dumfries,North Dumfries,municipal,lower
 ca/on/north-dundas,North Dundas,municipal,lower
 ca/on/north-frontenac,North Frontenac,municipal,lower
@@ -322,9 +376,13 @@ ca/on/north-kawartha,North Kawartha,municipal,lower
 ca/on/north-middlesex,North Middlesex,municipal,lower
 ca/on/north-perth,North Perth,municipal,lower
 ca/on/north-stormont,North Stormont,municipal,lower
+ca/on/northeastern-catholic-district-school-board,Northeastern Catholic District School Board,school-board,
 ca/on/northeastern-manitoulin-and-the-islands,Northeastern Manitoulin and the Islands,municipal,single
+ca/on/northeastern-public-health,Northeastern Public Health,health-unit,
 ca/on/northern-bruce-peninsula,Northern Bruce Peninsula,municipal,lower
 ca/on/northumberland,Northumberland,municipal,upper
+ca/on/northwest-catholic-district-school-board,Northwest Catholic District School Board,school-board,
+ca/on/northwestern-health-unit,Northwestern Health Unit,health-unit,
 ca/on/norwich,Norwich,municipal,lower
 ca/on/nottawasaga-valley-conservation-authority,Nottawasaga Valley Conservation Authority,conservation-authority,
 ca/on/oakville,Oakville,municipal,lower
@@ -342,11 +400,15 @@ ca/on/oshawa,Oshawa,municipal,lower
 ca/on/otonabee-conservation,Otonabee Conservation,conservation-authority,
 ca/on/otonabee-south-monaghan,Otonabee–South Monaghan,municipal,lower
 ca/on/ottawa,Ottawa,municipal,single
+ca/on/ottawa-carleton-district-school-board,Ottawa-Carleton District School Board,school-board,
 ca/on/ottawa-catholic-district-school-board,Ottawa Catholic District School Board,school-board,
+ca/on/ottawa-public-health,Ottawa Public Health,health-unit,
 ca/on/owen-sound,Owen Sound,municipal,lower
 ca/on/oxford,Oxford,municipal,upper
 ca/on/papineau-cameron,Papineau-Cameron,municipal,single
 ca/on/parry-sound,Parry Sound,municipal,single
+ca/on/peel-district-school-board,Peel District School Board,school-board,
+ca/on/peel-public-health,Peel Public Health,health-unit,
 ca/on/peel-region,Peel,municipal,upper
 ca/on/pelee,Pelee,municipal,single
 ca/on/pelham,Pelham,municipal,lower
@@ -360,6 +422,7 @@ ca/on/perth-south,Perth South,municipal,lower
 ca/on/petawawa,Petawawa,municipal,lower
 ca/on/peterborough,City of Peterborough,municipal,single
 ca/on/peterborough-county,Peterborough,municipal,upper
+ca/on/peterborough-victoria-northumberland-and-clarington-catholic,Peterborough Victoria Northumberland and Clarington Catholic District School Board,school-board,
 ca/on/petrolia,Petrolia,municipal,lower
 ca/on/pickering,Pickering,municipal,lower
 ca/on/pickle-lake,Pickle Lake,municipal,single
@@ -373,15 +436,22 @@ ca/on/prescott,Prescott,municipal,single
 ca/on/prescott-russell,Prescott and Russell,municipal,upper
 ca/on/prince,Prince,municipal,single
 ca/on/prince-edward-county,Prince Edward County,municipal,single
+ca/on/public-health-sudbury-districts,Public Health Sudbury & Districts,health-unit,
 ca/on/puslinch,Puslinch,municipal,lower
 ca/on/quinte-conservation,Quinte Conservation,conservation-authority,
 ca/on/quinte-west,Quinte West,municipal,single
+ca/on/rainbow-district-school-board,Rainbow District School Board,school-board,
 ca/on/rainy-river,Rainy River,municipal,single
+ca/on/rainy-river-district-school-board,Rainy River District School Board,school-board,
 ca/on/raisin-region-conservation-authority,Raisin Region Conservation Authority,conservation-authority,
 ca/on/ramara,Ramara,municipal,lower
 ca/on/red-lake,Red Lake,municipal,single
 ca/on/red-rock,Red Rock,municipal,single
+ca/on/region-of-waterloo-public-health-and-paramedic-services,Region of Waterloo Public Health and Paramedic Services,health-unit,
 ca/on/renfrew,Renfrew,municipal,upper
+ca/on/renfrew-county-and-district-health-unit,Renfrew County and District Health Unit,health-unit,
+ca/on/renfrew-county-catholic-district-school-board,Renfrew County Catholic District School Board,school-board,
+ca/on/renfrew-county-district-school-board,Renfrew County District School Board,school-board,
 ca/on/renfrew-town,Town of Renfrew,municipal,lower
 ca/on/richmond-hill,Richmond Hill,municipal,lower
 ca/on/rideau-lakes,Rideau Lakes,municipal,lower
@@ -404,6 +474,7 @@ ca/on/shelburne,Shelburne,municipal,lower
 ca/on/shuniah,Shuniah,municipal,single
 ca/on/simcoe,Simcoe,municipal,upper
 ca/on/simcoe-county-district-school-board,Simcoe County District School Board,school-board,
+ca/on/simcoe-muskoka-catholic-district-school-board,Simcoe Muskoka Catholic District School Board,school-board,
 ca/on/simcoe-muskoka-district-health-unit,Simcoe Muskoka District Health Unit,health-unit,
 ca/on/sioux-lookout,Sioux Lookout,municipal,single
 ca/on/sioux-narrows-nestor-falls,Sioux Narrows-Nestor Falls,municipal,single
@@ -420,14 +491,17 @@ ca/on/south-nation-conservation,South Nation Conservation,conservation-authority
 ca/on/south-river,South River,municipal,single
 ca/on/south-stormont,South Stormont,municipal,lower
 ca/on/south-west-oxford,South-West Oxford,municipal,lower
+ca/on/southeast-public-health,Southeast Public Health,health-unit,
 ca/on/southgate,Southgate,municipal,lower
 ca/on/southwest-middlesex,Southwest Middlesex,municipal,lower
+ca/on/southwestern-public-health,Southwestern Public Health,health-unit,
 ca/on/southwold,Southwold,municipal,lower
 ca/on/spanish,Spanish,municipal,single
 ca/on/springwater,Springwater,municipal,lower
 ca/on/st-catharines,St. Catharines,municipal,lower
 ca/on/st-charles,St.-Charles,municipal,single
 ca/on/st-clair,St. Clair,municipal,lower
+ca/on/st-clair-catholic-district-school-board,St. Clair Catholic District School Board,school-board,
 ca/on/st-clair-region-conservation-authority,St. Clair Region Conservation Authority,conservation-authority,
 ca/on/st-joseph,St. Joseph,municipal,single
 ca/on/st-marys,St. Marys,municipal,single
@@ -437,7 +511,10 @@ ca/on/stone-mills,Stone Mills,municipal,lower
 ca/on/stratford,Stratford,municipal,single
 ca/on/strathroy-caradoc,Strathroy-Caradoc,municipal,lower
 ca/on/strong,Strong,municipal,single
+ca/on/sudbury-catholic-district-school-board,Sudbury Catholic District School Board,school-board,
 ca/on/sundridge,Sundridge,municipal,single
+ca/on/superior-greenstone-district-school-board,Superior-Greenstone District School Board,school-board,
+ca/on/superior-north-catholic-district-school-board,Superior North Catholic District School Board,school-board,
 ca/on/tarbutt,Tarbutt,municipal,single
 ca/on/tay,Tay,municipal,lower
 ca/on/tay-valley,Tay Valley,municipal,lower
@@ -456,6 +533,8 @@ ca/on/thessalon,Thessalon,municipal,single
 ca/on/thornloe,Thornloe,municipal,single
 ca/on/thorold,Thorold,municipal,lower
 ca/on/thunder-bay,Thunder Bay,municipal,single
+ca/on/thunder-bay-catholic-district-school-board,Thunder Bay Catholic District School Board,school-board,
+ca/on/thunder-bay-district-health-unit,Thunder Bay District Health Unit,health-unit,
 ca/on/tillsonburg,Tillsonburg,municipal,lower
 ca/on/timmins,Timmins,municipal,single
 ca/on/tiny,Tiny,municipal,lower
@@ -463,12 +542,16 @@ ca/on/toronto,Toronto,municipal,single
 ca/on/toronto-and-region-conservation-authority,Toronto and Region Conservation Authority,conservation-authority,
 ca/on/toronto-catholic-district-school-board,Toronto Catholic District School Board,school-board,
 ca/on/toronto-district-school-board,Toronto District School Board,school-board,
+ca/on/toronto-public-health,Toronto Public Health,health-unit,
 ca/on/trans-canada-trail,Trans Canada Trail,agency,
 ca/on/trent-hills,Trent Hills,municipal,lower
 ca/on/trent-lakes,Trent Lakes,municipal,lower
+ca/on/trillium-lakelands-district-school-board,Trillium Lakelands District School Board,school-board,
 ca/on/tudor-and-cashel,Tudor and Cashel,municipal,lower
 ca/on/tweed,Tweed,municipal,lower
 ca/on/tyendinaga,Tyendinaga,municipal,lower
+ca/on/upper-canada-district-school-board,Upper Canada District School Board,school-board,
+ca/on/upper-grand-district-school-board,Upper Grand District School Board,school-board,
 ca/on/upper-thames-river-conservation-authority,Upper Thames River Conservation Authority,conservation-authority,
 ca/on/uxbridge,Uxbridge,municipal,lower
 ca/on/val-rita-harty,Val Rita-Harty,municipal,single
@@ -477,12 +560,15 @@ ca/on/wainfleet,Wainfleet,municipal,lower
 ca/on/warwick,Warwick,municipal,lower
 ca/on/wasaga-beach,Wasaga Beach,municipal,lower
 ca/on/waterloo,Waterloo,municipal,lower
+ca/on/waterloo-catholic-district-school-board,Waterloo Catholic District School Board,school-board,
 ca/on/waterloo-region,Region of Waterloo,municipal,upper
 ca/on/waterloo-region-district-school-board,Waterloo Region District School Board,school-board,
+ca/on/watson-associates-economists,Watson & Associates Economists,association,
 ca/on/wawa,Wawa,municipal,single
 ca/on/welland,Welland,municipal,lower
 ca/on/wellesley,Wellesley,municipal,lower
 ca/on/wellington,Wellington,municipal,upper
+ca/on/wellington-catholic-district-school-board,Wellington Catholic District School Board,school-board,
 ca/on/wellington-dufferin-guelph-public-health,Wellington-Dufferin-Guelph Public Health,health-unit,
 ca/on/wellington-north,Wellington North,municipal,lower
 ca/on/west-elgin,West Elgin,municipal,lower
@@ -499,8 +585,13 @@ ca/on/whitestone,Whitestone,municipal,single
 ca/on/whitewater,Whitewater,municipal,lower
 ca/on/wilmot,Wilmot,municipal,lower
 ca/on/windsor,Windsor,municipal,single
+ca/on/windsor-essex-catholic-district-school-board,Windsor-Essex Catholic District School Board,school-board,
+ca/on/windsor-essex-county-health-unit,Windsor-Essex County Health Unit,health-unit,
 ca/on/wollaston,Wollaston,municipal,lower
 ca/on/woodstock,Woodstock,municipal,lower
 ca/on/woolwich,Woolwich,municipal,lower
 ca/on/york,York,municipal,upper
+ca/on/york-catholic-district-school-board,York Catholic District School Board,school-board,
+ca/on/york-region-district-school-board,York Region District School Board,school-board,
+ca/on/york-region-public-health,York Region Public Health,health-unit,
 ca/on/zorra,Zorra,municipal,lower
