@@ -488,10 +488,10 @@ def merge():
     print(f"{done} rows merged into {LAYERS}; {len(pending)} still ungraded")
 
 COPY = "Copy of "
-MARK = re.compile(r"^Copy of (ca/on/[a-z0-9/-]*[a-z0-9])\.(?: |$)")
+MARK = re.compile(r"^Copy of (ca/[a-z]{2}/[a-z0-9/-]*[a-z0-9])\.(?: |$)")
 SAID = re.compile(r"(?:same (?:data|endpoint|layer|dataset|service) as|layer behind|tracked as|"
                   r"copy of|copies|copying|duplicates?|the source is|the live layer is) "
-                  r"(ca/on/[a-z0-9/-]*[a-z0-9])", re.I)
+                  r"(ca/[a-z]{2}/[a-z0-9/-]*[a-z0-9])", re.I)
 
 
 def marked(r: dict) -> str:

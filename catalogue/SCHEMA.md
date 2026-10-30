@@ -19,6 +19,9 @@ Every source has a lowercase path id: jurisdiction code, then a slug for the dat
     ca/on/geohub                    provincial
     ca/on/guelph/hydrants           municipal
     ca/on/guelph/addresses          a municipality's address-point dataset
+    ca/ns/halifax/addresses         the same in Nova Scotia
+
+A province's code is its two-letter postal abbreviation, lowercase: `ca/on`, `ca/ns`, `ca/qc`.
 
 A stream of work hangs off its source: `ca/on/toronto/addresses/import`.
 
@@ -174,8 +177,16 @@ own: `agency` (a ministry, agency, board or commission, or a province-wide body 
 Canada Trail), `conservation-authority`, `school-board`, `health-unit`, or `association` (a
 body that gathers its members' layers, like Conservation Ontario). `tier` is `upper`, `single`
 or `lower` for the 444 municipalities of the Ontario list, blank otherwise (`west-parry-sound`
-is a GIS consortium, not a municipality). The name is used as a wiki section heading, so no two rows
-share one.
+is a GIS consortium, not a municipality). Nova Scotia's 49 municipal units (4 regional, 9 county,
+11 district, 25 towns) come from the Wikipedia list of municipalities in Nova Scotia, read
+2026-10-30; the province's Municipal Affairs site publishes no directory. Their tier is blank.
+
+The name is used as a wiki section heading, so no two rows share one, across provinces too. A
+name already taken by an earlier province gets the province in parentheses: `Shelburne (NS)`,
+`Oxford (NS)`. Where a town and the rural municipality around it share a name, the town keeps
+the plain name and the rural unit adds its type: `Lunenburg` and `Lunenburg District`, `Pictou`
+and `Pictou County`. Codes carry no such qualifier unless two units of one province share a
+slug: `ca/ns/shelburne` is the town, `ca/ns/shelburne-district` the district.
 
 A new code is the slug of the name: lowercase, accents and punctuation dropped, spaces and
 slashes as hyphens (`St. Catharines` → `st-catharines`, `Admaston/Bromley` →
