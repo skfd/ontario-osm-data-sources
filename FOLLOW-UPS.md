@@ -9,25 +9,55 @@ readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's r
 downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10-30) listed the
 54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia.
 
-## Ungraded
+## Graded on 2026-10-30 and 31
 
-- **The org roots behind the Hubs (listed 2026-10-30).** 15,399 layers on 54 roots in 51
-  jurisdictions wait in 156 batches (`cache/inventory/chunks/`), none graded: a third carry
-  view, public or dashboard in their names and about 1,000 report zero records, so many will be
-  copies or empty. Grading was held for a go-ahead because of the size. Mississauga (1,757),
-  the province's two orgs (2,452), Dufferin, Oakville and Brampton are the largest.
+- **The org roots behind the Ontario Hubs (graded 2026-10-31).** 15,392 layers on 54 roots in
+  51 jurisdictions, graded by eighteen agents told to look for each layer's counterpart in the
+  catalogue first. Tiers: 1 at 5, 82 at 4, 559 at 3; 3,744 copies; 133 `Available` (rows with a
+  Hub licence), the rest `No licence` or `Not usable`. Three quarters are tier 1: Survey123
+  forms, staff and app layers, the province's forest-management-plan packages (about 2,100 of
+  its 2,452), census tables. What the Hubs left out, in brief:
+  - **Kingsville's 10,270 civic address points** on Essex County's org, the one tier 5, which
+    the tracker does not follow: the second untracked town found this way, after Leamington.
+  - **Dufferin's address-points-cityview-wgs84**, 32,318 points edited 2026-10, larger and newer
+    than the 28,305 the tracker follows; the tracker's own note says a better layer exists.
+    Re-pointing it is `../ontario-address-changes`' call.
+  - **Buildings with heights:** Hamilton's 193,683 polygons with eave height and roof form,
+    Sudbury's 128,651 rooflines (twice the Hub layer), Ottawa's 392,000 footprints, Cobourg's
+    9,162 and Dufferin's 37,591 footprints with addresses, Essex's 19,096 with roll numbers.
+  - **Trails:** Mississauga's pedestrian trail network (9,197 and 11,437 segments; the Hub has
+    none), Cambridge's 2,119 named trails, Burlington's off-road trails, North Frontenac's ATV and
+    hiking trails and campsites.
+  - **Trees:** Peterborough's 51,585 (2026), Cornwall's 16,008, Cobourg's 11,780, Essex's 5,750.
+    Peterborough's Hub layer has 29,455 (2023) and is also tier 4: decide which is the copy.
+  - Heritage registers (Brantford, Kawartha Lakes, Peterborough, York, Rideau Lakes, PEC,
+    Cornwall), stormwater ponds, park amenities, Brampton's sports-field rosters.
+
+  Also found: Woolwich's org carries Wellesley's and Wilmot's own services, and neither township
+  has a shared portal row. Prince Edward County's org shows only a 16,101-point address view
+  against the tracked 27,602. Grey's, Frontenac's and Waterloo Region's orgs each hold a layer
+  exported from OSM itself (tier 1). Several orgs carry Esri sample data or test layers.
 - **Nova Scotia is graded (2026-10-30):** 4,764 layers in 53 batches, graded by eleven agents
   the same day. Tiers: 39 at 5 (every municipal civic-address and building-footprint layer, the
   province's NSCAF civic points and 504,081 footprints), 82 at 4, 391 at 3; 911 marked copies.
   No municipal layer is licensed except Halifax's (Open Government Licence - Halifax) and some of
   Cumberland's (ODbL), so Nova Scotia's tier-5 layers are mostly `No licence`: the licence
-  emails to write first. Two Pictou County Survey123 forms of pupil and parent records were
-  dropped from the listing; `PERSONAL_FIELDS` now catches `students_*` and `parentguardians_*`
-  fields. Graders flagged many other layers with personal data (owner names on parcels, contact
-  details on forms, historical vital records); they are tier 1 with the fact in the note.
-  `--copies` was tightened after it marked two of Windsor's 311 request layers as copies of
-  each other: a shared schema and count prove nothing under 50 rows or between sublayers of one
-  service.
+  emails to write first. Graders flagged many layers with personal data (owner names on
+  parcels, contact details on forms, historical vital records); they are tier 1 with the fact
+  in the note. `--copies` was tightened after it marked two of Windsor's 311 request layers as
+  copies of each other: a shared schema and count prove nothing under 50 rows or between
+  sublayers of one service.
+- **Records of children and of homeless people are kept out, not only pupils' (2026-10-31).**
+  Eleven layers were dropped from listings and the catalogue: two Pictou County forms of pupil
+  and parent records, a Conservation Ontario school ski registration (student names, birth
+  dates), a Peterborough County student programme form, three Oakville Youth Advisory Council
+  applications (minors' names, ages, schools, parental consent), a Mississauga youth challenge
+  form (school, grade, email), West Parry Sound's Kids in the Biosphere registrations
+  (children's names and ages) and Grey County's two layers of homeless encampment locations.
+  Dropping the encampments widens the rule beyond children: undo it in `PERSONAL_FIELDS` if
+  that is not wanted. The filter now matches contact fields of students and parents, children's
+  names, homelessness duration, and a school-grade-email set; it no longer matches a school
+  list's `Student_Trustee` or a survey's yes-or-no `parent_guardian_school_child`.
 
 ## Nova Scotia (surveyed 2026-10-30)
 

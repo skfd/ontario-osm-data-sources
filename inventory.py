@@ -47,9 +47,21 @@ COLS = ["id", "jurisdiction", "portal_url", "origin", "dataset", "item_type", "s
 GRADE_COLS = ["id", "theme", "provider", "tier", "feasibility", "status", "notes"]
 BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st_area.*|"
                            r"st_length.*|created_.*|last_edited_.*)$", re.I)
-# Pupil records a board or its consultant left public: never listed, so the catalogue does not
-# point anyone at them.
-PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|students?_\w*|parent_?guardians?_\w*", re.I)
+# Records of pupils, of other children and of homeless people that a publisher left public: never
+# listed, so the catalogue does not point anyone at them.
+# Contact fields only: a school list's Student_Trustee or a survey's parent_guardian_school_child
+# (yes or no) is not a record of a child.
+PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|"
+                             r"students?_(name|email|phone|address|number|birth|dob)\w*|"
+                             r"parent_?(or_)?guardians?_(name|email|phone|contact|consent)\w*|"
+                             r"childrens?_?names?\w*|duration_of_homeless\w*", re.I)
+# A form that asks a child's school and grade along with an email address.
+PUPIL_SET = {"school_name", "grade", "email"}
+
+
+def personal(fields: list[str]) -> bool:
+    names = {f.lower() for f in fields}
+    return any(PERSONAL_FIELDS.fullmatch(f) for f in fields) or PUPIL_SET <= names
 
 
 def text(s, limit: int) -> str:
@@ -134,7 +146,7 @@ def expand(url: str) -> list[dict]:
     if index is not None:
         layers = [l for l in layers if str(l.get("id")) == index] or [{"id": int(index)}]
     return [layer_row(service, l) for l in layers
-            if not any(PERSONAL_FIELDS.fullmatch(f["name"]) for f in l.get("fields") or [])]
+            if not personal([f["name"] for f in l.get("fields") or []])]
 
 
 # ---------------------------------------------------------------- platforms
