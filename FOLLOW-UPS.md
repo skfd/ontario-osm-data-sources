@@ -6,7 +6,49 @@ ministries, agencies, school boards and health units, the 36 conservation author
 Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists beyond its
 `dataset` collection. The third (2026-10-16) read GRIN and RVCA's JKAN through new `custom`
 readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's remaining
-downloads as hand rows, and repaired the copy marks (below).
+downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10-30) listed the
+54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia.
+
+## Ungraded
+
+- **The org roots behind the Hubs (listed 2026-10-30).** 15,399 layers on 54 roots in 51
+  jurisdictions wait in 156 batches (`cache/inventory/chunks/`), none graded: a third carry
+  view, public or dashboard in their names and about 1,000 report zero records, so many will be
+  copies or empty. Grading was held for a go-ahead because of the size. Mississauga (1,757),
+  the province's two orgs (2,452), Dufferin, Oakville and Brampton are the largest.
+- **Nova Scotia (swept 2026-10-30).** Its batches are cut with the above; grade them first,
+  they are the smaller set.
+
+## Nova Scotia (surveyed 2026-10-30)
+
+Every one of the 49 municipal units has a portal row; three agents checked each unit's site
+bottom-up after a top-down pass over the Socrata, Hub and ArcGIS Online search APIs. The
+province publishes through a Socrata catalogue (every asset under the Nova Scotia Open
+Government Licence) and NSGI's two map servers; four departments and the Government of Nova
+Scotia org serve layers from ArcGIS Online with no licence stated. Only Halifax (Open
+Government Licence - Halifax) and Cumberland (ODbL-1.0 on some items) name a licence
+municipally. Open ends:
+
+- **Two shared GIS bodies are associations:** the Eastern District Planning Commission (six
+  members, 55 services) and the Annapolis Valley Local Information Utility (Annapolis Royal,
+  Middleton, Berwick). Argyle owns the org it shares with the District of Yarmouth, run by one
+  technician under the key `yabdpc`; a Yarmouth-Argyle-Barrington planning commission may be the
+  real owner. Chester's server carries members' layers by suffix (_TOMB, _MODL, _TOB, _TOL) and
+  17 layers suffixed _LC, probably Lunenburg County, with no body found.
+- **Boundary-only layers.** The five Pictou-area towns appear on the county's org only in the
+  county's `Town_Boundary` layer, so they got none-found rows (the Ganaraska rule). Lunenburg,
+  Bridgewater and Amherst kept thin shared rows because the host names the layer for the town
+  (`_TOL`, `_TOB`, `Amherst_Water`), as Adelaide Metcalfe's did.
+- **Empty Hubs at reach 4.** Truro's Hub lists six PDFs and Pictou County's one page; both got
+  the platform's reach, and their layers sit on the org roots. Barrington's Hub has 0 items
+  and no row.
+- **Not read:** Stewiacke's `Stewiacke_OpenDataLicence` PDF on its Hub (recorded as `None
+  published`); clarksharbour.com answers 403 to scripts; Queens may have a viewer behind a
+  login; middleton.ca does not answer. Guysborough and St. Mary's are not on the EDPC org,
+  though the top-down pass assumed they were. Six of CBRM's 14 server folders want a token.
+- **The address tracker is Ontario-only**, so Nova Scotia's civic address layers (the province's
+  NSCAF on Socrata and NSGI, EDPC's and Argyle's county points) have no `/addresses` synced
+  rows and no measures. Onboarding them is `../ontario-address-changes`' call.
 
 ## Not swept
 

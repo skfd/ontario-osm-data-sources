@@ -1,9 +1,10 @@
 # ontario-osm-data-sources
 
-A catalogue of every open data source usable for OpenStreetMap in Ontario. It records what
-each source is, what it is good for (import / conflate / validate / reference / no), and how
-far it has been brought into OSM, as dated measurements that build up a history. It grows
-until it covers every source and every measure we track.
+A catalogue of every open data source usable for OpenStreetMap in Canada, province by province:
+Ontario first, Nova Scotia since 2026-10-30. It records what each source is, what it is good for
+(import / conflate / validate / reference / no), and how far it has been brought into OSM, as
+dated measurements that build up a history. It grows until it covers every source and every
+measure we track. The repository keeps its Ontario name.
 
 Views are generated from it. Today there are three:
 
@@ -40,12 +41,13 @@ All of it is in [`catalogue/`](catalogue/); the format is in
 - `work.csv`: streams of work on a source (an import, a gap-fill, a MapRoulette queue)
 - `synced/addresses.csv`: the address datasets the tracker follows, written by `sync.py`
 - `measures.csv`: dated measurements, append only
-- `portals.csv`: every open-data portal in Ontario, the province's and its public bodies' as
-  well as the municipalities', and a `none-found` row for each municipality or conservation
-  authority without one: the denominator the catalogue grows towards
-- `jurisdictions.csv`: the places and bodies an id can sit under: all 444 municipalities, the
+- `portals.csv`: every open-data portal in the provinces covered, each province's and its
+  public bodies' as well as the municipalities', and a `none-found` row for each municipality or
+  conservation authority without one: the denominator the catalogue grows towards
+- `jurisdictions.csv`: the places and bodies an id can sit under: Ontario's 444 municipalities,
   36 conservation authorities, and the ministries, agencies, school boards and health units
-  found publishing map data
+  found publishing map data; Nova Scotia's 49 municipal units, its departments and the shared
+  GIS bodies that serve its towns
 
 ## Run
 
