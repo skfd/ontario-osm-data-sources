@@ -6825,7 +6825,7 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 |}
 
 === Address points ===
-74 municipal and county address-point datasets (40 parked, 15 onboarding, 12 not usable, 5 available, 1 ongoing, 1 completed).
+75 municipal and county address-point datasets (41 parked, 15 onboarding, 12 not usable, 5 available, 1 ongoing, 1 completed).
 ''In OSM'' is the share of source addresses with no matching OSM address, measured from a
 Geofabrik extract on 2026-08-12 unless the row says otherwise.
 
@@ -6897,6 +6897,8 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://www.lambtongis.ca/arcgis_adaptor/rest/services/OpenData/AddressPoints/MapServer/0 County of Lambton] || Open Government Licence - County of Lambton ||  || 86% of 56,897 missing (2026-08-12) || Import || style="background:#fdf6c8" | Onboarding || [https://github.com/skfd/lambton-address-import import checkout] ||  || OGL variant: LWG review pending; few addresses in OSM yet
 |-
+| [https://services6.arcgis.com/baycHE2iKJaT7Upn/arcgis/rest/services/SDEAddressPts/FeatureServer/3 Municipality of Leamington] || None published (read 2026-10-23) ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || no licence review yet
+|-
 | [https://services3.arcgis.com/KQcdsE7S72bcD7R8/arcgis/rest/services/LG_CivicAddress_OpenData/FeatureServer/0 United Counties of Leeds and Grenville] || Open Government Licence - United Counties of Leeds and Grenville v1.0 ||  || 60% of 54,142 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
 |-
 | [https://services.arcgis.com/YmmKxwNVvLQW5zcm/arcgis/rest/services/L_and_A_County_Civic_Address_Point_%28Public%29/FeatureServer/0 County of Lennox and Addington] || Open Government Licence - County of Lennox and Addington v2.0 ||  || 88% of 26,102 missing (2026-08-12) || Import || style="background:#f4e0d0" | Parked ||  ||  || OGL variant: LWG review pending
@@ -6917,7 +6919,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 | [https://services1.arcgis.com/WxiLK82TWf8W3O3f/arcgis/rest/services/OpenData_Address_Points/FeatureServer/43 Niagara Region] || Open Government Licence - Niagara Region || 2024-06-10 || 79% of 208,004 missing (2026-08-12) || Import || style="background:#e8eef8" | Available ||  ||  || 
 |-
-| [https://services1.arcgis.com/mSGV2hCLXHNsfQqK/arcgis/rest/services/Civic_Addresses/FeatureServer/0 Norfolk County] || Norfolk County Open Data Licence Agreement ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
+| [https://gis.norfolk.ca/arcgis/rest/services/Services_Public_GISviewer/Land_Records_Public/MapServer/2 Norfolk County] || Norfolk County Open Data Licence Agreement ||  ||  || Import || style="background:#f4e0d0" | Parked ||  ||  || custom licence: needs LWG review
 |-
 | [https://services5.arcgis.com/ItUGraUlQOjvSGOV/arcgis/rest/services/CivicAddress_Point/FeatureServer/0 City of North Bay] ||  ||  ||  || Import || style="background:#eeeeee" | Not usable ||  ||  || licence incompatible
 |-
@@ -9089,15 +9091,15 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |-
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/1 RVCA ConservationArea Service — Features] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 263 points in RVCA conservation areas, mostly parking and other facilities by type; a check list for amenities OSM may lack.
+|-
+| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/4 RVCA ConservationArea Service — Structures] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 55 weirs, boardwalks and other structures in conservation areas; boardwalk and weir details OSM trails often lack.
+|-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/6 RVCA ConservationArea Service — CA Trails] || RVCA Open Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 297 trail lines in RVCA conservation areas with maintenance and some trail names, mapped by staff in 2022; a check for OSM paths.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/8 RVCA ConservationArea Service — Conservation Areas] || RVCA Open Data Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 10 RVCA conservation areas with official names, addresses and web links; OSM likely has most, but boundaries and names can be checked.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_LandCover_Cache/MapServer/0 RVCA LandCover Cache — Land Cover] || RVCA Standard Data Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-10-16 || 104,636 land cover polygons classed for 2008, 2014 and 2020; a check list for woods, wetlands and fields in the Rideau watershed.
-|-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/1 RVCA ConservationArea Service — Features] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 263 points in RVCA conservation areas, mostly parking and other facilities by type; a check list for amenities OSM may lack.
-|-
-| [https://gis.rvca.ca/arcgis/rest/services/RVCA_ConservationArea_Service/MapServer/4 RVCA ConservationArea Service — Structures] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 55 weirs, boardwalks and other structures in conservation areas; boardwalk and weir details OSM trails often lack.
 |-
 | [https://gis.rvca.ca/arcgis/rest/services/RVCA_naturalHazardAtlas_Service/MapServer/39 RVCA naturalHazardAtlas Service — Woodlands - RVCA] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-10-15 || 30,401 RVCA woodland polygons classed for 2008, 2014 and 2020 with change flags; a gap list for wooded areas.
 |-
