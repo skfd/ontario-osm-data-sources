@@ -299,6 +299,55 @@ def from_jkan(p: dict) -> list[dict]:
     return rows
 
 
+SOCRATA_GEOMETRY = {"point": "point", "multipoint": "multipoint", "line": "polyline",
+                    "multiline": "polyline", "polygon": "polygon", "multipolygon": "polygon",
+                    "location": "point"}
+SOCRATA_DERIVED = {"chart", "filter", "visualization", "measure", "story", "calendar", "form"}
+
+
+def from_socrata(p: dict) -> list[dict]:
+    """A Socrata site through the discovery API. A map or filtered view of a dataset the site also
+    lists is left out, so each dataset is one row; a map with no parent on the site is kept."""
+    results, offset = [], 0
+    while True:
+        d = get_json(with_param(p["api_url"], f"limit=100&offset={offset}"))
+        got = d.get("results") or []
+        results += got
+        offset += len(got)
+        if not got or offset >= int(d.get("resultSetSize") or 0):
+            break
+    ids = {r["resource"]["id"] for r in results}
+    domain = urllib.parse.urlsplit(p["portal_url"]).netloc
+    rows = []
+    for r in results:
+        res, meta = r["resource"], r.get("metadata") or {}
+        kind = res.get("type") or ""
+        if kind in SOCRATA_DERIVED or (kind in ("map", "filter") and res.get("parent_fid") in ids):
+            continue
+        types = [t.lower() for t in res.get("columns_datatype") or []]
+        geometry = next((SOCRATA_GEOMETRY[t] for t in types if t in SOCRATA_GEOMETRY), "")
+        fields = [f for f in res.get("columns_field_name") or [] if not BORING_FIELDS.match(f)]
+        row = {
+            "origin": "socrata",
+            "dataset": text(res.get("name"), 200),
+            "item_type": f"Socrata {kind}" + (f" ({geometry})" if geometry else ""),
+            "source_url": r.get("permalink") or f"https://{domain}/d/{res['id']}",
+            "geometry": geometry or ("table" if kind == "dataset" else ""),
+            "fields": text(" ".join(fields), 300),
+            "edited": (res.get("updatedAt") or res.get("data_updated_at") or "")[:10],
+            "licence": licence(text(meta.get("license"), 150), p["licence"]),
+            "description": text(res.get("description"), 300),
+        }
+        if geometry and kind in ("dataset", "map"):
+            try:
+                n = get_json(f"https://{domain}/resource/{res['id']}.json?$select=count(*)")
+                row["records"] = str(next(iter(n[0].values()))) if n else ""
+            except (Secured, ServiceError, OSError, ValueError, KeyError, IndexError, StopIteration):
+                pass
+        rows.append(row)
+    return rows
+
+
 def from_custom(p: dict) -> list[dict]:
     """A download page with a JSON list behind it; one without has no api_url and is not swept."""
     if "/metadata-api/" in p["api_url"]:
@@ -309,7 +358,7 @@ def from_custom(p: dict) -> list[dict]:
 
 
 PLATFORM = {"arcgis-hub": from_hub, "ckan": from_ckan, "arcgis-rest": from_rest,
-            "custom": from_custom}
+            "socrata": from_socrata, "custom": from_custom}
 
 
 # ---------------------------------------------------------------- inventory
