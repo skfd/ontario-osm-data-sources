@@ -129,6 +129,10 @@ municipally. Open ends:
   roots an `arcgis-rest` row of its own (reach 2, under the Hub's jurisdiction), sweep them with
   `inventory.py`, let `--copies` take the alternate views, and grade the rest.
 
+- **The wiki view is over MediaWiki's 2 MB (3.3 MB with Nova Scotia, 2.3 MB before).** Nothing
+  is pasted until the catalogue is reviewed, so it blocks nothing yet; the likely fix is one page
+  per province under `Canada/Open data/<Province>`, with the national table and links on the
+  parent page.
 - **Conservation authorities consolidate on 2027-02-01.** The 36 authorities become 9
   regional ones; Long Point, Grand River, Catfish Creek and Kettle Creek become the Eastern
   Lake Erie Regional Conservation Authority. The CA codes in `jurisdictions.csv`, and the ids
@@ -151,6 +155,14 @@ municipally. Open ends:
   Those 50 have their graded tier back; notes naming an id became marks and dropped to tier 2;
   139 naming none now read "A copy of" and keep their grade. 6,269 layers are marked copies.
   Worth a look in review: the rows whose tier moved in commit `5b29458`.
+  **Marks the loose count rule may have made (counted 2026-10-30).** Until today `--copies`
+  took a shared schema and record count as proof from 2 rows up, and between sublayers of one
+  service; that marked two of Windsor's 311 request layers as copies of each other, so the rule
+  now needs 50 rows and different services. Marks already made were left alone. Of Ontario's
+  6,669 marks, 1,177 sit between sublayers of one service (Simcoe 352, Haliburton 290, York 63,
+  Markham 53) and 2,534 share a record count under 50 with their original; some of each were
+  proved another way (same URL, a grader's note), so these are upper bounds on what to review.
+  A wrong mark hides a layer at tier 2.
 - **Copies still not provable.** Left at their own grade:
   - Simcoe: New Tecumseth's public address points (15% fewer than the county's, 4 fields) and
     Orillia's (`addresses-sc-addresspoints`, county field names but empty ADDRESSID)
