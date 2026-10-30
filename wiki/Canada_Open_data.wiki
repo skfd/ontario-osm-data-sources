@@ -1,6 +1,6 @@
 {{Languages|Canada/Open data}}
 Open data that can be used for OpenStreetMap in Canada: what each source is good for, and how
-far work on it has got. Only Ontario is filled in so far; other provinces are welcome.
+far work on it has got. Ontario is filled in so far; other provinces are welcome.
 
 This page is generated from [https://github.com/skfd/ontario-osm-data-sources ontario-osm-data-sources]. Fix a row there. Edit here if you like, and say so on the talk page.
 
@@ -12994,7 +12994,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 
 == Other provinces ==
 Licence status per portal: [[Canada#Open Data]]. Add a section here when you have
-dataset-level detail.
+dataset-level detail. Listed, with nothing catalogued yet: Nova Scotia.
 
 [[Category:Canada]]
 [[Category:Data sources from Canada]]

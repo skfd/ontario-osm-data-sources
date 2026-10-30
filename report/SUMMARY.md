@@ -370,8 +370,8 @@ tracked over time:
 
 ## Coverage of the catalogue
 
-`catalogue/portals.csv` lists every open-data portal found in Ontario and a `none-found` row
-for each municipality that has none. 178 portals are known,
+`catalogue/portals.csv` lists every open-data portal found in Ontario and a
+`none-found` row for each municipality that has none. 178 portals are known,
 169 of them counted through their API: **30536 layers seen, against 32081
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
@@ -383,10 +383,12 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 
 | municipalities | total | 4 own | 3 catalogued | 2 on-server | 1 viewer | 0 none | not surveyed |
 |---|---|---|---|---|---|---|---|
-| upper-tier | 30 | 19 | 0 | 8 | 2 | 1 | 0 |
-| single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
-| lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
-| **all** | 444 | 66 | 16 | 108 | 109 | 145 | 0 |
+| Nova Scotia | 49 | 0 | 0 | 0 | 0 | 0 | 49 |
+| Ontario | 444 | 66 | 16 | 108 | 109 | 145 | 0 |
+| · upper-tier | 30 | 19 | 0 | 8 | 2 | 1 | 0 |
+| · single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
+| · lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
+| **all** | 493 | 66 | 16 | 108 | 109 | 145 | 49 |
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.

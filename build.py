@@ -139,18 +139,50 @@ def summarize(rows) -> str:
     return ", ".join(f"{n} {s.lower()}" for s, n in c.most_common())
 
 
-def wiki_page(sources, juris) -> str:
-    national = [r for r in sources if jurisdiction(r["id"]) == "ca"]
-    prov = [r for r in sources if jurisdiction(r["id"]) == "ca/on"]
-    addresses = [r for r in sources if is_address_dataset(r)]
-    local = [r for r in sources if jurisdiction(r["id"]).count("/") == 2 and not is_address_dataset(r)]
+def provinces(juris) -> list[str]:
+    """Province codes, by name."""
+    return sorted((c for c, j in juris.items() if j["level"] == "province"),
+                  key=lambda c: juris[c]["name"])
+
+
+def within(code: str, prov: str) -> bool:
+    """Is the jurisdiction the province itself or one of its bodies?"""
+    return code == prov or code.startswith(prov + "/")
+
+
+def covered(sources, juris) -> list[str]:
+    """Names of the provinces with a source in the catalogue."""
+    have = {jurisdiction(r["id"]) for r in sources}
+    return [juris[p]["name"] for p in provinces(juris) if any(within(c, p) for c in have)]
+
+
+def site_name(names: list[str]) -> str:
+    """'Ontario open data for OpenStreetMap' while the catalogue covers one or two provinces."""
+    where = " and ".join(names) if 0 < len(names) <= 2 else "Canadian"
+    return f"{where} open data for OpenStreetMap"
+
+
+def wiki_province(code: str, sources, juris) -> str:
+    """One province's section: its own sources, its address points, then each body's layers."""
+    mine = [r for r in sources if within(jurisdiction(r["id"]), code)]
+    prov = [r for r in mine if jurisdiction(r["id"]) == code]
+    addresses = [r for r in mine if is_address_dataset(r)]
+    local = [r for r in mine if jurisdiction(r["id"]) != code and not is_address_dataset(r)]
     by_muni = defaultdict(list)
     for r in local:
         by_muni[jurisdiction(r["id"])].append(r)
     cols = ["licence", "coverage", "feasibility", "status", "tools", "lead", "last_verified",
             "notes"]
-    sections = []
-    for code, every in sorted(by_muni.items(), key=lambda kv: -len(kv[1])):
+    wide = ["provider", "licence", "feasibility", "status", "tools", "last_verified", "notes"]
+    parts = [f"== {juris[code]['name']} ==\n=== Provincial sources ===\n{table(prov, 'dataset', wide)}"]
+    if addresses:
+        parts.append(f"""=== Address points ===
+{len(addresses)} municipal and county address-point datasets ({summarize(addresses)}).
+''In OSM'' is the share of source addresses with no matching OSM address, measured from a
+Geofabrik extract on {SURVEY_DATE} unless the row says otherwise.
+
+{table(addresses, "provider", ["licence", "lwg", "coverage", "feasibility", "status", "tools", "lead", "notes"])}""")
+    for muni, every in sorted(by_muni.items(), key=lambda kv: -len(kv[1])):
         # The sweep lists every layer; the wiki shows the ones worth a mapper's time and
         # index.html all of them. A page over 2 MB will not save.
         rs = [r for r in every if not r["swept"] or int(r["tier"] or 0) >= WIKI_MIN_TIER]
@@ -162,13 +194,22 @@ def wiki_page(sources, juris) -> str:
             intro += (f" {hidden} more swept layers scored below {WIKI_MIN_TIER}; they are in "
                       f"the [{PAGES_URL} catalogue].")
         intro += "\n\n" if intro else ""
-        sections.append(f"=== {juris[code]['name']} ===\n{intro}"
-                        + table(rs, "dataset", cols[:1] + (["tier"] if scored else []) + cols[1:]))
-    munis_text = "\n\n".join(sections)
+        parts.append(f"=== {juris[muni]['name']} ===\n{intro}"
+                     + table(rs, "dataset", cols[:1] + (["tier"] if scored else []) + cols[1:]))
+    return "\n\n".join(parts)
+
+
+def wiki_page(sources, juris) -> str:
+    national = [r for r in sources if jurisdiction(r["id"]) == "ca"]
     wide = ["provider", "licence", "feasibility", "status", "tools", "last_verified", "notes"]
+    names = covered(sources, juris)
+    filled = [p for p in provinces(juris) if juris[p]["name"] in names]
+    others = [juris[p]["name"] for p in provinces(juris) if p not in filled]
+    so_far = (f"{', '.join(names[:-1])} and {names[-1]} are" if len(names) > 1
+              else f"{names[0]} is" if names else "No province is")
     return f"""{{{{Languages|Canada/Open data}}}}
 Open data that can be used for OpenStreetMap in Canada: what each source is good for, and how
-far work on it has got. Only Ontario is filled in so far; other provinces are welcome.
+far work on it has got. {so_far} filled in so far; other provinces are welcome.
 
 {PREAMBLE}
 
@@ -178,22 +219,10 @@ far work on it has got. Only Ontario is filled in so far; other provinces are we
 == National sources ==
 {table(national, "dataset", wide)}
 
-== Ontario ==
-=== Provincial sources ===
-{table(prov, "dataset", wide)}
-
-=== Address points ===
-{len(addresses)} municipal and county address-point datasets ({summarize(addresses)}).
-''In OSM'' is the share of source addresses with no matching OSM address, measured from a
-Geofabrik extract on {SURVEY_DATE} unless the row says otherwise.
-
-{table(addresses, "provider", ["licence", "lwg", "coverage", "feasibility", "status", "tools", "lead", "notes"])}
-
-{munis_text}
-
+{chr(10).join(wiki_province(p, sources, juris) + chr(10) for p in filled)}
 == Other provinces ==
 Licence status per portal: [[Canada#Open Data]]. Add a section here when you have
-dataset-level detail.
+dataset-level detail.{(" Listed, with nothing catalogued yet: " + ", ".join(others) + ".") if others else ""}
 
 [[Category:Canada]]
 [[Category:Data sources from Canada]]
@@ -313,8 +342,8 @@ tracked over time:
 
 
 def coverage(sources, juris, portals) -> str:
-    """How much of what Ontario publishes the catalogue has looked at: the portal inventory is
-    the denominator, catalogued sources the numerator."""
+    """How much of what the provinces publish the catalogue has looked at: the portal inventory
+    is the denominator, catalogued sources the numerator."""
     catalogued = Counter(jurisdiction(r["id"]) for r in sources)
     by_j = defaultdict(list)
     for p in portals:
@@ -329,12 +358,27 @@ def coverage(sources, juris, portals) -> str:
     best = {c: max(int(p["reach"]) for p in ps) for c, ps in by_j.items()}
     grades = sorted(REACH, reverse=True)
     tiers = [("upper", "upper-tier"), ("single", "single-tier"), ("lower", "lower-tier")]
-    t_rows = []
-    for tier, label in tiers:
-        codes = [c for c, j in juris.items() if j["tier"] == tier]
+
+    def reach_row(label, codes):
         n = Counter(best[c] for c in codes if c in best)
-        t_rows.append([label, len(codes)] + [n[g] for g in grades] + [len(codes) - n.total()])
-    t_rows.append(["**all**"] + [sum(r[i] for r in t_rows) for i in range(1, len(grades) + 3)])
+        return [label, len(codes)] + [n[g] for g in grades] + [len(codes) - n.total()]
+
+    # one row per province, and Ontario's split by municipal tier under it
+    t_rows, p_sums = [], []
+    for prov in provinces(juris):
+        codes = [c for c, j in juris.items() if j["level"] == "municipal" and within(c, prov)]
+        if not codes:
+            continue
+        row = reach_row(juris[prov]["name"], codes)
+        t_rows.append(row)
+        p_sums.append(row)
+        for tier, label in tiers:
+            sub = [c for c in codes if juris[c]["tier"] == tier]
+            if sub:
+                t_rows.append(reach_row(f"· {label}", sub))
+    t_rows.append(["**all**"] + [sum(r[i] for r in p_sums) for i in range(1, len(grades) + 3)])
+    surveyed = [juris[p]["name"] for p in provinces(juris)
+                if any(j["level"] == "municipal" and within(c, p) and c in best for c, j in juris.items())]
 
     p_rows = []
     for plat in PLATFORMS[:-1]:
@@ -356,8 +400,8 @@ def coverage(sources, juris, portals) -> str:
 
     return f"""## Coverage of the catalogue
 
-`catalogue/portals.csv` lists every open-data portal found in Ontario and a `none-found` row
-for each municipality that has none. {len(set(p["portal_url"] for p in live))} portals are known,
+`catalogue/portals.csv` lists every open-data portal found in {" and ".join(surveyed)} and a
+`none-found` row for each municipality that has none. {len(set(p["portal_url"] for p in live))} portals are known,
 {len(counted)} of them counted through their API: **{seen} layers seen, against {in_counted}
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
@@ -607,6 +651,9 @@ def th(*cols: tuple[str, str]) -> str:
                    for label, attrs in cols)
 
 
+SITE = "Open data for OpenStreetMap"  # main() names the provinces covered
+
+
 def shell(title: str, here: str, intro: str, body: str) -> str:
     """One page of the site: the shared header with its navigation, then the body."""
     pages = [("index.html", "Datasets"), ("portals.html", "Portals")]
@@ -626,7 +673,7 @@ def shell(title: str, here: str, intro: str, body: str) -> str:
 </head>
 <body>
 <header>
-<h1>Ontario open data for OpenStreetMap</h1>
+<h1>{SITE}</h1>
 <nav>{nav}</nav>
 {intro}
 </header>
@@ -658,7 +705,8 @@ def html_page(sources, measures, juris, rows) -> str:
     deferred = " ".join(f"{g}:rows-{g.lower()}.js?v={sha1(deferred_rows(g, rows[g]).encode()).hexdigest()[:8]}"
                         for g in DEFERRED)
     shown = sum(len(rows[g]) for g in grades if g not in DEFERRED)
-    intro = f"""<p>Every open data source we know of that could feed OSM in Ontario: what it is good
+    where = " and ".join(covered(sources, juris))
+    intro = f"""<p>Every open data source we know of that could feed OSM in {where}: what it is good
 for, and how much of it is already in OSM. <b>{len(sources)} sources</b> ({summarize(sources)});
 {len(measures)} measures. Generated {date.today()}.</p>
 <p class="muted grades"><i>Value</i> is what OSM would gain (<a href="{REPO_URL}/blob/main/catalogue/GRADING.md">how it is graded</a>):
@@ -681,7 +729,7 @@ you pick them. Grades are a first pass and unreviewed.</p>
 </tbody>
 </table>
 </section>"""
-    return shell("Ontario open data for OpenStreetMap", "index.html", intro, body)
+    return shell(SITE, "index.html", intro, body)
 
 
 def deferred_rows(g: str, rows: list[str]) -> str:
@@ -691,12 +739,19 @@ def deferred_rows(g: str, rows: list[str]) -> str:
 
 def portals_page(sources, juris, portals) -> str:
     live = [p for p in portals if p["platform"] != "none-found"]
-    munis = {c for c, j in juris.items() if j["tier"]}
+    surveyed = {p["jurisdiction"] for p in portals}
+    provs = [p for p in provinces(juris) if any(within(c, p) for c in surveyed)]
+    munis = {c for c, j in juris.items() if j["level"] == "municipal" and any(within(c, p) for p in provs)}
     with_portal = {p["jurisdiction"] for p in live} & munis
-    portal_bar = bar("p", facet("p-tier", "Tier", plain(["province"] + list(TIER_LABEL.values())))
+    where = " and ".join(juris[p]["name"] for p in provs) + (" publish" if len(provs) > 1 else " publishes")
+    levels = sorted({juris[p["jurisdiction"]]["level"] for p in portals} - {"municipal"})
+    tiers = [TIER_LABEL[t] for t in TIER_LABEL if any(juris[p["jurisdiction"]]["tier"] == t for p in portals)]
+    if any(juris[p["jurisdiction"]]["level"] == "municipal" and not juris[p["jurisdiction"]]["tier"] for p in portals):
+        tiers.append("municipal")
+    portal_bar = bar("p", facet("p-tier", "Tier", plain(levels + tiers))
                      + facet("p-reach", "Reach", plain(f"{g} {REACH[g]}" for g in sorted(REACH, reverse=True)))
                      + facet("p-platform", "Platform", plain(PLATFORMS)))
-    intro = f"""<p>Where Ontario publishes open data: the denominator the catalogue grows towards.
+    intro = f"""<p>Where {where} open data: the denominator the catalogue grows towards.
 {len(with_portal)} of {len(munis)} municipalities have data reachable on a portal or map server.
 <i>Reach</i> grades how good the data is likely to be, by how it is published: 4 its own
 catalogue, 3 listed in a county catalogue, 2 layers on a map server no catalogue lists, 1 a
@@ -714,7 +769,7 @@ follow the number to see them.</p>"""
 </tbody>
 </table>
 </section>"""
-    return shell("Portals · Ontario open data for OpenStreetMap", "portals.html", intro, body)
+    return shell(f"Portals · {SITE}", "portals.html", intro, body)
 
 
 CSS = """
@@ -1110,7 +1165,9 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
 
 
 def main():
+    global SITE
     sources, measures, juris, portals = load()
+    SITE = site_name(covered(sources, juris))
     last = latest(measures)
     for r in sources:
         r["coverage"] = measure_text(last.get(r["id"]))
