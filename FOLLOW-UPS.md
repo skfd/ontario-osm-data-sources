@@ -72,6 +72,10 @@ downloads as hand rows, and repaired the copy marks (below).
   subtract catalogued and tracked service paths: `rootcheck.py`. Another case from the board
   and unit sweep: Peel's Hub sits on `services6.arcgis.com/ONZht79c8QWuX759` (321 services),
   whose six public `PHDZ_*` health data-zone services the Hub does not list.
+  **Decided 2026-10-30: yes, the catalogue holds them.** A publicly served layer is a candidate
+  source whether or not its publisher catalogued it. Work to follow: give each of the 57 org
+  roots an `arcgis-rest` row of its own (reach 2, under the Hub's jurisdiction), sweep them with
+  `inventory.py`, let `--copies` take the alternate views, and grade the rest.
 
 - **Conservation authorities consolidate on 2027-02-01.** The 36 authorities become 9
   regional ones; Long Point, Grand River, Catfish Creek and Kettle Creek become the Eastern
@@ -136,6 +140,9 @@ downloads as hand rows, and repaired the copy marks (below).
   - source-water protection zones (environment)
   - cartographic masks and label layers (maps)
   - Survey123 forms and staff records (statistics or community)
+- **Letters not sent.** The two drafts of 2026-10-11 in `wiki/edits/`, the follow-up to the OSMF
+  Licensing Working Group and the West Parry Sound scope question, were never sent, and there is
+  no plan yet to send them (2026-10-30).
 - **Licence emails.** Layers of use with no open licence have the status `No licence`;
   `report/SUMMARY.md` "Licences to ask for" lists those graded 3 to 5 by jurisdiction. The
   provincial bodies add some good ones: the Heritage Trust's plaques (terms forbid
