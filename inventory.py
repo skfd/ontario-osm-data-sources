@@ -49,7 +49,7 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
                            r"st_length.*|created_.*|last_edited_.*)$", re.I)
 # Pupil records a board or its consultant left public: never listed, so the catalogue does not
 # point anyone at them.
-PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen", re.I)
+PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|students?_\w*|parent_?guardians?_\w*", re.I)
 
 
 def text(s, limit: int) -> str:
@@ -635,7 +635,8 @@ def copies():
     groups = {}
     for r in rows:
         m = meta.get(r["id"])
-        if m and m["records"] and int(m["records"]) >= 2 and m["fields"]:
+        # Under 50 rows a shared schema and count prove little (Windsor's 311 request layers).
+        if m and m["records"] and int(m["records"]) >= 50 and m["fields"]:
             k = (m["jurisdiction"], m["geometry"], m["records"], m["fields"].lower())
             groups.setdefault(k, []).append(r)
         if m and m["records"] and int(m["records"]) >= 1000:  # a big exact count is a fingerprint
@@ -649,6 +650,11 @@ def copies():
                               -int(meta[r["id"]]["edited"].replace("-", "") or 0),
                               len(r["id"])))
         for r in g if outside else g[1:]:
+            # Two sublayers of one service share its schema by construction (Windsor's 311
+            # request layers, 65 rows each): another layer, not a copy.
+            if service(r["source_url"]) and service(r["source_url"]) == service(g[0]["source_url"]) \
+                    and layer(r["source_url"]) != layer(g[0]["source_url"]) and not outside:
+                continue
             original.setdefault(r["id"], outside or g[0]["id"])
 
     def root(i: str) -> str:

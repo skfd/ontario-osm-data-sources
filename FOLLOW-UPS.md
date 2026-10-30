@@ -16,8 +16,18 @@ downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10
   view, public or dashboard in their names and about 1,000 report zero records, so many will be
   copies or empty. Grading was held for a go-ahead because of the size. Mississauga (1,757),
   the province's two orgs (2,452), Dufferin, Oakville and Brampton are the largest.
-- **Nova Scotia (swept 2026-10-30).** Its batches are cut with the above; grade them first,
-  they are the smaller set.
+- **Nova Scotia is graded (2026-10-30):** 4,764 layers in 53 batches, graded by eleven agents
+  the same day. Tiers: 39 at 5 (every municipal civic-address and building-footprint layer, the
+  province's NSCAF civic points and 504,081 footprints), 82 at 4, 391 at 3; 911 marked copies.
+  No municipal layer is licensed except Halifax's (Open Government Licence - Halifax) and some of
+  Cumberland's (ODbL), so Nova Scotia's tier-5 layers are mostly `No licence`: the licence
+  emails to write first. Two Pictou County Survey123 forms of pupil and parent records were
+  dropped from the listing; `PERSONAL_FIELDS` now catches `students_*` and `parentguardians_*`
+  fields. Graders flagged many other layers with personal data (owner names on parcels, contact
+  details on forms, historical vital records); they are tier 1 with the fact in the note.
+  `--copies` was tightened after it marked two of Windsor's 311 request layers as copies of
+  each other: a shared schema and count prove nothing under 50 rows or between sublayers of one
+  service.
 
 ## Nova Scotia (surveyed 2026-10-30)
 
