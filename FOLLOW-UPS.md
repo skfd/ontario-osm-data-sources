@@ -53,7 +53,7 @@ downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10
   dates), a Peterborough County student programme form, three Oakville Youth Advisory Council
   applications (minors' names, ages, schools, parental consent), a Mississauga youth challenge
   form (school, grade, email), West Parry Sound's Kids in the Biosphere registrations
-  (children's names and ages) and Grey County's two layers of homeless encampment locations.
+  (children's names and ages) and a county's two layers of homeless encampment locations.
   Dropping the encampments widens the rule beyond children: undo it in `PERSONAL_FIELDS` if
   that is not wanted. The filter now matches contact fields of students and parents, children's
   names, homelessness duration, and a school-grade-email set; it no longer matches a school
