@@ -179,6 +179,24 @@ municipally. Open ends:
   including a layer named "CONFIDENTIAL DO NOT PRINT - MPAC Parcel 2009" (North Bay-Mattawa)
   and "Parcels (Owners)" (Conservation Sudbury). They are graded 1; the authorities may want to
   know.
+- **Form answers left readable by anyone (checked 2026-10-31).** Every layer of children's or
+  homeless people's records the sweeps found is the hidden layer behind a Survey123 form. A
+  public form must accept submissions from anyone; whether anyone can also read the answers is
+  a separate sharing setting, so the sweep sees only the publishers who set it wrong. Other
+  municipalities collect the same things (programme sign-ups, outreach logs) and keep them
+  private. A count-only query, which returns no records, shows two still exposed:
+  - **A county's homeless-outreach log:** 71 encampment locations with population, how long
+    people have been homeless, services needed and housing plans. Anyone can read, download and
+    edit it, and it was edited on 2026-05-29, so it is in use. The county should be told, and
+    soon: an editable layer can be altered as well as read.
+  - **A city's youth challenge form:** 6 entries with school, grade and email, readable and
+    editable by anyone; last edited 2021.
+
+  Two others accept submissions only, so their answers are hidden and only the field names show:
+  a children's activity-kit registration (2019) and a youth advisory council application (2026).
+  They were dropped from the listing anyway. Which publishers and services these are is kept out
+  of this public file, so it does not point anyone at them: it is in the gitignored
+  `cache/scratch/exposed-forms.md`.
 - **Copy marks repaired (2026-10-16).** `copies()` took any first word after "Copy of" as
   the original, so prose ("Copy of the county's layer") and stray punctuation ("Copy of
   <id>;") counted as marks, and 50 originals were demoted to copies of themselves or of "the".
