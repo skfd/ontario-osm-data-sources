@@ -456,9 +456,9 @@ tracked over time:
 
 ## Coverage of the catalogue
 
-`catalogue/portals.csv` lists every open-data portal found in Nova Scotia and Ontario and a
-`none-found` row for each municipality that has none. 282 portals are known,
-271 of them counted through their API: **55358 layers seen, against 52235
+`catalogue/portals.csv` lists every open-data portal found in New Brunswick and Nova Scotia and Ontario and a
+`none-found` row for each municipality that has none. 314 portals are known,
+303 of them counted through their API: **62011 layers seen, against 52235
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
@@ -469,33 +469,34 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 
 | municipalities | total | 4 own | 3 catalogued | 2 on-server | 1 viewer | 0 none | not surveyed |
 |---|---|---|---|---|---|---|---|
-| New Brunswick | 77 | 0 | 0 | 0 | 0 | 0 | 77 |
+| New Brunswick | 77 | 5 | 0 | 57 | 13 | 2 | 0 |
 | Nova Scotia | 49 | 6 | 2 | 25 | 6 | 10 | 0 |
 | Ontario | 444 | 66 | 16 | 108 | 109 | 145 | 0 |
 | · upper-tier | 30 | 19 | 0 | 8 | 2 | 1 | 0 |
 | · single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
 | · lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
-| **all** | 570 | 72 | 18 | 133 | 115 | 155 | 77 |
+| **all** | 570 | 77 | 18 | 190 | 128 | 157 | 0 |
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.
 
 | platform | portals | layers seen |
 |---|---|---|
-| arcgis-hub | 92 | 10312 |
-| arcgis-rest | 176 | 38900 |
+| arcgis-hub | 98 | 14047 |
+| arcgis-rest | 202 | 41818 |
 | ckan | 4 | 4071 |
 | socrata | 2 | 1979 |
 | custom | 8 | 96 |
 
 Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
 100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
-worked from the server behind its Hub). The 159 municipalities found only on a county or
+worked from the server behind its Hub). The 207 municipalities found only on a county or
 consortium portal are in `portals.csv`.
 
 | jurisdiction | platform | layers seen | sources catalogued | share |
 |---|---|---|---|---|
 | Ontario | arcgis-hub, arcgis-rest, ckan | 5910 | 5834 | 98.7% |
+| Moncton | arcgis-hub, arcgis-rest | 3178 |  |  |
 | Conservation Ontario | arcgis-hub, arcgis-rest | 2793 | 2732 | 97.8% |
 | Nova Scotia | arcgis-rest, socrata | 2236 | 2008 | 89.8% |
 | Mississauga | arcgis-hub, arcgis-rest | 2122 | 2081 | 98.1% |
@@ -504,6 +505,7 @@ consortium portal are in `portals.csv`.
 | Service New Brunswick | arcgis-rest, custom | 1274 |  |  |
 | Haliburton | arcgis-rest | 1042 | 1155 | 110.8% |
 | Ottawa | arcgis-hub, arcgis-rest | 1024 | 998 | 97.5% |
+| Saint John | arcgis-hub, arcgis-rest | 1003 |  |  |
 | Hamilton | arcgis-hub, arcgis-rest | 924 | 796 | 86.1% |
 | Leeds and Grenville | arcgis-hub, arcgis-rest | 859 | 853 | 99.3% |
 | Dufferin | arcgis-hub, arcgis-rest | 817 | 813 | 99.5% |
@@ -532,6 +534,7 @@ consortium portal are in `portals.csv`.
 | New Brunswick Department of Natural Resources | arcgis-rest | 530 |  |  |
 | Toronto and Region Conservation Authority | arcgis-hub, arcgis-rest, ckan | 513 | 653 | 127.3% |
 | Elgin | arcgis-hub, arcgis-rest | 480 | 516 | 107.5% |
+| Fredericton | arcgis-hub, arcgis-rest | 465 |  |  |
 | Kawartha Lakes | arcgis-hub, arcgis-rest | 461 | 451 | 97.8% |
 | Windsor | arcgis-hub, arcgis-rest | 450 | 453 | 100.7% |
 | Frontenac | arcgis-hub, arcgis-rest | 445 | 477 | 107.2% |
@@ -554,6 +557,7 @@ consortium portal are in `portals.csv`.
 | Cambridge | arcgis-hub, arcgis-rest | 306 | 309 | 101.0% |
 | New Brunswick Department of Environment and Local Government | arcgis-rest | 305 |  |  |
 | Region of Waterloo | arcgis-hub, arcgis-rest | 303 | 332 | 109.6% |
+| Southeast Regional Service Commission | arcgis-hub, arcgis-rest | 295 |  |  |
 | Newmarket | arcgis-hub, arcgis-rest | 276 | 261 | 94.6% |
 | Trans Canada Trail | arcgis-rest | 266 | 269 | 101.1% |
 | Milton | arcgis-hub, arcgis-rest | 264 | 267 | 101.1% |
@@ -569,15 +573,21 @@ consortium portal are in `portals.csv`.
 | Nova Scotia Department of Natural Resources and Renewables | arcgis-rest | 214 | 245 | 114.5% |
 | Lunenburg District | arcgis-rest | 200 | 200 | 100.0% |
 | Colchester | arcgis-rest | 192 | 192 | 100.0% |
+| Rothesay | arcgis-rest | 192 |  |  |
+| Edmundston | arcgis-hub, arcgis-rest | 186 |  |  |
 | Thames Valley District School Board | arcgis-rest | 185 | 185 | 100.0% |
 | Cornwall | arcgis-hub, arcgis-rest | 181 | 140 | 77.3% |
 | Hastings | arcgis-hub, arcgis-rest | 174 | 166 | 95.4% |
 | Muskoka | arcgis-hub, arcgis-rest | 174 | 205 | 117.8% |
 | Cape Breton | arcgis-rest | 173 | 178 | 102.9% |
 | York Catholic District School Board | arcgis-rest | 167 | 219 | 131.1% |
+| Acadian Peninsula Regional Service Commission | arcgis-rest | 166 |  |  |
 | Lake Simcoe Region Conservation Authority | arcgis-hub, arcgis-rest | 166 | 91 | 54.8% |
+| Fundy Regional Service Commission | arcgis-rest | 159 |  |  |
 | Amherstburg | arcgis-hub, arcgis-rest | 153 | 160 | 104.6% |
 | Central Lake Ontario Conservation Authority | arcgis-hub, arcgis-rest | 153 | 219 | 143.1% |
+| Capital Region Service Commission | arcgis-rest | 152 |  |  |
+| Kent Regional Service Commission | arcgis-rest | 151 |  |  |
 | Cumberland | arcgis-hub, arcgis-rest | 148 | 125 | 84.5% |
 | Cobourg | arcgis-hub, arcgis-rest | 146 | 139 | 95.2% |
 | Owen Sound | arcgis-rest | 144 | 146 | 101.4% |
@@ -587,9 +597,11 @@ consortium portal are in `portals.csv`.
 | Barrie | arcgis-hub, arcgis-rest | 134 | 308 | 229.9% |
 | Caledon | arcgis-hub, arcgis-rest | 133 | 134 | 100.8% |
 | North Bay | arcgis-rest | 125 | 128 | 102.4% |
+| Southwest Regional Service Commission | arcgis-rest | 124 |  |  |
 | Cataraqui Conservation | arcgis-rest | 119 | 147 | 123.5% |
 | East Hants | arcgis-hub, arcgis-rest | 117 | 91 | 77.8% |
 | Pictou County | arcgis-hub, arcgis-rest | 116 | 113 | 97.4% |
+| Bathurst | arcgis-hub, arcgis-rest | 114 |  |  |
 | Huron | arcgis-hub, arcgis-rest | 114 | 89 | 78.1% |
 | Norfolk | arcgis-hub, arcgis-rest | 110 | 88 | 80.0% |
 | Grand River Conservation Authority | arcgis-rest, custom | 108 | 111 | 102.8% |
@@ -602,26 +614,33 @@ consortium portal are in `portals.csv`.
 | Brantford | arcgis-hub, arcgis-rest | 93 | 83 | 89.2% |
 | Meaford | arcgis-rest | 88 | 104 | 118.2% |
 | Prince Edward County | arcgis-hub, arcgis-rest | 87 | 85 | 97.7% |
+| Tracadie | arcgis-rest | 83 |  |  |
 | Perth | arcgis-rest | 81 | 82 | 101.2% |
 | Sault Ste. Marie | arcgis-rest | 74 | 281 | 379.7% |
 | Nova Scotia Department of Environment and Climate Change | arcgis-rest | 68 | 71 | 104.4% |
 | District School Board of Niagara | arcgis-rest | 66 | 66 | 100.0% |
 | Eastern District Planning Commission | arcgis-rest | 65 | 65 | 100.0% |
 | Waterloo Region District School Board | arcgis-rest | 63 | 59 | 93.7% |
+| Dieppe | arcgis-rest | 61 |  |  |
 | Conservation Halton | arcgis-hub, arcgis-rest | 59 | 61 | 103.4% |
 | Wolfville | arcgis-rest | 57 | 64 | 112.3% |
 | Elliot Lake | arcgis-rest | 55 | 55 | 100.0% |
 | Carleton Place | arcgis-rest | 53 | 56 | 105.7% |
+| Northwest Regional Service Commission | arcgis-rest | 53 |  |  |
 | Halton District School Board | arcgis-rest | 52 | 57 | 109.6% |
 | Niagara Peninsula Conservation Authority | arcgis-hub, arcgis-rest | 52 | 57 | 109.6% |
 | Ontario Ministry of Energy and Mines | arcgis-rest | 49 | 54 | 110.2% |
 | North Bay Parry Sound District Health Unit | arcgis-rest | 48 | 48 | 100.0% |
 | Quinte Conservation | arcgis-hub, arcgis-rest | 48 | 34 | 70.8% |
+| Eastern Charlotte | arcgis-rest | 47 |  |  |
 | Stratford | arcgis-rest | 47 | 50 | 106.4% |
 | Ontario Geological Survey | arcgis-hub, arcgis-rest, custom | 46 | 69 | 150.0% |
 | Argyle | arcgis-rest | 45 | 47 | 104.4% |
 | Mississippi Mills | arcgis-hub, arcgis-rest | 44 | 38 | 86.4% |
+| Greater Miramichi Regional Service Commission | arcgis-rest | 43 |  |  |
 | Annapolis Valley Local Information Utility | arcgis-hub, arcgis-rest | 42 | 28 | 66.7% |
+| Campbellton | arcgis-rest | 42 |  |  |
+| Quispamsis | arcgis-rest | 42 |  |  |
 | Halton Catholic District School Board | arcgis-rest | 41 | 135 | 329.3% |
 | Welland | arcgis-hub | 41 | 68 | 165.9% |
 | Kenora | arcgis-rest | 40 | 40 | 100.0% |
@@ -632,14 +651,17 @@ consortium portal are in `portals.csv`.
 | Simcoe Muskoka District Health Unit | arcgis-rest | 36 | 39 | 108.3% |
 | Peterborough Victoria Northumberland and Clarington Catholic District School Board | arcgis-rest | 35 | 35 | 100.0% |
 | Middlesex-London Health Unit | arcgis-rest | 34 | 35 | 102.9% |
+| Restigouche Regional Service Commission | arcgis-rest | 34 |  |  |
 | Hamilton Conservation Authority | arcgis-hub | 32 | 32 | 100.0% |
 | Grand Erie Public Health | arcgis-rest | 28 | 29 | 103.6% |
 | Espanola | arcgis-rest | 27 | 27 | 100.0% |
 | Wellington-Dufferin-Guelph Public Health | arcgis-rest | 27 | 27 | 100.0% |
+| Oromocto | arcgis-rest | 26 |  |  |
 | Stewiacke | arcgis-hub | 26 | 24 | 92.3% |
 | Alcohol and Gaming Commission of Ontario | arcgis-rest | 25 | 25 | 100.0% |
 | Southeast Public Health | arcgis-rest | 24 | 17 | 70.8% |
 | Bruce | arcgis-hub | 23 | 19 | 82.6% |
+| Miramichi | arcgis-rest | 23 |  |  |
 | New Brunswick Department of Justice and Public Safety | arcgis-rest | 23 |  |  |
 | New Brunswick Department of Health | arcgis-rest | 22 |  |  |
 | Oxford | arcgis-hub | 21 | 22 | 104.8% |
@@ -649,6 +671,7 @@ consortium portal are in `portals.csv`.
 | Upper Thames River Conservation Authority | arcgis-hub | 19 | 19 | 100.0% |
 | Yarmouth | arcgis-rest | 18 | 18 | 100.0% |
 | Ottawa Catholic District School Board | arcgis-rest | 13 | 13 | 100.0% |
+| Chaleur Regional Service Commission | arcgis-rest | 12 |  |  |
 | Huntsville | arcgis-hub | 12 | 13 | 108.3% |
 | Toronto Catholic District School Board | arcgis-rest | 12 | 12 | 100.0% |
 | Haldimand | arcgis-hub | 11 | 12 | 109.1% |
@@ -666,6 +689,7 @@ consortium portal are in `portals.csv`.
 | Nova Scotia Department of Agriculture | arcgis-rest | 4 | 4 | 100.0% |
 | Brockville | arcgis-rest | 3 | 34 | 1133.3% |
 | Ontario Heritage Trust | arcgis-rest | 3 | 3 | 100.0% |
+| Hampton | arcgis-rest | 2 |  |  |
 | Elections Ontario | custom | — | 2 |  |
 | Erin | custom | — | 1 |  |
 | Metrolinx | custom | — | 8 |  |
