@@ -457,8 +457,8 @@ tracked over time:
 ## Coverage of the catalogue
 
 `catalogue/portals.csv` lists every open-data portal found in Nova Scotia and Ontario and a
-`none-found` row for each municipality that has none. 270 portals are known,
-260 of them counted through their API: **52262 layers seen, against 52235
+`none-found` row for each municipality that has none. 282 portals are known,
+271 of them counted through their API: **55358 layers seen, against 52235
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
@@ -483,14 +483,14 @@ higher than a Hub's count of curated datasets.
 | platform | portals | layers seen |
 |---|---|---|
 | arcgis-hub | 92 | 10312 |
-| arcgis-rest | 166 | 36504 |
+| arcgis-rest | 176 | 38900 |
 | ckan | 4 | 4071 |
-| socrata | 1 | 1279 |
-| custom | 7 | 96 |
+| socrata | 2 | 1979 |
+| custom | 8 | 96 |
 
 Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
 100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
-worked from the server behind its Hub). The 158 municipalities found only on a county or
+worked from the server behind its Hub). The 159 municipalities found only on a county or
 consortium portal are in `portals.csv`.
 
 | jurisdiction | platform | layers seen | sources catalogued | share |
@@ -501,6 +501,7 @@ consortium portal are in `portals.csv`.
 | Mississauga | arcgis-hub, arcgis-rest | 2122 | 2081 | 98.1% |
 | Brampton | arcgis-hub, arcgis-rest | 1394 | 1257 | 90.2% |
 | Simcoe | arcgis-rest | 1286 | 1451 | 112.8% |
+| Service New Brunswick | arcgis-rest, custom | 1274 |  |  |
 | Haliburton | arcgis-rest | 1042 | 1155 | 110.8% |
 | Ottawa | arcgis-hub, arcgis-rest | 1024 | 998 | 97.5% |
 | Hamilton | arcgis-hub, arcgis-rest | 924 | 796 | 86.1% |
@@ -510,6 +511,7 @@ consortium portal are in `portals.csv`.
 | Oakville | arcgis-hub, arcgis-rest | 808 | 873 | 108.0% |
 | Ontario Ministry of Agriculture, Food and Agribusiness | arcgis-hub, arcgis-rest | 789 | 821 | 104.1% |
 | Niagara | arcgis-hub, arcgis-rest, ckan | 745 | 710 | 95.3% |
+| New Brunswick | socrata | 700 |  |  |
 | Halifax | arcgis-hub, arcgis-rest | 684 | 460 | 67.3% |
 | Kingston | arcgis-hub, arcgis-rest | 679 | 625 | 92.0% |
 | Niagara Falls | arcgis-hub, arcgis-rest | 648 | 357 | 55.1% |
@@ -527,6 +529,7 @@ consortium portal are in `portals.csv`.
 | Northumberland | arcgis-rest | 539 | 603 | 111.9% |
 | Peel | arcgis-hub, arcgis-rest | 531 | 551 | 103.8% |
 | Watson & Associates Economists | arcgis-rest | 531 | 535 | 100.8% |
+| New Brunswick Department of Natural Resources | arcgis-rest | 530 |  |  |
 | Toronto and Region Conservation Authority | arcgis-hub, arcgis-rest, ckan | 513 | 653 | 127.3% |
 | Elgin | arcgis-hub, arcgis-rest | 480 | 516 | 107.5% |
 | Kawartha Lakes | arcgis-hub, arcgis-rest | 461 | 451 | 97.8% |
@@ -549,6 +552,7 @@ consortium portal are in `portals.csv`.
 | Stormont, Dundas and Glengarry | arcgis-rest | 311 | 315 | 101.3% |
 | Vaughan | arcgis-rest | 311 | 318 | 102.3% |
 | Cambridge | arcgis-hub, arcgis-rest | 306 | 309 | 101.0% |
+| New Brunswick Department of Environment and Local Government | arcgis-rest | 305 |  |  |
 | Region of Waterloo | arcgis-hub, arcgis-rest | 303 | 332 | 109.6% |
 | Newmarket | arcgis-hub, arcgis-rest | 276 | 261 | 94.6% |
 | Trans Canada Trail | arcgis-rest | 266 | 269 | 101.1% |
@@ -559,6 +563,7 @@ consortium portal are in `portals.csv`.
 | Wellington | arcgis-rest | 241 | 252 | 104.6% |
 | Middlesex | arcgis-hub, arcgis-rest | 240 | 245 | 102.1% |
 | Thunder Bay | arcgis-hub, arcgis-rest | 240 | 184 | 76.7% |
+| New Brunswick Department of Tourism, Heritage and Culture | arcgis-rest | 234 |  |  |
 | Annapolis | arcgis-rest | 233 | 234 | 100.4% |
 | London | arcgis-hub | 232 | 231 | 99.6% |
 | Nova Scotia Department of Natural Resources and Renewables | arcgis-rest | 214 | 245 | 114.5% |
@@ -635,6 +640,8 @@ consortium portal are in `portals.csv`.
 | Alcohol and Gaming Commission of Ontario | arcgis-rest | 25 | 25 | 100.0% |
 | Southeast Public Health | arcgis-rest | 24 | 17 | 70.8% |
 | Bruce | arcgis-hub | 23 | 19 | 82.6% |
+| New Brunswick Department of Justice and Public Safety | arcgis-rest | 23 |  |  |
+| New Brunswick Department of Health | arcgis-rest | 22 |  |  |
 | Oxford | arcgis-hub | 21 | 22 | 104.8% |
 | Conseil des écoles publiques de l'Est de l'Ontario | arcgis-rest | 20 | 20 | 100.0% |
 | Grand Erie District School Board | arcgis-rest | 20 | 20 | 100.0% |
@@ -646,6 +653,7 @@ consortium portal are in `portals.csv`.
 | Toronto Catholic District School Board | arcgis-rest | 12 | 12 | 100.0% |
 | Haldimand | arcgis-hub | 11 | 12 | 109.1% |
 | Kawartha Pine Ridge District School Board | arcgis-rest | 8 | 8 | 100.0% |
+| New Brunswick Department of Transportation and Infrastructure | arcgis-rest | 8 |  |  |
 | Nova Scotia Department of Fisheries and Aquaculture | arcgis-rest | 8 | 9 | 112.5% |
 | York Region District School Board | arcgis-rest | 8 | 8 | 100.0% |
 | Barrington | arcgis-rest | 7 | 7 | 100.0% |
