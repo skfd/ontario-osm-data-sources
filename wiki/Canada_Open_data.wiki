@@ -24187,7 +24187,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 
 == Other provinces ==
 Licence status per portal: [[Canada#Open Data]]. Add a section here when you have
-dataset-level detail.
+dataset-level detail. Listed, with nothing catalogued yet: New Brunswick.
 
 [[Category:Canada]]
 [[Category:Data sources from Canada]]

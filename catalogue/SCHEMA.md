@@ -180,6 +180,12 @@ or `lower` for the 444 municipalities of the Ontario list, blank otherwise (`wes
 is a GIS consortium, not a municipality). Nova Scotia's 49 municipal units (4 regional, 9 county,
 11 district, 25 towns) come from the Wikipedia list of municipalities in Nova Scotia, read
 2026-10-30; the province's Municipal Affairs site publishes no directory. Their tier is blank.
+New Brunswick's 77 local governments (8 cities, 30 towns, 21 villages, 17 rural communities and
+the regional municipality of Tracadie, as the 2023 reform left them) come from the Wikipedia
+list of municipalities in New Brunswick, which cites the Local Governments Establishment
+Regulation, read 2026-11-02. Their tier is blank. The 12 rural districts have no council and
+are run by the province, so they get no rows; the 12 regional service commissions, which do
+planning for their members and their rural districts, are `association` rows.
 
 The name is used as a wiki section heading, so no two rows share one, across provinces too. A
 name already taken by an earlier province gets the province in parentheses: `Shelburne (NS)`,
