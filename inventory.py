@@ -677,12 +677,16 @@ def copies():
         return i
 
     count = 0
+    # Two rows that name each other (a grader's "A copy of" one way, a shared count the other)
+    # loop: the first to be marked is the copy, and the other stays the original.
+    copied = {r["id"]: marked(r) for r in rows if marked(r)}
     for r in rows:
         of = original.get(r["id"]) and root(r["id"])
         if of == r["id"]:
             continue
-        if not of or marked(r):
+        if not of or marked(r) or copied.get(of) == r["id"]:
             continue
+        copied[r["id"]] = of
         r["tier"] = str(min(int(r["tier"] or 2), 2))
         if r["feasibility"] != "no":
             r["feasibility"] = "reference"
