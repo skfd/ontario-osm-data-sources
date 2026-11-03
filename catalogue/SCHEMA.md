@@ -193,10 +193,11 @@ list of municipalities in New Brunswick, which cites the Local Governments Estab
 Regulation, read 2026-11-02. Their tier is blank. The 12 rural districts have no council and
 are run by the province, so they get no rows; the 12 regional service commissions, which do
 planning for their members and their rural districts, are `association` rows. Prince Edward
-Island's 59 municipalities (2 cities, 10 towns, 46 rural municipalities and the resort
-municipality, coded `resort-municipality` for its five-place name) come from the table in the
-Wikipedia list of municipalities in Prince Edward Island, read 2026-11-03; its prose still says
-fifty rural municipalities. The province's own list sits behind a bot check. Their tier is blank.
+Island's 57 municipalities (2 cities, 10 towns, 44 rural municipalities and the resort
+municipality, coded `resort-municipality` for its five-place name) are the polygons of the
+province's `municipal_zones` layer on gis.princeedwardisland.ca, read 2026-11-03. Wikipedia's
+list also has Darlington and St. Louis, which IRAC records as dissolved in 2021. Their tier is
+blank.
 The rest of the island is unincorporated and run by the province, so it gets no rows.
 
 The name is used as a wiki section heading, so no two rows share one, across provinces too. A

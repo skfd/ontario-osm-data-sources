@@ -511,8 +511,8 @@ tracked over time:
 ## Coverage of the catalogue
 
 `catalogue/portals.csv` lists every open-data portal found in New Brunswick and Nova Scotia and Ontario and a
-`none-found` row for each municipality that has none. 313 portals are known,
-302 of them counted through their API: **61219 layers seen, against 61058
+`none-found` row for each municipality that has none. 319 portals are known,
+307 of them counted through their API: **61729 layers seen, against 61058
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
@@ -529,19 +529,19 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 | · upper-tier | 30 | 19 | 0 | 8 | 2 | 1 | 0 |
 | · single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
 | · lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
-| Prince Edward Island | 59 | 0 | 0 | 0 | 0 | 0 | 59 |
-| **all** | 629 | 77 | 18 | 190 | 128 | 157 | 59 |
+| Prince Edward Island | 57 | 0 | 0 | 0 | 0 | 0 | 57 |
+| **all** | 627 | 77 | 18 | 190 | 128 | 157 | 57 |
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.
 
 | platform | portals | layers seen |
 |---|---|---|
-| arcgis-hub | 98 | 14047 |
-| arcgis-rest | 201 | 41026 |
+| arcgis-hub | 101 | 14215 |
+| arcgis-rest | 203 | 41368 |
 | ckan | 4 | 4071 |
 | socrata | 2 | 1979 |
-| custom | 8 | 96 |
+| custom | 9 | 96 |
 
 Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
 100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
@@ -587,6 +587,7 @@ consortium portal are in `portals.csv`.
 | Watson & Associates Economists | arcgis-rest | 531 | 535 | 100.8% |
 | New Brunswick Department of Natural Resources | arcgis-rest | 530 | 537 | 101.3% |
 | Toronto and Region Conservation Authority | arcgis-hub, arcgis-rest, ckan | 513 | 653 | 127.3% |
+| Prince Edward Island | arcgis-hub, arcgis-rest, custom | 510 |  |  |
 | Service New Brunswick | arcgis-rest, custom | 482 | 523 | 108.5% |
 | Elgin | arcgis-hub, arcgis-rest | 480 | 516 | 107.5% |
 | Fredericton | arcgis-hub, arcgis-rest | 465 | 704 | 151.4% |
