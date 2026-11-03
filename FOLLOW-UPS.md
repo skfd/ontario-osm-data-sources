@@ -230,7 +230,8 @@ municipally. Open ends:
   service per emissions scenario, one sublayer per indicator, all on the same 18,271 cells) share
   a count, so the 99 indicators of the three later scenarios are marked copies of SSP1-2.6's Ice
   Days. They are different statistics, not copies, but all are tier 1 and `Not usable`, so no
-  grade moves. A rule that told a shared grid from a copy would also have to keep Simcoe's and
+  grade moves. Durham's 2021 census tables on its 1,004 dissemination areas are marked the same
+  way, also all tier 1. A rule that told a shared grid from a copy would also have to keep Simcoe's and
   Haliburton's basemap services, whose per-scale sublayers are real copies, so it is not written.
   (`--copies` used to mark the 32 SSP1-2.6 siblings too when run a second time; fixed 2026-11-03.
   An earlier run's original inside a group now leads it again.)
@@ -261,7 +262,8 @@ municipally. Open ends:
   **Decided 2026-10-30: yes, the catalogue holds them.** A publicly served layer is a candidate
   source whether or not its publisher catalogued it. Work to follow: give each of the 57 org
   roots an `arcgis-rest` row of its own (reach 2, under the Hub's jurisdiction), sweep them with
-  `inventory.py`, let `--copies` take the alternate views, and grade the rest.
+  `inventory.py`, let `--copies` take the alternate views, and grade the rest. Done 2026-10-30
+  and 31: see "Graded on 2026-10-30 and 31" above.
 
 - **The wiki view is over MediaWiki's 2 MB (5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
   2.3 MB before).** Nothing
