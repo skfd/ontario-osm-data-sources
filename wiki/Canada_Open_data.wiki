@@ -27079,6 +27079,50 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 | [https://services9.arcgis.com/zow9Ot3ujGSyJI3C/arcgis/rest/services/WS_REPORT_Cards_Symbology_Oct8/FeatureServer/0 WS REPORT Cards Symbology Oct8 — WS_REPORT_Cards_Symbology] || Prince Edward Island Department of Environment, Energy and Climate Action || Open Government Licence - Prince Edward Island || No || style="background:#eeeeee" | Not usable ||  || 2026-11-03 || Report card scores by year for 115 watersheds; monitoring or permit data, nothing to map.
 |}
 
+=== Charlottetown ===
+6 layers (6 no licence). ''Value'' is a 1–5 score of what OSM would gain. 40 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/wtAzoGvE6RRjW7Ns/arcgis/rest/services/BusStops_view/FeatureServer/0 BusStops view — BusStops] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 493 bus stops with stop id, name, shelters, benches, sidewalk and surface, edited 2026-10-30; stop positions and names to check OSM bus stops.
+|-
+| [https://services5.arcgis.com/wtAzoGvE6RRjW7Ns/arcgis/rest/services/Existing_Cycling_Network/FeatureServer/0 Existing Cycling Network — Existing Cycling Network] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 2,176 street segments, 355 with an existing bike lane, separated path or multi-use path, plus traffic stress and counts, 2025-11; bike facilities to conflate.
+|-
+| [https://services5.arcgis.com/wtAzoGvE6RRjW7Ns/arcgis/rest/services/Existing_Cycling_Network_Trails/FeatureServer/0 Existing Cycling Network Trails — Existing Cycling Network Trails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 384 trail segments with names, network and surface, 342 existing, 2025-11; newer and larger than the 2020 ca/pe/charlottetown-trail-data. Names and surfaces to conflate.
+|-
+| [https://services5.arcgis.com/wtAzoGvE6RRjW7Ns/arcgis/rest/services/PublicArt/FeatureServer/0 PublicArt — PublicArt] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 67 public artworks and memorials with title, artist, year, category and location, edited 2026-09; names for tourism=artwork and memorials.
+|-
+| [https://services5.arcgis.com/wtAzoGvE6RRjW7Ns/arcgis/rest/services/Tree_Sites_Public/FeatureServer/0 Tree Sites Public — Tree Sites] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 14,091 public tree sites with species, trunk diameter and condition, edited 2026-11-03; includes stumps and vacant sites to filter out.
+|-
+| [https://services5.arcgis.com/wtAzoGvE6RRjW7Ns/arcgis/rest/services/Truck_Routes/FeatureServer/0 Truck Routes — Truck_Routes] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 60 named truck route segments, edited 2026-07; designated truck routes to tag on OSM roads.
+|}
+
+=== Stratford (PE) ===
+4 layers (4 no licence). ''Value'' is a 1–5 score of what OSM would gain. 14 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/glc3Wi4bApeYfZfE/arcgis/rest/services/Bus_Stops/FeatureServer/0 Bus Stops — Bus Stops] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 54 bus stops with stop id, name, shelters, benches and surface, 2026-04; stop positions and names to check OSM bus stops.
+|-
+| [https://services5.arcgis.com/glc3Wi4bApeYfZfE/arcgis/rest/services/Founding_Community/FeatureServer/0 Founding Community — FoundingCommunities] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || The 4 founding communities (Southport, Bunbury, Cross Roads, Keppoch-Kinlock) with histories, 2026-05; names and extents for place=* areas.
+|-
+| [https://services5.arcgis.com/glc3Wi4bApeYfZfE/arcgis/rest/services/HistoricPropertiesCSV/FeatureServer/0 HistoricPropertiesCSV — Sheet1] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 17 historic houses with name, year built, builder, style and PEI register link, 2026-04; names and dates to add.
+|-
+| [https://services5.arcgis.com/glc3Wi4bApeYfZfE/arcgis/rest/services/Streetlights_and_Poles/FeatureServer/0 Streetlights and Poles — Streetlights_2026] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,268 street lights with pole number, wattage and lamp type, 2026-07; positions for highway=street_lamp.
+|}
+
+=== Summerside ===
+ 8 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|}
+
 == Other provinces ==
 Licence status per portal: [[Canada#Open Data]]. Add a section here when you have
 dataset-level detail.

@@ -8,7 +8,7 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
 readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's remaining
 downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10-30) listed the
 54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia. The fifth
-(2026-11-02 and 03) opened New Brunswick.
+(2026-11-02 and 03) opened New Brunswick, and the sixth (2026-11-03) Prince Edward Island.
 
 ## Graded on 2026-10-30 and 31
 
@@ -59,6 +59,56 @@ downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10
   that is not wanted. The filter now matches contact fields of students and parents, children's
   names, homelessness duration, and a school-grade-email set; it no longer matches a school
   list's `Student_Trustee` or a survey's yes-or-no `parent_guardian_school_child`.
+
+## Prince Edward Island (surveyed 2026-11-03)
+
+Every one of the 57 municipalities has a portal row: a top-down pass over the province's Hub,
+ArcGIS Online and servers, then two agents checking each unit's own site. The province runs
+nearly everything on one ArcGIS Online org (`peigov`): its open data portal
+(data.princeedwardisland.ca, Socrata until lately, now a Hub of 94 items with the old OD####
+tables carried over), two Hubs of PDF reports (Water Registry, Air Monitoring), and an org root
+of about 290 services staff of every department publish to. Finance's on-premise server
+(gis.princeedwardisland.ca) serves the reference layers. The Open Government Licence - Prince
+Edward Island (v1.0, 2018) is named on 66 of the Hub's 94 items. Only Charlottetown, Summerside
+and Stratford publish layers of their own; 51 units are none-found. The OSM wiki's PEI page names
+no provincial source and records no import beyond CanVec; a 2009 civic address upload was
+removed in 2010. Open ends:
+
+- **The layers (graded 2026-11-03):** 585 on 9 portals in 4 jurisdictions, 100 copies; 436 at
+  tier 1. Not copies at tier 4 or 5:
+  - **The island's 82,929 civic address points** (tier 5, `Available`), the 145,536 building
+    footprints of 2026 (tier 5, `No licence`: on the server only, no Hub twin), 600 recreation
+    facilities, 974 cultural points, Rec PEI's 2,053 named trail segments, 126 cycling routes and
+    the Island Walk.
+  - Charlottetown's cycling network (2,176 segments with bike lanes and traffic stress), 14,091
+    public trees, 67 public artworks and truck routes, all `No licence`.
+- **The OGL-PEI on items that do not name it.** `inventory.py` gives an item with no licence text
+  its portal's licence, as for Ontario's Hubs and org roots. So the 18 Hub items served from the
+  provincial server (civic addresses, zones, the 911 centreline) and every service at the org
+  root (Souris's and Victoria's water points among them) read as OGL-PEI, though the items
+  themselves state none. Worth a look before the address points are called `Available`.
+- **Municipalities' layers on the province's org.** North Rustico's, Souris' and Victoria's water,
+  sewer and transport networks sit on the government org root; the three have shared rows.
+  Summerside's address points and Stratford's buildings are the province's (same ids, same
+  geometry) and are marked copies. Charlottetown's 2025 trail layer (384 segments) is newer than
+  the province's copy of it (125, 2020).
+- **Transportation's org wants a token.** Its 121 Feature Service items are shared publicly, but
+  every one of its 120 services answers Token Required to an anonymous request, so the
+  department has a viewer-only row and no layers. Its name in `jurisdictions.csv`, Transportation,
+  Infrastructure and Energy, is the org's; a 2026 order may have renamed it. Charlottetown's
+  server opens 2 of 17 folders, the province's server 4 of 15; the image server none.
+- **The municipality count.** Wikipedia's table lists 59 (its prose says 50 rural units);
+  Darlington and St. Louis dissolved in 2021 (IRAC), and the province's `municipal_zones` holds
+  57. The province's own directory, like the rest of princeedwardisland.ca, sits behind a bot
+  check and was read only through Wayback; so were kensington.ca and several wordpress.com
+  municipal sites. gov.pe.ca's old GIS download list (a restrictive licence agreement, about 65
+  layers) times out but keeps a row because Finance still links it.
+- **Personal data in public layers**, all tier 1 with the fact in the note: municipal councillor
+  candidates' home addresses and phones (Elections PEI, four layers), owners' names on public-land
+  and trail-property layers and Stratford's external parcels, a farm survey with contacts. No
+  records of children or homeless people were found.
+- **No address tracker for Prince Edward Island**, as for Nova Scotia and New Brunswick.
+  Onboarding the civic address points is `../ontario-address-changes`' call.
 
 ## New Brunswick (surveyed 2026-11-02)
 
