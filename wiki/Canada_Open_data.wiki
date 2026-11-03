@@ -1022,6 +1022,80 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 | [https://gnb.socrata.com/d/ywkb-x4eg Digitized Pest Management Records / Documents numérisés concernant la lutte antiparasitaire] || New Brunswick Department of Natural Resources and Energy Development || New Brunswick Open Government Licence || No || style="background:#eeeeee" | Not usable ||  || 2026-11-02 || Copy of ca/nb/digitized-pest-management-records-documents-num-ris-s-concer. Catalogue link to the same data; 4,545 pest-spray treatment blocks digitized from 1952-1993 wall maps; operational history.
 |}
 
+=== Moncton ===
+33 layers (33 available). ''Value'' is a 1–5 score of what OSM would gain. 3111 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://open.moncton.ca/datasets/ac83cf3d1b5d4fd08bee4c09e495cb25 Imagery / Imagerie 2024] || Open Data Terms of Use || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || A web map of the City's 2024 aerial imagery; recent and openly licensed, a tracing and checking reference.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Active_Transportation/FeatureServer/0 Active Transportation] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 600 street segments on the active transportation network (edited 2026-11-02); route membership for cycling relations, on centreline geometry.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Address/FeatureServer/0 Address] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 49,730 Greater Moncton address points with units, unit notes, postal codes and PIDs (2026-11-02); adds units and postcodes to the NB 911 points (ca/nb/service-new-brunswick/geonb-dps-civic-address-civic-addresses-2).
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Bike_Racks_2/FeatureServer/1 Bike Racks] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 109 bike rack points (2026-11-02); bicycle parking OSM often lacks, no capacity field.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Buildings/FeatureServer/0 Buildings] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 41,916 city footprints with names, year built, floors, height, class and units (2026-11-02); richer attributes than GeoNB's lidar outlines (ca/nb/service-new-brunswick/geonb-snb-buildings-buildings-2).
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Bus_Stops/FeatureServer/0 Bus Stops] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 755 Codiac Transpo stops with stop codes and names (2026-11-02), the GTFS stops as a layer; good for checking bus stop names.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Cultural_Assets/FeatureServer/0 Cultural Assets] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 647 Greater Moncton cultural assets with bilingual names, addresses and websites (2026-10-13); venues mixed with organisations and festivals.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Fire_Hydrants/FeatureServer/0 Fire Hydrants] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 3,527 hydrants with service status and pressure zone (2026-11-02); positions OSM often lacks.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Heritage_Properties/FeatureServer/0 Heritage Properties] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 140 properties under heritage by-law Z-1116 with location and PID only (2026-11-02); the named version is Heritage Properties complete.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Parking_Lots/FeatureServer/0 Parking Lots] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 344 public parking lots with spaces, cost, access, enforcement, hours and surface (2026-10-29); attributes OSM lots usually lack.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Parks/FeatureServer/0 Parks] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || Official English and French names and types for 83 City parks (2026-11-02); names are the gain.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Pathways/FeatureServer/0 Pathways] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 26 park pathways with bilingual names, surface and winter use (2026-11-02).
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Points_of_Interest/FeatureServer/0 Points of Interest] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 222 municipal facilities, schools and hospitals with names, addresses and categories (2026-03-18); OSM usually has most, a check list.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Public_Art/FeatureServer/0 Public Art] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 80 public artworks with bilingual names, types and image links (2025-08-18); tourism=artwork with names, which OSM usually lacks.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Retention_Ponds/FeatureServer/0 Retention Ponds] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 99 stormwater retention pond outlines, no names or attributes, last edited 2021.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Road_Centerline/FeatureServer/0 Road Centerline] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 6,555 Greater Moncton street segments with bilingual names, speeds, lanes, one-way and truck routes (2026-08-25); attributes for roads OSM has; NBRN is ca/nb/service-new-brunswick/geonb-basemap-nbrn-nbrn-large-scale-2.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Schools/FeatureServer/0 Schools] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 33 schools with names and addresses (2026-03-18); OSM usually has the schools, a check list.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Splash_Pads/FeatureServer/0 Splash Pads] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 23 splash pads (2026-11-02), no names; leisure=splash_pad features OSM often lacks.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Trails/FeatureServer/0 Trails] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 282 trail segments with bilingual names, surface, class and winter use (2026-11-02); names and surface for trails OSM has.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Trees/FeatureServer/0 Trees] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 12,731 City trees with species, diameter, height and planted year (2026-10-02); street trees OSM usually lacks.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Wards/FeatureServer/0 Wards] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || Moncton's 4 wards with councillors and 2021 population (2026-06-02); boundary=political, also in the Elections NB layer (ca/nb/service-new-brunswick/geonb-enb-local-government-elections-wards-quartiers-2).
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Water_Bodies/FeatureServer/0 Water Bodies] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 474 water bodies and marshes with English and French names, last edited 2020; names may add to OSM; NBHN (ca/nb/service-new-brunswick/geonb-dnr-nbhn-water-bodies-2) covers the province.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Water_Courses/FeatureServer/0 Water Courses] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 10,048 watercourse lines with English and French names, last edited 2021; names are the gain; NBHN (ca/nb/service-new-brunswick/geonb-dnr-nbhn-water-courses-2) covers the province.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Wetlands/FeatureServer/0 Wetlands] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 527 wetlands with names, source and provincial significance, last edited 2020; NBHN wetlands (ca/nb/service-new-brunswick/geonb-dnr-nbhn-wetlands-2) cover the province.
+|-
+| [https://www7.moncton.ca/opendata/google_transit.zip Transit Files (GTFS)] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || The Codiac Transpo GTFS feed (google_transit.zip, updated 2026-01-27): stops, routes and schedules, the authority for bus stops and routes.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Heritage_Properties_complete/FeatureServer/4 Heritage Properties complete — Heritage Properties] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 133 heritage properties with bilingual names, addresses and descriptions (2026-06-04); named heritage designations OSM rarely carries.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Memorial_Program_gdb/FeatureServer/1 Memorial Program gdb — Available Benches] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 604 park bench positions open to memorial sponsorship (2026-11-02); benches OSM often lacks.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/ParkAssets_gdb/FeatureServer/1 ParkAssets gdb — Parks Point Appurtenances] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4,083 park point assets (benches, bike racks, splash pads and others) by unit type (2026-11-02); street furniture OSM often lacks.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/ParkAssets_gdb/FeatureServer/2 ParkAssets gdb — Bridge (Parks)] || Open Data Terms of Use || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 42 park footbridge outlines (2026-11-02); bridges on trails, a check for OSM.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/ParkAssets_gdb/FeatureServer/3 ParkAssets gdb — Parks Usage Area] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 411 park usage areas (fields, playgrounds, courts) by unit type (2026-11-02); facilities OSM may lack.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/Sports_Fields/FeatureServer/0 Sports Fields — Sports Fields] || Open Data Terms of Use || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 23 sports fields with official bilingual names, surfaces and sports (2026-03-17); names and sport tags.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/StreetLights_gdb/FeatureServer/0 StreetLights gdb — Street Lights] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 12,038 street light positions with support type (2026-11-02); visible street furniture OSM rarely has.
+|-
+| [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/StreetLights_gdb/FeatureServer/1 StreetLights gdb — Traffic Light] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 571 traffic signal poles with signal type (2026-11-02); a check for signalised intersections.
+|}
+
 === Service New Brunswick ===
 62 layers (57 available, 5 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1290 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -1154,6 +1228,208 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 | [https://geonb.snb.ca/image/rest/services/Imagery/SNB_2024/ImageServer SNB 2024] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || SNB orthoimagery from 2024, openly licensed; a recent tracing source.
 |}
 
+=== Saint John ===
+53 layers (53 available). ''Value'' is a 1–5 score of what OSM would gain. 757 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://catalogue-SaintJohn.opendata.arcgis.com/datasets/d6f4783521364429a2e51a64c60ae234 Saint John Transit General Transit Feed Specification (GTFS)] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || Saint John Transit GTFS (edited 2026-05); the authority for routes and stops.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Accomodations/FeatureServer/0 Accommodations] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 28 hotels, motels and inns with names, type, address, phone and website (edited 2025-08); names and contacts to check against OSM.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Arenas/FeatureServer/0 Arenas] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 5 arenas with names, address, phone and heated viewing and canteen flags (edited 2025-08); names and attributes for OSM.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Art_Galleries/FeatureServer/1 Art Galleries] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 17 art galleries with English and French names, address, phone and website (2024); a facility roster to check against OSM.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Automated_External_Defibrillators/FeatureServer/0 Automated External Defibrillators] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 30 AEDs in city facilities with facility and location inside it (2018); OSM rarely has emergency=defibrillator.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Ballfield_Polygons/FeatureServer/0 Ballfield Polygons] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 17 ballfield outlines with park names, type and city maintenance (edited 2025-07); sports-field polygons OSM often lacks or leaves unnamed.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Ballfields/FeatureServer/0 Ballfields] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 24 ballfield points with names, surface and category (edited 2025-08); the polygons layer is the better geometry.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Basketball_Court_Polygons/FeatureServer/4 Basketball Court Polygons] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 19 basketball court outlines with park names and city maintenance (edited 2025-08); courts OSM often lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Basketball_Courts/FeatureServer/3 Basketball Courts] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 18 basketball court points with material and park (edited 2025-08); the polygons layer is the better geometry.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Beaches/FeatureServer/0 Beaches] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 9 beaches with names, supervised and washroom flags (2020); attributes OSM usually lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Bike_Routes/FeatureServer/0 Bike Routes] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 61 bike route sections with route names, type and surface in English and French (edited 2025-08); a signed network OSM may lack as routes.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Building_Footprints/FeatureServer/0 Building Footprints] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 37,656 city-maintained footprints (edited 2026-04-10), likely newer for the city than the GeoNB 2015-18 lidar buildings in ca/nb/service-new-brunswick/geonb-snb-buildings-buildings-2; compare before use.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Bus_Stops/FeatureServer/0 Bus Stops] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 608 Saint John Transit stops with stop_id and names (edited 2025-08); positions to check against OSM; GTFS is the authority.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Cell_Towers/FeatureServer/0 Cell Towers] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 29 cell towers in Greater Saint John with tower owner (2019); towers OSM often lacks or leaves without operator.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Cemetery_Boundaries/FeatureServer/0 Cemetery Boundaries] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 16 cemetery outlines with English and French names, address and phone (2020); names for landuse=cemetery areas.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Civic_Addresses/FeatureServer/1 Civic Addresses] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 25,580 civic address points, live (edited 2026-10-29), bilingual street names, no unit field; the city's own register behind the NB 911 points in ca/nb/service-new-brunswick/geonb-dps-civic-address-civic-addresses-2.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Community_Centres/FeatureServer/0 Community Centres] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 22 community centres with names, address, phone and website (edited 2026-09); a roster to check against OSM.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Community_Gardens/FeatureServer/0 Community Gardens] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 12 community gardens with names and addresses (2021); OSM rarely has them.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Daycares/FeatureServer/0 Daycares] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 73 daycares with names, ages, spaces, operator and phone (edited 2025-09); child care OSM often lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Dog_Park_Boundaries/FeatureServer/0 Dog Park Boundaries] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4 dog park outlines with names (2025); leisure=dog_park areas.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Fire_Stations/FeatureServer/0 Fire Stations] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 6 fire stations with English and French names, address and phone (2022).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Heritage_Conservation_Areas/FeatureServer/0 Heritage Conservation Areas] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 34 heritage conservation areas with names and by-law links (2022); designated districts OSM can carry.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Hourly_Daily_Parking_Lots/FeatureServer/0 Hourly Daily Parking Lots] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 9 hourly lots with names, capacity, operator and time limits (edited 2025-12); attributes for OSM parking.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Hydrants/FeatureServer/0 Hydrants] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 2,306 hydrants with type and colour (2023).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Monthly_Parking_Lots/FeatureServer/0 Monthly Parking Lots] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 14 monthly lots with names, capacity and fees (2026).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Museums/FeatureServer/0 Museums] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 8 museums with English and French names, website and phone (2026).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/National_Historic_Sites/FeatureServer/0 National Historic Sites] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 15 national historic sites with names and websites (2020); heritage tags for OSM.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Neighbourhoods/FeatureServer/0 Neighbourhoods] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 33 named neighbourhood areas (2019); place=neighbourhood boundaries OSM mostly lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Nursing_Homes/FeatureServer/0 Nursing Homes] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 20 nursing homes with names, address, phone and capacity (2020); a roster to check against OSM.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Park_and_Ride_Locations/FeatureServer/0 Park and Ride Locations] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 7 park-and-ride lots with names (2021); park_ride tags OSM often lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Parking_Lots/FeatureServer/0 Parking Lots] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 21 Parking Commission lots with names, capacity and time limits (edited 2026-10).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Parking_Meters/FeatureServer/0 Parking Meters] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 149 parking meters with rates and time limits (2026); vending=parking_tickets points OSM lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Parks3/FeatureServer/0 Parks] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 38 city park outlines with English and French names (edited 2026-07); official park names.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Places_of_Worship/FeatureServer/0 Places of Worship] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 59 places of worship with names, religion and address (2020).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Playground_Polygons/FeatureServer/0 Playground Polygons] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 52 playground outlines with names and type (2025); OSM often lacks playground areas.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Playgrounds/FeatureServer/1 Playgrounds] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 52 playground points with names (2025); the polygons are the better geometry.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Police_Stations/FeatureServer/0 Police Stations] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 5 police stations with English and French names (2018).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Pools/FeatureServer/0 Pools] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 5 pools with names and addresses (2020).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Rail_Level_Crossings/FeatureServer/0 Rail Level Crossings] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 38 rail level crossings with type (2024); railway=level_crossing nodes to check.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Retaining_Walls/FeatureServer/0 Retaining Walls] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 194 retaining walls with type and average height (2020); barrier=retaining_wall OSM often lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Schedule_J_Truck_Routes/FeatureServer/0 Truck Routes] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 1,007 street segments on the Schedule J truck routes with speed limits (edited 2026-04); hgv tags OSM lacks.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Schools/FeatureServer/0 Schools] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 25 schools with names, district, grades and websites (edited 2026-08).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Soccer_Pitch_Polygons/FeatureServer/0 Soccer Pitch Polygons] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 23 soccer pitch outlines with names and surface (2020); pitches OSM often lacks or leaves unnamed.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Soccer_Pitches/FeatureServer/0 Soccer Pitches] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 23 soccer pitch points with surface (2020); the polygons are the better geometry.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Street_Centrelines/FeatureServer/1 Street Centrelines] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4,172 city street centrelines with bilingual names, address ranges, class, lanes and one-way (edited 2026-10-28); names and attributes to check.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Tennis_Court_Polygons/FeatureServer/0 Tennis Court Polygons] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 7 tennis court outlines with names, court count and surface (2020).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Theatres/FeatureServer/0 Theatres] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 8 theatres with names and websites (2021).
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Traffic_Control_Fixtures/FeatureServer/0 Traffic Control Fixtures] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 483 traffic control fixtures by intersection with type (2024); signals OSM may lack.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Trails/FeatureServer/0 Trails] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 3,740 trail segments with English and French names and surface (edited 2026-04); names and surface for OSM paths.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Urban_Forestry_Trees/FeatureServer/0 Urban Forestry Trees] || Open Government Licence – City of Saint John You are encouraged to use the Information that is available under this licence with only a few condition… || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4,815 street trees with species, cultivar, DBH and condition (2023); OSM rarely has city trees.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Heritage_Conservation_Area_map_app_WFL1/FeatureServer/0 Heritage Conservation Area map app WFL1 — Property Parcel] || Open Government Licence – City of Saint John || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 472 parcels in heritage conservation areas with civic address, historic place names and descriptions (2023); a heritage property register.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Parking_Garages/FeatureServer/0 Parking Garages — Parking Garages] || Open Government Licence – City of Saint John || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4 parking garages with names, capacity and operator (2026); OSM likely has the structures, attributes help.
+|-
+| [https://services.arcgis.com/DLk7hgTJeJILuEBg/arcgis/rest/services/Saint_John_Neighbourhoods/FeatureServer/0 Saint John Neighbourhoods — Website Neighbourhoods] || Open Government Licence – City of Saint John || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 15 combined neighbourhood areas by sector (2024); coarser than the 33-area Neighbourhoods layer.
+|}
+
+=== Fredericton ===
+40 layers (23 no licence, 17 available). ''Value'' is a 1–5 score of what OSM would gain. 664 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/BallFields/FeatureServer/0 BallFields / Terrains de balle] || GNB Open Data Policy || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 24 ballfield points with facility names and class, edited 2025-04; OSM usually has the diamonds as leisure=pitch, the names are the gain.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Bike_Lanes_Fred/FeatureServer/0 Bike Lanes] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 93 bike lane segments with street, type, side and lanes, edited 2026-07; cycleway tags along named streets are a bulk gain.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Building_Footprints/FeatureServer/9 Building Footprints] || GNB Open Data Policy || 4/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 31,183 city-maintained footprints (digitised from 2002 imagery, kept up to date, edited 2026-09); GeoNB's province-wide lidar set (ca/nb/service-new-brunswick/geonb-snb-buildings-buildings-2) also covers the city: compare currency before choosing.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/BusStops/FeatureServer/0 BusStops] || GNB Open Data Policy || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 673 field-checked stops with shelter, bench, garbage, surface and sidewalk, edited 2025-06; amenity attributes GTFS lacks, though the 2026 network has 424 stops.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/City_of_Fredericton_Trails/FeatureServer/68 City of Fredericton Trails] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 524 city-maintained trail segments with English, French and Maliseet names, surface and type, edited 2026-10; official names and surfaces are the gain.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Civic_Addresses/FeatureServer/16 Civic Addresses] || GNB Open Data Policy || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 25,111 city civic points with unit, postal code and ward, edited 2026-10-30; the city's own register, with units the NB 911 points (ca/nb/service-new-brunswick/geonb-dps-civic-address-civic-addresses-2) may lack: compare before import.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Fredericton_International_Airport/FeatureServer/94 Fredericton International Airport] || GNB Open Data Policy || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 41 named airport polygons with codes and bilingual names, edited 2025-12; names and outlines for runways, aprons and buildings to check against OSM.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/NB_Power_Owned_Street_Lights/FeatureServer/0 NB Power Owned Street Lights] || GNB Open Data Policy || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4,383 NB Power street lights with service address and wattage, last edited 2018; a bulk set of highway=street_lamp positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Neighbourhoods/FeatureServer/0 Neighbourhoods / Quartiers] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 74 named city neighbourhoods, edited 2025-07; official names and outlines for place=neighbourhood.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Paddle_Network/FeatureServer/0 Paddle Network] || GNB Open Data Policy || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 25 paddling routes with names, difficulty, length and municipality, edited 2026-06; named canoe and kayak routes OSM rarely has.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Parks_Public_View/FeatureServer/0 Parks Public View] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 225 park boundaries with names (bilingual), category and hectares, edited 2026-11; official park names and outlines.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Recreation_Amenities_view/FeatureServer/0 Recreation Amenities Public View] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 295 recreation amenities (playgrounds, fields, splash pads, dog parks) with names, type, season and address, edited 2026-10; a facility roster with good positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/StormSewerFull_View_OD/FeatureServer/12 StormSewerFull View OD — Storm Ponds] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 249 stormwater ponds with names, type and year, edited 2026-10; named ponds OSM often lacks or has unnamed.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/StormSewerFull_View_OD/FeatureServer/69 StormSewerFull View OD — Retaining Walls] || GNB Open Data Policy || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 370 retaining walls with civic address, type and length, edited 2026-10; barrier=retaining_wall OSM rarely has.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Street_CenterLines/FeatureServer/15 Street CenterLines] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 3,425 street segments with English and French names, class, speed, lanes, one-way, truck routes and address ranges, edited 2026-09; better than NBRN for the city.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Tree_Inventory/FeatureServer/37 Tree Inventory] || GNB Open Data Policy || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 21,186 city street trees with species, civic number and street, edited 2026-10; species and positions OSM mostly lacks.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/WaterUtilityFull_view/FeatureServer/5 Water Utility — Fire Hydrants] || GNB Open Data Policy || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 2,661 fire hydrants with private/public flag, edited 2026-11; positions for emergency=fire_hydrant.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Artwork/FeatureServer/0 Artwork — Artwork] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 25 public artworks with names and artists, last edited 2014; artist and title tags for tourism=artwork, but old.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Benches_Public_View/FeatureServer/34 Benches Public View — Benches_ExportFeatures] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 287 park benches with park name and condition, edited 2026-09; amenity=bench positions OSM partly has.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Bike_Racks_Public_View/FeatureServer/0 Bike Racks Public View — BikeRacks_ExportFeatures] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 46 park bike racks with condition, edited 2026-03; bicycle_parking positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Boat_Launches_Public_View/FeatureServer/0 Boat Launches Public View — BoatLaunch] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 8 named boat launches with class, edited 2025-03; slipway names and positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Charger_Locations/FeatureServer/63 Charger Locations — Charger_Locations] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 6 EV charger sites with address, charger type and count, edited 2026-04; small but amenity=charging_station details.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Disc_Golf_Updated_April_2026/FeatureServer/1 Disc Golf Updated April 2026 — DiscGolfTransits_Fluent] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 30 disc golf hole lines with hole number, edited 2026-08; disc golf course holes OSM rarely has.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Disc_Golf_Updated_April_2026/FeatureServer/2 Disc Golf Updated April 2026 — DiscGolfFootprints_Fluent] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 47 disc golf hole areas with course name, edited 2026-08; course layout for leisure=disc_golf_course.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Fountains_Public_View/FeatureServer/31 Fountains Public View — Fountains_ExportFeatures] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 24 park fountains with park name and condition, edited 2026-09; drinking water and fountain points.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Fredericton_Baseball_Field_Maps/FeatureServer/0 Fredericton Baseball Field Maps — Baseball Field] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 22 baseball field outlines with field names, edited 2026-07; named pitch areas.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Garbage_Cans_Public_View/FeatureServer/29 Garbage Cans Public View — GarbageCans_ExportFeatures] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 189 park garbage cans with condition, edited 2026-03; waste_basket positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Heritage_Evaluation/FeatureServer/0 Heritage Evaluation — Heritage_Evaluation] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 781 evaluated heritage buildings with style, materials, age and architect/builder, edited 2022-01; building attributes OSM lacks.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Heritage_View_OD/FeatureServer/69 Heritage View OD — Heritage] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 6 heritage preservation areas and zones (St. Anne's Point), edited 2026-10; named heritage districts.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Killarney_Lake_Mountain_Bike_Trail_Network/FeatureServer/0 Killarney Lake Mountain Bike Trail Network — Killarney Lake Mountain Bike Trails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 19 named mountain bike trails at Killarney Lake with type and difficulty, edited 2026-07; MTB names and scales.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Monday_to_Friday_Bus_Stops_Public_View/FeatureServer/1 Monday to Friday Bus Stops Public View — BusStop_GTFS_August7] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 424 stops of the current network (edited 2026-10) with wheelchair, shelter, bench and surface; newer than the hub's 673-stop inventory; GTFS is the authority for positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/NBFSC_Trails/FeatureServer/0 NBFSC Trails — NBFSC Trails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,133 snowmobile trail segments with names, category, status and club, edited 2022-03; a province-wide network OSM has only in part.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/PaddleNetworkParking/FeatureServer/0 PaddleNetworkParking — PaddleNetworkParking] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 38 paddle access parking points with route, edited 2026-04; parking at put-ins OSM often lacks.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/PaddleNetworkPutIns/FeatureServer/0 PaddleNetworkPutIns — PaddleNetworkPutIns] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 58 named put-ins with class, route and motorized flag, edited 2026-07; canoe launch names and positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/ParkingSpacesFull/FeatureServer/12 ParkingSpacesFull — parking_spaces] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 839 metered parking spaces with maximum hours and rate, edited 2026-09; on-street parking details OSM lacks.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Picnic_Tables_Public_View/FeatureServer/30 Picnic Tables Public View — PicnicTables_ExportFeatures] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 128 park picnic tables with condition, edited 2026-09; leisure=picnic_table positions.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Public_Put_Ins/FeatureServer/0 Public Put Ins — Public_Put-Ins] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 68 public put-ins and boat launches with water body, ownership and status, edited 2025-02; launch points OSM often lacks.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Public_Washrooms/FeatureServer/0 Public Washrooms — Public Washrooms] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 7 public washrooms with address and season, edited 2025-03; toilets positions and seasons.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Snowshoe_Trails_Public_View/FeatureServer/0 Snowshoe Trails Public View — SnowshoeTrails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 49 snowshoe trail segments with names, edited 2026-06; winter trail names OSM lacks.
+|-
+| [https://services2.arcgis.com/iLWAxhpxafhOza2U/arcgis/rest/services/Trail_Parking/FeatureServer/0 Trail Parking — Trail Parking] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 18 trailhead parking points with trail names, edited 2026-07; parking at trails OSM often lacks.
+|}
+
 === New Brunswick Department of Natural Resources ===
 10 layers (10 no licence). ''Value'' is a 1–5 score of what OSM would gain. 527 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -1190,6 +1466,46 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services.arcgis.com/x2ReO82gH9Baulnl/arcgis/rest/services/NB_Boat_Launch/FeatureServer/2 NB Boat Launch — Points] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || 147 named boat launches and marinas from a KML (Name, FolderPath by region); positions unverified: a gap list for leisure=slipway. 147 features, edited 2026-08-05.
+|}
+
+=== Southeast Regional Service Commission ===
+16 layers (16 no licence). ''Value'' is a 1–5 score of what OSM would gain. 256 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Active_Transportation/FeatureServer/0 Active Transportation] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 102 active-transportation segments region-wide with street name and facility type (bike lane, path), edited 2026; a check list for cycling ways.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Community_Centres/FeatureServer/0 Community Centres] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 37 community centres with names, category and address (edited 2026); names and positions to check against OSM's community centres.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/HealthCare/FeatureServer/0 Healthcare] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 29 healthcare locations with name, category and address (edited 2026); clinics and hospitals to check against OSM.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/RecreationalFacilities_NBSE/FeatureServer/1 Recreational Facilities] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 519 recreation facilities region-wide with English and French names, category, indoor/outdoor and accessibility (edited 2026); fields, courts, rinks and playgrounds OSM often lacks or leaves unnamed.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Tourism_in_Southeast_NB/FeatureServer/0 Tourism] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 355 tourism locations (attractions, beaches, accommodation) with bilingual names, category and owner (edited 2026); a check list for tourism POIs.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/TourismTrails/FeatureServer/0 Active Trails] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 337 active trail segments with names, trail system, type, difficulty and surface (edited 2026); official trail names and attributes, the region's current trail layer.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Active_Sites_2023/FeatureServer/0 Active Sites 2023 — Active] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 176 named sites with class, accessibility, address and municipality (edited 2024), apparently the recreation sites inventory; positions to check against OSM.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/ATV_Trails/FeatureServer/0 ATV Trails — ATV_Trails] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 49 ATV trail lines with name, status and type (edited 2024); names and routes to check against OSM tracks.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Churches/FeatureServer/0 Churches — FaithGroups] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 113 places of worship and faith groups with names, category and address (edited 2026); names to check against OSM's places of worship.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Dykes_SERSC/FeatureServer/0 Dykes SERSC — Dykes_SERSC] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 31 dyke lines with place notes (edited 2023); man_made=dyke lines OSM may lack on the marshes.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Fire_Departments/FeatureServer/0 Fire Departments — FireDepartments] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 24 fire departments with names and address (edited 2026); fire stations to check against OSM.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/NRCAN_Quarries/FeatureServer/0 NRCAN Quarries — NRCAN_Quarries] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,621 pit and quarry polygons from Natural Resources Canada (edited 2024); landuse=quarry areas to check against OSM, some likely worked out.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Shediac_Historic_Structures/FeatureServer/0 Shediac Historic Structures — SH_Historic] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 16 historic structures in Shediac with English and French names, address and PID (edited 2026); names for heritage buildings OSM may lack.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Shoreline_Trail_V18/FeatureServer/0 Shoreline Trail V18 — Shoreline_Trail_V18] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 66 segments of a shoreline trail with name and description (version 18, edited 2024); check against OSM paths, may be partly planned.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Tourism_Trails_Winter_25/FeatureServer/0 Tourism Trails Winter 25 — Winter_T_Trails_3] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 234 winter trail segments (ski, snowshoe, snowmobile) with bilingual names, difficulty and surface (edited 2026); names and winter use to check.
+|-
+| [https://services2.arcgis.com/EFg39h3DBNzpxORa/arcgis/rest/services/Trails_NBSE/FeatureServer/3 Trails NBSE — Trails_NBSE] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,069 trail segments with names, status, surface, owner, manager, difficulty and permitted uses (edited 2025); official trail names and attributes OSM often lacks.
 |}
 
 === New Brunswick Department of Tourism, Heritage and Culture ===
@@ -1242,6 +1558,252 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 | [https://services3.arcgis.com/cad8jHNOhWwbUlHP/arcgis/rest/services/Total_Programs2/FeatureServer/0 Total Programs2 — Total_Programs] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || 10,984 tourism businesses and programs by category with names, positions, websites and phones; a POI check list that churns.
 |}
 
+=== Rothesay ===
+14 layers (14 no licence). ''Value'' is a 1–5 score of what OSM would gain. 178 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Buildings/FeatureServer/0 Buildings — Buildings] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 6,859 building footprints with type and subtype, edited 2025-10-30; the town's own layer, not GeoNB's schema, a check for buildings newer than the 2015-18 lidar footprints.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Cityworks_Public/FeatureServer/23 Cityworks Public — Sign] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,836 traffic signs with MUTCD code, description and language, edited 2026-02-24; stop, yield and speed signs OSM usually lacks; inspector field names staff.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Cityworks_Public/FeatureServer/24 Cityworks Public — Traffic Signal] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 72 traffic signals and flashers with type and activation, edited 2026-02-24; a check for highway=traffic_signals and crossings.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Cityworks_Public/FeatureServer/48 Cityworks Public — W-Hydrant] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 356 fire hydrants with type and ports, edited 2026-02-24; a check for emergency=fire_hydrant.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Cityworks_Public/FeatureServer/54 Cityworks Public — Bench] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 90 benches with type, edited 2026-02-24; amenity=bench points OSM rarely has in bulk.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Cityworks_Public/FeatureServer/58 Cityworks Public — Waste Container] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 68 public waste containers with type, edited 2026-02-24; amenity=waste_basket points OSM rarely has.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Cityworks_Public/FeatureServer/66 Cityworks Public — Playground] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 21 playground polygons with names and surface, edited 2026-02-24; a check for leisure=playground.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/CivicAddress/FeatureServer/0 CivicAddress — CivicAddress] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 4,510 town civic address points with suite numbers, unit counts and PIDs, edited 2026-11-02 (live); the town's own register, finer than the NB 911 points (geonb-dps-civic-address-civic-addresses-2) where it has units.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Park/FeatureServer/0 Park — Park] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 102 park polygons with official names and classification, edited 2025-10-30; park names are the gain.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Parking_Surface/FeatureServer/0 Parking Surface — Parking_Surface] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 35 parking lot polygons with type and surface, edited 2025-10-30; a check for amenity=parking areas.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/RothesayRecSites/FeatureServer/1 RothesayRecSites — Playgrounds] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 12 named playground points, no edit date; a check for leisure=playground.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Street_Surface/FeatureServer/0 Street Surface — Street_Surface] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,085 town street segments with full name, class and surface material, edited 2026-10-29; surface is the gain over NBRN names.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Town_Building/FeatureServer/0 Town Building — Town_Building] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 56 town building footprints with names and primary use, edited 2025-10-30; names for municipal buildings.
+|-
+| [https://services1.arcgis.com/9M0W2FyHuittNScn/arcgis/rest/services/Trails/FeatureServer/0 Trails — Trails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 53 trail segments with names, difficulty and length, edited 2025-10-30; official trail names are the gain.
+|}
+
+=== Edmundston ===
+23 layers (16 no licence, 7 available). ''Value'' is a 1–5 score of what OSM would gain. 149 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Arbres_View/FeatureServer/0 Arbres urbains / Urban trees] || Licence d'utilisation des ensembles de données d'Edmundston || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 4,436 managed street and park trees with species, family, DBH, height and planting year, edited 2026-11-02, under the city's open licence; trees OSM mostly lacks.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Cadre_bati/FeatureServer/1 Cadre bati / Building footprints] || Licence d'utilisation des ensembles de données d'Edmundston || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 15,369 building outlines with PID and area (2024), the city's own and more than the 12,086 GeoNB lidar footprints it also holds; open licence, a fill and check for OSM buildings.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Parcs___Parks/FeatureServer/1 Parcs d'Edmundston / Edmundston Parks] || Licence d'utilisation des ensembles de données d'Edmundston || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || Official names and outlines of 23 municipal parks with addresses, edited 2026-10-16, open licence; names for OSM leisure=park areas.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Routes_Edmundston_Roads/FeatureServer/0 Routes / Roads] || Licence d'utilisation des ensembles de données d'Edmundston || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 1,709 road segments with names, class, speed limit, surface and route numbers, edited 2026-10-08, open licence; maxspeed and surface to check against OSM roads.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentier_Prospecteur_view/FeatureServer/3 Sentiers le Prospecteur / Trails — Sentier le Prospecteur Trails] || Licence d'utilisation des ensembles de données d'Edmundston || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 16 named sections of the Prospecteur hiking network with distance, level and walking time (2025), open licence; trail names and difficulty OSM may lack.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/SentiersMadawaska/FeatureServer/3 Sentiers vélo Madawaska / Madawaska bike trails — Sentiers Madawaska] || Licence d'utilisation des ensembles de données d'Edmundston || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 32 named mountain-bike trails with trail number, level and time (Républik Nature, 2025), open licence; names and difficulty for OSM mtb paths.
+|-
+| [https://svc.pictometry.com/Image/72A7AACF-B65C-D96B-847D-44F997693C35/wmts 2022 Imagerie aérienne haute-résolution / 2022 High-resolution aerial imagery] || Licence d'utilisation des ensembles de données d'Edmundston || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || Eagleview 7.5 cm aerial imagery of Edmundston, June 2022, as WMTS under the city's licence; recent tracing imagery.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/2025_Quartiers/FeatureServer/3 2025 Quartiers — Quartiers / Wards] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || Edmundston's 3 wards for 2025 (edited 2026-02-25); boundary=political areas, likely newer than the provincial ca/nb/service-new-brunswick/geonb-enb-local-government-elections-wards-quartiers-2.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Arbres_%28View%29/FeatureServer/0 Arbres (View) — Arbres] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || The fuller view of the tree inventory: 6,941 trees with species, DBH and value (2026-11-02) against 4,436 on the Hub; no licence on this one.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/ATV_Trails___Edmundston__QUAD_NB_/FeatureServer/0 ATV Trails   Edmundston  QUAD NB  — ATV Trails - Edmundston (QUAD NB)] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 43 ATV trail segments of QUAD NB's network with names, club and grooming (2026); designated ATV routes OSM often lacks.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Bornes_fontaines_view/FeatureServer/0 Bornes fontaines view — Hydrants] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 948 fire hydrants with install year, owner and pressure zone, edited 2026-10-23; hydrants OSM usually lacks in bulk.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Entreprises_Edmundston_2018/FeatureServer/0 Entreprises Edmundston 2018 — Opportunités d'affaires - Business Opportunities] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 966 commercial premises with business names, categories, floor and address (updated 2026-04-02); a churning directory, but a gap list for shops.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Parcs_EspacesVerts_AppData/FeatureServer/0 Parcs EspacesVerts AppData — EspacesVerts_Parcs_POI] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 98 park and green-space points with French and English names, descriptions and photos (2026-10-16); names for parks and play areas.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Quartiers/FeatureServer/0 Quartiers — Quartiers] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 41 named quartiers with population estimates (2025); named neighbourhoods are place areas OSM may lack.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentier_M%C3%A9riumticook/FeatureServer/1 Sentier Mériumticook — Sentier Meriumticook] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || The Mériumticook hiking trail as 10 GPX-traced lines (2019); a named trail to check against OSM.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentiers_Madawaska_%28Fat_Bike%29/FeatureServer/0 Sentiers Madawaska (Fat Bike) — GPS Trails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 8 GPS-recorded fat-bike trails with names, level and length (2021); named winter trails OSM may lack.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentiers_Recreatifs/FeatureServer/0 Sentiers Recreatifs — Sentiers_VTT] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 86 ATV trail lines with type (2021); designated ATV routes, a gap list.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentiers_Recreatifs/FeatureServer/1 Sentiers Recreatifs — Sentiers_Motoneige] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 84 snowmobile trail lines with type (2021); snowmobile routes OSM often lacks.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentiers_Riviera/FeatureServer/0 Sentiers Riviera — Sentiers 4 saisons] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 7 named four-season trails at the Riviera with level, time and distance (2025); small, names to add.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Sentiers_Riviera/FeatureServer/1 Sentiers Riviera — Sentiers d'hiver] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 5 named winter trails at the Riviera with level, time and distance (2025); small, names to add.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/TransportCommun_Arrets/FeatureServer/0 TransportCommun Arrets — arrets] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 187 bus stops with route and stop numbers (2025); stops for Edmundston's buses, which OSM may lack.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/Traverse_%C3%A0_pi%C3%A9ton___Crosswalk/FeatureServer/0 Traverse à piéton   Crosswalk — Traverse à piéton / Crosswalk] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 180 crosswalks with signal, push-button, sound and marking attributes (2019); crossing details OSM often lacks.
+|-
+| [https://services8.arcgis.com/jJ9BCntksycSGAMU/arcgis/rest/services/VTT_ByLaw/FeatureServer/1 VTT ByLaw — VTT_ByLaw] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 118 street segments open to ATVs under the by-law (2025); atv=yes access OSM lacks.
+|}
+
+=== Acadian Peninsula Regional Service Commission ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 165 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services9.arcgis.com/uHU4eGSzWdyQhJeN/arcgis/rest/services/Tour_communication/FeatureServer/0 Tour communication — Tour_communication] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 55 communication towers with names, imported from KML (2022); towers are often in OSM but unnamed, a check list.
+|}
+
+=== Fundy Regional Service Commission ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 157 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/zObTBWFShHDyNYqr/arcgis/rest/services/Fundy_Protected_Areas.gdb/FeatureServer/3 Fundy Protected Areas.gdb — Fee_Simple_Ownership] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || A clip of the federal CPCAD: 93 land-trust nature preserves with names, owners and IUCN category; preserves OSM may lack.
+|-
+| [https://services5.arcgis.com/zObTBWFShHDyNYqr/arcgis/rest/services/Fundy_Protected_Areas.gdb/FeatureServer/4 Fundy Protected Areas.gdb — Fee_Simple_Ownership_by_Environmental_Non_Governmental_Conservation_Organization] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || A clip of the federal CPCAD: 28 nature preserves owned by environmental groups, with names and owners; preserves OSM may lack.
+|}
+
+=== Capital Region Service Commission ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 150 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services6.arcgis.com/ryNCdW1VQ9aq9zEk/arcgis/rest/services/ASSET_POINTS_LABELS__%C3%89TIQUETTES_DES_POINTS_D_ACTIF/FeatureServer/25 ASSET POINTS LABELS  ÉTIQUETTES DES POINTS D ACTIF — ASSET POINTS LABELS; ÉTIQUETTES DES POINTS D'ACTIF] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 466 community assets (agriculture, health, churches, sports) with names, type, owner and address (edited 2025-07-22); names and positions to check against OSM POIs.
+|-
+| [https://services6.arcgis.com/ryNCdW1VQ9aq9zEk/arcgis/rest/services/Health_Services__Services_de_sant%C3%A9/FeatureServer/4 Health Services  Services de santé — Health Services; Services de santé] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 233 health services (clinics, pharmacies, practitioners) with names, type, address and links (edited 2025-06-05); a gap list for OSM health POIs.
+|}
+
+=== Kent Regional Service Commission ===
+ 151 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|}
+
+=== Southwest Regional Service Commission ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 126 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services3.arcgis.com/vI5YHAhVnULrp61r/arcgis/rest/services/firestations/FeatureServer/0 firestations — firestations] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 21 fire stations of the region with names, addresses and station phones, edited 2025-09-23; a check for named fire stations.
+|}
+
+=== Bathurst ===
+9 layers (9 no licence). ''Value'' is a 1–5 score of what OSM would gain. 105 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://maps.bathurst.ca/server/rest/services/DB_Parks_Recreation/Combined_Trails/MapServer/0 Combined_Trails] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 10,297 trail segments with per-use flags (walking, ski, snowshoe, fat bike, ATV, snowmobile) and jurisdiction (2022); trail uses OSM mostly lacks.
+|-
+| [https://maps.bathurst.ca/server/rest/services/Hosted/Quad_Trails_Bathurst_view/FeatureServer/0 Quad Trails Bathurst view — ATV_Annexe] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 11 ATV routes from the by-law annex (2026); designated ATV routes and atv=yes access OSM lacks.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Cornation_Park/FeatureServer/0 Cornation Park — Cornation_Park] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 65 surface polygons of Coronation Park with surface class and names (2026); park detail to map.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Daly_Point_Trails/FeatureServer/0 Daly Point Trails — Daly_Point_Trails] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 16 Daly Point trails with numbers, descriptions and allowed uses (2024); named trails to check against OSM.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Disc_Golf_Pics/FeatureServer/0 Disc Golf Pics — Disc_Golf_Pics] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 10 disc golf tees with distance and par (2025); a course OSM may lack.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Disc_Path/FeatureServer/0 Disc Path — Disc_Path] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 9 disc golf holes as lines with par and distance (2025); with the tees, a course to map.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Hydrants_wgs84/FeatureServer/0 Hydrants wgs84 — Hydrants_wgs84] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 841 fire hydrants with asset ids and nearest civic address (2024); hydrants OSM usually lacks in bulk.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Nepisiguit_Mi_Gmaq_Trail/FeatureServer/0 Nepisiguit Mi Gmaq Trail — Nepisiguit_Mi_Gmaq_Trail] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 617 segments of the Nepisiguit Mi'gmaq Trail with per-use flags (2021); a named long-distance trail to check against OSM.
+|-
+| [https://services.arcgis.com/036S6vZ8Km7lO7Hl/arcgis/rest/services/Tree_Golf/FeatureServer/0 Tree Golf — Tree_Golf] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 144 trees on the disc golf course with size (2025); park trees OSM rarely has.
+|}
+
+=== Tracadie ===
+6 layers (6 no licence). ''Value'' is a 1–5 score of what OSM would gain. 77 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services7.arcgis.com/V33JXkemekmeW9AX/arcgis/rest/services/D%C3%A9fibrillateur_Tracadie/FeatureServer/0 Défibrillateur Tracadie — Défibrillateur] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 14 AED locations with the building and civic address of each, edited October 2025; OSM rarely has defibrillators.
+|-
+| [https://services7.arcgis.com/V33JXkemekmeW9AX/arcgis/rest/services/Plantation_d_arbre_WFL1/FeatureServer/0 Plantation d arbre WFL1 — Arbres] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 223 planted trees with type and site (May 2025); OSM rarely has individual trees here.
+|-
+| [https://services7.arcgis.com/V33JXkemekmeW9AX/arcgis/rest/services/RoadNetworkMRT/FeatureServer/13 RoadNetworkMRT — rdStreetSign] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 711 street signs with sign code and description (stop, yield, speed and others), April 2025; regulatory signs OSM mostly lacks here.
+|-
+| [https://services7.arcgis.com/V33JXkemekmeW9AX/arcgis/rest/services/RoadNetworkMRT/FeatureServer/2 RoadNetworkMRT — rdBikeLane] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 11 bike lanes with street names (January 2026); small, but official cycling infrastructure to check in OSM.
+|-
+| [https://services7.arcgis.com/V33JXkemekmeW9AX/arcgis/rest/services/RoadNetworkMRT/FeatureServer/6 RoadNetworkMRT — rdParkTrail] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 22 park trails with names and type (April 2025); official trail names to check against OSM.
+|-
+| [https://services7.arcgis.com/V33JXkemekmeW9AX/arcgis/rest/services/WaterNetwork/FeatureServer/10 WaterNetwork — wHydrant] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 417 fire hydrants with model, flow and pressure (September 2026); hydrants are a fair OSM gap.
+|}
+
+=== Dieppe ===
+13 layers (13 no licence). ''Value'' is a 1–5 score of what OSM would gain. 50 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Arret_Autobus/Transport_Commun/FeatureServer/0 Transport Commun — Arrêt d'autobus] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 102 Codiac Transpo stops in Dieppe with shelter, lighting, sidewalk and bike access flags; stop attributes OSM often lacks (the system-wide stops are ca/nb/moncton/bus-stops).
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Carte_Communication/FeatureServer/0 Carte Communication — Sports et Loisirs] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 34 Dieppe sports and leisure facilities with names, address and flags per sport (baseball, basketball, disc golf, climbing, hockey); facility names and sports OSM often lacks.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Carte_Communication/FeatureServer/1 Carte Communication — Parcs et terrains de jeux] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 40 Dieppe parks and playgrounds with official names, type, year and address; names OSM often lacks on leisure=park and playground features.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Carte_Communication/FeatureServer/2 Carte Communication — Services] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 38 city service points (offices, facilities) with names, address, hours and links; check against OSM POIs.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Carte_Communication/FeatureServer/3 Carte Communication — Lieux Patrimoniaux] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 54 Dieppe heritage places with names, address, PID, description and photos; a heritage register OSM rarely has.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Carte_Communication/FeatureServer/4 Carte Communication — Monuments] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 16 monuments with names, location, category and condition; memorials OSM may lack.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Carte_Communication/FeatureServer/5 Carte Communication — Oeuvres d'art] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 6 public artworks with names, artist and year; small, tourism=artwork OSM may lack.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Sentiers_Inventaires_enseignes/FeatureServer/0 Sentiers Inventaires enseignes — Sentiers] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 561 trail segments with names, colour, type, status and surface, a sign-inventory edition of the trail network larger than Sentiers Open; names and surfaces.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Communications/Stationnement/FeatureServer/0 Stationnement — GISPROD.GISOWN.Stationnement] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || Parking areas with spaces, duration, cost and winter rules (record count not given); parking attributes OSM usually lacks.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Loisirs/Sentiers_Open/FeatureServer/0 Sentiers Open — GISPROD.GISOWN.Sentiers] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 368 Dieppe trail segments with names, colour, type, status and surface; official trail names and surfaces OSM often lacks.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Planification/Civics_Ingenierie_Service/FeatureServer/0 Civics Ingenierie Service — civic_numbers] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 12,273 city civic numbers with units, postcodes and French addresses; adds units and postcodes to the NB 911 points (ca/nb/service-new-brunswick/geonb-dps-civic-address-civic-addresses-2).
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/PRO/app_firstdue_hydrant_pressure/FeatureServer/0 app firstdue hydrant pressure — app_firstdue_hydrant_pressure] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,679 fire hydrants with ids, private flag and status, published for the FirstDue app; positions to check against OSM.
+|-
+| [https://geo.dieppe.ca/arcgis/rest/services/Routes/MapServer/0 Routes — Noms de rues / Street names] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,299 Dieppe street segments with official bilingual names, type, class and jurisdiction; names and French forms to check against OSM and NBRN.
+|}
+
+=== Northwest Regional Service Commission ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 53 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/GrrgYfPENmGavCKj/arcgis/rest/services/SentierM%C3%A9ruimticook_SentierPrincipal/FeatureServer/0 SentierMéruimticook SentierPrincipal — SentierMéruimticook_SentierPrincipal] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || The Méruimticook trail's main route as 3 lines (KML, 2022); a named hiking trail to check against OSM.
+|-
+| [https://services5.arcgis.com/GrrgYfPENmGavCKj/arcgis/rest/services/Stations_de_lavage/FeatureServer/0 Stations de lavage — main."Stations de lavage"] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 129 boat washing stations in Quebec and NB with operator, address, type and fees (2024); amenities OSM rarely has.
+|}
+
+=== Eastern Charlotte ===
+2 layers (2 no licence). ''Value'' is a 1–5 score of what OSM would gain. 45 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services9.arcgis.com/xYlY00DUBWnM15s9/arcgis/rest/services/Blacks_Harbour_Municipal_Infrastructure/FeatureServer/0 Blacks Harbour Municipal Infrastructure — Fire Hydrant] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 52 Blacks Harbour fire hydrants with install year and condition, edited 2026-07-13; a check for emergency=fire_hydrant.
+|-
+| [https://services9.arcgis.com/xYlY00DUBWnM15s9/arcgis/rest/services/St_George_Municipal_Infrastructure/FeatureServer/9 St George Municipal Infrastructure — Fire Hydrant] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 111 St. George fire hydrants with install year and condition, edited 2026-02-23; a check for emergency=fire_hydrant.
+|}
+
 === New Brunswick Department of Justice and Public Safety ===
  45 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -1250,8 +1812,94 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 ! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |}
 
+=== Campbellton ===
+4 layers (4 no licence). ''Value'' is a 1–5 score of what OSM would gain. 40 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/KWLXHgYiVxSEB0YG/arcgis/rest/services/2026_Lane_Direction_Arrows/FeatureServer/0 2026 Lane Direction Arrows — 2026_Lane_Direction_Arrows] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 295 painted lane-direction arrows by street (2026); turn-lane data for OSM turn:lanes, by hand.
+|-
+| [https://services5.arcgis.com/KWLXHgYiVxSEB0YG/arcgis/rest/services/Crosswalks/FeatureServer/0 Crosswalks — Crosswalks] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 100 crosswalks with type (2026); crossing positions and markings OSM often lacks.
+|-
+| [https://services5.arcgis.com/KWLXHgYiVxSEB0YG/arcgis/rest/services/Multi_trail/FeatureServer/2 Multi trail — Multi-trail] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 19 multi-use trail sections with length, surface material and owner (2026); surface and sections for OSM paths.
+|-
+| [https://services5.arcgis.com/KWLXHgYiVxSEB0YG/arcgis/rest/services/Traffic_Lights/FeatureServer/0 Traffic Lights — Traffic_Lights] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 19 traffic signals with pole and service address (2026); positions for highway=traffic_signals, small.
+|}
+
+=== Quispamsis ===
+4 layers (4 no licence). ''Value'' is a 1–5 score of what OSM would gain. 40 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services.arcgis.com/TkD6WFqZrtPnILbz/arcgis/rest/services/BuildingEnvelope/FeatureServer/1 BuildingEnvelope — Envelope] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || The town's own building footprints, 13,570 polygons down to sheds, edited April 2026: newer than the 2015-18 lidar outlines in ca/nb/service-new-brunswick/geonb-snb-buildings-buildings-2.
+|-
+| [https://services.arcgis.com/TkD6WFqZrtPnILbz/arcgis/rest/services/CivicNumbersTest/FeatureServer/0 CivicNumbersTest — CivicNumbers] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || The town's own 8,123 civic numbers with street, suffix and placement method, edited Oct 2026 despite 'Test'; a cross-check for ca/nb/service-new-brunswick/geonb-dps-civic-address-civic-addresses-2.
+|-
+| [https://services.arcgis.com/TkD6WFqZrtPnILbz/arcgis/rest/services/QuispamsisHydrant/FeatureServer/0 QuispamsisHydrant — QuispamsisHydrant] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 80 hydrants with flow tests and nozzle direction (2022); positions to check OSM hydrants against.
+|-
+| [https://services.arcgis.com/TkD6WFqZrtPnILbz/arcgis/rest/services/StreetNames_Public/FeatureServer/0 StreetNames Public — Streets] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,206 town street segments with names, posted speed and 2021-22 condition (edited 2023); maxspeed is the gain over OSM.
+|}
+
+=== Greater Miramichi Regional Service Commission ===
+3 layers (3 no licence). ''Value'' is a 1–5 score of what OSM would gain. 40 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services7.arcgis.com/Ekhg8HoLHR992KEG/arcgis/rest/services/Bridges/FeatureServer/0 Bridges — Bridges] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 13 bridges with names, status and length (2021); bridge names OSM often lacks.
+|-
+| [https://services7.arcgis.com/Ekhg8HoLHR992KEG/arcgis/rest/services/GMRSC_Recreation_Infrastructure/FeatureServer/0 GMRSC Recreation Infrastructure — GMRSC Recreation Infrastructure] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 28 recreation facilities with names, address, owner, operator, surface, lighting and size (2022); a facility roster with attributes OSM mostly lacks.
+|-
+| [https://services7.arcgis.com/Ekhg8HoLHR992KEG/arcgis/rest/services/MyMapService/FeatureServer/0 MyMapService — Battery & Cell Phone / Piles et téléphones mobiles] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 18 battery and cell phone drop-off depots with names and locations (2023); recycling points OSM rarely has.
+|}
+
+=== Restigouche Regional Service Commission ===
+ 34 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|}
+
+=== Oromocto ===
+1 layers (1 no licence). ''Value'' is a 1–5 score of what OSM would gain. 25 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services5.arcgis.com/dGnJNUgV6a8Ekhpr/arcgis/rest/services/RT_Tourism_Features_WFL1_PUBLIC_VIEW/FeatureServer/0 RT Tourism Features WFL1 PUBLIC VIEW — RT Tourism Features] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 70 named tourism features with classification and address (edited June 2025); names and positions to check against OSM attractions.
+|}
+
+=== Miramichi ===
+3 layers (3 no licence). ''Value'' is a 1–5 score of what OSM would gain. 20 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://services2.arcgis.com/SVwVXeL5KEXSXvML/arcgis/rest/services/Playground/FeatureServer/1 Playground — Playgrounds] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 9 playground outlines with names (October 2024); small, official playground names to check against OSM.
+|-
+| [https://services2.arcgis.com/SVwVXeL5KEXSXvML/arcgis/rest/services/Road_Names/FeatureServer/14 Road Names — Road Names] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,549 street sections with names, surface type, width and age (October 2026); official names and surfaces to check against OSM.
+|-
+| [https://services2.arcgis.com/SVwVXeL5KEXSXvML/arcgis/rest/services/Street_Names_Bilingual/FeatureServer/5 Street Names Bilingual — Street Names] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-03 || 1,427 street sections with English and French street names, old names and designation (February 2024); bilingual names for name:en and name:fr.
+|}
+
 === New Brunswick Department of Health ===
  22 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|}
+
+=== Chaleur Regional Service Commission ===
+ 12 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -1266,6 +1914,14 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 ! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |-
 | [https://services7.arcgis.com/QOHmSObpROGHEo2p/arcgis/rest/services/NBDTI_Surface_Treated_Roads_View/FeatureServer/0 NBDTI Surface Treated Roads View — NBDTI_Surface_Treated] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Surface type on provincial roads (6,903 asphalt, 6,325 chipseal, 37 concrete) with route names: a surface=* source OSM mostly lacks. 13,265 features, edited 2025-01-22.
+|}
+
+=== Hampton ===
+ 2 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
 |}
 
 == Nova Scotia ==

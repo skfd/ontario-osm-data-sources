@@ -7,7 +7,8 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
 `dataset` collection. The third (2026-10-16) read GRIN and RVCA's JKAN through new `custom`
 readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's remaining
 downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10-30) listed the
-54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia.
+54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia. The fifth
+(2026-11-02 and 03) opened New Brunswick.
 
 ## Graded on 2026-10-30 and 31
 
@@ -58,6 +59,95 @@ downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10
   that is not wanted. The filter now matches contact fields of students and parents, children's
   names, homelessness duration, and a school-grade-email set; it no longer matches a school
   list's `Student_Trustee` or a survey's yes-or-no `parent_guardian_school_child`.
+
+## New Brunswick (surveyed 2026-11-02)
+
+Every one of the 77 local governments and the 12 regional service commissions (RSCs) has a portal
+row: a top-down pass over GeoNB, Socrata, Hub and ArcGIS Online searches, then three agents
+checking each unit's own site. The province publishes through a Socrata catalogue
+(gnb.socrata.com, 676 of 700 assets under the New Brunswick Open Government Licence, which the
+OSMF page lists as compatible since 2025-07-14) and GeoNB, whose items name a GeoNB OpenData
+Licence (`geonb-odl_en.pdf`). Six departments serve layers from ArcGIS Online orgs or servers
+with no licence stated. Edmundston's Hub is the only municipal portal naming a licence of its
+own. The OSM wiki's New Brunswick page records CanVec imported province-wide, GeoNB addresses
+used as a reference by hand, and the 2023 boundaries imported in 2025; no import is tracked in
+`work.csv`. Open ends:
+
+- **The province's layers (graded 2026-11-02):** 3,034 layers, 1,110 copies. GeoNB's 373,903 NB
+  911 civic address points and 661,348 lidar building footprints are tier 5 and `Available`.
+  Worth a look in review:
+  - `geonb-snb-municipal-planning-civic-addresses-2` has 441,451 points with unit numbers against
+    the DPS layer's 373,903, and the test server's sub-address layer 437,372: either may be the
+    better import source. Both are marked copies of the DPS layer.
+  - **GeoNB's test server** (`geonb-t.snb.ca`) answers anonymously and carries layers production
+    lacks, the best of them 15,869 named trail segments with network, surface and managing
+    organisation (tier 4, `No licence`), plus park campsites, water taps and recreation
+    facilities. Whether a test server is a release is a question for Service New Brunswick.
+  - The org's `schools-update-2024-05-03` (295 schools) is newer than the two 2018 production
+    school layers, but is marked their copy.
+  - Natural Resources' own server (`gis-erd-der.gnb.ca`) has an older NBHN edition (88,242
+    watercourses against GeoNB's 158,957), province-wide 10-30 cm orthos (NBORTHOS) and Crown
+    forest roads with attributes, all with no licence: the department is the one to ask. Two of
+    its OpenData layers (mineral claims, exploration drillholes) say "not to distribute".
+  - The Socrata "Rural Districts" dataset holds the 77 local governments, and its "NBHN" holds
+    wetlands; both are marked copies of the GeoNB layers they really are.
+  - Socrata-only originals whose twins are on the test server (protected natural areas, nursing
+    homes, forest roads) were not cross-marked: different jurisdictions, so `--copies` cannot.
+- **The municipalities' and RSCs' layers (graded 2026-11-03):** 6,639 layers on 32 portals in 24
+  jurisdictions, 932 copies; 5,572 at tier 1, among them Moncton's 2,922 council documents on its
+  Hub. Only Edmundston's Hub names an open licence, Moncton's says "Open Data Terms of Use", and
+  Fredericton's 119 Hub rows say "GNB Open Data Policy": a policy, not a licence, though the grader
+  took it as open (`Available`); worth a look. What the cities publish beyond GeoNB:
+  - **Their own address registers**, all graded on their merits against the NB 911 points:
+    Fredericton's 25,111 points with units, postcodes and wards (tier 5, edited 2026-10-30),
+    Moncton's 49,730 Greater Moncton points with units and postcodes, Saint John's 25,580 (the
+    city's source for NB 911), Dieppe's 12,273 with units, Rothesay's 4,510 with suites, Quispamsis'
+    8,123 `CivicNumbersTest` (live despite the name). Bathurst's layer stops at exactly 8,000, which
+    looks capped.
+  - **Footprints newer than GeoNB's 2015-18 lidar:** Moncton's 41,916 with year built, floors and
+    height, Saint John's 37,656 and Quispamsis' 13,570 (both edited 2026-04), Fredericton's 31,183,
+    Edmundston's 15,369 (source unverified).
+  - **Trails:** the Southeast RSC's 1,069 and 337 named segments, Bathurst's 10,297 by use,
+    Fredericton's 524 with Wolastoqey (Maliseet) names, Dieppe's 368, Edmundston's mountain-bike and hiking
+    trails. Also parks, sports fields, trees (Fredericton 21,186, Moncton 12,731), heritage
+    registers (Fredericton's 781 evaluated buildings), Rothesay's 1,836 signs, Saint John's truck
+    routes and bike routes, Moncton's 344 parking lots.
+  - Fredericton's org holds about 40 layers of South African municipal asset registers (Port St
+    Johns, Buffalo City) and a Newfoundland salmon-pool layer; two Southeast RSC layers are Esri's
+    Los Angeles sample data; two Edmundston layers are exports of OSM. All tier 1.
+- **The RSCs hold the small units' layers.** 52 shared rows give members their zoning, civic
+  points and other layers on the RSC orgs, many under the names of villages and planning areas
+  the 2023 reform merged (Maple Hills' zoning is the old Kent County and Beaubassin West plans on
+  the Southeast org). Kings and Western Valley RSCs publish PDF maps only, so 11 of their members
+  are none-found at reach 1. Kedgwick is a Restigouche member, not Northwest's.
+- **Fredericton's org is half someone else's.** 288 of its 555 services belong to Greater
+  Fredericton Social Innovation's accounts (social-indicator tables, story maps); they are listed
+  under Fredericton with that non-profit as provider.
+- **Token-only and unread.** Bathurst's server opens 11 of 53 folders anonymously (planning,
+  property and road network need a token); Dieppe's 8 of 16. Two Northwest RSC Hubs are empty
+  sites. arcadianb.ca, townofsaintandrews.ca and valleywaters.ca answer 403 to scripts,
+  tantramar.ca fails certificate checks, campbellton.org, grand-sault.ca, valleedesrivieres.ca,
+  maps.saintjohn.ca and gis.moncton.ca do not answer.
+- **Personal data in public layers**, all tier 1 with the fact in the note: Restigouche RSC's
+  `SNBData_Restigouche` (property owners' names and mailing addresses), Chaleur RSC's variance
+  layer (applicants' names and addresses), Natural Resources' deer registration agents (home
+  addresses and phones), GeoNB's early learning centres (operators' emails and phones) and
+  pharmacies, and 142 home daycares under their operators' names in the Socrata childcare list.
+  A Tourism layer that looks like a children's physical-literacy self-assessment holds scores
+  only, so it was kept. Municipal parcels joined to owners' names and mailing addresses are
+  common on the RSC orgs (Acadian Peninsula, Capital Region, Restigouche, Chaleur) and in Dieppe,
+  Miramichi and Rothesay.
+- **Records of children and of homeless people kept out (2026-11-03).** Four forms and a layer were
+  dropped: a city's holiday-help form (parents' and children's names, school, allergies), another
+  city's student application and student quiz forms with their tables, and a city's 219 parcels
+  marked as encampments with occupancy. `PERSONAL_FIELDS` now matches the French field names
+  (`nom_dedes_enfants`, `nom_de_l_tudiant`), a layer named for encampments is left out whatever its
+  fields, and a form with one such layer is left out whole. A count-only query shows one student
+  application still readable by anyone and its layer editable by anyone; the holiday form accepts
+  submissions only, and the encampment layer is read-only. Which publishers and services these are
+  is in the gitignored `cache/scratch/exposed-forms.md`, as for Ontario's.
+- **No address tracker for New Brunswick**, as for Nova Scotia: the NB 911 points have no
+  `/addresses` row and no measures. Onboarding them is `../ontario-address-changes`' call.
 
 ## Nova Scotia (surveyed 2026-10-30)
 
@@ -159,7 +249,8 @@ municipally. Open ends:
   roots an `arcgis-rest` row of its own (reach 2, under the Hub's jurisdiction), sweep them with
   `inventory.py`, let `--copies` take the alternate views, and grade the rest.
 
-- **The wiki view is over MediaWiki's 2 MB (3.3 MB with Nova Scotia, 2.3 MB before).** Nothing
+- **The wiki view is over MediaWiki's 2 MB (5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
+  2.3 MB before).** Nothing
   is pasted until the catalogue is reviewed, so it blocks nothing yet; the likely fix is one page
   per province under `Canada/Open data/<Province>`, with the national table and links on the
   parent page.

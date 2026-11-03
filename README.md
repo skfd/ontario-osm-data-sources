@@ -1,9 +1,9 @@
 # ontario-osm-data-sources
 
 A catalogue of every open data source usable for OpenStreetMap in Canada, province by province:
-Ontario first, Nova Scotia since 2026-10-30. It records what each source is, what it is good for
-(import / conflate / validate / reference / no), and how far it has been brought into OSM, as
-dated measurements that build up a history. It grows until it covers every source and every
+Ontario first, Nova Scotia since 2026-10-30, New Brunswick since 2026-11-02. It records what each
+source is, what it is good for (import / conflate / validate / reference / no), and how far it has
+been brought into OSM, as dated measurements that build up a history. It grows until it covers every source and every
 measure we track. The repository keeps its Ontario name.
 
 Views are generated from it. Today there are three:
@@ -47,7 +47,8 @@ All of it is in [`catalogue/`](catalogue/); the format is in
 - `jurisdictions.csv`: the places and bodies an id can sit under: Ontario's 444 municipalities,
   36 conservation authorities, and the ministries, agencies, school boards and health units
   found publishing map data; Nova Scotia's 49 municipal units, its departments and the shared
-  GIS bodies that serve its towns
+  GIS bodies that serve its towns; New Brunswick's 77 local governments, its departments and the
+  12 regional service commissions that plan for them
 
 ## Run
 
