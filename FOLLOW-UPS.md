@@ -182,6 +182,10 @@ municipally. Open ends:
 
 ## Not swept
 
+- **GeoNB's download catalogue.** Its `custom` row (gnb.ca's data-catalogue page, 74 zip
+  downloads from `geonb.snb.ca/downloads`) has no `api_url`, so it is not swept. Most of the 74
+  have twins among the services on `geonb.snb.ca`; as with OGSEarth's, hand rows in `sources.csv`
+  are owed only for downloads that have none.
 - **GeologyOntario.** Both Hubs still list 0 datasets (the French one lists 10 site pages);
   the search app behind `www.geologyontario.mines.gov.on.ca` queries a keyed Elasticsearch API.
   OGSEarth's 38 downloads all have rows: 25 were swept already (13 of them under `ca/on`, from
@@ -220,6 +224,13 @@ municipally. Open ends:
 
 ## Decisions pending
 
+- **Layer files are named for the last part of a code, across provinces.** `inventory.py` writes
+  `cache/inventory/<last>.csv` and `catalogue/layers/<last>.csv` (`inventory()`, `chunk()`,
+  `merge()`), so two provinces' units with one slug share a file and a cache. Nothing collides
+  yet: `ca/nb/woodstock`, `ca/ns/oxford`, `ca/ns/shelburne` and `ca/ns/st-marys` have no swept
+  portal. British Columbia would: Victoria and Richmond have Hubs, and `ca/ns/victoria` and
+  `ca/ns/richmond` exist. The likely fix is a province-qualified name for the newcomer
+  (`victoria-bc.csv`) through one helper used in all three places, before that sweep.
 - **Hub portals are swept through their catalogue only (measured 2026-10-22).** `from_hub`
   reads the Hub's search, so a service the org publishes without cataloguing it is never seen.
   Essex County's org (`services6.arcgis.com/baycHE2iKJaT7Upn`) lists 288 services at its REST
