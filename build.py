@@ -458,16 +458,19 @@ def portal_label(url: str) -> str:
 
 
 def portal_finder(portals):
-    """Which portal a source was found on. Of the jurisdiction's portals: one whose licence the
-    row carries (a server's layers always carry the server's), then one on the source's host,
-    then the best reach. A source with none, the host's portal anywhere. Checked against the
-    sweep's own record: every swept layer comes out on the portal it was listed from."""
+    """Which portal a source was found on: the one a swept layer records. For the rest, of the
+    jurisdiction's portals: one whose licence the row carries, then one on the source's host,
+    then the best reach. A source with none, the host's portal anywhere."""
     live = [p for p in portals if p["platform"] != "none-found"]
     by_j = defaultdict(list)
     for p in live:
         by_j[p["jurisdiction"]].append(p)
 
+    by_url = {(p["jurisdiction"], p["portal_url"]): p for p in live}
+
     def find(r: dict) -> dict | None:
+        if p := by_url.get((jurisdiction(r["id"]), r.get("portal_url"))):
+            return p
         h = portal_label(r["source_url"]).lower()
         on_host = lambda p: h in (portal_label(p["portal_url"]).lower(),
                                   portal_label(p["api_url"]).lower())

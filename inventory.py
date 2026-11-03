@@ -579,6 +579,7 @@ def merge():
                 continue
             out.append({"id": r["id"], "theme": g["theme"], "dataset": r["dataset"],
                         "provider": g["provider"], "source_url": r["source_url"],
+                        "portal_url": r["portal_url"],
                         "licence": r["licence"], "licence_from": r.get("licence_from", ""),
                         "tier": g["tier"],
                         "feasibility": g["feasibility"], "status": g["status"], "tools": "",
