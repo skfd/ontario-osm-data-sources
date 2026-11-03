@@ -83,10 +83,16 @@ removed in 2010. Open ends:
   - Charlottetown's cycling network (2,176 segments with bike lanes and traffic stress), 14,091
     public trees, 67 public artworks and truck routes, all `No licence`.
 - **The OGL-PEI on items that do not name it.** `inventory.py` gives an item with no licence text
-  its portal's licence, as for Ontario's Hubs and org roots. So the 18 Hub items served from the
-  provincial server (civic addresses, zones, the 911 centreline) and every service at the org
-  root (Souris's and Victoria's water points among them) read as OGL-PEI, though the items
-  themselves state none. Worth a look before the address points are called `Available`.
+  its portal's licence. So the 18 Hub items served from the provincial server (civic addresses,
+  zones, the 911 centreline) read as OGL-PEI, though the items themselves state none. The org
+  root's row carries the Hub's licence too, as Halifax's, Saint John's, Moncton's and GeoNB's do,
+  so every service there (Souris's and Victoria's water points among them) reads as OGL-PEI;
+  Ontario's 54 org roots say `None published` instead. One rule should hold for all; worth
+  settling before the address points are called `Available`.
+- **Providers guessed.** One org holds every department's layers, and the owners (`gpei_*`) are
+  staff, not departments, so graders named the department from the content, some from memory
+  (Fisheries, Tourism, Sport and Culture; Education and Early Years; Island Waste Management
+  Corporation), and fell back to `Government of Prince Edward Island` where unsure.
 - **Municipalities' layers on the province's org.** North Rustico's, Souris' and Victoria's water,
   sewer and transport networks sit on the government org root; the three have shared rows.
   Summerside's address points and Stratford's buildings are the province's (same ids, same
