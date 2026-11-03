@@ -60,6 +60,11 @@ PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|"
                              r"nom_d\w*_enfants?\w*|nom_de_l_?e?tudiants?\w*|nom_de(_l|s)_?e?l_?e?ves?\w*", re.I)
 # A form that asks a child's school and grade along with an email address.
 PUPIL_SET = {"school_name", "grade", "email"}
+# A test or development server, or a test folder on a production one, is not a release: nothing on
+# it is listed (GeoNB's geonb-t.snb.ca, Haliburton's Testing folder, MTO's intra.dev hosts).
+TEST = re.compile(r"//(?:[^/]*\.)?(?:[a-z0-9-]+-t|test|testing|dev|staging)\.|"
+                  r"/rest/services/(?:test|testing|dev|staging)/(?!(?:Feature|Map|Image)Server)", re.I)
+TEST_FOLDER = re.compile(r"(?:test|testing|dev|staging)", re.I)
 # A layer of encampment sites, whatever its fields (Saint John's parcels with Status and Occupancy).
 ENCAMPMENTS = re.compile(r"encampment", re.I)
 
@@ -145,7 +150,7 @@ def layer_row(service: str, layer: dict) -> dict:
 def expand(url: str) -> list[dict]:
     """A service or layer URL as one entry per (non-group) layer it names."""
     m = SERVICE.match(url or "")
-    if not m:
+    if not m or TEST.search(url):
         return []
     service, index = m.group(1), m.group(2)
     layers = [l for l in service_layers(service) if not l.get("subLayerIds")]
@@ -250,6 +255,8 @@ def from_rest(p: dict) -> list[dict]:
     top = get_json(with_param(root, "f=json"))
     services = list(top.get("services", []))
     for folder in top.get("folders", []):
+        if TEST_FOLDER.fullmatch(folder):
+            continue
         try:
             services += get_json(f"{root}/{urllib.parse.quote(folder)}?f=json").get("services", [])
         except (Secured, ServiceError, OSError, ValueError):

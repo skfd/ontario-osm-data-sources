@@ -135,7 +135,9 @@ A catalogue is a site whose purpose is publishing datasets: a Hub, CKAN, Socrata
 or a page listing downloads (`custom`). A dashboard or story-map hub is not one. A Hub and the
 ArcGIS server behind it are one row (the Hub); a server holding much more than its Hub lists
 gets a reach-2 row of its own. A CKAN site and a Hub run side by side are two rows. A
-municipality is graded by its best row.
+municipality is graded by its best row. A test or development server (`geonb-t.snb.ca`, an
+`intra.dev` host), and a `test` or `Testing` folder on a production server, is not a release: no
+row, and `inventory.py` lists nothing from it.
 
 **Shared portals.** A county or consortium catalogue or server that holds a member's own layers
 gives the member a row too, with the same URL, blank `layers_seen` and `shared portal of <code>`

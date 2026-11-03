@@ -1096,138 +1096,6 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 | [https://services1.arcgis.com/E26PuSoie2Y7bbyI/arcgis/rest/services/StreetLights_gdb/FeatureServer/1 StreetLights gdb — Traffic Light] || Open Data Terms of Use || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-03 || 571 traffic signal poles with signal type (2026-11-02); a check for signalised intersections.
 |}
 
-=== Service New Brunswick ===
-62 layers (57 available, 5 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1290 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
-
-{| class="wikitable sortable" style="font-size:90%"
-|-
-! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
-|-
-| [https://geonb-t.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/5 GeoNB RIPT Facilities — Additional Facilities - Autres établissements] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Test server: recreation facilities by RSC (350 records: courts, diamonds, fields, rinks) with names, civic addresses and coordinates; a gap list for OSM.
-|-
-| [https://geonb-t.snb.ca/arcgis/rest/services/test/GeoNB_THC_DataCatalogue/MapServer/0 GeoNB THC DataCatalogue — Campsites] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Test server: 1,042 records. Campsites in provincial parks with site numbers and services; OSM rarely maps individual pitches.
-|-
-| [https://geonb-t.snb.ca/arcgis/rest/services/test/GeoNB_THC_DataCatalogue/MapServer/10 GeoNB THC DataCatalogue — Trails] || None published || 4/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Test server: 15,869 records. Trail segments with names, network, surface, width, season and managing organisation; names and attributes OSM trails usually lack.
-|-
-| [https://geonb-t.snb.ca/arcgis/rest/services/test/GeoNB_THC_DataCatalogue/MapServer/13 GeoNB THC DataCatalogue — Provincial Park Boundaries] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Test server: 28 records. Provincial park boundaries built from parcels, with park names; a check on OSM park outlines.
-|-
-| [https://geonb-t.snb.ca/arcgis/rest/services/test/GeoNB_THC_DataCatalogue/MapServer/4 GeoNB THC DataCatalogue — Water Taps] || None published || 3/5 ||  || Validate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Test server: 342 records. Water taps in provincial parks with condition; drinking-water points OSM rarely has.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Grey/MapServer/0 GeoNB Basemap Grey — Canadian Geographic Names] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Canadian Geographical Names Database entries for NB (11,663 records); official names to check OSM place and feature names against.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Grey/MapServer/5 GeoNB Basemap Grey — Resource Roads] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Resource and forest roads (247,548 records) with type, year and designation; a gap list for back-country tracks OSM only partly has.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_NBRN/MapServer/1 GeoNB Basemap NBRN — NBRN large scale] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || New Brunswick Road Network (66,819 records) with street and route names, lanes and surface; OSM has the roads, the gain is names and classes to check.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Topo/MapServer/13 GeoNB Basemap Topo — Transmission Lines] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Transmission lines in the topo basemap (record count not reported, no attributes); a gap list for power=line, which OSM has in part.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Topo/MapServer/27 GeoNB Basemap Topo — Protected Natural Areas] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Protected natural areas (record count not reported) with names, class, IUCN category and year; official names and boundaries to check OSM protected areas against.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Topo/MapServer/28 GeoNB Basemap Topo — Wildlife Refuges] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Wildlife refuges (record count not reported) with English and French names; official names and boundaries OSM may lack.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/0 GeoNB DNR NBHN — Named Features - points] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 294 named hydrographic points from the NB Hydrographic Network with official names; names for water features OSM may have unnamed.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/1 GeoNB DNR NBHN — Obstacles - points] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 889 obstacles to flow (falls, rapids, dams) with names and elevation; point features OSM often lacks along mapped streams.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/10 GeoNB DNR NBHN — Water Courses] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 158,957 NBHN watercourse lines with flow direction, permanency and name ids; the province's stream network, mostly a names and attribute gain where OSM has the lines.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/11 GeoNB DNR NBHN — Wetlands] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 171,558 wetland polygons with wetland class; a gap list for natural=wetland, too large and detailed for a blind import.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/12 GeoNB DNR NBHN — Islands] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 8,042 islands with coastal flag and name ids; names and missing islets are the gain.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/13 GeoNB DNR NBHN — Water Bodies] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 17,298 NBHN lakes, ponds and river polygons with permanency and name ids; names and outlines to check against OSM water.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/18 GeoNB DNR NBHN — NBHN_0000_Names] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 7,876 official hydrographic names (with Indigenous and local names) that join to the NBHN layers on NAMEID1/NAMEID2; the names are the gain.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/2 GeoNB DNR NBHN — Man Made Features - points] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,582 man-made water structures (dams, wharves, locks) as points with type and names; features OSM often lacks.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/5 GeoNB DNR NBHN — Obstacles - lines] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 298 linear obstacles to flow (dams, falls) with names; features OSM often lacks.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/6 GeoNB DNR NBHN — Man Made Features - lines] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 685 man-made water structures as lines (dams, breakwaters, wharves) with type and names.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/7 GeoNB DNR NBHN — Obstacles - polygons] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,469 obstacle areas (rapids, falls, dams) with type and names.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/8 GeoNB DNR NBHN — Named Features - polygons] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 707 named hydrographic areas (bays, coves, harbours) with official names; names for water OSM may have unnamed.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/9 GeoNB DNR NBHN — Man Made Features - polygons] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,367 man-made water structures as areas (dams, wharves, reservoirs) with type and names.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_ProvincialParks/MapServer/0 GeoNB DNR ProvincialParks — Provincial Parks] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 24 provincial parks with English and French names and area; official names and boundaries to check against OSM's park areas.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DPS_Civic_Address/MapServer/0 GeoNB DPS Civic Address — Civic_Addresses] || GeoNB OpenData Licence || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 373,903 NB 911 civic address points with number, street, community, PID and structure type; the province's address authority, and NB has no address tracker yet.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DPS_NB911_Communities/MapServer/0 GeoNB DPS NB911 Communities — Communities / Communautés] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,197 NB 911 community areas with official community names; named places for place=* names and extents across the province.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_EECD_PublicSchools/MapServer/0 GeoNB EECD PublicSchools — Anglophone] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 206 anglophone public schools with name, address, grades, district and website, as of September 2018; OSM usually has schools, the names and grades help.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_EECD_PublicSchools/MapServer/1 GeoNB EECD PublicSchools — Francophone] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 89 francophone public schools with name, address, grades, district and website, as of September 2018; OSM usually has schools, the names and grades help.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_ELG_Local_Governance/MapServer/5 GeoNB ELG Local Governance — Large Scale / Grande échelle] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 12 rural districts created by the 2023 local governance reform, with official English and French names; the unincorporated areas between local governments.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_ELG_Local_Governance/MapServer/8 GeoNB ELG Local Governance — Large Scale / Grande échelle] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 77 local government boundaries in force since 2023-01-01 with official English and French names and type; the post-reform municipal map, for admin boundaries in OSM.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_ENB_Local_Government_Elections/MapServer/1 GeoNB ENB Local Government Elections — Wards / Quartiers] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 330 municipal wards with names and English and French labels; ward boundaries are what boundary=political carries.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/0 GeoNB Health Facilities — Hospital / Hôpital (Horizon)] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 12 Horizon hospitals with name, address, phone, website and beds; OSM usually has hospitals, a check for names and positions.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/1 GeoNB Health Facilities — Hospital / Hôpital (Vitalité)] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 11 Vitalite hospitals with English and French names, address, phone and website; OSM usually has hospitals, a check for names.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/2 GeoNB Health Facilities — After-hours clinic / Après les heures de clinique] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 33 after-hours clinics, geocoded from addresses; clinics OSM may lack, positions are geocoder hits.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/4 GeoNB Health Facilities — Licensed nursing home / Maison de repos autorisée] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 68 licensed nursing homes with name, beds, language, address and phone; OSM may lack some, a check for names.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_FirstNations/MapServer/0 GeoNB NRCan FirstNations — First Nations Land] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 32 First Nations reserve lands with names (CLSS/NRCan); boundary=aboriginal_lands boundaries to check against OSM.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_PlaceNames/MapServer/0 GeoNB NRCan PlaceNames — Geographic Name / Nom de lieu] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 2,143 official place names from the CGNDB with generic and category; the names are the gain for place=* and named features.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_PlaceNames/MapServer/1 GeoNB NRCan PlaceNames — Administrative Area / Région administrative] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 345 CGNDB administrative area names (parishes, counties, reserves) as points; official names to check against OSM.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_PlaceNames/MapServer/3 GeoNB NRCan PlaceNames — Terrain Feature / Entité terrestre] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,801 CGNDB names of hills, capes, points and other terrain features; official names OSM often lacks.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_Buildings/MapServer/0 GeoNB SNB Buildings — Buildings] || GeoNB OpenData Licence || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 661,348 building footprints from the 2015-18 lidar with ground and roof elevations; province-wide outlines, an import where OSM lacks buildings.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_Counties/MapServer/0 GeoNB SNB Counties — Counties] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || The 15 counties with English and French names; county boundaries are admin areas OSM carries.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_NRWN/MapServer/0 GeoNB SNB NRWN — Station] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 70 railway stations from the National Railway Network with names and type; OSM usually has stations, a check for names.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_NRWN/MapServer/4 GeoNB SNB NRWN — Crossing] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 2,484 rail crossings with level or grade-separated type, warning system and road class; a check for railway=level_crossing tags.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_NRWN/MapServer/5 GeoNB SNB NRWN — Track] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,432 track segments with operator, owner, subdivision, gauge, status and speeds; attributes for OSM railways.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/0 GeoNB RIPT Facilities — Pool - Piscine] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 49 swimming pools with name, address, owner, operator, year built, indoor/outdoor, length and lanes; a facility roster with attributes OSM lacks.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/1 GeoNB RIPT Facilities — Arena- Arèna] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 83 arenas with name, address, owner, operator, year built, ice size and type; a facility roster with attributes OSM lacks.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/2 GeoNB RIPT Facilities — Artificial Turf Field - Terrain Synthétique] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 17 artificial turf fields with name, owner, operator and surface; small, sport and surface tags for OSM pitches.
-|-
-| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/3 GeoNB RIPT Facilities — Track - Piste] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 9 athletic tracks with name, owner, surface and lanes; small, attributes for OSM tracks.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/Fredericton_2020/ImageServer Fredericton 2020] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery of Fredericton, 2020, openly licensed; a recent tracing source for the city.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/HighResolution_Imagery/ImageServer HighResolution Imagery] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || GeoNB's high-resolution orthoimagery mosaic, openly licensed; a province-wide tracing source.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/Imagery2025/ImageServer Imagery2025] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery flown in 2025, openly licensed; a recent tracing source.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2020/ImageServer NB 2020] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2020, openly licensed; a tracing source for its coverage.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2021/ImageServer NB 2021] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2021, openly licensed; a tracing source for its coverage.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2022/ImageServer NB 2022] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2022, openly licensed; a tracing source for its coverage.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2023/ImageServer NB 2023] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2023, openly licensed; a recent tracing source.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2024/ImageServer NB 2024] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2024, openly licensed; a recent tracing source.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2024_Drone/ImageServer NB 2024 Drone] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Drone imagery from 2024, openly licensed; very high resolution for small areas.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/NB_DroneImagery_2025/ImageServer NB DroneImagery 2025] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Drone imagery from 2025, openly licensed; very high resolution for small areas.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/SaintJohn2025/ImageServer SaintJohn2025] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery of Saint John, 2025, openly licensed; a recent tracing source for the city.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/SNB_2023/ImageServer SNB 2023] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || SNB orthoimagery from 2023, openly licensed; a recent tracing source.
-|-
-| [https://geonb.snb.ca/image/rest/services/Imagery/SNB_2024/ImageServer SNB 2024] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || SNB orthoimagery from 2024, openly licensed; a recent tracing source.
-|}
-
 === Saint John ===
 53 layers (53 available). ''Value'' is a 1–5 score of what OSM would gain. 757 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
@@ -1456,6 +1324,128 @@ This page is generated from [https://github.com/skfd/ontario-osm-data-sources on
 | [https://gis-erd-der.gnb.ca/server/rest/services/OpenData/Wetland/FeatureServer/0 Wetland — Wetland] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || Wetlands from forest inventory photo interpretation and lidar, with wetland class (WC), vegetation type and year (DATAYR): natural=wetland types to refine OSM's outlines. 123,910 polygon features; no edit date.
 |-
 | [https://gis-erd-der.gnb.ca/server/rest/services/OpenData/WildlifeRefuge/FeatureServer/0 WildlifeRefuge — Wildlife Refuges] || None published || 3/5 ||  || Conflate || style="background:#f8e4e4" | No licence ||  ||  || 2026-11-02 || 21 wildlife refuges with English and French names (NAME, NAMF, W_CLASS): named protected areas. Its description wrongly says WMZ; Socrata edition has the NB OGL. 21 polygon features; no edit date.
+|}
+
+=== Service New Brunswick ===
+57 layers (57 available). ''Value'' is a 1–5 score of what OSM would gain. 466 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+
+{| class="wikitable sortable" style="font-size:90%"
+|-
+! Dataset !! Licence !! Value !! In OSM !! Use !! Status !! Tools !! Lead !! Verified !! Notes
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Grey/MapServer/0 GeoNB Basemap Grey — Canadian Geographic Names] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Canadian Geographical Names Database entries for NB (11,663 records); official names to check OSM place and feature names against.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Grey/MapServer/5 GeoNB Basemap Grey — Resource Roads] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Resource and forest roads (247,548 records) with type, year and designation; a gap list for back-country tracks OSM only partly has.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_NBRN/MapServer/1 GeoNB Basemap NBRN — NBRN large scale] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || New Brunswick Road Network (66,819 records) with street and route names, lanes and surface; OSM has the roads, the gain is names and classes to check.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Topo/MapServer/13 GeoNB Basemap Topo — Transmission Lines] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Transmission lines in the topo basemap (record count not reported, no attributes); a gap list for power=line, which OSM has in part.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Topo/MapServer/27 GeoNB Basemap Topo — Protected Natural Areas] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Protected natural areas (record count not reported) with names, class, IUCN category and year; official names and boundaries to check OSM protected areas against.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Basemap_Topo/MapServer/28 GeoNB Basemap Topo — Wildlife Refuges] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Wildlife refuges (record count not reported) with English and French names; official names and boundaries OSM may lack.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/0 GeoNB DNR NBHN — Named Features - points] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 294 named hydrographic points from the NB Hydrographic Network with official names; names for water features OSM may have unnamed.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/1 GeoNB DNR NBHN — Obstacles - points] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 889 obstacles to flow (falls, rapids, dams) with names and elevation; point features OSM often lacks along mapped streams.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/10 GeoNB DNR NBHN — Water Courses] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 158,957 NBHN watercourse lines with flow direction, permanency and name ids; the province's stream network, mostly a names and attribute gain where OSM has the lines.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/11 GeoNB DNR NBHN — Wetlands] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 171,558 wetland polygons with wetland class; a gap list for natural=wetland, too large and detailed for a blind import.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/12 GeoNB DNR NBHN — Islands] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 8,042 islands with coastal flag and name ids; names and missing islets are the gain.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/13 GeoNB DNR NBHN — Water Bodies] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 17,298 NBHN lakes, ponds and river polygons with permanency and name ids; names and outlines to check against OSM water.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/18 GeoNB DNR NBHN — NBHN_0000_Names] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 7,876 official hydrographic names (with Indigenous and local names) that join to the NBHN layers on NAMEID1/NAMEID2; the names are the gain.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/2 GeoNB DNR NBHN — Man Made Features - points] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,582 man-made water structures (dams, wharves, locks) as points with type and names; features OSM often lacks.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/5 GeoNB DNR NBHN — Obstacles - lines] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 298 linear obstacles to flow (dams, falls) with names; features OSM often lacks.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/6 GeoNB DNR NBHN — Man Made Features - lines] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 685 man-made water structures as lines (dams, breakwaters, wharves) with type and names.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/7 GeoNB DNR NBHN — Obstacles - polygons] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,469 obstacle areas (rapids, falls, dams) with type and names.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/8 GeoNB DNR NBHN — Named Features - polygons] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 707 named hydrographic areas (bays, coves, harbours) with official names; names for water OSM may have unnamed.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_NBHN/MapServer/9 GeoNB DNR NBHN — Man Made Features - polygons] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,367 man-made water structures as areas (dams, wharves, reservoirs) with type and names.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DNR_ProvincialParks/MapServer/0 GeoNB DNR ProvincialParks — Provincial Parks] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 24 provincial parks with English and French names and area; official names and boundaries to check against OSM's park areas.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DPS_Civic_Address/MapServer/0 GeoNB DPS Civic Address — Civic_Addresses] || GeoNB OpenData Licence || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 373,903 NB 911 civic address points with number, street, community, PID and structure type; the province's address authority, and NB has no address tracker yet.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_DPS_NB911_Communities/MapServer/0 GeoNB DPS NB911 Communities — Communities / Communautés] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,197 NB 911 community areas with official community names; named places for place=* names and extents across the province.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_EECD_PublicSchools/MapServer/0 GeoNB EECD PublicSchools — Anglophone] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 206 anglophone public schools with name, address, grades, district and website, as of September 2018; OSM usually has schools, the names and grades help.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_EECD_PublicSchools/MapServer/1 GeoNB EECD PublicSchools — Francophone] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 89 francophone public schools with name, address, grades, district and website, as of September 2018; OSM usually has schools, the names and grades help.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_ELG_Local_Governance/MapServer/5 GeoNB ELG Local Governance — Large Scale / Grande échelle] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 12 rural districts created by the 2023 local governance reform, with official English and French names; the unincorporated areas between local governments.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_ELG_Local_Governance/MapServer/8 GeoNB ELG Local Governance — Large Scale / Grande échelle] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 77 local government boundaries in force since 2023-01-01 with official English and French names and type; the post-reform municipal map, for admin boundaries in OSM.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_ENB_Local_Government_Elections/MapServer/1 GeoNB ENB Local Government Elections — Wards / Quartiers] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 330 municipal wards with names and English and French labels; ward boundaries are what boundary=political carries.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/0 GeoNB Health Facilities — Hospital / Hôpital (Horizon)] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 12 Horizon hospitals with name, address, phone, website and beds; OSM usually has hospitals, a check for names and positions.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/1 GeoNB Health Facilities — Hospital / Hôpital (Vitalité)] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 11 Vitalite hospitals with English and French names, address, phone and website; OSM usually has hospitals, a check for names.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/2 GeoNB Health Facilities — After-hours clinic / Après les heures de clinique] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 33 after-hours clinics, geocoded from addresses; clinics OSM may lack, positions are geocoder hits.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_Health_Facilities/MapServer/4 GeoNB Health Facilities — Licensed nursing home / Maison de repos autorisée] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 68 licensed nursing homes with name, beds, language, address and phone; OSM may lack some, a check for names.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_FirstNations/MapServer/0 GeoNB NRCan FirstNations — First Nations Land] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 32 First Nations reserve lands with names (CLSS/NRCan); boundary=aboriginal_lands boundaries to check against OSM.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_PlaceNames/MapServer/0 GeoNB NRCan PlaceNames — Geographic Name / Nom de lieu] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 2,143 official place names from the CGNDB with generic and category; the names are the gain for place=* and named features.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_PlaceNames/MapServer/1 GeoNB NRCan PlaceNames — Administrative Area / Région administrative] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 345 CGNDB administrative area names (parishes, counties, reserves) as points; official names to check against OSM.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_NRCan_PlaceNames/MapServer/3 GeoNB NRCan PlaceNames — Terrain Feature / Entité terrestre] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,801 CGNDB names of hills, capes, points and other terrain features; official names OSM often lacks.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_Buildings/MapServer/0 GeoNB SNB Buildings — Buildings] || GeoNB OpenData Licence || 5/5 ||  || Import || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 661,348 building footprints from the 2015-18 lidar with ground and roof elevations; province-wide outlines, an import where OSM lacks buildings.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_Counties/MapServer/0 GeoNB SNB Counties — Counties] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || The 15 counties with English and French names; county boundaries are admin areas OSM carries.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_NRWN/MapServer/0 GeoNB SNB NRWN — Station] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 70 railway stations from the National Railway Network with names and type; OSM usually has stations, a check for names.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_NRWN/MapServer/4 GeoNB SNB NRWN — Crossing] || GeoNB OpenData Licence || 3/5 ||  || Validate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 2,484 rail crossings with level or grade-separated type, warning system and road class; a check for railway=level_crossing tags.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/GeoNB_SNB_NRWN/MapServer/5 GeoNB SNB NRWN — Track] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 1,432 track segments with operator, owner, subdivision, gauge, status and speeds; attributes for OSM railways.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/0 GeoNB RIPT Facilities — Pool - Piscine] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 49 swimming pools with name, address, owner, operator, year built, indoor/outdoor, length and lanes; a facility roster with attributes OSM lacks.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/1 GeoNB RIPT Facilities — Arena- Arèna] || GeoNB OpenData Licence || 4/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 83 arenas with name, address, owner, operator, year built, ice size and type; a facility roster with attributes OSM lacks.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/2 GeoNB RIPT Facilities — Artificial Turf Field - Terrain Synthétique] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 17 artificial turf fields with name, owner, operator and surface; small, sport and surface tags for OSM pitches.
+|-
+| [https://geonb.snb.ca/arcgis/rest/services/RIPT/GeoNB_RIPT_Facilities/MapServer/3 GeoNB RIPT Facilities — Track - Piste] || GeoNB OpenData Licence || 3/5 ||  || Conflate || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || 9 athletic tracks with name, owner, surface and lanes; small, attributes for OSM tracks.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/Fredericton_2020/ImageServer Fredericton 2020] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery of Fredericton, 2020, openly licensed; a recent tracing source for the city.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/HighResolution_Imagery/ImageServer HighResolution Imagery] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || GeoNB's high-resolution orthoimagery mosaic, openly licensed; a province-wide tracing source.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/Imagery2025/ImageServer Imagery2025] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery flown in 2025, openly licensed; a recent tracing source.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2020/ImageServer NB 2020] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2020, openly licensed; a tracing source for its coverage.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2021/ImageServer NB 2021] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2021, openly licensed; a tracing source for its coverage.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2022/ImageServer NB 2022] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2022, openly licensed; a tracing source for its coverage.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2023/ImageServer NB 2023] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2023, openly licensed; a recent tracing source.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2024/ImageServer NB 2024] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery from 2024, openly licensed; a recent tracing source.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_2024_Drone/ImageServer NB 2024 Drone] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Drone imagery from 2024, openly licensed; very high resolution for small areas.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/NB_DroneImagery_2025/ImageServer NB DroneImagery 2025] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Drone imagery from 2025, openly licensed; very high resolution for small areas.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/SaintJohn2025/ImageServer SaintJohn2025] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || Orthoimagery of Saint John, 2025, openly licensed; a recent tracing source for the city.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/SNB_2023/ImageServer SNB 2023] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || SNB orthoimagery from 2023, openly licensed; a recent tracing source.
+|-
+| [https://geonb.snb.ca/image/rest/services/Imagery/SNB_2024/ImageServer SNB 2024] || GeoNB OpenData Licence || 3/5 ||  || Reference || style="background:#e8eef8" | Available ||  ||  || 2026-11-02 || SNB orthoimagery from 2024, openly licensed; a recent tracing source.
 |}
 
 === New Brunswick Department of Environment and Local Government ===
@@ -19639,7 +19629,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Haliburton ===
-56 layers (56 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1098 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+56 layers (56 no licence). ''Value'' is a 1–5 score of what OSM would gain. 1079 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-
@@ -21835,7 +21825,7 @@ Geofabrik extract on 2026-08-12 unless the row says otherwise.
 |}
 
 === Ontario Ministry of Transportation ===
-35 layers (20 no licence, 15 available). ''Value'' is a 1–5 score of what OSM would gain. 520 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
+35 layers (20 no licence, 15 available). ''Value'' is a 1–5 score of what OSM would gain. 518 more swept layers scored below 3; they are in the [https://skfd.github.io/ontario-osm-data-sources/ catalogue].
 
 {| class="wikitable sortable" style="font-size:90%"
 |-

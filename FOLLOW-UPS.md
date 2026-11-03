@@ -73,16 +73,18 @@ own. The OSM wiki's New Brunswick page records CanVec imported province-wide, Ge
 used as a reference by hand, and the 2023 boundaries imported in 2025; no import is tracked in
 `work.csv`. Open ends:
 
-- **The province's layers (graded 2026-11-02):** 3,034 layers, 1,110 copies. GeoNB's 373,903 NB
-  911 civic address points and 661,348 lidar building footprints are tier 5 and `Available`.
-  Worth a look in review:
+- **The province's layers (graded 2026-11-02):** 2,205 layers once the test server was dropped
+  (3,034 swept). GeoNB's 373,903 NB 911 civic address points and 661,348 lidar building
+  footprints are tier 5 and `Available`. Worth a look in review:
   - `geonb-snb-municipal-planning-civic-addresses-2` has 441,451 points with unit numbers against
-    the DPS layer's 373,903, and the test server's sub-address layer 437,372: either may be the
-    better import source. Both are marked copies of the DPS layer.
-  - **GeoNB's test server** (`geonb-t.snb.ca`) answers anonymously and carries layers production
-    lacks, the best of them 15,869 named trail segments with network, surface and managing
-    organisation (tier 4, `No licence`), plus park campsites, water taps and recreation
-    facilities. Whether a test server is a release is a question for Service New Brunswick.
+    the DPS layer's 373,903: it may be the better import source. It is marked a copy of the DPS
+    layer.
+  - **Test servers are not catalogued (decided 2026-11-03).** GeoNB's test server
+    (`geonb-t.snb.ca`, 825 layers, among them 15,869 named trail segments production does not
+    serve) was swept and graded, then dropped with its portal row, along with the 4-layer `test`
+    folder on GeoNB's production server, Haliburton's 19-layer `Testing` folder and MTO's two
+    `intra.dev` apps. `inventory.py`'s `TEST` rule keeps such hosts and folders out of later
+    sweeps; a service merely named `test` on a production server is still listed.
   - The org's `schools-update-2024-05-03` (295 schools) is newer than the two 2018 production
     school layers, but is marked their copy.
   - Natural Resources' own server (`gis-erd-der.gnb.ca`) has an older NBHN edition (88,242
@@ -91,8 +93,6 @@ used as a reference by hand, and the 2023 boundaries imported in 2025; no import
     its OpenData layers (mineral claims, exploration drillholes) say "not to distribute".
   - The Socrata "Rural Districts" dataset holds the 77 local governments, and its "NBHN" holds
     wetlands; both are marked copies of the GeoNB layers they really are.
-  - Socrata-only originals whose twins are on the test server (protected natural areas, nursing
-    homes, forest roads) were not cross-marked: different jurisdictions, so `--copies` cannot.
 - **The municipalities' and RSCs' layers (graded 2026-11-03):** 6,639 layers on 32 portals in 24
   jurisdictions, 932 copies; 5,572 at tier 1, among them Moncton's 2,922 council documents on its
   Hub. Only Edmundston's Hub names an open licence, Moncton's says "Open Data Terms of Use", and
@@ -224,6 +224,12 @@ municipally. Open ends:
 
 ## Decisions pending
 
+- **`--copies` is not idempotent (found 2026-11-03).** Run again on the committed catalogue, it
+  marks 33 rows the first run left alone: 32 of the Fundy RSC's CMIP6 climate grids (one service
+  per emissions scenario, same 18,271 cells and fields, different values) as copies of each other,
+  and one of Fredericton's South African asset layers. All are tier 1, so no grade moves; the
+  Fundy marks were reverted by hand and will come back on the next run until the rule learns that
+  a shared schema and count across scenario services is not a copy, or why the first run differs.
 - **Layer files are named for the last part of a code, across provinces.** `inventory.py` writes
   `cache/inventory/<last>.csv` and `catalogue/layers/<last>.csv` (`inventory()`, `chunk()`,
   `merge()`), so two provinces' units with one slug share a file and a cache. Nothing collides
