@@ -57,11 +57,14 @@ PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|"
                              r"childrens?_?names?\w*|duration_of_homeless\w*", re.I)
 # A form that asks a child's school and grade along with an email address.
 PUPIL_SET = {"school_name", "grade", "email"}
+# A layer of encampment sites, whatever its fields (Saint John's parcels with Status and Occupancy).
+ENCAMPMENTS = re.compile(r"encampment", re.I)
 
 
-def personal(fields: list[str]) -> bool:
+def personal(fields: list[str], name: str = "") -> bool:
     names = {f.lower() for f in fields}
-    return any(PERSONAL_FIELDS.fullmatch(f) for f in fields) or PUPIL_SET <= names
+    return (any(PERSONAL_FIELDS.fullmatch(f) for f in fields) or PUPIL_SET <= names
+            or bool(ENCAMPMENTS.search(name)))
 
 
 def text(s, limit: int) -> str:
@@ -146,7 +149,7 @@ def expand(url: str) -> list[dict]:
     if index is not None:
         layers = [l for l in layers if str(l.get("id")) == index] or [{"id": int(index)}]
     return [layer_row(service, l) for l in layers
-            if not personal([f["name"] for f in l.get("fields") or []])]
+            if not personal([f["name"] for f in l.get("fields") or []], f"{service} {l.get('name') or ''}")]
 
 
 # ---------------------------------------------------------------- platforms
