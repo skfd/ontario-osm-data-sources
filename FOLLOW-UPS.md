@@ -224,12 +224,14 @@ municipally. Open ends:
 
 ## Decisions pending
 
-- **`--copies` is not idempotent (found 2026-11-03).** Run again on the committed catalogue, it
-  marks 33 rows the first run left alone: 32 of the Fundy RSC's CMIP6 climate grids (one service
-  per emissions scenario, same 18,271 cells and fields, different values) as copies of each other,
-  and one of Fredericton's South African asset layers. All are tier 1, so no grade moves; the
-  Fundy marks were reverted by hand and will come back on the next run until the rule learns that
-  a shared schema and count across scenario services is not a copy, or why the first run differs.
+- **The Fundy RSC's climate grids are marked copies of one another.** Its CMIP6 indicators (one
+  service per emissions scenario, one sublayer per indicator, all on the same 18,271 cells) share
+  a count, so the 99 indicators of the three later scenarios are marked copies of SSP1-2.6's Ice
+  Days. They are different statistics, not copies, but all are tier 1 and `Not usable`, so no
+  grade moves. A rule that told a shared grid from a copy would also have to keep Simcoe's and
+  Haliburton's basemap services, whose per-scale sublayers are real copies, so it is not written.
+  (`--copies` used to mark the 32 SSP1-2.6 siblings too when run a second time; fixed 2026-11-03.
+  An earlier run's original inside a group now leads it again.)
 - **Hub portals are swept through their catalogue only (measured 2026-10-22).** `from_hub`
   reads the Hub's search, so a service the org publishes without cataloguing it is never seen.
   Essex County's org (`services6.arcgis.com/baycHE2iKJaT7Upn`) lists 288 services at its REST

@@ -695,6 +695,13 @@ def copies():
         g.sort(key=lambda r: (-int(r["tier"] or 0), meta[r["id"]]["origin"] != "hub",
                               -int(meta[r["id"]]["edited"].replace("-", "") or 0),
                               len(r["id"])))
+        # An earlier run's original inside the group is this group's own choice, not an outside
+        # one: it leads again, so its sublayer siblings stay unmarked as they were the first time.
+        inside = next((r for r in g if r["id"] == outside), None)
+        if inside:
+            g.remove(inside)
+            g.insert(0, inside)
+            outside = None
         for r in g if outside else g[1:]:
             # Two sublayers of one service share its schema by construction (Windsor's 311
             # request layers, 65 rows each): another layer, not a copy.
