@@ -35,7 +35,7 @@ is the tracker slug. Ids never change once given, because measures point at them
 
 ## `sources.csv`
 
-    id,theme,dataset,provider,source_url,licence,tier,feasibility,status,tools,lead,last_verified,notes
+    id,theme,dataset,provider,source_url,licence,licence_from,tier,feasibility,status,tools,lead,last_verified,notes
 
 | column | meaning |
 |---|---|
@@ -45,6 +45,7 @@ is the tracker slug. Ids never change once given, because measures point at them
 | `provider` | Publisher (City of Guelph, Statistics Canada, …) |
 | `source_url` | The live endpoint or dataset page: what a mapper would open |
 | `licence` | Licence name as published. Never a verdict; the verdict lives on the wiki's `Canada#Open_Data` table and the OSMF variants page |
+| `licence_from` | Where the licence came from: blank when the dataset names it itself (or the row is by hand), else the `portal_url` of the row in `portals.csv` whose licence it took. A sweep cannot tell an item that repeats its portal's licence word for word from one that names none: both read as taken from the portal |
 | `tier` | Optional 1–5 score of what OSM would gain (Guelph audit rubric) |
 | `feasibility` | `import`, `conflate`, `validate`, `reference` or `no` |
 | `status` | `Completed`, `Ongoing`, `Planned`, `Onboarding`, `Available`, `Parked`, `No licence` (of use, but the publisher gives no open licence) or `Not usable` |

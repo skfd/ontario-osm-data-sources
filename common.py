@@ -18,7 +18,7 @@ JURISDICTIONS = CATALOGUE / "jurisdictions.csv"
 WORK = CATALOGUE / "work.csv"
 PORTALS = CATALOGUE / "portals.csv"
 
-SOURCE_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tier",
+SOURCE_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "licence_from", "tier",
                "feasibility", "status", "tools", "lead", "last_verified", "notes"]
 SYNCED_COLS = ["id", "theme", "dataset", "provider", "source_url", "licence", "tracker_tier",
                "lwg", "lwg_url", "feasibility", "status", "tools", "last_verified", "notes"]

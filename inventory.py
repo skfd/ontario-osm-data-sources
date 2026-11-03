@@ -43,7 +43,7 @@ GRADED = HERE / "cache" / "graded"
 CHUNK = 120
 SKIP: set[str] = set()  # jurisdictions left out of a sweep
 COLS = ["id", "jurisdiction", "portal_url", "origin", "dataset", "item_type", "source_url",
-        "geometry", "records", "fields", "edited", "licence", "description"]
+        "geometry", "records", "fields", "edited", "licence", "licence_from", "description"]
 GRADE_COLS = ["id", "theme", "provider", "tier", "feasibility", "status", "notes"]
 BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st_area.*|"
                            r"st_length.*|created_.*|last_edited_.*)$", re.I)
@@ -92,6 +92,9 @@ def key(url: str) -> str:
     u = urllib.parse.unquote(url.strip().rstrip("/").lower().split("?", 1)[0])
     return (u.replace("/featureserver", "/mapserver").replace("http://", "https://")
             .replace("/en/dataset/", "/dataset/").replace("/fr/dataset/", "/dataset/"))
+
+
+NO_LICENCE = {"", "none", "none published"}
 
 
 def licence(item_text: str, portal: str) -> str:
@@ -434,6 +437,9 @@ def inventory(only: set[str]):
             for r in rows:
                 r |= {"jurisdiction": p["jurisdiction"], "portal_url": p["portal_url"],
                       "reach": p["reach"]}
+                # Blank is the item's own words; a URL is the portal whose licence it took.
+                if r["licence"] == p["licence"] and r["licence"].lower() not in NO_LICENCE:
+                    r["licence_from"] = p["portal_url"]
             by_juris.setdefault(p["jurisdiction"], []).extend(rows)
 
     # Record counts last, in one pool, once the rows are deduplicated.
@@ -573,7 +579,8 @@ def merge():
                 continue
             out.append({"id": r["id"], "theme": g["theme"], "dataset": r["dataset"],
                         "provider": g["provider"], "source_url": r["source_url"],
-                        "licence": r["licence"], "tier": g["tier"],
+                        "licence": r["licence"], "licence_from": r.get("licence_from", ""),
+                        "tier": g["tier"],
                         "feasibility": g["feasibility"], "status": g["status"], "tools": "",
                         "lead": "", "last_verified": today, "notes": g["notes"]})
         out += kept.values()  # gone from the portal since; dropping them is a decision for a person
