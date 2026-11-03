@@ -512,9 +512,9 @@ tracked over time:
 
 ## Coverage of the catalogue
 
-`catalogue/portals.csv` lists every open-data portal found in New Brunswick and Nova Scotia and Ontario and a
-`none-found` row for each municipality that has none. 319 portals are known,
-307 of them counted through their API: **61729 layers seen, against 61571
+`catalogue/portals.csv` lists every open-data portal found in New Brunswick and Nova Scotia and Ontario and Prince Edward Island and a
+`none-found` row for each municipality that has none. 323 portals are known,
+311 of them counted through their API: **61794 layers seen, against 61571
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
@@ -531,8 +531,8 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 | · upper-tier | 30 | 19 | 0 | 8 | 2 | 1 | 0 |
 | · single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
 | · lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
-| Prince Edward Island | 57 | 0 | 0 | 0 | 0 | 0 | 57 |
-| **all** | 627 | 77 | 18 | 190 | 128 | 157 | 57 |
+| Prince Edward Island | 57 | 0 | 0 | 6 | 21 | 30 | 0 |
+| **all** | 627 | 77 | 18 | 196 | 149 | 187 | 0 |
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.
@@ -540,14 +540,14 @@ higher than a Hub's count of curated datasets.
 | platform | portals | layers seen |
 |---|---|---|
 | arcgis-hub | 101 | 14215 |
-| arcgis-rest | 203 | 41368 |
+| arcgis-rest | 207 | 41433 |
 | ckan | 4 | 4071 |
 | socrata | 2 | 1979 |
 | custom | 9 | 96 |
 
 Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
 100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
-worked from the server behind its Hub). The 207 municipalities found only on a county or
+worked from the server behind its Hub). The 210 municipalities found only on a county or
 consortium portal are in `portals.csv`.
 
 | jurisdiction | platform | layers seen | sources catalogued | share |
@@ -702,6 +702,7 @@ consortium portal are in `portals.csv`.
 | Halton Catholic District School Board | arcgis-rest | 41 | 135 | 329.3% |
 | Welland | arcgis-hub | 41 | 68 | 165.9% |
 | Kenora | arcgis-rest | 40 | 40 | 100.0% |
+| Charlottetown | arcgis-rest | 39 |  |  |
 | Conseil scolaire Viamonde | arcgis-rest | 39 | 47 | 120.5% |
 | Dufferin-Peel Catholic District School Board | arcgis-rest | 39 | 38 | 97.4% |
 | St. Catharines | arcgis-hub, arcgis-rest | 37 | 21 | 56.8% |
@@ -727,6 +728,7 @@ consortium portal are in `portals.csv`.
 | Grand Erie District School Board | arcgis-rest | 20 | 20 | 100.0% |
 | Simcoe County District School Board | arcgis-hub, arcgis-rest | 20 | 19 | 95.0% |
 | Upper Thames River Conservation Authority | arcgis-hub | 19 | 19 | 100.0% |
+| Stratford (PE) | arcgis-rest | 18 |  |  |
 | Yarmouth | arcgis-rest | 18 | 18 | 100.0% |
 | Ottawa Catholic District School Board | arcgis-rest | 13 | 13 | 100.0% |
 | Chaleur Regional Service Commission | arcgis-rest | 12 | 12 | 100.0% |
@@ -736,6 +738,7 @@ consortium portal are in `portals.csv`.
 | Kawartha Pine Ridge District School Board | arcgis-rest | 8 | 8 | 100.0% |
 | New Brunswick Department of Transportation and Infrastructure | arcgis-rest | 8 | 8 | 100.0% |
 | Nova Scotia Department of Fisheries and Aquaculture | arcgis-rest | 8 | 9 | 112.5% |
+| Summerside | arcgis-rest | 8 |  |  |
 | York Region District School Board | arcgis-rest | 8 | 8 | 100.0% |
 | Barrington | arcgis-rest | 7 | 7 | 100.0% |
 | Halton Hills | arcgis-rest | 7 | 8 | 114.3% |
