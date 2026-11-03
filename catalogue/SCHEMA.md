@@ -201,6 +201,12 @@ province's `municipal_zones` layer on gis.princeedwardisland.ca, read 2026-11-03
 list also has Darlington and St. Louis, which IRAC records as dissolved in 2021. Their tier is
 blank.
 The rest of the island is unincorporated and run by the province, so it gets no rows.
+British Columbia's 160 municipalities are the polygons of the province's
+`ABMS_MUNICIPALITIES_SP` layer on openmaps.gov.bc.ca, and its 27 regional districts those of
+`ABMS_REGIONAL_DISTRICTS_SP`, read 2026-11-03. A regional district is an elected local government
+that does planning and often GIS for its members, as an Ontario county does, so it is `municipal`,
+not `association`. The Stikine Region has no board and is run by the province, so it gets no row.
+Their tier is blank.
 
 The name is used as a wiki section heading, so no two rows share one, across provinces too. A
 name already taken by an earlier province gets the province in parentheses: `Shelburne (NS)`,
