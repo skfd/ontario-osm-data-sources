@@ -315,7 +315,7 @@ municipally. Open ends:
   `inventory.py`, let `--copies` take the alternate views, and grade the rest. Done 2026-10-30
   and 31: see "Graded on 2026-10-30 and 31" above.
 
-- **The wiki view is over MediaWiki's 2 MB (5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
+- **The wiki view is over MediaWiki's 2 MB (5.4 MB with Prince Edward Island, 5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
   2.3 MB before).** Nothing
   is pasted until the catalogue is reviewed, so it blocks nothing yet; the likely fix is one page
   per province under `Canada/Open data/<Province>`, with the national table and links on the
