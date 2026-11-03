@@ -382,6 +382,51 @@ def from_socrata(p: dict) -> list[dict]:
     return rows
 
 
+ODS_GEOMETRY = {"Point": "point", "MultiPoint": "multipoint", "LineString": "polyline",
+                "MultiLineString": "polyline", "Polygon": "polygon", "MultiPolygon": "polygon"}
+
+
+def ods_geometry(p: dict, r: dict) -> str:
+    """The catalogue says a dataset has a shape, not of what kind: the first record does."""
+    types = {f["type"]: f["name"] for f in r.get("fields") or []}
+    if "geo_shape" not in types:
+        return "point" if "geo_point_2d" in types else "table" if r.get("has_records") else ""
+    try:
+        d = get_json(f"{p['api_url']}/{r['dataset_id']}/records?limit=1&select={types['geo_shape']}")
+        shape = (d.get("results") or [{}])[0].get(types["geo_shape"]) or {}
+        return ODS_GEOMETRY.get((shape.get("geometry") or {}).get("type"), "")
+    except (Secured, ServiceError, OSError, ValueError):
+        return ""
+
+
+def from_opendatasoft(p: dict) -> list[dict]:
+    """An OpenDataSoft site through its Explore API, one row per dataset."""
+    rows, offset = [], 0
+    site = p["portal_url"].rstrip("/")
+    while True:
+        d = get_json(with_param(p["api_url"], f"limit=100&offset={offset}"))
+        got = d.get("results") or []
+        for r in got:
+            meta = (r.get("metas") or {}).get("default") or {}
+            geometry = ods_geometry(p, r)
+            fields = [f["name"] for f in r.get("fields") or [] if not BORING_FIELDS.match(f["name"])]
+            rows.append({
+                "origin": "opendatasoft",
+                "dataset": text(meta.get("title") or r["dataset_id"], 200),
+                "item_type": "OpenDataSoft dataset" + (f" ({geometry})" if geometry else ""),
+                "source_url": f"{site}/explore/dataset/{r['dataset_id']}/",
+                "geometry": geometry,
+                "records": str(meta["records_count"]) if meta.get("records_count") else "",
+                "fields": text(" ".join(fields), 300),
+                "edited": (meta.get("modified") or "")[:10],
+                "licence": licence(text(meta.get("license"), 150), p["licence"]),
+                "description": text(meta.get("description"), 300),
+            })
+        offset += len(got)
+        if not got or offset >= int(d.get("total_count") or 0):
+            return rows
+
+
 def from_custom(p: dict) -> list[dict]:
     """A download page with a JSON list behind it; one without has no api_url and is not swept."""
     if "/metadata-api/" in p["api_url"]:
@@ -392,7 +437,7 @@ def from_custom(p: dict) -> list[dict]:
 
 
 PLATFORM = {"arcgis-hub": from_hub, "ckan": from_ckan, "arcgis-rest": from_rest,
-            "socrata": from_socrata, "custom": from_custom}
+            "socrata": from_socrata, "opendatasoft": from_opendatasoft, "custom": from_custom}
 
 
 # ---------------------------------------------------------------- inventory
