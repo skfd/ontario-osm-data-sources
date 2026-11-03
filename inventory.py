@@ -54,7 +54,10 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
 PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|"
                              r"students?_(name|email|phone|address|number|birth|dob)\w*|"
                              r"parent_?(or_)?guardians?_(name|email|phone|contact|consent)\w*|"
-                             r"childrens?_?names?\w*|duration_of_homeless\w*", re.I)
+                             r"childrens?_?names?\w*|duration_of_homeless\w*|"
+                             # French forms, accents stripped by Survey123: nom_dedes_enfants,
+                             # nom_de_l_tudiant (étudiant), nom_de_l_l_ve (élève).
+                             r"nom_d\w*_enfants?\w*|nom_de_l_?e?tudiants?\w*|nom_de(_l|s)_?e?l_?e?ves?\w*", re.I)
 # A form that asks a child's school and grade along with an email address.
 PUPIL_SET = {"school_name", "grade", "email"}
 # A layer of encampment sites, whatever its fields (Saint John's parcels with Status and Occupancy).
@@ -148,8 +151,12 @@ def expand(url: str) -> list[dict]:
     layers = [l for l in service_layers(service) if not l.get("subLayerIds")]
     if index is not None:
         layers = [l for l in layers if str(l.get("id")) == index] or [{"id": int(index)}]
-    return [layer_row(service, l) for l in layers
-            if not personal([f["name"] for f in l.get("fields") or []], f"{service} {l.get('name') or ''}")]
+    # A form with one layer of personal records is left out whole: its repeat and metadata tables
+    # point at the same records.
+    if any(personal([f["name"] for f in l.get("fields") or []], f"{service} {l.get('name') or ''}")
+           for l in service_layers(service)):
+        return []
+    return [layer_row(service, l) for l in layers]
 
 
 # ---------------------------------------------------------------- platforms
