@@ -27,6 +27,7 @@ import re
 import sys
 import threading
 import urllib.parse
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 
@@ -95,6 +96,7 @@ def key(url: str) -> str:
 
 
 NO_LICENCE = {"", "none", "none published"}
+CATALOGUES = {"arcgis-hub", "ckan", "socrata", "opendatasoft", "custom"}
 
 
 def licence(item_text: str, portal: str) -> str:
@@ -416,6 +418,45 @@ def layer_file(code: str) -> str:
     return last
 
 
+def host(url: str) -> str:
+    """A server's host, or an ArcGIS Online org's: services9.arcgis.com/<org id>."""
+    m = re.match(r"https?://([^/]+)(?:/([^/]+)/arcgis/rest)?", url or "", re.I)
+    if not m:
+        return ""
+    return m[1].lower() + (f"/{m[2]}" if m[2] and "arcgis.com" in m[1].lower() else "")
+
+
+def closed_licences(layers: list[dict]) -> set[str]:
+    """Licences graded not open: more layers of use under them are `No licence` than `Available`."""
+    use = {}
+    for r in layers:
+        if r["status"] in ("Available", "No licence"):
+            use.setdefault(r["licence"], Counter())[r["status"]] += 1
+    return {l for l, c in use.items() if c["No licence"] >= c["Available"]}
+
+
+def inherit(rows: list[dict], catalogued: list[dict], portals: list[dict], closed: set[str]) -> list[dict]:
+    """A layer that names no licence takes the most compatible its publisher states: the open
+    licence of the jurisdiction's own catalogue, when the catalogue's items are served from the
+    layer's host, so the server stands behind it. `catalogued` is what the catalogues list, here
+    and already merged. A server beside a catalogue, sharing no host with it, takes nothing.
+    Returns the rows that took one."""
+    licences = {p["portal_url"]: p["licence"] for p in portals if p["platform"] in CATALOGUES
+                and p["licence"].lower() not in NO_LICENCE and p["licence"] not in closed
+                and "shared portal of" not in p["notes"]}
+    hosts = {}
+    for r in catalogued:
+        if r.get("portal_url") in licences:
+            hosts.setdefault(host(r["source_url"]), r["portal_url"])
+    took = []
+    for r in rows:
+        url = hosts.get(host(r["source_url"]))
+        if url and r["licence"].lower() in NO_LICENCE:
+            r["licence"], r["licence_from"] = licences[url], url
+            took.append(r)
+    return took
+
+
 def inventory(only: set[str]):
     portals = [p for p in read_csv(PORTALS) if swept(p) and (not only or p["jurisdiction"] in only)]
     existing = read_csv(SOURCES) + read_csv(SYNCED)
@@ -454,6 +495,11 @@ def inventory(only: set[str]):
             seen.add(k)
             kept.append(r)
         by_juris[code] = kept
+    every = read_csv(PORTALS)
+    closed = closed_licences([r for f in LAYERS.glob("*.csv") for r in read_csv(f)])
+    for code, rows in by_juris.items():
+        mine = [p for p in every if p["jurisdiction"] == code]
+        inherit(rows, rows + read_csv(LAYERS / f"{layer_file(code)}.csv"), mine, closed)
     todo = [r for rows in by_juris.values() for r in rows
             if SERVICE.match(r["source_url"]) and r.get("geometry") != "raster"]
     print(f"counting records in {len(todo)} layers", flush=True)

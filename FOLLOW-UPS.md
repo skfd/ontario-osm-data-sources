@@ -76,19 +76,16 @@ removed in 2010. Open ends:
 
 - **The layers (graded 2026-11-03):** 585 on 9 portals in 4 jurisdictions, 100 copies; 436 at
   tier 1. Not copies at tier 4 or 5:
-  - **The island's 82,929 civic address points** (tier 5, `Available`), the 145,536 building
-    footprints of 2026 (tier 5, `No licence`: on the server only, no Hub twin), 600 recreation
-    facilities, 974 cultural points, Rec PEI's 2,053 named trail segments, 126 cycling routes and
+  - **The island's 82,929 civic address points** and the 145,536 building footprints of 2026
+    (both tier 5, `Available`, their OGL-PEI passed down from the Hub: the footprints are on the
+    server only, with no Hub item), 600 recreation facilities, 974 cultural points, Rec PEI's 2,053 named trail segments, 126 cycling routes and
     the Island Walk.
   - Charlottetown's cycling network (2,176 segments with bike lanes and traffic stress), 14,091
     public trees, 67 public artworks and truck routes, all `No licence`.
-- **The OGL-PEI on items that do not name it.** `inventory.py` gives an item with no licence text
-  its portal's licence. So the 18 Hub items served from the provincial server (civic addresses,
-  zones, the 911 centreline) read as OGL-PEI, though the items themselves state none. The org
-  root's row carries the Hub's licence too, as Halifax's, Saint John's, Moncton's and GeoNB's do,
-  so every service there (Souris's and Victoria's water points among them) reads as OGL-PEI;
-  Ontario's 54 org roots say `None published` instead. One rule should hold for all; worth
-  settling before the address points are called `Available`.
+- **The OGL-PEI on items that do not name it.** The 18 Hub items served from the provincial
+  server (civic addresses, zones, the 911 centreline), the server's other layers and every service
+  at the org root (Souris's and Victoria's water points among them) state no licence themselves;
+  they carry the Hub's by the rule below, and `licence_from` says so.
 - **Providers guessed.** One org holds every department's layers, and the owners (`gpei_*`) are
   staff, not departments, so graders named the department from the content, some from memory
   (Fisheries, Tourism, Sport and Culture; Education and Early Years; Island Waste Management
@@ -281,6 +278,18 @@ municipally. Open ends:
   passes `--check`.
 
 ## Decisions pending
+
+- **Licences passed down (decided 2026-11-03).** A layer that names no licence takes the most
+  compatible its publisher states, and `licence_from` records the portal it came from: GRADING.md
+  has the rule. On the rows already merged, 17,289 layers on servers and org roots behind their
+  jurisdiction's catalogue took its licence, and 4,450 of them went from `No licence` to
+  `Available` (4,259 in Ontario, 147 in New Brunswick, 26 in Nova Scotia, 18 in Prince Edward
+  Island). Counts of `No licence` in the sections above predate this. Servers beside a catalogue
+  stay as they were: about 2,650 layers, mostly Nova Scotia's NSGI servers, then Leeds-Grenville's,
+  Elgin's and TRCA's. Terms of use and policies passed down as graded (Mississauga's Terms of Use,
+  Fredericton's "GNB Open Data Policy", Burlington's, Peterborough's, Cobourg's); whether each
+  really covers layers its catalogue does not list is the publisher's to say. The status is still
+  no verdict on OSM compatibility.
 
 - **The Fundy RSC's climate grids are marked copies of one another.** Its CMIP6 indicators (one
   service per emissions scenario, one sublayer per indicator, all on the same 18,271 cells) share

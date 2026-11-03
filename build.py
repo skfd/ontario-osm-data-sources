@@ -583,6 +583,8 @@ def source_rows(sources, measures, juris, portals, last) -> dict[str, list[str]]
             licence += ' <span class="muted">· self-listed on the wiki</span>'
         elif r["lwg"]:
             licence += f' <span class="muted">· LWG {a(r.get("lwg_url", ""), r["lwg"])}</span>'
+        if r.get("licence_from") and r["licence_from"] != r.get("portal_url"):
+            licence += f' <span class="muted">· from {a(r["licence_from"], portal_label(r["licence_from"]))}</span>'
         p = find(r)
         portal = a(p["portal_url"], portal_label(p["portal_url"])) if p else ""
         g = GRADE.get(r["tier"], UNGRADED)

@@ -68,6 +68,14 @@ Three values come out of a sweep:
 The licence column is the publisher's words, never a verdict on OSM compatibility. Whether a
 licence is LWG-cleared is not the grader's call and does not change the status.
 
+**A layer that names no licence takes the most compatible its publisher states** (decided
+2026-11-03): its portal's, or, on a server or org root that states none, the licence of the
+jurisdiction's own catalogue when the catalogue's items are served from that host. A server
+beside a catalogue, sharing no host with it, takes nothing, nor does a licence the graders
+treated as not open. `inventory.py` applies this before grading, so the column already holds the
+result; `licence_from` says which portal it came from, and a licence passed down counts like any
+other for the status.
+
 ## Theme
 
 Pick by what the features are, not by the department that publishes them: a park's washroom
