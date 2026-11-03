@@ -11,6 +11,11 @@ UTF-8 CSV, RFC 4180 quoting. `build.py` validates all of it and refuses to run o
 | `measures.csv` | hand, and `sync.py` appends | measurement of one source or stream on one day |
 | `jurisdictions.csv` | hand | country, province or municipality an id can sit under |
 
+A jurisdiction's layers are in `layers/<last part of its code>.csv` (`ca/on/guelph` →
+`guelph.csv`). When that file already holds another province's unit of the same slug, the
+newcomer's adds its province: `ca/ns/victoria` swept first keeps `victoria.csv`, and
+`ca/bc/victoria` gets `victoria-bc.csv`. A file keeps its name once given.
+
 ## Ids
 
 Every source has a lowercase path id: jurisdiction code, then a slug for the dataset.

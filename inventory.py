@@ -397,6 +397,22 @@ def swept(p: dict) -> bool:
             and p["jurisdiction"] not in SKIP and "shared portal of" not in p["notes"])
 
 
+def layer_file(code: str) -> str:
+    """The name of the file a jurisdiction's layers live in, here and in catalogue/layers: the last
+    part of its code, unless that file already holds another jurisdiction's layers (Victoria, NS
+    and BC), when the newcomer adds its province: victoria-bc. A file once named keeps its name,
+    and --chunk and --merge follow the cache file's name."""
+    last, province = code.split("/")[-1], code.split("/")[1]
+    for folder in (LAYERS, CACHE):
+        path = folder / f"{last}.csv"
+        if path.exists():
+            with path.open(encoding="utf-8", newline="") as f:
+                first = next(csv.DictReader(f), None)
+            if first and not first["id"].startswith(code + "/"):
+                return f"{last}-{province}"
+    return last
+
+
 def inventory(only: set[str]):
     portals = [p for p in read_csv(PORTALS) if swept(p) and (not only or p["jurisdiction"] in only)]
     existing = read_csv(SOURCES) + read_csv(SYNCED)
@@ -442,11 +458,12 @@ def inventory(only: set[str]):
                 print(f"  {i} counted", flush=True)
 
     for code, rows in by_juris.items():
+        name = layer_file(code)
         # A layer already merged keeps its id, so a new portal or a rerun cannot shift the
         # suffixes and hand an old grade to another layer.
         # A Hub item and a server row for one layer are the same layer under two spellings.
         spell = lambda u: key(u) if SERVICE.match(u) else u
-        merged = {spell(r["source_url"]): r["id"] for r in read_csv(LAYERS / f"{code.split('/')[-1]}.csv")}
+        merged = {spell(r["source_url"]): r["id"] for r in read_csv(LAYERS / f"{name}.csv")}
         # The tracker's address points are left free: the same dataset found here is dropped below.
         used = set(merged.values()) | {i for i in taken_ids if not i.endswith("/addresses")}
         for r in sorted(rows, key=lambda r: key(r["source_url"]) or r["dataset"]):
@@ -461,7 +478,7 @@ def inventory(only: set[str]):
         # The tracker follows each municipality's address points under <code>/addresses, often
         # at another URL; the same dataset found on a portal is that source, not a new one.
         rows[:] = [r for r in rows if r["id"] not in taken_ids or not r["id"].endswith("/addresses")]
-        write_csv(CACHE / f"{code.split('/')[-1]}.csv", COLS, rows)
+        write_csv(CACHE / f"{name}.csv", COLS, rows)
     print(f"{sum(map(len, by_juris.values()))} rows in {len(by_juris)} jurisdictions")
 
 
