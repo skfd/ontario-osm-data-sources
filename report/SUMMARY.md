@@ -529,7 +529,8 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 | · upper-tier | 30 | 19 | 0 | 8 | 2 | 1 | 0 |
 | · single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
 | · lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
-| **all** | 570 | 77 | 18 | 190 | 128 | 157 | 0 |
+| Prince Edward Island | 59 | 0 | 0 | 0 | 0 | 0 | 59 |
+| **all** | 629 | 77 | 18 | 190 | 128 | 157 | 59 |
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.
