@@ -182,10 +182,12 @@ municipally. Open ends:
 
 ## Not swept
 
-- **GeoNB's download catalogue.** Its `custom` row (gnb.ca's data-catalogue page, 74 zip
-  downloads from `geonb.snb.ca/downloads`) has no `api_url`, so it is not swept. Most of the 74
-  have twins among the services on `geonb.snb.ca`; as with OGSEarth's, hand rows in `sources.csv`
-  are owed only for downloads that have none.
+- **GeoNB's download catalogue (checked 2026-11-03).** Its `custom` row (gnb.ca's data-catalogue
+  page, 74 zip downloads from `geonb.snb.ca/downloads`) has no `api_url`, so it is not swept, and
+  needs no hand rows: 63 of the 74 have an item of the same title on GeoNB's org ("1:10,000 Grid /
+  Grille 1:10,000"), and the other 11 a layer on the service the page names or of the same name
+  on GeoNB's server (the minerals-and-petroleum grid and units, the historical local service
+  districts).
 - **GeologyOntario.** Both Hubs still list 0 datasets (the French one lists 10 site pages);
   the search app behind `www.geologyontario.mines.gov.on.ca` queries a keyed Elasticsearch API.
   OGSEarth's 38 downloads all have rows: 25 were swept already (13 of them under `ca/on`, from
