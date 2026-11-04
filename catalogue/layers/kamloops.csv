@@ -1,0 +1,2 @@
+id,theme,dataset,provider,source_url,portal_url,licence,licence_from,tier,feasibility,status,tools,lead,last_verified,notes
+ca/bc/kamloops/waste-recycle-facility,maps,Waste & Recycle Facility,City of Kamloops,https://maps.kamloops.ca/arcgis/rest/services/OpenData/OpenDataSanitaryTel/MapServer/21,https://mydata-kamloops.opendata.arcgis.com,"Open Government Licence - Kamloops The Open Government Licence - Kamloops is based on version 2.0 of the Open Government Licence - British Columbia,…",,1,no,Not usable,,,2026-11-04,An empty layer: no records on the day of the sweep.
