@@ -100,8 +100,9 @@ CATALOGUES = {"arcgis-hub", "ckan", "socrata", "opendatasoft", "custom"}
 
 
 def licence(item_text: str, portal: str) -> str:
-    """The item's own licence when it names one; many Hubs put a disclaimer in that field."""
-    if re.search(r"licen[cs]e|OGL|creative commons|public domain", item_text, re.I):
+    """The item's own licence when it names one; many Hubs put a disclaimer in that field.
+    British Columbia's `Access Only` says no licence is given: never read it as the portal's."""
+    if re.search(r"licen[cs]e|\bOGL\b|creative commons|public domain|^access only$", item_text, re.I):
         return item_text
     return portal
 
