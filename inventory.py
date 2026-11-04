@@ -102,7 +102,8 @@ CATALOGUES = {"arcgis-hub", "ckan", "socrata", "opendatasoft", "custom"}
 def licence(item_text: str, portal: str) -> str:
     """The item's own licence when it names one; many Hubs put a disclaimer in that field.
     British Columbia's `Access Only` says no licence is given: never read it as the portal's."""
-    if re.search(r"licen[cs]e|\bOGL\b|creative commons|public domain|^access only$", item_text, re.I):
+    if re.search(r"licen[cs]e|\bOGL\b|\bCC[ -]?(BY|0)\b|\bPDDL\b|\bODbL\b|creative commons|public domain|"
+                 r"^access only$", item_text, re.I):
         return item_text
     return portal
 
@@ -173,9 +174,10 @@ def expand(url: str) -> list[dict]:
 # ---------------------------------------------------------------- platforms
 
 def hub_items(api_url: str) -> list[dict]:
+    """Sorted, because a Hub pages in no fixed order: unsorted, Ottawa's 710 came back as 563."""
     items, start = [], 1
     while True:
-        d = get_json(with_param(api_url, f"limit=100&startindex={start}"))
+        d = get_json(with_param(api_url, f"limit=100&startindex={start}&sortBy=properties.modified"))
         feats = d.get("features") or []
         items += [f["properties"] for f in feats]
         start += len(feats)
