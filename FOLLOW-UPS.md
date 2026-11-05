@@ -9,7 +9,7 @@ readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's r
 downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10-30) listed the
 54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia. The fifth
 (2026-11-02 and 03) opened New Brunswick, the sixth (2026-11-03) Prince Edward Island, and the
-seventh (2026-11-03 to 05) British Columbia.
+seventh (2026-11-03 to 05) British Columbia, and the eighth (2026-11-05) Alberta.
 
 ## Graded on 2026-10-30 and 31
 
@@ -60,6 +60,127 @@ seventh (2026-11-03 to 05) British Columbia.
   that is not wanted. The filter now matches contact fields of students and parents, children's
   names, homelessness duration, and a school-grade-email set; it no longer matches a school
   list's `Student_Trustee` or a survey's yes-or-no `parent_guardian_school_child`.
+
+## Alberta (surveyed and graded 2026-11-05)
+
+Every one of the 338 local governments has a portal row: 19 cities, 105 towns, 78 villages, 51 summer
+villages, 63 counties and municipal districts, 6 specialized municipalities, 7 improvement districts,
+the Special Areas Board (one row for Special Areas 2, 3 and 4) and 8 Metis settlements, from the
+province's boundary layers, checked by code against its 2026 municipal tax workbook. By best reach: 19
+run their own catalogue, 78 have layers on a public server, 130 a viewer only, 111 nothing found. The
+province publishes through Open Alberta (CKAN, 37,618 records, 3,020 of them data) and GeoDiscover
+(Esri Geoportal, 1,891 records), and five ArcGIS servers on geospatial.alberta.ca. Calgary and Edmonton
+run Socrata; Red Deer has its own list. Eighteen bodies name a licence of their own. Open ends:
+
+- **AMDSP is the largest unknown (decision for a person).** The Alberta Municipal Data Sharing
+  Partnership offers members' roads, addresses and landmarks under an open licence of its own (AMDSP
+  Open Data Licence 1.1), behind a form that wants a name and an emailed code, so nobody here has listed
+  it. 130 of its members match our codes. Public layers named `Taber_Area_AMDSP_Subset` and
+  `Municipal_Addressing_AMDSP` suggest it holds what it says. An OSM forum post of 2026-02-08 says the
+  licence matches the approved OGLs and has gone to the LWG; no answer was seen. It has one row and no
+  shared rows until someone registers. If its holdings are real, reach 0 and 1 units fall sharply.
+- **The layers (graded 2026-11-05):** 26,734 on 112 portals in 77 jurisdictions, 6,018 marked copies.
+  10,754 are the province's and its agencies', 29 at tier 4 and none at 5; 15,980 are local, 64 at tier 5
+  and 249 at tier 4. 2,446 are `Available`, 3,094 `No licence`, the rest `Not usable`. About 5,080 rows
+  were graded by rule and 3,201 exact repeats took their original's grade.
+  - **Address points, 43 layers at tier 5.** `Available`: Edmonton's 298,785 parcel addresses and 479,503
+    suites, Strathcona County's 49,470, Airdrie's 41,633, Grande Prairie's 35,415, Cochrane's 21,492
+    (approved and tentative mixed), Leduc's 19,787, County of Grande Prairie's 15,569, Canmore's 15,005,
+    Clearwater County's 7,348, Banff's 1,645. `No licence`, the licence emails to write first: Wood
+    Buffalo's 24,015, Spruce Grove's 22,546, Lloydminster's 16,520, Chestermere's 14,017, Red Deer
+    County's 12,146, Camrose's 11,569 and 27 more. The province offers no open address layer.
+  - **Buildings, 21 layers at tier 5.** `Available`: Edmonton's 384,228 rooflines with heights, Grande
+    Prairie's 36,312, Airdrie's 26,316, St. Albert's 24,528, Leduc's 16,836, Canmore's 6,311, Banff's 2,068.
+    `No licence`: Red Deer County's 85,689 in two layers, Red Deer's 43,219 with floors and heights,
+    Chestermere's 19,488, Spruce Grove's 15,014.
+  - **The province's best are its base layers, under the OGL-Alberta:** the 20K roads (217,772 paved,
+    367,844 gravel, 231,129 dry-weather segments with names), 1,076,398 access road arcs, 143,570 named
+    streams and 127,227 lake and river polygons, 4,385 designated trail segments, 5,996 park trails with
+    surface and allowed uses, 469 parks and protected areas, 8,843 official names as points and lines and
+    9,655 as polygons, 434 hamlet boundaries, the high load corridor. The 12,442 measured overhead
+    clearances and the merged wetland inventory are `No licence`.
+  - Calgary's 581,506 public trees, 237,652 traffic signs, 20,126 pathway segments and 4,929 bikeway
+    segments, Edmonton's 487,421 trees and 17,522 speed zones, all `Available`. Red Deer's 60,841 trees and
+    Edmonton's `cemetery-search-parks-trails` (15,477 trail sections, whatever its name) are the `No
+    licence` ones most worth asking for.
+- **Licences a person should read.**
+  - **GeoDiscover's own word beats the pass-down.** 140 of its records are `licence: other`, 57 rows of them
+    the Non-Commercial Licence - Alberta. The rest read `Other terms, see the GeoDiscover record`, 163 rows
+    in all, so the catalogue's open licence does not reach them. FWMIS hydrography reads the OGL on the
+    server and Non-Commercial on its record, and only services a record links are covered, so more may hide.
+  - The OGL-Alberta reached the five servers because GeoDiscover's records link them: 13,642 rows carry
+    `licence_from`. Records whose data comes through AltaLIS (`property-municipal-boundaries`, the ATS and
+    20K DEM pages, `base-small-scale-topographic`) read the OGL, but AltaLIS's own terms were not read.
+  - Banff's 174 rows on maps.banff.ca take `Banff Open Data Terms and Conditions` from the download page
+    on that host, by hand, since the page has no reader, as North Vancouver's did. Medicine Hat's
+    `Disclaimer and Licence` and Banff's terms were taken as open: worth reading. Lac La Biche County's
+    items forbid copying without consent, so they are `No licence`.
+- **Shared bodies.** The Oldman River Regional Services Commission and the Mackenzie Municipal Services
+  Agency are coded as associations, with their members on shared rows. Palliser Regional Municipal Services
+  answers 401 and has no row; about 17 units use its viewer. Consultants serving clients across the
+  country are not swept, as Lake Cowichan's is not: Green Drop's org holds Drumheller's trees, Urban
+  Systems' server Carstairs' base map, O2 Design's org Mackenzie County's land use bylaw. Catalis (formerly
+  Munisight), MRF Geosystems and GIS Cloud host viewers with no open services.
+- **Metis settlements and First Nations.** The 8 settlements have codes, since they are local governments
+  under provincial law; none serves layers of its own. First Nations have none: Cold Lake First Nations'
+  org, the Kehewin folder on gis.county24.com and `Siksika_Nation2` on Vulcan County's org. Raise any of
+  them with the Nation first.
+- **No reader, so no rows.** Alberta Parks' 3 zips, Elections Alberta's 2, Banff's 3, Grande Prairie's GIS
+  Service Catalogue. Hub searches on `rmwb`, `draytonvalley` and Special Areas' keys return 94, 62 and 7
+  items but have no site; their org roots are swept instead.
+- **Unread or token-only.** maps.alberta.ca's certificate has expired. Cloudflare on devon.ca, barnwell.ca
+  and Sunrise Beach; a bot check on mdsmokyriver.com. Token-only: Chestermere's `OpenData`, seven folders on
+  `titan`, two on `mimas`, Wetaskiwin's `Hosted`, Yellowhead's wildfire services, ORRSC's Raymond, Taber,
+  Coaldale and Cardston folders. Small units often had only their home page read.
+- **Personal data in public layers**, all tier 1 with the fact in the note: parcels joined to owners' names
+  on many servers, business licences, development and building permits, water licence holders, plot owners,
+  grazing lessees, a town's customer list with names, addresses and phones, a county's staff warnings about
+  named residents. Family day homes put Alberta's two child care lists and Calgary's at tier 1; the group
+  centres alone would be tier 3. A city's business licences withhold home addresses, but a home business's
+  name may be its owner's.
+- **Records of children and of homeless people kept out (2026-11-05).** Twelve rows were dropped. A city's
+  crisis team's 24,335 case records, one per case with close to exact points and flags for homelessness, mental
+  health and sexual exploitation (two services). A city's crew log of 4,774 points with a count of people
+  sleeping rough. A city's general service log, 1,254,520 tickets at street addresses, 65,750 of them
+  encampments, with three map views. A city's safety reports at a point with the reporter's age band, 370 of
+  8,218 in bands to 18, with its map. Park staff's 39,937 shift reports, 22 mentioning camps by a count
+  query, none read. A city's two lemonade stand layers, naming what appear to be children at addresses; that
+  is inferred from the name and a field, not read. `PERSONAL_FIELDS`, `ENCAMPMENTS` and `SOCRATA_KEPT_OUT`
+  now carry these, and the rule now reaches Socrata, which it did not before. Which publishers these are is
+  in the gitignored `cache/scratch/exposed-forms.md`.
+- **Kept, against the same rule.** All stay listed at tier 1 unless said: complaints and encampment concerns
+  at neighbourhood or community centrepoints, with no address (a city's 311 tables, 45,163 such requests in
+  one); one row per COVID case by health zone with an age band; collision records with parties' ages, 436 of
+  7,312 under 18; a social services viewer's 4,216 client points with a postal code and no identity; an
+  anonymised telephone survey of adults; a transit security log of 40,250 incidents by station; cemetery records.
+- **Worth a look in review:**
+  - **Tier 5 was set by rule, not by agent.** 44 complete address and footprint layers held at 4 because OSM
+    was unchecked went to 5, as in every other province. Three stay measured: Strathcona County's footprints
+    (56,816 against 49,230 OSM buildings) and Cochrane's and High River's at 3, on counts over rough boxes.
+    Rocky View's 22,197 addresses are a labels layer and stay at 4, as do Vulcan County's 2,122 residences.
+  - Councillors' office contacts: Edmonton's two licensed ward layers are back at tier 3, but the school
+    board's ward layers, and several counties', differ. County of Grande Prairie's five carry phones marked
+    home or cell and stay at tier 1.
+  - Critical infrastructure was read cautiously by some graders: the AER's pipelines and facilities and the
+    road structures (20,269 with clearances) are tier 1 where British Columbia's twins are 2 and 4, the
+    Edmonton region board's water layers and towers are tier 1, and AESO's plain rosters are 2-3.
+  - Red Deer's `ab1call-wms` is a public feed of the whole locate service, with third parties' gas, power
+    and fibre lines. Oil sands and pipeline layers in some counties are similar.
+  - Provincial boundaries by class have competing originals (`hamlet-boundaries-*`, `ags-apps-urban-and-rural-
+    municipality-*`, `education-urban-locations-*`); `--copies` chose by grade.
+  - Copies by name and count: several road and railway layers marked against the 20K base have different
+    counts, and Parkland's licensed hydrants are a copy of an unlicensed layer.
+  - Vermilion River's `pw-map-data-parcels` reports 571,884 rows against 38,127 title parcels; Morinville's
+    server holds the whole National Road Network for Alberta; Chestermere's org holds Nova Scotia layers;
+    Lloydminster's a Los Angeles River study; Edmonton Public Schools' org a layer built from OSM.
+- **Layers built from OSM, tier 1.** Lamont County's `roads-view-roads` (`osm_id`, `fclass`), Edmonton Public
+  Schools' `osm-can-bics-v3-jan-2023`. `osm` on `titan` is Oil Sands Monitoring.
+- **What the OSM wiki says.** The Alberta page names no CanVec or provincial import, and counted 927,600
+  buildings against 1,772,670 dwellings in 2024. Calgary's page says most footprints and parcel addresses
+  have been imported, the catalogue lists that import as in progress, and Edmonton's names city data with no
+  import.
+- **No address tracker for Alberta**, as for the Atlantic provinces and British Columbia. Onboarding the 43
+  tier 5 layers is `../ontario-address-changes`' call.
 
 ## British Columbia (surveyed 2026-11-03 and 04)
 
@@ -436,7 +557,7 @@ municipally. Open ends:
   `inventory.py`, let `--copies` take the alternate views, and grade the rest. Done 2026-10-30
   and 31: see "Graded on 2026-10-30 and 31" above.
 
-- **The wiki view is over MediaWiki's 2 MB (7.9 MB with British Columbia, 5.4 MB with Prince Edward Island, 5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
+- **The wiki view is over MediaWiki's 2 MB (11.5 MB with Alberta, 7.9 MB with British Columbia, 5.4 MB with Prince Edward Island, 5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
   2.3 MB before).** Nothing
   is pasted until the catalogue is reviewed, so it blocks nothing yet; the likely fix is one page
   per province under `Canada/Open data/<Province>`, with the national table and links on the
