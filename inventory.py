@@ -55,7 +55,7 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
 PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|customer_age|"
                              r"students?_(name|email|phone|address|number|birth|dob)\w*|"
                              r"parent_?(or_)?guardians?_(name|email|phone|contact|consent)\w*|"
-                             r"childrens?_?names?\w*|duration_of_homeless\w*|rough_?sleepers?\w*|"
+                             r"childrens?_?names?\w*|duration_of_homeless\w*|rough_?sleepers?\w*|sexual_exploitation|domestic_abuse|"
                              # French forms, accents stripped by Survey123: nom_dedes_enfants,
                              # nom_de_l_tudiant (étudiant), nom_de_l_l_ve (élève).
                              r"nom_d\w*_enfants?\w*|nom_de_l_?e?tudiants?\w*|nom_de(_l|s)_?e?l_?e?ves?\w*", re.I)
@@ -688,7 +688,7 @@ def check(name: str) -> list[str]:
             bad.append(f"status {r['status']!r}")
         if not r["provider"].strip():
             bad.append("empty provider")
-        if not r["notes"].strip() or "\n" in r["notes"] or len(r["notes"]) > 300:
+        if not r["notes"].strip() or len(r["notes"]) > 300 or any(ord(c) < 32 for c in r["notes"]):
             bad.append("notes must be one line of 1-300 characters")
         if r["notes"].startswith(COPY) and marked(r) not in known:
             bad.append("a note starting 'Copy of ' must go on 'Copy of <known id>. '")
