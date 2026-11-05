@@ -464,7 +464,7 @@ def from_reddeer(p: dict) -> list[dict]:
     """Red Deer's own catalogue: /api/datasets lists every dataset, each with its download formats."""
     return [{"origin": "reddeer", "dataset": text(d.get("name"), 200),
              "item_type": f"Red Deer dataset: {d.get('formats') or ''}",
-             "source_url": f"{p['portal_url'].rstrip('/')}/datasets/{d['dataUrl'].split('/')[-1].split('?')[0]}",
+             "source_url": f"{p['portal_url'].rstrip('/')}/{d['dataUrl'].split('/')[-1].split('?')[0]}",
              "edited": (d.get("lastUpdateDate") or "")[:10], "licence": p["licence"],
              "description": text(d.get("description"), 300)}
             for d in get_json(with_param(p["api_url"], "take=1000"))["datasets"]]
