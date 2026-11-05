@@ -653,6 +653,7 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 
 | municipalities | total | 4 own | 3 catalogued | 2 on-server | 1 viewer | 0 none | not surveyed |
 |---|---|---|---|---|---|---|---|
+| Alberta | 338 | 0 | 0 | 0 | 0 | 0 | 338 |
 | British Columbia | 187 | 51 | 19 | 84 | 29 | 4 | 0 |
 | New Brunswick | 77 | 5 | 0 | 57 | 13 | 2 | 0 |
 | Nova Scotia | 49 | 6 | 2 | 25 | 6 | 10 | 0 |
@@ -661,7 +662,7 @@ county's, that no catalogue lists; 1 a map viewer only; 0 nothing found.
 | · single-tier | 173 | 20 | 7 | 10 | 34 | 102 | 0 |
 | · lower-tier | 241 | 27 | 9 | 90 | 73 | 42 | 0 |
 | Prince Edward Island | 57 | 0 | 0 | 6 | 21 | 30 | 0 |
-| **all** | 814 | 128 | 37 | 280 | 178 | 191 | 0 |
+| **all** | 1152 | 128 | 37 | 280 | 178 | 191 | 338 |
 
 An `arcgis-rest` count includes every layer on the server, viewer backends too, so it runs
 higher than a Hub's count of curated datasets.
