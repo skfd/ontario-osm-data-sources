@@ -66,7 +66,7 @@ PUPIL_SET = {"school_name", "grade", "email"}
 TEST = re.compile(r"//(?:[^/]*\.)?(?:[a-z0-9-]+-t|test|testing|dev|staging)\.|"
                   r"/rest/services/(?:test|testing|dev|staging)/(?!(?:Feature|Map|Image)Server)", re.I)
 TEST_FOLDER = re.compile(r"(?:test|testing|dev|staging)", re.I)
-# A layer of encampment sites, whatever its fields (Saint John's parcels with Status and Occupancy),
+# A layer of encampment sites, whatever its fields (a city's parcels with Status and Occupancy),
 # and a log of needles picked up, whose free text places camps and people sleeping rough.
 ENCAMPMENTS = re.compile(r"encampment|needle found", re.I)
 
