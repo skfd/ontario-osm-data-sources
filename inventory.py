@@ -339,6 +339,8 @@ def from_jkan(p: dict) -> list[dict]:
     return rows
 
 
+# Not `None published`: that would let the catalogue's own open licence pass down to a record it withholds it from.
+GEOPORTAL_OTHER = "Other terms, see the GeoDiscover record"
 GEOPORTAL_LICENCE = re.compile(r"terms of the ((?:[\w-]+ )+Licen[cs]e)\W+Alberta")
 
 
@@ -358,7 +360,7 @@ def from_geoportal(p: dict) -> list[dict]:
                     "source_url": next((u for u in links if u.endswith("/html")), links[0]),
                     "edited": (r.get("updated") or "")[:10],
                     "licence": p["licence"] if src.get("sys_constraint_s") == "licence: open government"
-                    else f"{name[1]} - Alberta" if name else "None published",
+                    else f"{name[1]} - Alberta" if name else GEOPORTAL_OTHER,
                     "description": text(f"{(r.get('author') or {}).get('name', '')}. {r.get('description') or ''}", 300)}
             rows += as_layers(base, links)
         start += len(d["results"])
