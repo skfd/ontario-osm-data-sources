@@ -460,6 +460,16 @@ def from_opendatasoft(p: dict) -> list[dict]:
             return rows
 
 
+def from_reddeer(p: dict) -> list[dict]:
+    """Red Deer's own catalogue: /api/datasets lists every dataset, each with its download formats."""
+    return [{"origin": "reddeer", "dataset": text(d.get("name"), 200),
+             "item_type": f"Red Deer dataset: {d.get('formats') or ''}",
+             "source_url": f"{p['portal_url'].rstrip('/')}/datasets/{d['dataUrl'].split('/')[-1].split('?')[0]}",
+             "edited": (d.get("lastUpdateDate") or "")[:10], "licence": p["licence"],
+             "description": text(d.get("description"), 300)}
+            for d in get_json(with_param(p["api_url"], "take=1000"))["datasets"]]
+
+
 def from_custom(p: dict) -> list[dict]:
     """A download page with a JSON list behind it; one without has no api_url and is not swept."""
     if "/metadata-api/" in p["api_url"]:
@@ -468,6 +478,8 @@ def from_custom(p: dict) -> list[dict]:
         return from_jkan(p)
     if "/geoportal/opensearch" in p["api_url"]:
         return from_geoportal(p)
+    if p["api_url"].endswith("/api/datasets"):
+        return from_reddeer(p)
     raise ValueError(f"no reader for the custom catalogue {p['api_url']}")
 
 

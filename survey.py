@@ -123,7 +123,8 @@ def count(p: dict, warnings: list[str]) -> int:
         return rest_layers(url.rstrip("/"), warnings)
     if platform == "custom":  # a download list with a JSON API: GRIN's, a JKAN site's, or a Geoportal
         d = get_json(url)
-        return d["total"] if "total" in d else len(d["results"] if isinstance(d, dict) else d)
+        total = d.get("total", d.get("totalCount")) if isinstance(d, dict) else None
+        return total if total is not None else len(d["results"] if isinstance(d, dict) else d)
     raise ValueError(f"no counting method for platform {platform!r}")
 
 
