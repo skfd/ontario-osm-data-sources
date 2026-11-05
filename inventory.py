@@ -55,7 +55,7 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
 PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|customer_age|"
                              r"students?_(name|email|phone|address|number|birth|dob)\w*|"
                              r"parent_?(or_)?guardians?_(name|email|phone|contact|consent)\w*|"
-                             r"childrens?_?names?\w*|duration_of_homeless\w*|"
+                             r"childrens?_?names?\w*|duration_of_homeless\w*|rough_?sleepers?\w*|"
                              # French forms, accents stripped by Survey123: nom_dedes_enfants,
                              # nom_de_l_tudiant (étudiant), nom_de_l_l_ve (élève).
                              r"nom_d\w*_enfants?\w*|nom_de_l_?e?tudiants?\w*|nom_de(_l|s)_?e?l_?e?ves?\w*", re.I)
