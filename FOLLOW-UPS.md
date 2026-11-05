@@ -152,7 +152,7 @@ open address layer, and the regional districts and cities do. Open ends:
   city's 400-row log of needles picked up, whose free text places camps and a person sleeping rough
   (`needle found`). Which publishers these are is in the gitignored
   `cache/scratch/exposed-forms.md`, with the operational systems the sweep found on public servers.
-- **Questions for a person, on the same rule.** All are kept at tier 1 for now:
+- **Kept, against the same rule (decided 2026-11-05).** All stay listed at tier 1:
   - `ca/bc/uhr-uhr`, the BC Coroners' unidentified human remains (156 rows, 20 or more under 18, many
     infants, with its two twins): a deliberate public appeal with no names.
   - Cemetery records of the dead, children among them, in several municipalities' layers (names,
