@@ -461,7 +461,9 @@ municipally. Open ends:
   including a layer named "CONFIDENTIAL DO NOT PRINT - MPAC Parcel 2009" (North Bay-Mattawa)
   and "Parcels (Owners)" (Conservation Sudbury). They are graded 1; the authorities may want to
   know.
-- **Form answers left readable by anyone (checked 2026-10-31).** Every layer of children's or
+- **Form answers left readable by anyone (checked 2026-10-31; decided 2026-11-05: these and the
+  other public layers in `exposed-forms.md` are not treated as exposures, and no publisher is to
+  be told; the kept-out rows stay out).** Every layer of children's or
   homeless people's records the sweeps found is the hidden layer behind a Survey123 form. A
   public form must accept submissions from anyone; whether anyone can also read the answers is
   a separate sharing setting, so the sweep sees only the publishers who set it wrong. Other
@@ -469,8 +471,7 @@ municipally. Open ends:
   private. A count-only query, which returns no records, shows two still exposed:
   - **A county's homeless-outreach log:** 71 encampment locations with population, how long
     people have been homeless, services needed and housing plans. Anyone can read, download and
-    edit it, and it was edited on 2026-05-29, so it is in use. The county should be told, and
-    soon: an editable layer can be altered as well as read.
+    edit it, and it was edited on 2026-05-29, so it is in use.
   - **A city's youth challenge form:** 6 entries with school, grade and email, readable and
     editable by anyone; last edited 2021.
 
