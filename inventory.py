@@ -69,7 +69,7 @@ TEST_FOLDER = re.compile(r"(?:test|testing|dev|staging)(?:_.*)?", re.I)
 # A layer of encampment sites, whatever its fields (a city's parcels with Status and Occupancy),
 # and logs whose free text places camps and people sleeping rough: needles picked up, park staff's
 # shift reports.
-ENCAMPMENTS = re.compile(r"encampment|needle found|rdsr", re.I)
+ENCAMPMENTS = re.compile(r"encampment|needle found|\brdsr\b", re.I)
 
 
 def personal(fields: list[str], name: str = "") -> bool:
