@@ -23,6 +23,7 @@ graders never invent one; a layer already in catalogue/layers keeps the id it ha
 import csv
 import html
 import json
+from hashlib import sha1
 import re
 import sys
 import threading
@@ -375,6 +376,11 @@ SOCRATA_GEOMETRY = {"point": "point", "multipoint": "multipoint", "line": "polyl
 SOCRATA_DERIVED = {"chart", "filter", "visualization", "measure", "story", "calendar", "form"}
 
 
+# Socrata assets under the rule on PERSONAL_FIELDS that no field name gives away: a general log
+# that places camps or holds children's reports, and its maps. Hashed, so this file names none.
+SOCRATA_KEPT_OUT = {"616480c6da00", "6e0cf4dc9b13", "2638bec799b1", "556acc1c3349", "d421b52121ce", "46d3dc5724fe"}
+
+
 def from_socrata(p: dict) -> list[dict]:
     """A Socrata site through the discovery API. A map or filtered view of a dataset the site also
     lists is left out, so each dataset is one row; a map with no parent on the site is kept."""
@@ -393,6 +399,9 @@ def from_socrata(p: dict) -> list[dict]:
         res, meta = r["resource"], r.get("metadata") or {}
         kind = res.get("type") or ""
         if kind in SOCRATA_DERIVED or (kind in ("map", "filter") and res.get("parent_fid") in ids):
+            continue
+        if sha1(res["id"].encode()).hexdigest()[:12] in SOCRATA_KEPT_OUT \
+                or personal(res.get("columns_field_name") or [], res.get("name") or ""):
             continue
         types = [t.lower() for t in res.get("columns_datatype") or []]
         geometry = next((SOCRATA_GEOMETRY[t] for t in types if t in SOCRATA_GEOMETRY), "")
