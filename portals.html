@@ -1444,8 +1444,8 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
   const total = +sec.dataset.total || rows.length;
   // Grades whose rows ship in their own file, and what has arrived.
   const deferred = Object.fromEntries((sec.dataset.deferred || "").split(" ").filter(Boolean)
-    .map(s => s.split(":")));
-  const loading = {}, done = {};
+    .map(s => s.split(":")).map(([g, files]) => [g, files.split(",")]));
+  const loading = {}, fetched = {}, done = {};
   const facets = [...sec.querySelectorAll(".facet")].map(el => ({
     el, f: el.dataset.f, name: el.dataset.name,
     label: el.querySelector("summary").firstChild.textContent,
@@ -1476,22 +1476,29 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
     const vals = valueFacet ? chosen(valueFacet) : [];
     return Object.keys(deferred).filter(g => !vals.length || vals.includes(g));
   };
-  const load = g => loading[g] || (loading[g] = new Promise((ok, fail) => {
+  // Not append(...rows): Chrome stops near 123,000 arguments, and the table is nearly there.
+  const refill = () => {
+    const f = document.createDocumentFragment();
+    for (const tr of rows) f.append(tr);
+    tbody.append(f);
+  };
+  // A file that arrived is kept when another of its grade fails: asking again fetches only the rest.
+  const fetchFile = src => fetched[src] || (fetched[src] = new Promise((ok, fail) => {
     const s = document.createElement("script");
-    s.src = deferred[g];
-    s.onerror = () => { delete loading[g]; fail(new Error(deferred[g])); };
-    s.onload = () => {
-      const t = document.createElement("tbody");
-      t.innerHTML = window["ROWS_" + g];
-      delete window["ROWS_" + g];
-      rows.push(...t.rows);
-      done[g] = true;
-      order();
-      tbody.append(...rows);
-      ok();
-    };
+    s.src = src;
+    s.onerror = () => { delete fetched[src]; fail(new Error(src)); };
+    s.onload = ok;
     document.head.append(s);
   }));
+  const load = g => loading[g] || (loading[g] = Promise.all(deferred[g].map(fetchFile)).then(() => {
+    const t = document.createElement("tbody");
+    t.innerHTML = window["ROWS_" + g].join("");
+    delete window["ROWS_" + g];
+    for (const tr of t.rows) rows.push(tr);
+    done[g] = true;
+    order();
+    refill();
+  }, err => { delete loading[g]; throw err; }));
 
   let sorting = null;
   const order = () => {
@@ -1668,7 +1675,7 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
     th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
     sorting = {i: th.cellIndex, num: th.dataset.type === "num", dir};
     order();
-    tbody.append(...rows);
+    refill();
     apply();
   });
   tbody.addEventListener("click", ev => {

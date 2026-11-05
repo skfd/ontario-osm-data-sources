@@ -2,7 +2,7 @@
 
 Reads   catalogue/*.csv, catalogue/synced/*.csv  (see catalogue/SCHEMA.md)
 Writes  index.html, portals.html                 the catalogue as tables, for GitHub Pages
-        rows-d.js, rows-f.js                     index.html's D and F rows, loaded on request
+        rows-d-*.js, rows-f-*.js                 index.html's D and F rows by province, loaded on request
         wiki/Canada_Open_data.wiki               the OSM wiki page
         report/SUMMARY.md                        counts, freshness, gaps and coverage, for review
 
@@ -439,7 +439,7 @@ UNGRADED = "ungraded"
 GRADE_MEANS = {"A": "a large gap filled", "B": "features OSM lacks in bulk",
                "C": "a gaps list or reference", "D": "small, or OSM has it",
                "F": "not something OSM maps", UNGRADED: "hand-catalogued, not graded"}
-DEFERRED = ("D", "F")  # rows-d.js and rows-f.js: loaded when the Value filter asks for them
+DEFERRED = ("D", "F")  # rows-d-*.js and rows-f-*.js: loaded when the Value filter asks for them
 GRADE_STYLE = {"A": "background:#8fd19e", "B": "background:#c8ebb4", "C": "background:#f7e79a",
                "D": "background:#f8c99a", "F": "background:#f1cfcf"}
 SHARED_ARCGIS = re.compile(r"^services\d*\.arcgis\.com$|^utility\.arcgis\.com$")
@@ -545,8 +545,9 @@ def badge_css() -> str:
     return "\n".join(rules)
 
 
-def source_rows(sources, measures, juris, portals, last) -> dict[str, list[str]]:
-    """Each row's HTML, by the grade letter that decides which file it ships in."""
+def source_rows(sources, measures, juris, portals, last) -> tuple[dict, dict]:
+    """Each row's HTML by grade letter, and the deferred grades' rows again by province,
+    which decide the file they ship in."""
     find = portal_finder(portals)
     history = defaultdict(list)
     for m in measures:
@@ -556,6 +557,8 @@ def source_rows(sources, measures, juris, portals, last) -> dict[str, list[str]]
     rows = sorted(sources, key=lambda r: (order[r["status"]], jurisdiction(r["id"]).count("/"),
                                           juris[jurisdiction(r["id"])]["name"], r["dataset"]))
     out = defaultdict(list)
+    parts = {g: defaultdict(list) for g in DEFERRED}
+    provs = provinces(juris)
     for i, r in enumerate(rows):
         where = juris[jurisdiction(r["id"])]["name"]
         use = FEASIBILITY[r["feasibility"]]
@@ -590,7 +593,7 @@ def source_rows(sources, measures, juris, portals, last) -> dict[str, list[str]]
         g = GRADE.get(r["tier"], UNGRADED)
         copy = ' data-copy="1"' if r["notes"].startswith("Copy of ") else ""
 
-        out[g].append(
+        tr = (
             f'<tr data-i="{i}" data-where="{esc(where)}" data-theme="{r["theme"]}" data-use="{use}" '
             f'data-status="{r["status"]}" data-value="{g}"{copy}>'
             f'<td class="name">{a(r["source_url"], name)}{notes}</td>'
@@ -605,7 +608,11 @@ def source_rows(sources, measures, juris, portals, last) -> dict[str, list[str]]
             + cell("tools", tools) + cell("lead", leads)
             + f'<td class="more nowrap">{r["last_verified"]}</td>'
             f'<td class="more"><code>{esc(r["id"])}</code></td></tr>')
-    return out
+        out[g].append(tr)
+        if g in parts:
+            home = next((p for p in provs if within(jurisdiction(r["id"]), p)), "ca")
+            parts[g][home].append(tr)
+    return out, parts
 
 
 def cell(cls: str, html: str, sort: str | None = None) -> str:
@@ -689,7 +696,7 @@ def shell(title: str, here: str, intro: str, body: str) -> str:
 """
 
 
-def html_page(sources, measures, juris, rows) -> str:
+def html_page(sources, measures, juris, rows, files) -> str:
     """The datasets page. Its rows are A to C and the ungraded; D and F wait in their files."""
     by_name = lambda codes: sorted({juris[c]["name"] for c in codes})
     present = lambda vocab, key: [v for v in vocab if any(r[key] == v for r in sources)]
@@ -706,8 +713,9 @@ def html_page(sources, measures, juris, rows) -> str:
                   + facet("s-status", "Status", plain(present(STATUSES, "status"))),
                   [("nocopy", "hide copies"), ("more", "more columns")])
     legend = " ".join(f'{grade(t)} {GRADE_MEANS[g]}' for t, g in GRADE.items())
-    # The file's hash in its URL: a cached rows-f.js from an older build would not fit this page.
-    deferred = " ".join(f"{g}:rows-{g.lower()}.js?v={sha1(deferred_rows(g, rows[g]).encode()).hexdigest()[:8]}"
+    # Each file's hash in its URL: a cached rows-f-on.js from an older build would not fit this page.
+    deferred = " ".join(g + ":" + ",".join(f"{name}?v={sha1(text.encode()).hexdigest()[:8]}"
+                                           for name, text in files[g].items())
                         for g in DEFERRED)
     shown = sum(len(rows[g]) for g in grades if g not in DEFERRED)
     where = " and ".join(covered(sources, juris))
@@ -738,8 +746,16 @@ you pick them. Grades are a first pass and unreviewed.</p>
 
 
 def deferred_rows(g: str, rows: list[str]) -> str:
-    """A script, not JSON for fetch(): a script loads from file:// too."""
-    return f"window.ROWS_{g} = {json.dumps(chr(10).join(rows), ensure_ascii=False)};\n"
+    """A script, not JSON for fetch(): a script loads from file:// too. A grade's files run in
+    any order, so each adds to the list rather than setting it."""
+    return f"(window.ROWS_{g} = window.ROWS_{g} || []).push({json.dumps(chr(10).join(rows), ensure_ascii=False)});\n"
+
+
+def deferred_files(parts: dict) -> dict[str, dict[str, str]]:
+    """Each deferred grade's files, one per province: GitHub refuses a file over 100 MB, and
+    British Columbia took the one F file to 72."""
+    return {g: {f"rows-{g.lower()}-{code.rsplit('/', 1)[-1]}.js": deferred_rows(g, rows)
+                for code, rows in sorted(parts[g].items())} for g in DEFERRED}
 
 
 def portals_page(sources, juris, portals) -> str:
@@ -934,8 +950,8 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
   const total = +sec.dataset.total || rows.length;
   // Grades whose rows ship in their own file, and what has arrived.
   const deferred = Object.fromEntries((sec.dataset.deferred || "").split(" ").filter(Boolean)
-    .map(s => s.split(":")));
-  const loading = {}, done = {};
+    .map(s => s.split(":")).map(([g, files]) => [g, files.split(",")]));
+  const loading = {}, fetched = {}, done = {};
   const facets = [...sec.querySelectorAll(".facet")].map(el => ({
     el, f: el.dataset.f, name: el.dataset.name,
     label: el.querySelector("summary").firstChild.textContent,
@@ -966,22 +982,29 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
     const vals = valueFacet ? chosen(valueFacet) : [];
     return Object.keys(deferred).filter(g => !vals.length || vals.includes(g));
   };
-  const load = g => loading[g] || (loading[g] = new Promise((ok, fail) => {
+  // Not append(...rows): Chrome stops near 123,000 arguments, and the table is nearly there.
+  const refill = () => {
+    const f = document.createDocumentFragment();
+    for (const tr of rows) f.append(tr);
+    tbody.append(f);
+  };
+  // A file that arrived is kept when another of its grade fails: asking again fetches only the rest.
+  const fetchFile = src => fetched[src] || (fetched[src] = new Promise((ok, fail) => {
     const s = document.createElement("script");
-    s.src = deferred[g];
-    s.onerror = () => { delete loading[g]; fail(new Error(deferred[g])); };
-    s.onload = () => {
-      const t = document.createElement("tbody");
-      t.innerHTML = window["ROWS_" + g];
-      delete window["ROWS_" + g];
-      rows.push(...t.rows);
-      done[g] = true;
-      order();
-      tbody.append(...rows);
-      ok();
-    };
+    s.src = src;
+    s.onerror = () => { delete fetched[src]; fail(new Error(src)); };
+    s.onload = ok;
     document.head.append(s);
   }));
+  const load = g => loading[g] || (loading[g] = Promise.all(deferred[g].map(fetchFile)).then(() => {
+    const t = document.createElement("tbody");
+    t.innerHTML = window["ROWS_" + g].join("");
+    delete window["ROWS_" + g];
+    for (const tr of t.rows) rows.push(tr);
+    done[g] = true;
+    order();
+    refill();
+  }, err => { delete loading[g]; throw err; }));
 
   let sorting = null;
   const order = () => {
@@ -1158,7 +1181,7 @@ for (const sec of document.querySelectorAll("section[data-table]")) {
     th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
     sorting = {i: th.cellIndex, num: th.dataset.type === "num", dir};
     order();
-    tbody.append(...rows);
+    refill();
     apply();
   });
   tbody.addEventListener("click", ev => {
@@ -1178,10 +1201,13 @@ def main():
         r["coverage"] = measure_text(last.get(r["id"]))
 
     shown = [with_work(r) for r in sources]
-    rows = source_rows(shown, measures, juris, portals, last)
-    (HERE / "index.html").write_text(html_page(shown, measures, juris, rows), encoding="utf-8")
-    for g in DEFERRED:
-        (HERE / f"rows-{g.lower()}.js").write_text(deferred_rows(g, rows[g]), encoding="utf-8")
+    rows, parts = source_rows(shown, measures, juris, portals, last)
+    files = deferred_files(parts)
+    (HERE / "index.html").write_text(html_page(shown, measures, juris, rows, files), encoding="utf-8")
+    for old in HERE.glob("rows-*.js"):
+        old.unlink()
+    for name, text in (f for g in DEFERRED for f in files[g].items()):
+        (HERE / name).write_text(text, encoding="utf-8")
     (HERE / "portals.html").write_text(portals_page(shown, juris, portals), encoding="utf-8")
     WIKI.mkdir(exist_ok=True)
     (WIKI / "Canada_Open_data.wiki").write_text(wiki_page([with_work(r) for r in sources], juris),

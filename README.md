@@ -13,7 +13,8 @@ Views are generated from it. Today there are three:
   every source as a table you can search, filter and sort, with its licence, the portal it
   was found on, its value as a grade (A–F for tiers 5–1) and its measure history. It opens on
   the rows graded A to C and the ungraded hand-catalogued ones; the D and F rows wait in
-  `rows-d.js` and `rows-f.js` until the Value filter asks for them. On a phone each row
+  `rows-d-*.js` and `rows-f-*.js`, one file per province, until the Value filter asks for
+  them. On a phone each row
   becomes a card. [`portals.html`](portals.html) lists every portal, with how many
   sources the catalogue has taken from each.
 - [`wiki/Canada_Open_data.wiki`](wiki/Canada_Open_data.wiki), for
