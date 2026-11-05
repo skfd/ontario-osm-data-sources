@@ -783,7 +783,7 @@ tracked over time:
 
 `catalogue/portals.csv` lists every open-data portal found in Alberta and British Columbia and New Brunswick and Nova Scotia and Ontario and Prince Edward Island and a
 `none-found` row for each municipality that has none. 609 portals are known,
-458 of them counted through their API: **94428 layers seen, against 98428
+571 of them counted through their API: **119772 layers seen, against 124836
 sources catalogued in those jurisdictions.** A layer seen is a candidate source; a shared
 county or consortium portal is counted once, under its owner.
 
@@ -810,12 +810,12 @@ higher than a Hub's count of curated datasets.
 
 | platform | portals | layers seen |
 |---|---|---|
-| arcgis-hub | 168 | 23993 |
-| arcgis-rest | 405 | 60725 |
-| ckan | 6 | 7435 |
-| socrata | 4 | 1979 |
+| arcgis-hub | 168 | 25920 |
+| arcgis-rest | 405 | 77938 |
+| ckan | 6 | 8704 |
+| socrata | 4 | 5001 |
 | opendatasoft | 1 | 200 |
-| custom | 25 | 96 |
+| custom | 25 | 2009 |
 
 Jurisdictions with a portal of their own. *Share* is sources catalogued over layers seen; over
 100% means the catalogue holds layers the portal's own catalogue does not list (Guelph's audit
@@ -824,20 +824,25 @@ consortium portal are in `portals.csv`.
 
 | jurisdiction | platform | layers seen | sources catalogued | share |
 |---|---|---|---|---|
+| Alberta | arcgis-rest, ckan, custom | 7985 | 8884 | 111.3% |
 | Ontario | arcgis-hub, arcgis-rest, ckan | 5910 | 5834 | 98.7% |
 | Langley Township | arcgis-hub | 5591 | 5722 | 102.3% |
 | British Columbia | arcgis-hub, arcgis-rest, ckan | 4502 | 4603 | 102.2% |
 | Moncton | arcgis-hub, arcgis-rest | 3178 | 3144 | 98.9% |
 | Conservation Ontario | arcgis-hub, arcgis-rest | 2793 | 2770 | 99.2% |
+| Edmonton | arcgis-rest, socrata | 2652 | 2341 | 88.3% |
 | Nova Scotia | arcgis-rest, socrata | 2236 | 2008 | 89.8% |
 | Mississauga | arcgis-hub, arcgis-rest | 2122 | 2098 | 98.9% |
 | Surrey | arcgis-hub, arcgis-rest | 1941 | 2279 | 117.4% |
 | North Vancouver | arcgis-rest | 1552 | 1692 | 109.0% |
+| Calgary | arcgis-rest, socrata | 1516 | 1354 | 89.3% |
+| Alberta Energy Regulator | arcgis-hub, arcgis-rest | 1445 | 1049 | 72.6% |
 | Brampton | arcgis-hub, arcgis-rest | 1394 | 1257 | 90.2% |
 | Simcoe | arcgis-rest | 1286 | 1451 | 112.8% |
 | Haliburton | arcgis-rest | 1042 | 1136 | 109.0% |
 | Ottawa | arcgis-hub, arcgis-rest | 1024 | 1011 | 98.7% |
 | Saint John | arcgis-hub, arcgis-rest | 1003 | 810 | 80.8% |
+| Airdrie | arcgis-hub, arcgis-rest | 933 | 1164 | 124.8% |
 | Hamilton | arcgis-hub, arcgis-rest | 924 | 796 | 86.1% |
 | Leeds and Grenville | arcgis-hub, arcgis-rest | 859 | 853 | 99.3% |
 | Regional District of Central Okanagan | arcgis-hub, arcgis-rest | 853 | 984 | 115.4% |
@@ -858,12 +863,15 @@ consortium portal are in `portals.csv`.
 | Niagara Falls | arcgis-hub, arcgis-rest | 648 | 357 | 55.1% |
 | Ontario Ministry of Transportation | arcgis-hub, arcgis-rest | 638 | 553 | 86.7% |
 | Guelph | arcgis-hub, arcgis-rest | 634 | 639 | 100.8% |
+| Spruce Grove | arcgis-rest | 629 | 655 | 104.1% |
 | Regional District of Nanaimo | arcgis-rest, custom | 623 | 666 | 106.9% |
 | Kitchener | arcgis-hub, arcgis-rest | 618 | 474 | 76.7% |
 | Lennox and Addington | arcgis-hub, arcgis-rest | 612 | 655 | 107.0% |
 | Toronto District School Board | arcgis-rest | 608 | 679 | 111.7% |
 | Essex | arcgis-hub, arcgis-rest | 603 | 640 | 106.1% |
+| Mackenzie Municipal Services Agency | arcgis-rest | 602 | 605 | 100.5% |
 | Renfrew | arcgis-rest | 599 | 630 | 105.2% |
+| Oldman River Regional Services Commission | arcgis-rest | 592 | 674 | 113.9% |
 | York | arcgis-hub, arcgis-rest | 589 | 638 | 108.3% |
 | TRUE Consulting | arcgis-rest | 586 | 596 | 101.7% |
 | Greater Sudbury | arcgis-hub, arcgis-rest | 569 | 545 | 95.8% |
@@ -876,7 +884,9 @@ consortium portal are in `portals.csv`.
 | New Brunswick Department of Natural Resources | arcgis-rest | 530 | 537 | 101.3% |
 | Toronto and Region Conservation Authority | arcgis-hub, arcgis-rest, ckan | 513 | 653 | 127.3% |
 | Prince Edward Island | arcgis-hub, arcgis-rest, custom | 510 | 513 | 100.6% |
+| Edmonton Public Schools | arcgis-rest | 507 | 507 | 100.0% |
 | Victoria (BC) | arcgis-hub | 504 | 504 | 100.0% |
+| Red Deer | arcgis-rest, custom | 499 | 553 | 110.8% |
 | Service New Brunswick | arcgis-rest, custom | 482 | 523 | 108.5% |
 | Elgin | arcgis-hub, arcgis-rest | 480 | 516 | 107.5% |
 | Fredericton | arcgis-hub, arcgis-rest | 465 | 704 | 151.4% |
@@ -887,30 +897,40 @@ consortium portal are in `portals.csv`.
 | Mission | arcgis-rest | 440 | 598 | 135.9% |
 | Markham | arcgis-hub | 437 | 447 | 102.3% |
 | Ganaraska Region Conservation Authority | arcgis-rest | 433 | 449 | 103.7% |
+| Grande Prairie | arcgis-hub, arcgis-rest | 432 | 594 | 137.5% |
 | Nanaimo | arcgis-hub, arcgis-rest | 424 | 353 | 83.3% |
 | Oshawa | arcgis-hub, arcgis-rest | 422 | 450 | 106.6% |
 | Sunshine Coast Regional District | arcgis-hub, arcgis-rest | 420 | 421 | 100.2% |
 | Chatham-Kent | arcgis-hub, arcgis-rest | 419 | 404 | 96.4% |
+| Mountain View County | arcgis-rest | 412 | 520 | 126.2% |
+| Lloydminster | arcgis-rest | 405 | 460 | 113.6% |
 | Burlington | arcgis-hub, arcgis-rest | 400 | 421 | 105.2% |
 | Ajax | arcgis-hub, arcgis-rest | 397 | 435 | 109.6% |
 | Rideau Valley Conservation Authority | arcgis-rest, custom | 388 | 448 | 115.5% |
 | Waterloo | arcgis-hub, arcgis-rest | 368 | 288 | 78.3% |
+| Sylvan Lake | arcgis-rest | 366 | 411 | 112.3% |
 | Woolwich | arcgis-hub, arcgis-rest | 357 | 361 | 101.1% |
+| County of Vermilion River | arcgis-rest | 355 | 384 | 108.2% |
 | Pickering | arcgis-hub, arcgis-rest | 348 | 369 | 106.0% |
 | BC Ministry of Emergency Management and Climate Readiness | arcgis-hub, arcgis-rest | 345 | 318 | 92.2% |
 | Peterborough | arcgis-rest | 343 | 350 | 102.0% |
 | West Parry Sound | arcgis-hub, arcgis-rest | 339 | 335 | 98.8% |
+| Strathcona County | arcgis-hub | 329 | 330 | 100.3% |
 | Lake Country | arcgis-hub, arcgis-rest | 326 | 303 | 92.9% |
 | Nottawasaga Valley Conservation Authority | arcgis-rest | 326 | 387 | 118.7% |
 | Delta | arcgis-hub, arcgis-rest | 322 | 337 | 104.7% |
+| Parkland County | arcgis-hub, arcgis-rest | 321 | 339 | 105.6% |
 | Dryden | arcgis-rest | 314 | 350 | 111.5% |
 | Stormont, Dundas and Glengarry | arcgis-rest | 311 | 315 | 101.3% |
 | Vaughan | arcgis-rest | 311 | 318 | 102.3% |
 | West Kelowna | arcgis-rest, custom | 309 | 362 | 117.2% |
 | Cambridge | arcgis-hub, arcgis-rest | 306 | 309 | 101.0% |
 | New Brunswick Department of Environment and Local Government | arcgis-rest | 305 | 343 | 112.5% |
+| Sturgeon County | arcgis-hub, arcgis-rest | 305 | 278 | 91.1% |
 | Region of Waterloo | arcgis-hub, arcgis-rest | 303 | 332 | 109.6% |
+| Strathmore | arcgis-rest | 296 | 311 | 105.1% |
 | Southeast Regional Service Commission | arcgis-hub, arcgis-rest | 295 | 272 | 92.2% |
+| Alberta Health Services | arcgis-rest | 288 | 296 | 102.8% |
 | Kelowna | arcgis-hub | 281 | 281 | 100.0% |
 | Newmarket | arcgis-hub, arcgis-rest | 276 | 261 | 94.6% |
 | Dawson Creek | arcgis-rest | 271 | 324 | 119.6% |
@@ -922,10 +942,13 @@ consortium portal are in `portals.csv`.
 | Regional District of Kootenay Boundary | arcgis-rest | 257 | 297 | 115.6% |
 | Oak Bay | arcgis-rest | 256 | 264 | 103.1% |
 | Chester | arcgis-rest | 252 | 253 | 100.4% |
+| Wheatland County | arcgis-rest | 244 | 244 | 100.0% |
 | Wellington | arcgis-rest | 241 | 252 | 104.6% |
 | Middlesex | arcgis-hub, arcgis-rest | 240 | 245 | 102.1% |
 | Thunder Bay | arcgis-hub, arcgis-rest | 240 | 184 | 76.7% |
+| Vulcan County | arcgis-rest | 238 | 244 | 102.5% |
 | New Brunswick Department of Tourism, Heritage and Culture | arcgis-rest | 234 | 246 | 105.1% |
+| St. Albert | arcgis-hub, arcgis-rest | 234 | 205 | 87.6% |
 | Terrace | arcgis-rest | 234 | 266 | 113.7% |
 | Annapolis | arcgis-rest | 233 | 234 | 100.4% |
 | London | arcgis-hub | 232 | 231 | 99.6% |
@@ -933,7 +956,9 @@ consortium portal are in `portals.csv`.
 | Revelstoke | arcgis-hub, arcgis-rest | 218 | 165 | 75.7% |
 | Nova Scotia Department of Natural Resources and Renewables | arcgis-rest | 214 | 245 | 114.5% |
 | Regional District of Okanagan-Similkameen | arcgis-hub, arcgis-rest | 213 | 240 | 112.7% |
+| Banff | arcgis-rest, custom | 210 | 218 | 103.8% |
 | North Vancouver District | arcgis-rest, custom | 210 | 236 | 112.4% |
+| Chestermere | arcgis-hub, arcgis-rest | 207 | 298 | 144.0% |
 | Fraser Valley Regional District | arcgis-rest | 205 | 234 | 114.1% |
 | White Rock | arcgis-hub | 204 | 333 | 163.2% |
 | Lunenburg District | arcgis-rest | 200 | 200 | 100.0% |
@@ -955,8 +980,10 @@ consortium portal are in `portals.csv`.
 | Lake Simcoe Region Conservation Authority | arcgis-hub, arcgis-rest | 166 | 91 | 54.8% |
 | New Westminster | arcgis-hub | 165 | 165 | 100.0% |
 | North Cowichan | arcgis-rest | 163 | 163 | 100.0% |
+| County of Grande Prairie | arcgis-hub, arcgis-rest | 162 | 165 | 101.9% |
 | Fundy Regional Service Commission | arcgis-rest | 159 | 159 | 100.0% |
 | Richmond (BC) | arcgis-rest | 159 | 165 | 103.8% |
+| Medicine Hat | arcgis-hub, arcgis-rest | 157 | 118 | 75.2% |
 | Port Moody | arcgis-hub | 155 | 147 | 94.8% |
 | Amherstburg | arcgis-hub, arcgis-rest | 153 | 160 | 104.6% |
 | Central Lake Ontario Conservation Authority | arcgis-hub, arcgis-rest | 153 | 219 | 143.1% |
@@ -966,35 +993,47 @@ consortium portal are in `portals.csv`.
 | Thompson-Nicola Regional District | arcgis-hub | 149 | 270 | 181.2% |
 | Cumberland | arcgis-hub, arcgis-rest | 148 | 125 | 84.5% |
 | Penticton | arcgis-hub | 148 | 147 | 99.3% |
+| Stony Plain | arcgis-rest | 148 | 150 | 101.4% |
 | Abbotsford | arcgis-hub | 147 | 155 | 105.4% |
 | Cobourg | arcgis-hub, arcgis-rest | 146 | 139 | 95.2% |
+| Drayton Valley | arcgis-rest | 144 | 154 | 106.9% |
 | Owen Sound | arcgis-rest | 144 | 146 | 101.4% |
 | Maple Ridge | arcgis-hub | 140 | 138 | 98.6% |
 | Langford | arcgis-rest | 139 | 155 | 111.5% |
 | Orangeville | arcgis-hub, arcgis-rest | 139 | 115 | 82.7% |
 | Belleville | arcgis-hub, arcgis-rest | 137 | 95 | 69.3% |
+| Edmonton Metropolitan Region Board | arcgis-rest | 137 | 164 | 119.7% |
 | Quinte West | arcgis-rest | 137 | 138 | 100.7% |
 | Parksville | arcgis-hub, arcgis-rest | 136 | 138 | 101.5% |
+| Camrose | arcgis-rest | 135 | 216 | 160.0% |
 | Peace River Regional District | arcgis-rest | 135 | 153 | 113.3% |
 | Barrie | arcgis-hub, arcgis-rest | 134 | 308 | 229.9% |
+| Morinville | arcgis-rest | 134 | 147 | 109.7% |
 | Caledon | arcgis-hub, arcgis-rest | 133 | 134 | 100.8% |
 | Regional District of East Kootenay | arcgis-hub, arcgis-rest | 131 | 16 | 12.2% |
+| Bonnyville | arcgis-rest | 129 | 130 | 100.8% |
 | Sidney | arcgis-rest | 128 | 129 | 100.8% |
 | North Bay | arcgis-rest | 125 | 128 | 102.4% |
 | Southwest Regional Service Commission | arcgis-rest | 124 | 127 | 102.4% |
+| Lethbridge | arcgis-hub | 123 | 119 | 96.7% |
 | Comox | arcgis-rest | 120 | 121 | 100.8% |
 | Cataraqui Conservation | arcgis-rest | 119 | 147 | 123.5% |
 | East Hants | arcgis-hub, arcgis-rest | 117 | 91 | 77.8% |
 | Pictou County | arcgis-hub, arcgis-rest | 116 | 113 | 97.4% |
 | Bathurst | arcgis-hub, arcgis-rest | 114 | 114 | 100.0% |
 | Huron | arcgis-hub, arcgis-rest | 114 | 89 | 78.1% |
+| Beaumont | arcgis-rest | 112 | 113 | 100.9% |
 | Norfolk | arcgis-hub, arcgis-rest | 110 | 88 | 80.0% |
 | Grand River Conservation Authority | arcgis-rest, custom | 108 | 111 | 102.8% |
 | Sarnia | arcgis-hub, arcgis-rest | 108 | 96 | 88.9% |
 | West Hants | arcgis-rest | 107 | 108 | 100.9% |
 | Credit Valley Conservation | arcgis-hub, arcgis-rest | 104 | 63 | 60.6% |
+| Leduc | arcgis-hub, arcgis-rest | 104 | 97 | 93.3% |
+| High River | arcgis-rest | 103 | 107 | 103.9% |
 | Hamilton-Wentworth District School Board | arcgis-rest | 100 | 109 | 109.0% |
+| Municipal District of Bonnyville | arcgis-rest | 100 | 100 | 100.0% |
 | Brant | arcgis-hub, arcgis-rest | 99 | 83 | 83.8% |
+| Canmore | arcgis-hub, arcgis-rest | 98 | 28 | 28.6% |
 | Rossland | arcgis-rest | 98 | 99 | 101.0% |
 | Salmon Arm | arcgis-rest | 97 | 97 | 100.0% |
 | Grand Forks | arcgis-hub, arcgis-rest | 94 | 85 | 90.4% |
@@ -1002,11 +1041,16 @@ consortium portal are in `portals.csv`.
 | Kings | arcgis-rest | 94 | 101 | 107.4% |
 | Brantford | arcgis-hub, arcgis-rest | 93 | 83 | 89.2% |
 | Summerland | arcgis-hub | 90 | 88 | 97.8% |
+| Big Lakes County | arcgis-rest | 88 | 107 | 121.6% |
 | Meaford | arcgis-rest | 88 | 104 | 118.2% |
 | Prince Edward County | arcgis-hub, arcgis-rest | 87 | 85 | 97.7% |
+| Cochrane (AB) | arcgis-hub | 85 | 79 | 92.9% |
 | Pooni Group | arcgis-rest | 85 |  |  |
 | BC Energy Regulator | arcgis-hub, arcgis-rest | 84 | 281 | 334.5% |
+| Peace River | arcgis-rest | 83 | 83 | 100.0% |
 | Tracadie | arcgis-rest | 83 | 83 | 100.0% |
+| Brazeau County | arcgis-rest | 81 | 82 | 101.2% |
+| County of Newell | arcgis-rest | 81 | 81 | 100.0% |
 | Perth | arcgis-rest | 81 | 82 | 101.2% |
 | Kent | arcgis-rest | 80 | 80 | 100.0% |
 | Strathcona Regional District | arcgis-hub, arcgis-rest | 77 | 71 | 92.2% |
@@ -1018,18 +1062,28 @@ consortium portal are in `portals.csv`.
 | District School Board of Niagara | arcgis-rest | 66 | 66 | 100.0% |
 | North Saanich | arcgis-rest | 66 | 68 | 103.0% |
 | Eastern District Planning Commission | arcgis-rest | 65 | 65 | 100.0% |
+| Lac La Biche County | arcgis-rest | 65 | 65 | 100.0% |
 | Langley | arcgis-hub | 65 | 64 | 98.5% |
+| Alberta Forestry and Parks | arcgis-rest, custom | 64 | 82 | 128.1% |
+| Blackfalds | arcgis-rest | 64 | 66 | 103.1% |
+| Cold Lake | arcgis-rest | 64 | 85 | 132.8% |
+| Municipal District of Taber | arcgis-rest | 64 | 64 | 100.0% |
+| Hinton | arcgis-rest | 63 | 63 | 100.0% |
 | Powell River | arcgis-rest | 63 | 63 | 100.0% |
 | Waterloo Region District School Board | arcgis-rest | 63 | 59 | 93.7% |
 | Dieppe | arcgis-rest | 61 | 63 | 103.3% |
+| Okotoks | arcgis-hub | 60 | 58 | 96.7% |
 | Colwood | arcgis-rest | 59 | 59 | 100.0% |
 | Conservation Halton | arcgis-hub, arcgis-rest | 59 | 61 | 103.4% |
 | Cranbrook | arcgis-hub | 59 | 44 | 74.6% |
 | Qualicum Beach | arcgis-rest | 58 | 59 | 101.7% |
 | qathet Regional District | arcgis-rest | 58 | 59 | 101.7% |
 | Wolfville | arcgis-rest | 57 | 64 | 112.3% |
+| Fort Saskatchewan | arcgis-rest | 56 | 72 | 128.6% |
 | Fort St. John | arcgis-hub | 56 | 56 | 100.0% |
+| Regional Municipality of Wood Buffalo | arcgis-rest | 56 | 57 | 101.8% |
 | Elliot Lake | arcgis-rest | 55 | 55 | 100.0% |
+| Ponoka | arcgis-rest | 55 | 55 | 100.0% |
 | Carleton Place | arcgis-rest | 53 | 56 | 105.7% |
 | Northwest Regional Service Commission | arcgis-rest | 53 | 55 | 103.8% |
 | Halton District School Board | arcgis-rest | 52 | 57 | 109.6% |
@@ -1040,7 +1094,9 @@ consortium portal are in `portals.csv`.
 | North Bay Parry Sound District Health Unit | arcgis-rest | 48 | 48 | 100.0% |
 | Quinte Conservation | arcgis-hub, arcgis-rest | 48 | 34 | 70.8% |
 | Eastern Charlotte | arcgis-rest | 47 | 47 | 100.0% |
+| Leduc County | arcgis-rest | 47 | 54 | 114.9% |
 | Stratford | arcgis-rest | 47 | 50 | 106.4% |
+| Lethbridge County | arcgis-rest | 46 | 53 | 115.2% |
 | Ontario Geological Survey | arcgis-hub, arcgis-rest, custom | 46 | 69 | 150.0% |
 | Argyle | arcgis-rest | 45 | 47 | 104.4% |
 | Golden | arcgis-rest | 45 | 45 | 100.0% |
@@ -1052,15 +1108,20 @@ consortium portal are in `portals.csv`.
 | Campbellton | arcgis-rest | 42 | 44 | 104.8% |
 | Quispamsis | arcgis-rest | 42 | 44 | 104.8% |
 | Spallumcheen | arcgis-rest | 42 | 44 | 104.8% |
+| Alberta Electric System Operator | arcgis-rest | 41 | 41 | 100.0% |
 | Halton Catholic District School Board | arcgis-rest | 41 | 135 | 329.3% |
+| Municipal District of Lesser Slave River | arcgis-rest | 41 | 42 | 102.4% |
+| Rocky View County | arcgis-rest | 41 | 46 | 112.2% |
 | Welland | arcgis-hub | 41 | 68 | 165.9% |
 | Kenora | arcgis-rest | 40 | 40 | 100.0% |
 | Port Coquitlam | arcgis-hub | 40 | 79 | 197.5% |
 | Charlottetown | arcgis-rest | 39 | 46 | 117.9% |
 | Conseil scolaire Viamonde | arcgis-rest | 39 | 47 | 120.5% |
 | Dufferin-Peel Catholic District School Board | arcgis-rest | 39 | 38 | 97.4% |
+| Kneehill County | arcgis-rest | 39 | 47 | 120.5% |
 | Sicamous | arcgis-rest | 39 |  |  |
 | Chilliwack | arcgis-rest, custom | 38 | 1054 | 2773.7% |
+| Lacombe | arcgis-rest | 38 | 38 | 100.0% |
 | St. Catharines | arcgis-hub, arcgis-rest | 37 | 21 | 56.8% |
 | Kentville | arcgis-rest | 36 | 36 | 100.0% |
 | Simcoe Muskoka District Health Unit | arcgis-rest | 36 | 39 | 108.3% |
@@ -1070,10 +1131,13 @@ consortium portal are in `portals.csv`.
 | Middlesex-London Health Unit | arcgis-rest | 34 | 35 | 102.9% |
 | Peachland | arcgis-hub | 34 | 33 | 97.1% |
 | Restigouche Regional Service Commission | arcgis-rest | 34 | 34 | 100.0% |
+| Municipality of Jasper | arcgis-rest | 33 | 33 | 100.0% |
 | Hamilton Conservation Authority | arcgis-hub | 32 | 32 | 100.0% |
 | TransLink | arcgis-rest, custom | 31 | 35 | 112.9% |
+| Athabasca County | arcgis-rest | 29 | 30 | 103.4% |
 | Grand Erie Public Health | arcgis-rest | 28 | 29 | 103.6% |
 | Lions Bay | arcgis-rest | 28 | 28 | 100.0% |
+| Alberta Emergency Management Agency | arcgis-rest | 27 | 27 | 100.0% |
 | Cowichan Valley Regional District | arcgis-rest, custom | 27 | 27 | 100.0% |
 | Espanola | arcgis-rest | 27 | 27 | 100.0% |
 | Regional District of North Okanagan | arcgis-hub | 27 | 74 | 274.1% |
@@ -1082,6 +1146,7 @@ consortium portal are in `portals.csv`.
 | Stewiacke | arcgis-hub | 26 | 24 | 92.3% |
 | Alcohol and Gaming Commission of Ontario | arcgis-rest | 25 | 25 | 100.0% |
 | Elkford | arcgis-hub | 25 | 37 | 148.0% |
+| Clearwater County | arcgis-hub | 24 | 44 | 183.3% |
 | Southeast Public Health | arcgis-rest | 24 | 17 | 70.8% |
 | Squamish-Lillooet Regional District | arcgis-rest | 24 | 24 | 100.0% |
 | Bruce | arcgis-hub | 23 | 19 | 82.6% |
@@ -1092,12 +1157,16 @@ consortium portal are in `portals.csv`.
 | Canal Flats | arcgis-rest | 21 | 21 | 100.0% |
 | Oxford | arcgis-hub | 21 | 22 | 104.8% |
 | Conseil des écoles publiques de l'Est de l'Ontario | arcgis-rest | 20 | 20 | 100.0% |
+| Crossfield | arcgis-rest | 20 | 20 | 100.0% |
 | Grand Erie District School Board | arcgis-rest | 20 | 20 | 100.0% |
+| Lacombe County | arcgis-rest | 20 | 20 | 100.0% |
 | Simcoe County District School Board | arcgis-hub, arcgis-rest | 20 | 19 | 95.0% |
 | Upper Thames River Conservation Authority | arcgis-hub | 19 | 19 | 100.0% |
 | Stratford (PE) | arcgis-rest | 18 | 18 | 100.0% |
 | Yarmouth | arcgis-rest | 18 | 18 | 100.0% |
+| Didsbury | arcgis-rest | 16 | 16 | 100.0% |
 | Gibsons | arcgis-hub | 16 | 16 | 100.0% |
+| Saddle Hills County | arcgis-rest | 15 | 17 | 113.3% |
 | Sooke | arcgis-rest | 15 | 15 | 100.0% |
 | Lillooet | arcgis-rest | 14 | 14 | 100.0% |
 | Anmore | arcgis-rest | 13 | 13 | 100.0% |
@@ -1106,15 +1175,21 @@ consortium portal are in `portals.csv`.
 | Huntsville | arcgis-hub | 12 | 13 | 108.3% |
 | Toronto Catholic District School Board | arcgis-rest | 12 | 12 | 100.0% |
 | Haldimand | arcgis-hub | 11 | 12 | 109.1% |
+| Westlock | arcgis-rest | 10 | 10 | 100.0% |
+| Municipal District of Willow Creek | arcgis-rest | 9 | 9 | 100.0% |
+| Edson | arcgis-rest | 8 | 8 | 100.0% |
 | Fraser Health | arcgis-rest | 8 | 8 | 100.0% |
 | Kawartha Pine Ridge District School Board | arcgis-rest | 8 | 8 | 100.0% |
 | New Brunswick Department of Transportation and Infrastructure | arcgis-rest | 8 | 8 | 100.0% |
 | Nova Scotia Department of Fisheries and Aquaculture | arcgis-rest | 8 | 9 | 112.5% |
+| Special Areas Board | arcgis-rest | 8 | 8 | 100.0% |
 | Summerside | arcgis-rest | 8 | 8 | 100.0% |
 | York Region District School Board | arcgis-rest | 8 | 8 | 100.0% |
 | Barrington | arcgis-rest | 7 | 7 | 100.0% |
 | Halton Hills | arcgis-rest | 7 | 8 | 114.3% |
 | Lambton | arcgis-hub | 7 | 7 | 100.0% |
+| Wetaskiwin | arcgis-rest | 7 | 12 | 171.4% |
+| Fairview | arcgis-rest | 6 | 6 | 100.0% |
 | Islands Trust | arcgis-rest | 6 | 6 | 100.0% |
 | Truro | arcgis-hub, arcgis-rest | 6 | 83 | 1383.3% |
 | Lower Thames Valley Conservation Authority | arcgis-hub | 5 | 5 | 100.0% |
@@ -1126,95 +1201,20 @@ consortium portal are in `portals.csv`.
 | Port Alberni | arcgis-rest | 3 | 3 | 100.0% |
 | Hampton | arcgis-rest | 2 | 2 | 100.0% |
 | Interior Health | arcgis-rest | 2 | 2 | 100.0% |
+| Lamont County | arcgis-rest | 2 | 2 | 100.0% |
 | Regional District of Alberni-Clayoquot | arcgis-rest | 1 | 1 | 100.0% |
-| Airdrie | arcgis-hub, arcgis-rest | — | 1164 |  |
-| Alberta | arcgis-rest, ckan, custom | — | 8884 |  |
-| Alberta Electric System Operator | arcgis-rest | — | 41 |  |
-| Alberta Emergency Management Agency | arcgis-rest | — | 27 |  |
-| Alberta Energy Regulator | arcgis-hub, arcgis-rest | — | 1049 |  |
-| Alberta Forestry and Parks | arcgis-rest, custom | — | 82 |  |
-| Alberta Health Services | arcgis-rest | — | 296 |  |
+| Calgary Metropolitan Region Board | arcgis-rest | 0 |  |  |
+| County of Minburn | arcgis-rest | 0 |  |  |
 | Alberta Municipal Data Sharing Partnership | custom | — |  |  |
-| Athabasca County | arcgis-rest | — | 30 |  |
 | BC Transit | custom | — |  |  |
-| Banff | arcgis-rest, custom | — | 218 |  |
-| Beaumont | arcgis-rest | — | 113 |  |
-| Big Lakes County | arcgis-rest | — | 107 |  |
-| Blackfalds | arcgis-rest | — | 66 |  |
-| Bonnyville | arcgis-rest | — | 130 |  |
-| Brazeau County | arcgis-rest | — | 82 |  |
-| Calgary | arcgis-rest, socrata | — | 1354 |  |
-| Calgary Metropolitan Region Board | arcgis-rest | — |  |  |
-| Camrose | arcgis-rest | — | 216 |  |
-| Canmore | arcgis-hub, arcgis-rest | — | 28 |  |
-| Chestermere | arcgis-hub, arcgis-rest | — | 298 |  |
-| Clearwater County | arcgis-hub | — | 44 |  |
-| Cochrane (AB) | arcgis-hub | — | 79 |  |
-| Cold Lake | arcgis-rest | — | 85 |  |
-| County of Grande Prairie | arcgis-hub, arcgis-rest | — | 165 |  |
-| County of Minburn | arcgis-rest | — |  |  |
-| County of Newell | arcgis-rest | — | 81 |  |
-| County of Vermilion River | arcgis-rest | — | 384 |  |
-| Crossfield | arcgis-rest | — | 20 |  |
-| Didsbury | arcgis-rest | — | 16 |  |
-| Drayton Valley | arcgis-rest | — | 154 |  |
 | Drumheller | arcgis-rest | — |  |  |
-| Edmonton | arcgis-rest, socrata | — | 2341 |  |
-| Edmonton Metropolitan Region Board | arcgis-rest | — | 164 |  |
-| Edmonton Public Schools | arcgis-rest | — | 507 |  |
-| Edson | arcgis-rest | — | 8 |  |
 | Elections Alberta | custom | — |  |  |
 | Elections Ontario | custom | — | 2 |  |
 | Erin | custom | — | 1 |  |
-| Fairview | arcgis-rest | — | 6 |  |
-| Fort Saskatchewan | arcgis-rest | — | 72 |  |
-| Grande Prairie | arcgis-hub, arcgis-rest | — | 594 |  |
-| High River | arcgis-rest | — | 107 |  |
-| Hinton | arcgis-rest | — | 63 |  |
-| Kneehill County | arcgis-rest | — | 47 |  |
-| Lac La Biche County | arcgis-rest | — | 65 |  |
-| Lacombe | arcgis-rest | — | 38 |  |
-| Lacombe County | arcgis-rest | — | 20 |  |
 | Lake Cowichan | arcgis-rest | — |  |  |
-| Lamont County | arcgis-rest | — | 2 |  |
-| Leduc | arcgis-hub, arcgis-rest | — | 97 |  |
-| Leduc County | arcgis-rest | — | 54 |  |
-| Lethbridge | arcgis-hub | — | 119 |  |
-| Lethbridge County | arcgis-rest | — | 53 |  |
-| Lloydminster | arcgis-rest | — | 460 |  |
-| Mackenzie Municipal Services Agency | arcgis-rest | — | 605 |  |
-| Medicine Hat | arcgis-hub, arcgis-rest | — | 118 |  |
 | Metrolinx | custom | — | 8 |  |
-| Morinville | arcgis-rest | — | 147 |  |
-| Mountain View County | arcgis-rest | — | 520 |  |
-| Municipal District of Bonnyville | arcgis-rest | — | 100 |  |
-| Municipal District of Lesser Slave River | arcgis-rest | — | 42 |  |
-| Municipal District of Taber | arcgis-rest | — | 64 |  |
-| Municipal District of Willow Creek | arcgis-rest | — | 9 |  |
-| Municipality of Jasper | arcgis-rest | — | 33 |  |
-| Okotoks | arcgis-hub | — | 58 |  |
-| Oldman River Regional Services Commission | arcgis-rest | — | 674 |  |
 | Ontario Northland | custom | — | 1 |  |
-| Parkland County | arcgis-hub, arcgis-rest | — | 339 |  |
-| Peace River | arcgis-rest | — | 83 |  |
-| Ponoka | arcgis-rest | — | 55 |  |
-| Red Deer | arcgis-rest, custom | — | 553 |  |
 | Red Deer County | arcgis-rest | — | 326 |  |
-| Regional Municipality of Wood Buffalo | arcgis-rest | — | 57 |  |
-| Rocky View County | arcgis-rest | — | 46 |  |
-| Saddle Hills County | arcgis-rest | — | 17 |  |
 | Sechelt | arcgis-rest | — | 97 |  |
 | Selkirk College | arcgis-rest | — |  |  |
-| Special Areas Board | arcgis-rest | — | 8 |  |
-| Spruce Grove | arcgis-rest | — | 655 |  |
-| St. Albert | arcgis-hub, arcgis-rest | — | 205 |  |
-| Stony Plain | arcgis-rest | — | 150 |  |
-| Strathcona County | arcgis-hub | — | 330 |  |
-| Strathmore | arcgis-rest | — | 311 |  |
-| Sturgeon County | arcgis-hub, arcgis-rest | — | 278 |  |
-| Sylvan Lake | arcgis-rest | — | 411 |  |
-| Vulcan County | arcgis-rest | — | 244 |  |
 | West Vancouver | custom | — |  |  |
-| Westlock | arcgis-rest | — | 10 |  |
-| Wetaskiwin | arcgis-rest | — | 12 |  |
-| Wheatland County | arcgis-rest | — | 244 |  |

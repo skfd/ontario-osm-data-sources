@@ -207,6 +207,12 @@ British Columbia's 160 municipalities are the polygons of the province's
 that does planning and often GIS for its members, as an Ontario county does, so it is `municipal`,
 not `association`. The Stikine Region has no board and is run by the province, so it gets no row.
 Their tier is blank.
+Alberta's 338 local governments are the polygons of `municipal_boundary_public`,
+`municipal_communities_public` and `municipal_metis_settlement_public` on geospatial.alberta.ca, read
+2026-11-05 and checked by code against the province's 2026 municipal tax workbook. A county there sits
+beside the towns inside it, not above them, so all are `municipal` with a blank tier. Special Areas 2, 3
+and 4 are one row, `special-areas-board`, for the body that runs them. The 8 Metis settlements are local
+governments under provincial law and have rows, though the workbook leaves them out; First Nations do not.
 
 The name is used as a wiki section heading, so no two rows share one, across provinces too. A
 name already taken by an earlier province gets the province in parentheses: `Shelburne (NS)`,
