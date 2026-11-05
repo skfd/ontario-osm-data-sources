@@ -52,7 +52,7 @@ BORING_FIELDS = re.compile(r"^(objectid|fid|shape|shape_.*|shape__.*|globalid|st
 # listed, so the catalogue does not point anyone at them.
 # Contact fields only: a school list's Student_Trustee or a survey's parent_guardian_school_child
 # (yes or no) is not a record of a child.
-PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|"
+PERSONAL_FIELDS = re.compile(r"student_?id|stu_?id|oen|customer_age|"
                              r"students?_(name|email|phone|address|number|birth|dob)\w*|"
                              r"parent_?(or_)?guardians?_(name|email|phone|contact|consent)\w*|"
                              r"childrens?_?names?\w*|duration_of_homeless\w*|"
