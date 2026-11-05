@@ -121,9 +121,9 @@ def count(p: dict, warnings: list[str]) -> int:
         return int(get_json(with_param(url, "limit=0"))["resultSetSize"])
     if platform == "arcgis-rest":
         return rest_layers(url.rstrip("/"), warnings)
-    if platform == "custom":  # a download list with a JSON API: GRIN's, or a JKAN site's
+    if platform == "custom":  # a download list with a JSON API: GRIN's, a JKAN site's, or a Geoportal
         d = get_json(url)
-        return len(d["results"] if isinstance(d, dict) else d)
+        return d["total"] if "total" in d else len(d["results"] if isinstance(d, dict) else d)
     raise ValueError(f"no counting method for platform {platform!r}")
 
 

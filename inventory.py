@@ -64,8 +64,8 @@ PUPIL_SET = {"school_name", "grade", "email"}
 # A test or development server, or a test folder on a production one, is not a release: nothing on
 # it is listed (GeoNB's geonb-t.snb.ca, Haliburton's Testing folder, MTO's intra.dev hosts).
 TEST = re.compile(r"//(?:[^/]*\.)?(?:[a-z0-9-]+-t|test|testing|dev|staging)\.|"
-                  r"/rest/services/(?:test|testing|dev|staging)/(?!(?:Feature|Map|Image)Server)", re.I)
-TEST_FOLDER = re.compile(r"(?:test|testing|dev|staging)", re.I)
+                  r"/rest/services/(?:test|testing|dev|staging)(?:_[^/]*)?/(?!(?:Feature|Map|Image)Server)", re.I)
+TEST_FOLDER = re.compile(r"(?:test|testing|dev|staging)(?:_.*)?", re.I)
 # A layer of encampment sites, whatever its fields (a city's parcels with Status and Occupancy),
 # and a log of needles picked up, whose free text places camps and people sleeping rough.
 ENCAMPMENTS = re.compile(r"encampment|needle found", re.I)
@@ -306,9 +306,18 @@ JKAN_LINK = re.compile(r'href="([^"]+)"[^>]*property=.dcat:accessURL.', re.I)
 JKAN_LICENCE = re.compile(r'property="dct:license"[^>]*>\s*(?:<[^>]+>\s*)*([^<]+)', re.I)
 
 
+def as_layers(base: dict, links: list[str]) -> list[dict]:
+    """A catalogue record that links a layer on a map server is that layer, as with a Hub item."""
+    service = next((u for u in links if SERVICE.match(u)), None)
+    layers = expand(service) if service else []
+    return [base | {k: v for k, v in l.items() if k in COLS and v}
+            | {"dataset": base["dataset"] if len(layers) == 1
+               else f"{base['dataset']} — {l['layer_name']}"} for l in layers] or [base]
+
+
 def from_jkan(p: dict) -> list[dict]:
     """A JKAN site: datasets.json lists the datasets, each page its links and licence. A dataset
-    that links a layer on a map server is that layer, as with a Hub item."""
+    that links a layer on a map server is that layer."""
     site = urllib.parse.urlsplit(p["api_url"])
     rows = []
     for d in get_json(p["api_url"]):
@@ -326,15 +335,35 @@ def from_jkan(p: dict) -> list[dict]:
                 "licence": text(name[1], 150) if name else p["licence"],
                 "description": text(re.sub(r"^Last Update \(mm-dd-yyyy\):\s*[\d-]*\s*", "",
                                            text(d.get("notes"), 400)), 300)}
-        service = next((u for u in links if SERVICE.match(u)), None)
-        layers = expand(service) if service else []
-        if not layers:
-            rows.append(base)
-        for l in layers:
-            rows.append(base | {k: v for k, v in l.items() if k in COLS and v}
-                        | {"dataset": base["dataset"] if len(layers) == 1
-                           else f"{base['dataset']} — {l['layer_name']}"})
+        rows += as_layers(base, links)
     return rows
+
+
+GEOPORTAL_LICENCE = re.compile(r"terms of the ((?:[\w-]+ )+Licen[cs]e)\W+Alberta")
+
+
+def from_geoportal(p: dict) -> list[dict]:
+    """Esri Geoportal, as GeoDiscover Alberta runs it: each record says whether its licence is the
+    open one, and a record that is not may name another, such as the Non-Commercial Licence."""
+    rows, start = [], 1
+    while True:
+        d = get_json(with_param(p["api_url"], f"num=1000&start={start}"))
+        for r in d["results"]:
+            src = r["_source"]
+            terms = src.get("apiso_OtherConstraints_s") or ""
+            name = GEOPORTAL_LICENCE.search(terms if isinstance(terms, str) else " ".join(terms))
+            links = [l["href"] for l in r.get("links") or []]
+            base = {"origin": "geoportal", "dataset": text(r.get("title"), 200),
+                    "item_type": "Geoportal record",
+                    "source_url": next((u for u in links if u.endswith("/html")), links[0]),
+                    "edited": (r.get("updated") or "")[:10],
+                    "licence": p["licence"] if src.get("sys_constraint_s") == "licence: open government"
+                    else f"{name[1]} - Alberta" if name else "None published",
+                    "description": text(f"{(r.get('author') or {}).get('name', '')}. {r.get('description') or ''}", 300)}
+            rows += as_layers(base, links)
+        start += len(d["results"])
+        if not d["results"] or start > d["total"]:
+            return rows
 
 
 SOCRATA_GEOMETRY = {"point": "point", "multipoint": "multipoint", "line": "polyline",
@@ -437,6 +466,8 @@ def from_custom(p: dict) -> list[dict]:
         return from_grin(p)
     if p["api_url"].endswith("/datasets.json"):
         return from_jkan(p)
+    if "/geoportal/opensearch" in p["api_url"]:
+        return from_geoportal(p)
     raise ValueError(f"no reader for the custom catalogue {p['api_url']}")
 
 
