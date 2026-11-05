@@ -8,7 +8,8 @@ Conservation Ontario, Guelph's map server, Erin, and everything each Hub lists b
 readers, swept Essex County's imagery server, added OGSEarth's and Metrolinx's remaining
 downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10-30) listed the
 54 ArcGIS Online org roots the Ontario Hubs sit on, and opened Nova Scotia. The fifth
-(2026-11-02 and 03) opened New Brunswick, and the sixth (2026-11-03) Prince Edward Island.
+(2026-11-02 and 03) opened New Brunswick, the sixth (2026-11-03) Prince Edward Island, and the
+seventh (2026-11-03 to 05) British Columbia.
 
 ## Graded on 2026-10-30 and 31
 
@@ -59,6 +60,111 @@ downloads as hand rows, and repaired the copy marks (below). The fourth (2026-10
   that is not wanted. The filter now matches contact fields of students and parents, children's
   names, homelessness duration, and a school-grade-email set; it no longer matches a school
   list's `Student_Trustee` or a survey's yes-or-no `parent_guardian_school_child`.
+
+## British Columbia (surveyed 2026-11-03 and 04)
+
+Every one of the 187 local governments (160 municipalities, 27 regional districts) has a portal
+row. By best reach: 51 run their own catalogue, 19 sit in a regional one, 84 have layers on a
+public server, 29 a viewer only, 4 nothing found. The province publishes through its CKAN catalogue
+and the Map Hub org under the Open Government Licence - British Columbia, but much of its best data
+is `Access Only`. Unlike the Atlantic provinces, the addresses are local: the province offers no
+open address layer, and the regional districts and cities do. Open ends:
+
+- **The layers (graded 2026-11-04 and 05):** 36,802 on 148 portals in 103 jurisdictions; 8,712
+  marked copies; 8,220 `Available`, 6,544 `No licence`, the rest `Not usable`. 5,253 are the
+  province's and its agencies', one at tier 5; 31,549 are local, 96 at tier 5 and 443 at tier 4.
+  About 15,000 local rows were graded by rule (groups, labels, documents, forms, unlicensed rasters,
+  5,447 of Langley Township's orthophoto tiles) and 4,396 exact repeats took their original's grade.
+  - **Address points, 82 layers at tier 5 in 64 jurisdictions.** Regional layers overlap their
+    members', so the counts do not add up. `Available`: Central Okanagan's 117,540 (see the licence
+    question below), Surrey's 102,698, Vancouver's 99,728, Kelowna's 79,080, Victoria's 65,955,
+    Kamloops' 50,080, New Westminster's 42,798, Nanaimo's 36,140, Burnaby's 34,272. `No licence`,
+    the licence emails to write first: Metro Vancouver's 606,720, the largest in the province, then
+    the Capital Regional District's 177,265, Fraser-Fort George's 63,109, Cowichan Valley's 45,962
+    (cvrd.ca's downloads page has terms of its own, unread), North Vancouver's 37,614 and Cariboo's
+    34,031.
+  - **Buildings, 15 layers at tier 5, all `Available`:** Surrey's 137,657 footprints, Saanich's
+    62,320, Burnaby's 54,792, Kelowna's 46,477, Kamloops' 39,969, Coquitlam's 33,770, Okanagan-
+    Similkameen's 33,230 and North Cowichan's rooflines, corrected for lean. Delta's 2022 layer stacks
+    2012-2022 in 166,379 rows; `BUILDING_YEAR=2022` gives the 37,770 current ones. qathet's footprints
+    are the federal ODB outlines. Richmond's `nearmap-ai-data-*` (21 rows) are a vendor's 2023 product.
+  - **The province's `Access Only` layers stay `No licence`:** the Digital Road Atlas (1,882,029
+    segments, tier 4), Consolidated Wetlands, TRIM buildings, Cariboo roads, the Historic Places layer,
+    Diagnostic Facilities, the mill list. Every `maps.gov.bc.ca` row reads None published too.
+  - TransLink's Regional Bikeway Data 2025 (17,677 segments, tier 4) and Regional Sidewalk data
+    (132,390, tier 3). `translink/overhead-dataset-overhead-dataset-points` (1,665 structures with
+    per-lane clearances) is marked a copy of `translink-height-restrictions`; if it is not, it is a
+    tier 4 source for maxheight.
+  - Vancouver's server layers worth asking for: murals, benches, bike racks, AEDs, four-way stops,
+    speed limit segments, turn restrictions.
+  - Worth a look in review: the Hub services of Surrey's specimen trees (exactly 62,000) and poles
+    (72,000) stop short of their server twins (73,985 and 115,154), so they look capped. Port Moody's
+    traffic-lights reports 402,512 rows for 204 AssetIDs, and `regional-land-use-designation-rlud`
+    reports 512,005 against 1,766 on its twins. Maple Ridge's layers stop at 2024-04.
+- **Licences a person should read.**
+  - Whether a regional district's licence covers what it serves for others: RDCO's on members' civic
+    points and on Westbank First Nation's and the Okanagan Basin Water Board's layers, the Sunshine
+    Coast's on Sechelt's and Gibsons' layers and on its imagery, Squamish's on BC Hydro's layers,
+    Vernon's on the Greater Vernon Water layers (RDNO's own rows carry none).
+  - Whistler's `roads-network` names the Digital Road Atlas as its source under the municipality's
+    licence, while the province's atlas is `Access Only`.
+  - North Vancouver District's server takes the Open Government Licence - North Vancouver from its
+    download page on the same host (`geoweb.dnv.org`), by hand, since that page has no reader:
+    236 rows, 77 of them moved to `Available`.
+  - Campbell River: one open item, a CC0 parks layer of 2022, on the same service as the live one.
+  - Census Dissemination Areas and Blocks: the licence column is open, the description says licensed
+    to government agencies only. `lidarbc-open-lidar-data-portal`'s column says Access Only, its
+    description the OGL-BC. `new-westminster/tree-replacements`' `Custom License` has no terms.
+- **Consultants' orgs.** TRUE Consulting and Pooni Group are coded as associations, as Watson's is,
+  with their clients on shared rows. TRUE's org holds layers of about a dozen communities and of
+  Tsideldel First Nation; Cache Creek's addresses are there (540, no licence) and on the
+  Thompson-Nicola's Hub (504, licensed), unmarked because the counts differ. A third org,
+  `oomh8HZ3HzM4fYHL` (191 services, clients across Canada, firm unnamed), is not swept; Lake
+  Cowichan's land use and boundary sit there. Urban Systems' and Ecoscape's orgs have no row.
+- **First Nations' layers have no code of their own.** Tk'emlups' and Tsideldel's on TRUE's org,
+  Westbank's on RDCO's server (it has an open data site of its own), Tla'amin's addresses on qathet's
+  org, and a First Nations set on Strathcona's. Raise any of them with the Nation first.
+- **No reader, so no rows.** Licensed download pages: North Vancouver District (170+ sets), West
+  Vancouver (24 layers; its licence's name comes from an archived PDF's filename), Chilliwack's
+  catalogue (43 items behind an Accept gate, not accepted, and its server layers read `No licence`),
+  the CRD (9 layers), Cowichan Valley (18), Nanaimo Regional District (15, OGL-RDN: the server's rows
+  have licensed twins nobody can list), Fraser-Fort George (9, OGL-RDFFG), West Kelowna (24 zips).
+  `ca/bc/west-vancouver` has a portal row and no inventory, so its three layers on North Vancouver's
+  basemap are unmarked.
+- **Unread or token-only.** Cloudflare or a plain 403 on kelowna.ca, csrd.bc.ca, gis.vernon.ca,
+  maps.nord.ca, tnrd.ca, westvancouver.ca, maps.portcoquitlam.ca; rdkb.com and newdenver.ca were
+  unreadable even through Wayback. Token-only: five RDKB folders, Hosted on maps.rdck.bc.ca, Kimberley,
+  Terrace and Parksville, Kelowna's Corporate_Reference_Layer, Summerland's BaseData,
+  gis.courtenay.ca. Quesnel and Prince Rupert run OpsReady, which needs a browser. Five of
+  gis.summerland.ca's Hub layers answer 500 and two 404, so they were graded from their descriptions.
+  Saanich's map moves in December 2026, so that server may change.
+- **Personal data in public layers**, all tier 1 with the fact in the note: parcels joined to owners'
+  names and mailing addresses on many servers, business licences with personal phones and emails
+  (146,471 records at one city, home occupations at others), building permits with applicants' names
+  (10 layers at one city), short-term rentals, water meters with occupants' names, memorial benches
+  with purchasers. Family child care providers at home put the province's Child Care Map Data (1,874
+  of 5,991 rows), and Surrey's and North Vancouver's lists, at tier 1; the group centres alone would
+  be tier 3. `fields` is cut at 300 characters, which hid people's fields on 126 or more rows until
+  graders read the full lists; rows graded by rule alone may hide more.
+- **Records of children and of homeless people kept out (2026-11-04 and 05).** Two layers were
+  dropped, on the rule `PERSONAL_FIELDS` and `ENCAMPMENTS` now carry: a city's 133,088 recreation
+  registrations, one row per customer with an age, most of them under 18 (`customer_age`), and a
+  city's 400-row log of needles picked up, whose free text places camps and a person sleeping rough
+  (`needle found`). Which publishers these are is in the gitignored
+  `cache/scratch/exposed-forms.md`, with the operational systems the sweep found on public servers.
+- **Questions for a person, on the same rule.** All are kept at tier 1 for now:
+  - `ca/bc/uhr-uhr`, the BC Coroners' unidentified human remains (156 rows, 20 or more under 18, many
+    infants, with its two twins): a deliberate public appeal with no names.
+  - Cemetery records of the dead, children among them, in several municipalities' layers (names,
+    birth and death dates, ages): kept, since they are the dead and such records are public elsewhere.
+    Plot reservations of the same services name the living.
+  - An evacuation layer whose schema has `EvacueeName`, `ContactNum` and `NumChildren` per address (19
+    rows, 1 name filled), and a flag marking households served because of age.
+- **Layers built from OSM, tier 2 or 1.** `skimaporg-ski-lifts-and-trails-*` (fields mirror OSM
+  tags), Kent's ParkMap Trails (a `highway` field), RDCK's two power line layers; Powell River's trails
+  look like a Trailforks export.
+- **No address tracker for British Columbia**, as for the Atlantic provinces. Onboarding the 82 tier 5
+  layers is `../ontario-address-changes`' call.
 
 ## Prince Edward Island (surveyed 2026-11-03)
 
@@ -330,11 +436,15 @@ municipally. Open ends:
   `inventory.py`, let `--copies` take the alternate views, and grade the rest. Done 2026-10-30
   and 31: see "Graded on 2026-10-30 and 31" above.
 
-- **The wiki view is over MediaWiki's 2 MB (5.4 MB with Prince Edward Island, 5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
+- **The wiki view is over MediaWiki's 2 MB (7.9 MB with British Columbia, 5.4 MB with Prince Edward Island, 5.2 MB with New Brunswick, 3.3 MB with Nova Scotia,
   2.3 MB before).** Nothing
   is pasted until the catalogue is reviewed, so it blocks nothing yet; the likely fix is one page
   per province under `Canada/Open data/<Province>`, with the national table and links on the
   parent page.
+- **`rows-f.js` is 71.6 MB with British Columbia (53.8 MB before).** GitHub warns above 50 MB and
+  refuses a file over 100 MB, and British Columbia alone added 18 MB, so Quebec could stop a push.
+  Each build also commits the whole file again. Splitting it per province, as the wiki page's likely
+  fix does, would answer both.
 - **Conservation authorities consolidate on 2027-02-01.** The 36 authorities become 9
   regional ones; Long Point, Grand River, Catfish Creek and Kettle Creek become the Eastern
   Lake Erie Regional Conservation Authority. The CA codes in `jurisdictions.csv`, and the ids
