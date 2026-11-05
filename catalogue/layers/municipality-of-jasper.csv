@@ -1,0 +1,2 @@
+id,theme,dataset,provider,source_url,portal_url,licence,licence_from,tier,feasibility,status,tools,lead,last_verified,notes
+ca/ab/municipality-of-jasper/stormwatersystem-viewing-public-pipe,maps,StormwaterSystem viewing public — Pipe,Municipality of Jasper,https://services7.arcgis.com/1glZz4XajYW77W8H/arcgis/rest/services/StormwaterSystem_viewing_public/FeatureServer/415004,https://services7.arcgis.com/1glZz4XajYW77W8H/arcgis/rest/services,None published,,1,no,Not usable,,,2026-11-05,An empty layer: no records on the day of the sweep.
