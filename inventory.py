@@ -68,8 +68,8 @@ TEST = re.compile(r"//(?:[^/]*\.)?(?:[a-z0-9-]+-t|test|testing|dev|staging)\.|"
 TEST_FOLDER = re.compile(r"(?:test|testing|dev|staging)(?:_.*)?", re.I)
 # A layer of encampment sites, whatever its fields (a city's parcels with Status and Occupancy),
 # and logs whose free text places camps and people sleeping rough: needles picked up, park staff's
-# shift reports.
-ENCAMPMENTS = re.compile(r"encampment|needle found|\brdsr\b", re.I)
+# shift reports. A lemonade stand layer names the children who run them, at their addresses.
+ENCAMPMENTS = re.compile(r"encampment|needle found|\brdsr\b|lemonade.stand", re.I)
 
 
 def personal(fields: list[str], name: str = "") -> bool:
