@@ -565,10 +565,11 @@ municipally. Open ends:
 - **The D and F rows ship one file per province (split 2026-11-05).** `rows-f.js` had reached
   71.6 MB, against GitHub's warning at 50 MB and refusal at 100 MB. The largest file is now
   `rows-f-on.js` at 38.1 MB. A build still rewrites every file when rows are added anywhere, since
-  `data-i` numbers the whole table. Picking D or F still loads all that grade's files, 92,559 rows
-  in all, and a phone may struggle with that long before any limit here. The page also stopped
-  spreading its rows into one call, which Chrome refuses near 123,000 arguments; it was tested to
-  158,465 rows in Chrome only. The table has 98,556.
+  `data-i` numbers the whole table. Picking D and F still loads all their files, 118,122 rows, about
+  70 seconds in desktop Chrome with Alberta in, and a phone may struggle long before that. Loading
+  only the provinces a Where filter picks would answer it. The page also stopped spreading its rows
+  into one call, which Chrome refuses near 123,000 arguments; it was tested to 158,465 rows in Chrome
+  only, and the table now has 125,290.
 - **Conservation authorities consolidate on 2027-02-01.** The 36 authorities become 9
   regional ones; Long Point, Grand River, Catfish Creek and Kettle Creek become the Eastern
   Lake Erie Regional Conservation Authority. The CA codes in `jurisdictions.csv`, and the ids
